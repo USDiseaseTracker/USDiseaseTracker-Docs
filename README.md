@@ -8,11 +8,20 @@ Data standards and public documentation of the US Disease Tracker project.
 
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
+## Pilot Program Documentation
+
+For jurisdictions participating in the pilot phase:
+
+1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
+2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
+3. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+
 ## Data Standards
 
-The repository includes the following data standards:
+The repository includes comprehensive data standards documentation:
 
-- **Disease Tracking Report Standard**: Defines required and optional fields for disease tracking reports
+- **[Data Standards Overview](standards/data-standards.md)** - Overview and index of all standards
+- **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** - Detailed field specifications for data submissions
 - Templates for creating additional standards
 
 See the [full documentation](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/) for details.
