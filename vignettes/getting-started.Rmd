@@ -1,0 +1,102 @@
+---
+title: "Getting Started with US Disease Tracker Data Standards"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting Started with US Disease Tracker Data Standards}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Introduction
+
+The US Disease Tracker Data Standards package provides comprehensive documentation,
+templates, and validation tools for disease surveillance data. This vignette will
+help you get started with using and contributing to the data standards.
+
+## Package Structure
+
+The package is organized into several key directories:
+
+- **inst/standards/**: Formal data standard definitions
+- **inst/templates/**: Templates for creating new standards
+- **inst/examples/**: Example data files demonstrating compliance
+- **data-raw/**: Data validation scripts
+
+## Data Standards
+
+### Case Reporting Standard
+
+The case reporting standard defines the required and optional fields for disease
+case reports. See `inst/standards/case-reporting-standard.md` for the complete
+specification.
+
+Required fields include:
+- case_id
+- report_date
+- disease_code
+- jurisdiction
+- age
+- sex
+
+### Using Example Data
+
+Example data files are provided to demonstrate proper data formatting:
+
+```{r eval=FALSE}
+# Path to example file
+example_file <- system.file("examples", "case_report_example.json", 
+                           package = "USDiseaseTrackerDocs")
+
+# Read the example (requires jsonlite package)
+# library(jsonlite)
+# example_data <- fromJSON(example_file)
+```
+
+## Validating Data
+
+Validation scripts help ensure data compliance with standards:
+
+```{r eval=FALSE}
+# Source the validation script
+source(system.file("../data-raw/validate_case_report.R", 
+                  package = "USDiseaseTrackerDocs"))
+
+# Validate your data
+# result <- validate_case_report(your_data)
+# 
+# if (result$valid) {
+#   message("Data is valid!")
+# } else {
+#   print(result$errors)
+# }
+```
+
+## Creating New Standards
+
+To create a new data standard:
+
+1. Copy the template from `inst/templates/standard-definition-template.md`
+2. Fill in all sections with your standard details
+3. Create example data files in `inst/examples/`
+4. Create a validation script in `data-raw/`
+5. Submit a pull request for review
+
+## Contributing
+
+Contributions to the data standards are welcome! Please:
+
+1. Review existing standards for consistency
+2. Use the provided templates
+3. Include examples and validation scripts
+4. Follow the GitHub workflow for submissions
+
+## Further Information
+
+For more details, visit the [package website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/).

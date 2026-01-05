@@ -1,0 +1,19 @@
+Package: USDiseaseTrackerDocs
+Title: Data Standards and Documentation for US Disease Tracker
+Version: 0.1.0
+Authors@R: 
+    person("US Disease Tracker Team", email = "info@usdiseasetracker.org",
+           role = c("aut", "cre"))
+Description: This package houses data standards, templates, examples, and 
+    validation documentation for the US Disease Tracker project. It provides
+    standardized formats and guidelines for disease surveillance data.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+URL: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+BugReports: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/issues
