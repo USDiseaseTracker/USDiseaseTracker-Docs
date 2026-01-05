@@ -1,0 +1,28 @@
+title: US Disease Tracker Data Standards
+description: Data standards and public documentation of the US Disease Tracker project
+theme: jekyll-theme-cayman
+
+# Build settings
+markdown: kramdown
+
+# Include/exclude files
+include:
+  - standards
+  - templates
+  - examples
+  - data-raw
+
+exclude:
+  - .git
+  - .github
+  - LICENSE
+  - .gitignore
+
+# Navigation (optional)
+header_pages:
+  - INDEX.md
+  - standards/README.md
+  - templates/README.md
+  - examples/README.md
+  - CONTRIBUTING.md
+  - SETUP.md
