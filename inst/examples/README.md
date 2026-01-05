@@ -8,8 +8,9 @@ This directory contains example data files that demonstrate compliance with the 
 - `case_report_example.json` - Complete case report following the case reporting standard
 - `case_report_minimal.json` - Minimal valid case report with only required fields
 
-### Laboratory Data Examples
-- `lab_result_example.json` - Laboratory result data example
+### Planned Examples
+- Laboratory result data examples (when laboratory data standard is completed)
+- Demographic data examples (when demographic data standard is completed)
 
 ## Using Examples
 

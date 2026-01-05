@@ -16,8 +16,12 @@ Each data standard should include:
 ### Case Reporting Standard
 The case reporting standard defines the required and optional fields for disease case reports.
 
+See [case-reporting-standard.md](case-reporting-standard.md) for details.
+
+## Planned Standards
+
 ### Laboratory Data Standard
-The laboratory data standard specifies formats for laboratory test results and interpretations.
+The laboratory data standard will specify formats for laboratory test results and interpretations.
 
 ### Demographic Data Standard
-The demographic data standard outlines required demographic information for case tracking.
+The demographic data standard will outline required demographic information for case tracking.

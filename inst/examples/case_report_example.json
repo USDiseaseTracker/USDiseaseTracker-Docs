@@ -8,11 +8,5 @@
   "race": "White",
   "ethnicity": "Non-Hispanic",
   "symptom_onset_date": "2026-01-02",
-  "hospitalized": false,
-  "outcome": "Recovered",
-  "reporter": {
-    "name": "Dr. Jane Smith",
-    "facility": "Austin General Hospital",
-    "contact": "jsmith@example.com"
-  }
+  "hospitalized": false
 }

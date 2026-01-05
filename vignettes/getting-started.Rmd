@@ -61,12 +61,12 @@ example_file <- system.file("examples", "case_report_example.json",
 
 ## Validating Data
 
-Validation scripts help ensure data compliance with standards:
+Validation scripts help ensure data compliance with standards. Since validation
+scripts are in `data-raw/`, they should be accessed from the source repository:
 
 ```{r eval=FALSE}
-# Source the validation script
-source(system.file("../data-raw/validate_case_report.R", 
-                  package = "USDiseaseTrackerDocs"))
+# If you have the repository cloned, source the validation script directly
+# source("data-raw/validate_case_report.R")
 
 # Validate your data
 # result <- validate_case_report(your_data)

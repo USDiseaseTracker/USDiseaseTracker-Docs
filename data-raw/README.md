@@ -7,8 +7,10 @@ This directory contains scripts for validating data against the defined standard
 ### validate_case_report.R
 Validates case report data against the case reporting standard.
 
-### validate_lab_data.R
-Validates laboratory data against the laboratory data standard.
+## Planned Validation Scripts
+
+- validate_lab_data.R - For laboratory data (when standard is completed)
+- validate_demographic_data.R - For demographic data (when standard is completed)
 
 ## Usage
 
