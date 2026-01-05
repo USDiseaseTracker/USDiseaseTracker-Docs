@@ -91,14 +91,14 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Value | Description |
 |-------|-------------|
-| `0-11 m` | Birth through day before 1st birthday |
-| `1-4 y` | 1st birthday through day before 5th birthday |
-| `5-11 y` | 5th birthday through day before 12th birthday |
-| `12-18 y` | 12th birthday through day before 19th birthday |
-| `19-22 y` | 19th birthday through day before 23rd birthday |
-| `23-44 y` | 23rd birthday through day before 45th birthday |
-| `45-64 y` | 45th birthday through day before 65th birthday |
-| `>=65 y` | 65th birthday and older |
+| `0-11 m` | From birth up to but not including 1 year birthday |
+| `1-4 y` | From 1 year birthday up to but not including 5 year birthday |
+| `5-11 y` | From 5 year birthday up to but not including 12 year birthday |
+| `12-18 y` | From 12 year birthday up to but not including 19 year birthday |
+| `19-22 y` | From 19 year birthday up to but not including 23 year birthday |
+| `23-44 y` | From 23 year birthday up to but not including 45 year birthday |
+| `45-64 y` | From 45 year birthday up to but not including 65 year birthday |
+| `>=65 y` | From 65 year birthday and older |
 | `total` | All ages combined |
 | `unknown` | Age unknown |
 
