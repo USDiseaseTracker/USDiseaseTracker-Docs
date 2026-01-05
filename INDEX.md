@@ -4,7 +4,7 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 ## Quick Links
 
-- [Getting Started Guide](../vignettes/getting-started.Rmd)
+- [Getting Started Guide](SETUP.md)
 - [Case Reporting Standard](standards/case-reporting-standard.md)
 - [Standard Definition Template](templates/standard-definition-template.md)
 
@@ -17,7 +17,7 @@ This is the comprehensive index for all data standards, templates, and examples 
    - Last Updated: 2026-01-05
    - Defines required and optional fields for disease case reports
    - [Example Data](examples/case_report_example.json)
-   - [Validation Script](../data-raw/validate_case_report.R)
+   - [Validation Script](data-raw/validate_case_report.R)
 
 ### Planned Standards
 

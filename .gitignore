@@ -9,23 +9,10 @@
 # User-specific files
 .Ruserdata
 
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
 # RStudio files
 .Rproj.user/
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
-
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+# OAuth2 token
 .httr-oauth
 
 # knitr and R markdown default cache directories
@@ -39,11 +26,15 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# pkgdown site
+# Jekyll site
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# GitHub Pages / Jekyll
 docs/
 
-# translation temp files
-po/*~
-
-# RStudio Connect folder
-rsconnect/
+# OS files
+.DS_Store
+Thumbs.db

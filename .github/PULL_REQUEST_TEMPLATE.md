@@ -21,11 +21,11 @@
 
 ### For New Standards
 
-- [ ] Standard definition document created in `inst/standards/`
-- [ ] At least one complete example in `inst/examples/`
-- [ ] At least one minimal example (required fields only) in `inst/examples/`
+- [ ] Standard definition document created in `standards/`
+- [ ] At least one complete example in `examples/`
+- [ ] At least one minimal example (required fields only) in `examples/`
 - [ ] Validation script created in `data-raw/`
-- [ ] Entry added to `inst/INDEX.md`
+- [ ] Entry added to `INDEX.md`
 - [ ] Version number and change log included
 - [ ] All fields have clear definitions and data types
 - [ ] Validation rules documented

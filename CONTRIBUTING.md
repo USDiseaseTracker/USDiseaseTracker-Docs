@@ -47,7 +47,7 @@ git checkout -b feature/your-standard-name
 
 1. **Copy the template:**
    ```bash
-   cp inst/templates/standard-definition-template.md inst/standards/your-standard-name.md
+   cp templates/standard-definition-template.md standards/your-standard-name.md
    ```
 
 2. **Fill in all sections:**
@@ -60,8 +60,8 @@ git checkout -b feature/your-standard-name
 3. **Create example data:**
    ```bash
    # Create at least one complete example and one minimal example
-   touch inst/examples/your_standard_example.json
-   touch inst/examples/your_standard_minimal.json
+   touch examples/your_standard_example.json
+   touch examples/your_standard_minimal.json
    ```
 
 4. **Create a validation script:**
@@ -72,11 +72,11 @@ git checkout -b feature/your-standard-name
    Use `data-raw/validate_case_report.R` as a template.
 
 5. **Update the index:**
-   Add your standard to `inst/INDEX.md`
+   Add your standard to `INDEX.md`
 
 #### Updating an Existing Standard
 
-1. Update the standard document in `inst/standards/`
+1. Update the standard document in `standards/`
 2. Increment the version number
 3. Add entry to the Change Log section
 4. Update examples if needed
@@ -95,8 +95,7 @@ source("data-raw/validate_your_standard.R")
 
 ### 5. Document Your Changes
 
-- Update `inst/INDEX.md` with your new standard
-- Add or update vignettes if appropriate
+- Update `INDEX.md` with your new standard
 - Ensure all markdown files are properly formatted
 
 ### 6. Commit and Push
@@ -126,7 +125,7 @@ All data standards must include:
 - [ ] At least one complete example
 - [ ] At least one minimal example (required fields only)
 - [ ] Validation script
-- [ ] Entry in `inst/INDEX.md`
+- [ ] Entry in `INDEX.md`
 - [ ] Version number and change log
 - [ ] Clear field definitions with data types
 - [ ] Validation rules
@@ -156,7 +155,7 @@ All data standards must include:
 
 ## Review Process
 
-1. **Automated checks:** GitHub Actions will run R CMD check and build the pkgdown site
+1. **Automated checks:** GitHub Actions will build and deploy the documentation site
 2. **Maintainer review:** A maintainer will review your contribution for:
    - Completeness
    - Accuracy
@@ -170,7 +169,7 @@ All data standards must include:
 If you have questions about contributing:
 
 1. Check the [Setup Guide](SETUP.md)
-2. Review existing standards in `inst/standards/`
+2. Review existing standards in `standards/`
 3. Open an issue with the `question` label
 
 ## License

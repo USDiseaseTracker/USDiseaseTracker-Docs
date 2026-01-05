@@ -1,32 +1,29 @@
 # USDiseaseTracker-Docs
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/R-CMD-check/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions)
-[![pkgdown](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/pkgdown/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions)
-<!-- badges: end -->
+[![Deploy GitHub Pages](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/Deploy%20GitHub%20Pages/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions)
 
 Data standards and public documentation of the US Disease Tracker project.
 
 ## Overview
 
-This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It is structured as an R package to leverage pkgdown for documentation and provide a standardized format for data standard management.
+This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
 ## Repository Structure
 
 ```
 USDiseaseTracker-Docs/
-├── inst/
-│   ├── standards/          # Data standard definitions
-│   ├── templates/          # Templates for creating new standards
-│   └── examples/           # Example data files
+├── standards/             # Data standard definitions
+├── templates/             # Templates for creating new standards
+├── examples/              # Example data files
 ├── data-raw/              # Data validation scripts
-├── vignettes/             # Documentation articles
-├── man/                   # R documentation
 ├── .github/
-│   └── workflows/         # GitHub Actions workflows
-├── DESCRIPTION            # R package metadata
-├── NAMESPACE              # R package namespace
-└── _pkgdown.yml          # pkgdown configuration
+│   ├── workflows/         # GitHub Actions workflows
+│   └── ISSUE_TEMPLATE/    # Issue templates
+├── INDEX.md               # Comprehensive index of all standards
+├── README.md              # This file
+├── SETUP.md               # Setup and usage guide
+├── CONTRIBUTING.md        # Contribution guidelines
+└── _config.yml            # Jekyll configuration for GitHub Pages
 ```
 
 ## Data Standards
@@ -46,11 +43,16 @@ The documentation website is available at: https://usdiseasetracker.github.io/US
 
 ### Using Examples
 
-Example data files are provided in `inst/examples/`:
+Example data files are provided in `examples/`:
 
-```r
+```bash
 # View example case report
-jsonlite::fromJSON("inst/examples/case_report_example.json")
+cat examples/case_report_example.json
+```
+
+Or in R:
+```r
+jsonlite::fromJSON("examples/case_report_example.json")
 ```
 
 ### Validating Data
@@ -76,27 +78,17 @@ We welcome contributions to the data standards! Please see our [Contributing Gui
 
 Quick overview:
 
-1. Review existing standards in `inst/standards/`
-2. Use templates from `inst/templates/` for new standards
-3. Include example data in `inst/examples/`
+1. Review existing standards in `standards/`
+2. Use templates from `templates/` for new standards
+3. Include example data in `examples/`
 4. Provide validation scripts in `data-raw/`
 5. Submit a pull request
 
-## Installation and Setup
-
-While this is primarily a documentation repository, you can install it as an R package. See the [Setup Guide](SETUP.md) for detailed instructions.
-
-```r
-# install.packages("remotes")
-remotes::install_github("USDiseaseTracker/USDiseaseTracker-Docs")
-```
+See the [Setup Guide](SETUP.md) for more information on using and contributing to this repository.
 
 ## GitHub Actions
 
-This repository uses GitHub Actions for:
-
-- **R-CMD-check**: Validates the R package structure across multiple platforms
-- **pkgdown**: Automatically builds and deploys the documentation website
+This repository uses GitHub Actions to automatically build and deploy the documentation website to GitHub Pages whenever changes are pushed to the main branch.
 
 ## License
 

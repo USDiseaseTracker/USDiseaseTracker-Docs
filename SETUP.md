@@ -4,49 +4,32 @@ This guide will help you set up and use the US Disease Tracker documentation rep
 
 ## Prerequisites
 
-- R (>= 4.0.0)
 - Git
 - GitHub account
+- (Optional) R for using validation scripts
 
 ## Installation
 
-### Option 1: Install as an R Package
-
-```r
-# Install from GitHub
-install.packages("remotes")
-remotes::install_github("USDiseaseTracker/USDiseaseTracker-Docs")
-```
-
-### Option 2: Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/USDiseaseTracker/USDiseaseTracker-Docs.git
 cd USDiseaseTracker-Docs
 ```
 
-## Building the Documentation Website
+## Viewing the Documentation Website
 
-The repository uses `pkgdown` to generate a documentation website. To build it locally:
+The documentation website is automatically built and deployed to GitHub Pages:
 
-```r
-# Install pkgdown if you haven't already
-install.packages("pkgdown")
+**Website URL:** https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
 
-# Build the site
-pkgdown::build_site()
-
-# Preview the site
-pkgdown::preview_site()
-```
-
-The site will be built in the `docs/` directory and automatically deployed to GitHub Pages when changes are pushed to the main branch.
+The site is built using Jekyll and updates automatically when changes are pushed to the main branch.
 
 ## Using the Data Standards
 
 ### Viewing Standards
 
-All data standards are located in `inst/standards/`. Each standard document includes:
+All data standards are located in `standards/`. Each standard document includes:
 
 - Field definitions
 - Data types and validation rules
@@ -85,58 +68,48 @@ if (result$valid) {
 
 Example data files demonstrate proper formatting:
 
+```bash
+# View example using cat
+cat examples/case_report_example.json
+```
+
+Or in R:
 ```r
 # Read example using jsonlite
 library(jsonlite)
-example <- fromJSON("inst/examples/case_report_example.json")
+example <- fromJSON("examples/case_report_example.json")
 ```
 
 ## Creating New Standards
 
 1. **Copy the template**
    ```bash
-   cp inst/templates/standard-definition-template.md inst/standards/my-new-standard.md
+   cp templates/standard-definition-template.md standards/my-new-standard.md
    ```
 
 2. **Fill in the template** with your standard details
 
-3. **Create example data** in `inst/examples/`
+3. **Create example data** in `examples/`
 
 4. **Create a validation script** in `data-raw/`
 
-5. **Update the index** in `inst/INDEX.md`
+5. **Update the index** in `INDEX.md`
 
 6. **Submit a pull request**
 
 ## GitHub Actions
 
-This repository includes two GitHub Actions workflows:
-
-### R-CMD-check
-
-Runs on every push and pull request to validate the R package structure across multiple platforms (Ubuntu, macOS, Windows) and R versions.
-
-### pkgdown
-
-Automatically builds and deploys the documentation website to GitHub Pages when changes are pushed to the main branch.
+This repository includes a GitHub Actions workflow that automatically builds and deploys the documentation website to GitHub Pages when changes are pushed to the main branch.
 
 ## Troubleshooting
 
-### Package Check Fails
-
-If `R CMD check` fails:
-
-1. Make sure all required fields in `DESCRIPTION` are filled
-2. Ensure all examples in documentation are valid
-3. Check that all dependencies are listed
-
 ### Website Build Fails
 
-If `pkgdown::build_site()` fails:
+If the GitHub Pages deployment fails:
 
-1. Install all suggested packages: `install.packages(c("knitr", "rmarkdown"))`
-2. Check that `_pkgdown.yml` is valid YAML
-3. Ensure vignettes build correctly
+1. Check the Actions tab in GitHub for error messages
+2. Ensure `_config.yml` is valid YAML
+3. Verify all markdown files are properly formatted
 
 ### Validation Script Issues
 
