@@ -72,7 +72,9 @@ if (result$valid) {
 
 ## Contributing
 
-We welcome contributions to the data standards! Please:
+We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+
+Quick overview:
 
 1. Review existing standards in `inst/standards/`
 2. Use templates from `inst/templates/` for new standards
@@ -80,9 +82,9 @@ We welcome contributions to the data standards! Please:
 4. Provide validation scripts in `data-raw/`
 5. Submit a pull request
 
-## Installation
+## Installation and Setup
 
-While this is primarily a documentation repository, you can install it as an R package:
+While this is primarily a documentation repository, you can install it as an R package. See the [Setup Guide](SETUP.md) for detailed instructions.
 
 ```r
 # install.packages("remotes")
