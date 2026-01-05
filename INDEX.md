@@ -5,8 +5,21 @@ This is the comprehensive index for all data standards, templates, and examples 
 ## Quick Links
 
 - [Getting Started Guide](SETUP.md)
+- [Pilot Phase Overview](PILOT-OVERVIEW.md)
+- [Data Submission Guide](DATA-SUBMISSION-GUIDE.md)
+- [Data Transfer Guide](DATA-TRANSFER-GUIDE.md)
+- [Data Standards Overview](standards/data-standards.md)
 - [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
 - [Standard Definition Template](templates/standard-definition-template.md)
+
+## Pilot Program Documentation
+
+### For Participating Jurisdictions
+
+1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
+2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
+3. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+4. **[Data Standards Overview](standards/data-standards.md)** - Overview of all standards documentation
 
 ## Data Standards
 
@@ -15,7 +28,7 @@ This is the comprehensive index for all data standards, templates, and examples 
 1. **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** (v1.0.0)
    - Status: Draft
    - Last Updated: 2026-01-05
-   - Defines required and optional fields for disease tracking reports
+   - Defines required and optional fields for aggregate disease tracking reports
    - [Example Data](examples/disease_tracking_report_example.csv)
    - Validation: Coming Soon
 
