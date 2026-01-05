@@ -13,10 +13,10 @@ Each data standard should include:
 
 ## Current Standards
 
-### Case Reporting Standard
-The case reporting standard defines the required and optional fields for disease case reports.
+### Disease Tracking Report Standard
+The disease tracking report standard defines the required and optional fields for disease tracking reports.
 
-See [case-reporting-standard.md](case-reporting-standard.md) for details.
+See [disease-tracking-report-standard.md](disease-tracking-report-standard.md) for details.
 
 ## Planned Standards
 

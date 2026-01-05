@@ -43,7 +43,7 @@ Document specific validation rules:
 ## Examples
 
 Provide references to example files:
-- See `inst/examples/[example-file].json`
+- See `examples/[example-file].csv`
 
 ## Change Log
 

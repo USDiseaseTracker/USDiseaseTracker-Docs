@@ -4,9 +4,9 @@ This directory contains example data files that demonstrate compliance with the 
 
 ## Available Examples
 
-### Case Report Examples
-- `case_report_example.json` - Complete case report following the case reporting standard
-- `case_report_minimal.json` - Minimal valid case report with only required fields
+### Disease Tracking Report Examples
+- `disease_tracking_report_example.csv` - Complete disease tracking report following the standard
+- `disease_tracking_report_minimal.csv` - Minimal valid disease tracking report with only required fields
 
 ### Planned Examples
 - Laboratory result data examples (when laboratory data standard is completed)

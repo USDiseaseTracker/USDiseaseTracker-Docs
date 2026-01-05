@@ -40,7 +40,7 @@
 
 ### General
 
-- [ ] All example data files are valid JSON/CSV
+- [ ] All example data files are valid CSV format
 - [ ] Validation scripts tested and working
 - [ ] Markdown files properly formatted
 - [ ] No sensitive or confidential data included

@@ -69,7 +69,7 @@ git checkout -b feature/your-standard-name
    touch data-raw/validate_your_standard.R
    ```
    
-   Use `data-raw/validate_case_report.R` as a template.
+   (Coming soon: validation script templates will be provided)
 
 5. **Update the index:**
    Add your standard to `INDEX.md`

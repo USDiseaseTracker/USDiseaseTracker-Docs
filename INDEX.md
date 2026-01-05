@@ -5,19 +5,19 @@ This is the comprehensive index for all data standards, templates, and examples 
 ## Quick Links
 
 - [Getting Started Guide](SETUP.md)
-- [Case Reporting Standard](standards/case-reporting-standard.md)
+- [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
 - [Standard Definition Template](templates/standard-definition-template.md)
 
 ## Data Standards
 
 ### Active Standards
 
-1. **[Case Reporting Standard](standards/case-reporting-standard.md)** (v1.0.0)
+1. **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** (v1.0.0)
    - Status: Draft
    - Last Updated: 2026-01-05
-   - Defines required and optional fields for disease case reports
-   - [Example Data](examples/case_report_example.json)
-   - [Validation Script](data-raw/validate_case_report.R)
+   - Defines required and optional fields for disease tracking reports
+   - [Example Data](examples/disease_tracking_report_example.csv)
+   - Validation: Coming Soon
 
 ### Planned Standards
 
@@ -36,14 +36,12 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 All example data files are located in the `examples/` directory:
 
-- [case_report_example.json](examples/case_report_example.json) - Complete case report with all fields
-- [case_report_minimal.json](examples/case_report_minimal.json) - Minimal valid case report
+- [disease_tracking_report_example.csv](examples/disease_tracking_report_example.csv) - Complete disease tracking report with all fields
+- [disease_tracking_report_minimal.csv](examples/disease_tracking_report_minimal.csv) - Minimal valid disease tracking report
 
 ## Validation Scripts
 
-Validation scripts are available in the `data-raw/` directory:
-
-- [validate_case_report.R](../data-raw/validate_case_report.R) - Validates case report data
+Validation scripts are coming soon. Check the `data-raw/` directory for updates.
 
 ## Contributing
 
@@ -60,7 +58,7 @@ To contribute a new data standard:
 
 | Date | Version | Changes |
 |------|---------|---------|
-| 2026-01-05 | 0.1.0 | Initial repository setup with case reporting standard |
+| 2026-01-05 | 0.1.0 | Initial repository setup with disease tracking report standard |
 
 ## Contact
 

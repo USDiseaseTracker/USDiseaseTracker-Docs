@@ -1,4 +1,4 @@
-# Case Reporting Data Standard
+# Disease Tracking Report Data Standard
 
 **Version:** 1.0.0  
 **Last Updated:** 2026-01-05  
@@ -6,7 +6,7 @@
 
 ## Overview
 
-This document defines the data standard for disease case reporting in the US Disease Tracker system.
+This document defines the data standard for disease tracking reports in the US Disease Tracker system.
 
 ## Required Fields
 
@@ -30,8 +30,8 @@ This document defines the data standard for disease case reporting in the US Dis
 
 ## Example
 
-See `inst/examples/case_report_example.json` for a complete example.
+See `examples/disease_tracking_report_example.csv` for a complete example.
 
 ## Validation
 
-Validation scripts are available in `data-raw/validate_case_report.R`.
+Validation scripts are coming soon.
