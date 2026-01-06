@@ -42,10 +42,16 @@ Technical details on data transfer methods, including:
 Detailed technical specification of the data standard, including:
 - Required and optional fields
 - Data types and formats
-- Validation rules
 - Valid value sets
 - Example data
 - Version history
+
+### 5. [Validation Rules](validation.md)
+Comprehensive validation rules for data submissions, including:
+- Format validation
+- Data type validation
+- Logical validation
+- Cross-field validation rules
 
 ## Quick Reference
 

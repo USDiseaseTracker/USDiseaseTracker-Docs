@@ -8,6 +8,7 @@ The data standards documentation is organized into several focused documents:
 
 - **[data-standards.md](data-standards.md)** - Overview and index of all standards documentation
 - **[disease-tracking-report-standard.md](disease-tracking-report-standard.md)** - Technical specification for data submissions
+- **[validation.md](validation.md)** - Validation rules and requirements for data submissions
 
 ## Related Documentation
 
@@ -25,9 +26,11 @@ The disease tracking report standard defines the required and optional fields fo
 
 See [disease-tracking-report-standard.md](disease-tracking-report-standard.md) for complete details including:
 - Field definitions and data types
-- Validation rules and valid value sets
+- Valid value sets
 - Example data formats
 - Metadata requirements
+
+See [validation.md](validation.md) for validation rules and requirements.
 
 ## Standard Structure
 

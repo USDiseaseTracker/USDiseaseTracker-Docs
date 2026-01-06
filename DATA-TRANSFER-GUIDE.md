@@ -202,6 +202,8 @@ All submitted files undergo automated validation:
 - **Value checks:** Values within acceptable ranges/enumerations
 - **Reasonableness checks:** Logical consistency (dates, counts, etc.)
 
+See the [Validation Rules](standards/validation.md) for detailed validation requirements.
+
 ### Validation Errors
 
 If validation fails:

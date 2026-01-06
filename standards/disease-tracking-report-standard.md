@@ -121,7 +121,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 ## Validation
 
-See [Submission Validation]`standards/validation.md` for details on file and data validation.
+See [Validation](validation.md) for details on file and data validation.
 
 
 ## Example Data
