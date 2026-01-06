@@ -26,7 +26,7 @@ Three vaccine-preventable diseases have been selected for the pilot phase:
 2. **Pertussis** (caused by *Bordetella pertussis* bacteria)
 3. **Invasive Meningococcal Disease** (caused by *Neisseria meningitidis* bacteria)
 
-Additional diseases may be added after the pilot phase.
+Additional diseases will be added after the pilot phase.
 
 ### Pilot Timeline
 
@@ -55,22 +55,11 @@ Provision of data is voluntary and based on individual jurisdiction capabilities
 - JHU will only post what is supplied by jurisdictions
 
 ### Privacy During Pilot
-Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard is intended to be posted on the JHU website and become public.
+Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.
 
 ## Project Goals
 
-The major goal of this project is to produce epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
-
-This document will be updated as needed during the pilot and following the pilot based on lessons learned, and as advised by the Steering Committee and Technical Advisory Group.
-
-## Next Steps
-
-For detailed information on participating in the pilot:
-
-- Review the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md)
-- Review the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md)
-- Review the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
-- Contact the project team to discuss participation
+The major goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
 
 ## Contact
 
