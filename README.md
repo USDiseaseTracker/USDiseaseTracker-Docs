@@ -12,30 +12,6 @@ The documentation website is available at: https://usdiseasetracker.github.io/US
 The major goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
 
 
-## Key Principles
-
-### Voluntary Participation
-Provision of data is voluntary and based on individual jurisdiction capabilities and policies.
-
-### Aggregate Data Only
-- No line-level data will be collected
-- Data are subject to suppression in accordance with individual jurisdiction policies, regulations, and laws
-- Ensures patient privacy and minimizes reidentification risk
-
-### Data Updates and Versioning
-- Data should be updated and back-populated on a regular basis
-- Records of prior versions will be maintained
-- Recent data may be incomplete as investigations proceed
-
-### Data Integrity
-- We do not manipulate or suppress data once received
-- Jurisdictions submit only data they are comfortable posting publicly
-- Only data supplied by jurisdictions will be posted publicly
-
-### Privacy During Pilot
-Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.
-
-
 ## Program Documentation
 
 For jurisdictions participating or interested in participating, the following pages provide detailed information how the project, data formatting and standards, and how to submit these data.
@@ -46,16 +22,42 @@ For jurisdictions participating or interested in participating, the following pa
 - **[Data Standards Overview](standards/data-standards.md)** - Overview and index of all standards
 - **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** - Detailed field specifications for data submissions
 
+
 ## Examples and Templates
 
 - Example data files are provided in `examples/`: 
 - Templates for data files are provided in `templates/`:
 
+
 ## Data Validation
 
 Data are validated upon submission for completeness, format, and errors. Data are validated against the **[Data Reporting Schema](validation/data_reporting_schema.json)**.
 
-**Coming Soon:** Tools to perform validation prior to submission are currently under development.
+***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+
+
+## Key Principles
+
+#### 1. Voluntary Participation
+- Provision of data is voluntary and based on individual jurisdiction capabilities and policies.
+
+#### 2. Aggregate Data Only
+- No line-level data will be collected
+- Data are subject to suppression in accordance with individual jurisdiction policies, regulations, and laws
+- Ensures patient privacy and minimizes reidentification risk
+
+#### 3. Data Updates and Versioning
+- Data should be updated and back-populated on a regular basis
+- Records of prior versions will be maintained
+- Recent data may be incomplete as investigations proceed
+
+#### 4. Data Integrity
+- We do not manipulate or suppress data once received
+- Jurisdictions submit only data they are comfortable posting publicly
+- Only data supplied by jurisdictions will be posted publicly
+
+*NOTE: Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.*
+
 
 ## Contributing
 
