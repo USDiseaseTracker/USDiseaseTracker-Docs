@@ -2,10 +2,39 @@
 
 [![Deploy GitHub Pages](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/Deploy%20GitHub%20Pages/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions)
 
-
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
 The documentation website is available at: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+
+
+## Project Goals
+
+The major goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
+
+
+## Key Principles
+
+### Voluntary Participation
+Provision of data is voluntary and based on individual jurisdiction capabilities and policies.
+
+### Aggregate Data Only
+- No line-level data will be collected
+- Data are subject to suppression in accordance with individual jurisdiction policies, regulations, and laws
+- Ensures patient privacy and minimizes reidentification risk
+
+### Data Updates and Versioning
+- Data should be updated and back-populated on a regular basis
+- Records of prior versions will be maintained
+- Recent data may be incomplete as investigations proceed
+
+### Data Integrity
+- We do not manipulate or suppress data once received
+- Jurisdictions submit only data they are comfortable posting publicly
+- Only data supplied by jurisdictions will be posted publicly
+
+### Privacy During Pilot
+Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.
+
 
 ## Program Documentation
 
