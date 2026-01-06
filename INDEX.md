@@ -4,7 +4,6 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 ## Quick Links
 
-- [Getting Started Guide](SETUP.md)
 - [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
 - [Standard Definition Template](templates/standard-definition-template.md)
 

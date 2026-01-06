@@ -47,8 +47,6 @@ Quick overview:
 3. Include example data in `examples/`
 4. Submit a pull request
 
-See the [Setup Guide](SETUP.md) for more information on using and contributing to this repository.
-
 ## GitHub Actions
 
 This repository uses GitHub Actions to automatically build and deploy the documentation website to GitHub Pages whenever changes are pushed to the main branch.
