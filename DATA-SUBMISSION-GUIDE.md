@@ -249,6 +249,8 @@ Jurisdictions should provide metadata including:
 
 Values submitted must align with valid value sets defined in the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md). Values not in alignment may result in validation errors.
 
+See the [Validation Rules](standards/validation.md) for comprehensive validation requirements including format, data type, logical, and cross-field validation.
+
 See the [data dictionary and sample data file](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) for complete data element definitions and valid value sets.
 <br>
 

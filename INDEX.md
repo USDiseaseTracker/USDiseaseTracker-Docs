@@ -25,7 +25,9 @@ This is the comprehensive index for all data standards, templates, and examples 
    - Last Updated: 2026-01-05
    - Defines required and optional fields for aggregate disease tracking reports
    - [Example Data](examples/disease_tracking_report_example.csv)
-   - Validation: Coming Soon
+2. **[Validation Rules](standards/validation.md)**
+   - Comprehensive validation requirements for data submissions
+   - Includes format, data type, logical, and cross-field validation
 
 ### Planned Standards
 

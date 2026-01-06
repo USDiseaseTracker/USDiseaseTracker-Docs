@@ -31,7 +31,7 @@ For jurisdictions participating or interested in participating, the following pa
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. Data are validated against the **[Data Reporting Schema](validation/data_reporting_schema.json)**.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](standards/validation.md) for detailed validation requirements.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
 
