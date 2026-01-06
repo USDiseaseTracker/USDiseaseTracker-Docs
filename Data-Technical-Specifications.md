@@ -51,10 +51,10 @@ The following fields are **required** for all disease tracking reports:
 - **Description**: Unique identifier for the case
 - **Validation Rules**: 
   - Must be unique across all submissions
-  - Alphanumeric characters only (A-Z, a-z, 0-9)
+  - Alphanumeric characters and hyphens allowed (A-Z, a-z, 0-9, -)
   - Maximum length: 50 characters
-  - No special characters or spaces
-- **Example**: `CASE2026001234`
+  - No spaces allowed
+- **Example**: `CASE2026001234`, `CASE-2026-001-TX`
 
 #### report_date
 
@@ -72,9 +72,9 @@ The following fields are **required** for all disease tracking reports:
 - **Description**: Standard disease classification code
 - **Validation Rules**: 
   - Must match an entry in the approved disease list
-  - Case-sensitive
+  - May contain alphanumeric characters and hyphens
   - Valid codes are maintained in the reference data system
-- **Example**: `COVID19`, `INFLUENZA`, `MEASLES`
+- **Example**: `COVID-19`, `FLU-A`, `MEASLES`
 - **Notes**: Contact the system administrator for the current approved disease list
 
 #### jurisdiction
@@ -124,15 +124,16 @@ The following fields are **optional** but recommended for enhanced data quality:
 - **Validation Rules**: 
   - Must use one of the standard race categories
   - Multiple races can be separated by semicolons
+  - Case-insensitive matching
 - **Allowed Values**:
-  - `AMERICAN_INDIAN_ALASKA_NATIVE` - American Indian or Alaska Native
-  - `ASIAN` - Asian
-  - `BLACK_AFRICAN_AMERICAN` - Black or African American
-  - `NATIVE_HAWAIIAN_PACIFIC_ISLANDER` - Native Hawaiian or Other Pacific Islander
-  - `WHITE` - White
-  - `OTHER` - Other race
-  - `UNKNOWN` - Unknown or not reported
-- **Example**: `ASIAN`, `WHITE;ASIAN` (for multiple races)
+  - `White` - White
+  - `Black or African American` - Black or African American
+  - `American Indian or Alaska Native` - American Indian or Alaska Native
+  - `Asian` - Asian
+  - `Native Hawaiian or Other Pacific Islander` - Native Hawaiian or Other Pacific Islander
+  - `Other` - Other race
+  - `Unknown` - Unknown or not reported
+- **Example**: `White`, `Asian`, `White;Asian` (for multiple races)
 - **Notes**: Use semicolons (;) to separate multiple race categories
 
 #### ethnicity
@@ -141,11 +142,12 @@ The following fields are **optional** but recommended for enhanced data quality:
 - **Description**: Patient ethnicity (Hispanic origin)
 - **Validation Rules**: 
   - Must be one of the allowed values
+  - Case-insensitive matching
 - **Allowed Values**:
-  - `HISPANIC` - Hispanic or Latino
-  - `NON_HISPANIC` - Not Hispanic or Latino
-  - `UNKNOWN` - Unknown or not reported
-- **Example**: `NON_HISPANIC`
+  - `Hispanic or Latino` - Hispanic or Latino
+  - `Not Hispanic or Latino` or `Non-Hispanic` - Not Hispanic or Latino
+  - `Unknown` - Unknown or not reported
+- **Example**: `Non-Hispanic`, `Hispanic or Latino`
 
 #### symptom_onset_date
 
@@ -192,9 +194,9 @@ Fields can appear in any order in the CSV file. The header row determines the fi
 
 ```csv
 case_id,report_date,disease_code,jurisdiction,age,sex,race,ethnicity,symptom_onset_date,hospitalized
-CASE2026001234,2026-01-15,COVID19,CA,45,F,ASIAN,NON_HISPANIC,2026-01-10,true
-CASE2026001235,2026-01-15,INFLUENZA,NY,67,M,WHITE,NON_HISPANIC,2026-01-12,false
-CASE2026001236,2026-01-16,MEASLES,TX,3,F,BLACK_AFRICAN_AMERICAN,HISPANIC,2026-01-13,true
+CASE-2026-001-TX,2026-01-05,COVID-19,TX,42,F,White,Non-Hispanic,2026-01-02,false
+CASE-2026-002-NY,2026-01-05,FLU-A,NY,67,M,Asian,Not Hispanic or Latino,2026-01-03,false
+CASE-2026-003-CA,2026-01-06,MEASLES,CA,3,F,Black or African American,Hispanic or Latino,2026-01-04,true
 ```
 
 ## Validation
