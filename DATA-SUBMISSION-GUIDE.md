@@ -1,6 +1,6 @@
 # Data Submission Guide
 
-**Last Updated:** January 5, 2026  
+**Last Updated:** January 6, 2026  
 **Status:** Work in Progress
 
 
@@ -8,22 +8,21 @@
 
 This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Data Project pilot phase.
 
-<br>
 ## Submission Summary
 
 ### Frequency
 **Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
-
 <br>
+
 ## Reportable Data Specifications
-
 <br>
+
 ### Time Period
 
 **Start Date:** December 29, 2024 (start of MMWR week 1, 2025)  
 **End Date:** Through present
-
 <br>
+
 ### Time Aggregation
 
 | Disease | Weekly | Monthly |
@@ -31,8 +30,8 @@ This guide provides detailed specifications for state, tribal, local, and territ
 | Measles | ✓ | ✓ |
 | Pertussis | | ✓ |
 | Invasive Meningococcal Disease | | ✓ |
-
 <br>
+
 ### Required Data Aggregations
 
 Each aggregation stream should provide complete data from December 29, 2024 through the present.
@@ -54,8 +53,8 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 - Cases × month × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
 - Cases × month × jurisdiction × age group
 - Cases × month × jurisdiction × serogroup
-
 <br>
+
 ### Reporting Frequency
 
 Data should be reported **weekly** during non-emergency periods.
@@ -74,8 +73,8 @@ Weekly reports can follow one of two formats. In both formats, all diseases and 
    - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
-
 <br>
+
 ### Case Classification by Time
 
 Cases should be classified according to a hierarchical date algorithm. 
@@ -100,8 +99,8 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 - **Monthly counts:** Use groupings of 4-5 corresponding MMWR weeks (see [MMWR week to month crosswalk](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?rtime=8l2fm2Ig3kg&ActiveCell=MMWR%20week%20to%20month))
   - Month start = start of first MMWR week that includes at least four days of the new calendar month
 - **Year-to-date counts:** Start of MMWR week 1 (2024-12-29) through end of last included MMWR week
-
 <br>
+
 ### Data Lags and Incompleteness
 
 - Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable
@@ -112,8 +111,8 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 - The project team will **not** censor data reported by jurisdictions
 - All data will be displayed as reported
 - The project team will work with jurisdictions to ensure completeness details are understood and portrayed correctly
-
 <br>
+
 ### Confirmation Status
 
 Required confirmation status by disease:
@@ -123,8 +122,8 @@ Required confirmation status by disease:
 | Measles | Confirmed only |
 | Pertussis | Confirmed and probable combined |
 | Invasive Meningococcal Disease | Confirmed and probable combined |
-
 <br>
+
 ### Geographic Assignment
 
 Cases should be included in aggregated counts according to their **place of residence**, in accordance with standard epidemiologic practice in the US (see [CSTE Position Statement 11-SI-04](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)).
@@ -135,13 +134,13 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 - Each jurisdiction should decide the geographic unit to use and provide a list of geographic units as metadata
 - Individual jurisdictions will work with the project team to determine geographic granularity
-
 <br>
+
 ## Data Elements
 
 For complete field definitions, data types, and validation rules, see the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md).
-
 <br>
+
 ### Required Data Fields
 
 - **Time fields:** time_unit, report_period_start, report_period_end, date_type
@@ -149,8 +148,8 @@ For complete field definitions, data types, and validation rules, see the [Disea
 - **Geographic fields:** reporting_jurisdiction, state, geo_unit, geo_name
 - **Demographic fields:** age_group (for applicable aggregations)
 - **Count field:** count
-
 <br>
+
 ### Optional Data Fields
 
 - **disease_subtype** - For meningococcal serogroup reporting
@@ -174,8 +173,8 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 | unknown | Counts of individuals with unknown age |
 
 **Important:** Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
-
 <br>
+
 ### International Residents
 
 International residents (international travelers who are not residents of the reporting jurisdiction but were identified in that jurisdiction) can be included in reported data but should be:
@@ -185,16 +184,16 @@ International residents (international travelers who are not residents of the re
   - `geo_unit = "NA"`
 - Excluded from jurisdiction total counts and age group stratifications
 - Excluded from displayed totals, epidemic curves, etc. for the jurisdiction
-
 <br>
+
 ## Data Suppression
-
 <br>
+
 ### Small Count Suppression
 
 Jurisdictions should work with the project team to ensure visualized data do not risk reidentification of individual patients. In general, jurisdictions can leverage their existing policies regarding suppression of small numerators or where underlying populations are small enough to risk reidentification. All <u>data should have suppression applied by the jurisdiction prior to submission</u>, in accordance with their institutional policies. To ensure clear understanding of the data and transparency, jurisdictions should share applicable documentation of small count suppression policies with the project team if possible. Specific reporting rules are to be followed when data are suppressed to limit uncertainty and incompleteness in the data.
-
 <br>
+
 ### Handling Suppressed Data
 
 To ensure total counts add to 100% of cases:
@@ -205,16 +204,16 @@ To ensure total counts add to 100% of cases:
       - Report as `geo_name = "unspecified"`
 2. Perform allocation of suppression rules and "unspecified" aggregation prior to data release
 3. Share all suppression rules with the project team for accurate description/footnoting
-
 <br>
+
 ### Measles Exception
 
 For measles, the project team recommends **not suppressing data** as a default and releasing any cases that have already been publicly released. This is to ensure comparability with counts being produced through various "web-scraping" efforts that exist, which often capture cases reported individually through press releases. Individual requests to suppress data can be discussed with the project team.
-
 <br>
+
 ## Data Format
-
 <br>
+
 ### No Zero Reporting
 
 - Report only non-zero counts
@@ -232,8 +231,8 @@ Each jurisdiction will use the template provided ([download template](https://cs
 - Changes to prior observation counts will be taken as revisions
 
 See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods.
-
 <br>
+
 ## Metadata Requirements
 
 Jurisdictions should provide metadata including:
@@ -242,15 +241,15 @@ Jurisdictions should provide metadata including:
 - List of geographic units used for reporting
 - Data suppression policies and rules
 - Any jurisdiction-specific notes or caveats
-
 <br>
+
 ## Validation
 
 Values submitted must align with valid value sets defined in the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md). Values not in alignment may result in validation errors.
 
 See the [data dictionary and sample data file](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) for complete data element definitions and valid value sets.
-
 <br>
+
 ## Questions
 
-For questions about data submission requirements, contact the project team through your jurisdiction's liaison.
+For questions about data submission requirements, contact the project team.
