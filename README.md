@@ -19,8 +19,8 @@ For jurisdictions participating or interested in participating, the following pa
 
 ## Examples and Templates
 
-Example data files are provided in `examples/`: 
-Templates for data files are provided in `templates/`:
+- Example data files are provided in `examples/`: 
+- Templates for data files are provided in `templates/`:
 
 ## Validating Data
 
