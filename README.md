@@ -32,8 +32,10 @@ See also:
   - [disease_tracking_report_WA_2025-09-30.csv](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
 - **Templates:** See `templates/` directory
   - [disease_tracking_report_{state}_{report_date}.csv](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
+- **Data dictionary:**
+  - [disease_tracking_data_dictionary.csv](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - **External resources:**
-  - [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+  - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 
 ## Data Validation

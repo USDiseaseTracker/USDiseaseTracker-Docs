@@ -133,9 +133,10 @@ Example data files are available to help understand the required format:
 **In this repository:**
 - [Complete example](../examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
 - [Empty template](../templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
+- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 **External resources:**
-- [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and valid value sets
+- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and external resources
 
 **File naming convention:**
 Files should be named following the pattern:
@@ -179,11 +180,12 @@ Jurisdictions should provide accompanying metadata including:
 
 - [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
 - [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
+- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf)
-- [Data dictionary and examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+- [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Questions
 

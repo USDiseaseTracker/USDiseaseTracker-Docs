@@ -19,4 +19,5 @@ These examples can be used to:
 
 - [Empty template](../templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct field structure
 - [Data Technical Specifications](../standards/disease-tracking-report-standard.md) - Complete field definitions and requirements
-- [Data dictionary and additional resources](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications
+- [Data dictionary (CSV)](../standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications

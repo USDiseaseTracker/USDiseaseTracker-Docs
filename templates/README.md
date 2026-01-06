@@ -30,4 +30,5 @@ Examples:
 - [Data Technical Specifications](../standards/disease-tracking-report-standard.md) - Complete field definitions and requirements
 - [Example data file](../examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 - [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
-- [Data dictionary and additional resources](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications
+- [Data dictionary (CSV)](../standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications

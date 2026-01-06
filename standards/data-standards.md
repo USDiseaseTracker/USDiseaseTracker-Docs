@@ -55,7 +55,8 @@ For quick access to key information:
 **Templates and Examples:**
 - [Data submission template](../templates/disease_tracking_report_{state}_{report_date}.csv)
 - [Example data file](../examples/disease_tracking_report_WA_2025-09-30.csv)
-- [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Getting Started
 
