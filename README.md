@@ -8,58 +8,32 @@ Data standards and public documentation of the US Disease Tracker project.
 
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
-## Pilot Program Documentation
+The documentation website is available at: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
 
-For jurisdictions participating in the pilot phase:
+## Program Documentation
+
+For jurisdictions participating or interested in participating, the following pages provide detailed information how the project, data formatting and standards, and how to submit these data.
 
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
 2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
 3. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-
-## Data Standards
-
-The repository includes comprehensive data standards documentation:
-
 - **[Data Standards Overview](standards/data-standards.md)** - Overview and index of all standards
 - **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** - Detailed field specifications for data submissions
-- Templates for creating additional standards
 
-See the [full documentation](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/) for details.
+## Examples and Templates
 
-## Quick Start
+Example data files are provided in `examples/`: 
+Templates for data files are provided in `templates/`:
 
-### Viewing Documentation
+## Validating Data
 
-The documentation website is available at: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+Data are validated upon submission for completeness, format, and errors. Data are validated against the **[Data Reporting Schema](validation/data_reporting_schema.json)**.
 
-### Using Examples
-
-Example data files are provided in `examples/`:
-
-```bash
-# View example disease tracking report
-cat examples/disease_tracking_report_example.csv
-```
-
-### Validating Data
-
-**Coming Soon:** Validation scripts are currently under development.
+**Coming Soon:** Tools to perform validation prior to submission are currently under development.
 
 ## Contributing
 
 We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
 
-Quick overview:
-
-1. Review existing standards in `standards/`
-2. Use templates from `templates/` for new standards
-3. Include example data in `examples/`
-4. Submit a pull request
-
-## GitHub Actions
-
-This repository uses GitHub Actions to automatically build and deploy the documentation website to GitHub Pages whenever changes are pushed to the main branch.
-
-## License
 
 This project is licensed under the GNU General Public License v3.0 or later. See [LICENSE](LICENSE) for details.
