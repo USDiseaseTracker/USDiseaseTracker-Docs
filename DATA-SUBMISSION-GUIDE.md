@@ -4,8 +4,6 @@
 **Status:** Work in Progress
 
 
-## Overview
-
 This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Tracker project to contribute reportable disease count data. 
 
 
