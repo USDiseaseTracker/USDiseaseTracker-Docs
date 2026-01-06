@@ -2,6 +2,13 @@
 
 This directory contains the formal data standard definitions for the US Disease Tracker project.
 
+## Consolidated Documentation
+
+For easy access to data submission information, see these consolidated guides:
+
+- **[Data Submission Guide](../Data-Submission-Guide.md)** - High-level overview of data requirements and submission process
+- **[Data Technical Specifications](../Data-Technical-Specifications.md)** - Detailed technical field specifications and validation rules
+
 ## Structure
 
 Each data standard should include:

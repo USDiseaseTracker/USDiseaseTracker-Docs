@@ -2,7 +2,21 @@
 
 This is the comprehensive index for all data standards, templates, and examples in the US Disease Tracker documentation repository.
 
+## Consolidated Documentation
+
+The US Disease Tracker maintains two primary documentation resources for data submission:
+
+1. **[Data Submission Guide](Data-Submission-Guide.md)** - High-level overview of data submission requirements, including what data is required, submission process, and getting help
+2. **[Data Technical Specifications](Data-Technical-Specifications.md)** - Detailed technical specifications including exact field definitions, data types, validation rules, and formats
+
 ## Quick Links
+
+### For Data Submitters
+
+- **[Data Submission Guide](Data-Submission-Guide.md)** - Start here for an overview of data requirements
+- **[Data Technical Specifications](Data-Technical-Specifications.md)** - Detailed field-level specifications
+
+### For Standard Developers
 
 - [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
 - [Standard Definition Template](templates/standard-definition-template.md)

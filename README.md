@@ -10,9 +10,14 @@ This repository houses the data standards, templates, examples, and validation d
 
 ## Data Standards
 
-The repository includes the following data standards:
+### Getting Started with Data Submission
 
-- **Disease Tracking Report Standard**: Defines required and optional fields for disease tracking reports
+- **[Data Submission Guide](Data-Submission-Guide.md)**: High-level overview of what data is required and how to submit it
+- **[Data Technical Specifications](Data-Technical-Specifications.md)**: Detailed technical specifications for all data fields
+
+### Current Standards
+
+- **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)**: Defines required and optional fields for disease tracking reports
 - Templates for creating additional standards
 
 See the [full documentation](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/) for details.

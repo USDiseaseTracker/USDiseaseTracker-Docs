@@ -21,6 +21,8 @@ exclude:
 # Navigation (optional)
 header_pages:
   - INDEX.md
+  - Data-Submission-Guide.md
+  - Data-Technical-Specifications.md
   - standards/README.md
   - templates/README.md
   - examples/README.md
