@@ -138,22 +138,23 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ## Data Elements
 
-For complete field definitions, data types, and validation rules, see the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md).
-<br>
+For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
 
-### Required Data Fields
+### Summary of Required Fields
 
-- **Time fields:** time_unit, report_period_start, report_period_end, date_type
-- **Disease fields:** disease_name, outcome, confirmation_status
-- **Geographic fields:** reporting_jurisdiction, state, geo_unit, geo_name
-- **Demographic fields:** age_group (for applicable aggregations)
-- **Count field:** count
-<br>
+All data submissions must include the following types of information:
 
-### Optional Data Fields
+- **Time fields:** When the cases occurred (report period dates and time unit)
+- **Disease fields:** What disease is being reported and case confirmation status
+- **Geographic fields:** Where the cases occurred (jurisdiction and geographic unit)
+- **Count field:** Number of cases for this combination
+- **Demographic fields:** Age group (for age-stratified aggregations)
 
-- **disease_subtype** - For meningococcal serogroup reporting
+### Summary of Optional Fields
 
+- **disease_subtype:** For meningococcal serogroup reporting
+
+For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
 <br>
 ### Age Groups
 
@@ -223,14 +224,26 @@ For measles, the project team recommends **not suppressing data** as a default a
 <br>
 ### File Format
 
-Each jurisdiction will use the template provided ([download template](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=2Xea8R)) to report data.
+Data should be submitted in CSV format following the standard template structure. 
 
+**Template and Example Files:**
+- [Data submission template](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Empty template with correct field structure
+- [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
+- [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and valid value sets
+
+**File Submission Requirements:**
 - Submit a file with all incident disease counts since December 29, 2024
 - Add new rows each week/month for new cases
 - Files will be date-stamped by the system for version control
 - Changes to prior observation counts will be taken as revisions
 
-See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods.
+**File Naming:** Jurisdictions should name files following the pattern:
+```
+disease_tracking_report_{state}_{report_date}.csv
+```
+Example: `disease_tracking_report_WA_2025-09-30.csv`
+
+See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](standards/disease-tracking-report-standard.md) for complete field requirements.
 <br>
 
 ## Metadata Requirements
@@ -245,11 +258,20 @@ Jurisdictions should provide metadata including:
 
 ## Validation
 
-Values submitted must align with valid value sets defined in the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md). Values not in alignment may result in validation errors.
+All submitted data must meet validation requirements to ensure data quality and consistency.
 
-See the [Validation Rules](standards/validation.md) for comprehensive validation requirements including format, data type, logical, and cross-field validation.
+**What is validated:**
+- Field formats and data types
+- Values are within acceptable ranges and valid value sets
+- Logical consistency across fields
+- Required fields are present
 
-See the [data dictionary and sample data file](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) for complete data element definitions and valid value sets.
+**Resources:**
+- [Data Technical Specifications](standards/disease-tracking-report-standard.md) - Complete field definitions and valid value sets
+- [Validation Rules](standards/validation.md) - Comprehensive validation requirements
+- [Data dictionary and examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Reference for valid values and data element definitions
+
+Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) describes what happens when validation succeeds or fails.
 <br>
 
 ## Questions

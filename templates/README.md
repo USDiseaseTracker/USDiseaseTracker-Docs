@@ -1,18 +1,33 @@
-# Document Templates
+# Data Templates
 
-This directory contains templates for creating data standard documentation.
+This directory contains templates for data submission.
 
 ## Available Templates
 
-### Standard Definition Template
-Use `standard-definition-template.md` as a starting point for creating new data standard documents.
+### Disease Tracking Report Template
+- `disease_tracking_report_{state}_{disease}_{report_date}.csv` - Empty template file with correct field structure for data submission
 
-### Data Dictionary Template
-Use `data-dictionary-template.md` for creating comprehensive data dictionaries.
+**File naming convention:**
+When using this template, rename the file following the pattern:
+```
+disease_tracking_report_{state}_{report_date}.csv
+```
+
+Examples:
+- `disease_tracking_report_WA_2025-09-30.csv`
+- `disease_tracking_report_CA_2025-10-15.csv`
+- `disease_tracking_report_NYC_2025-11-01.csv`
 
 ## Usage
 
-1. Copy the appropriate template
-2. Fill in the sections with your specific standard information
-3. Follow the validation guidelines in the template
-4. Submit for review through the standard GitHub workflow
+1. Download the template file
+2. Fill in your jurisdiction's data following the field specifications
+3. Rename the file using the naming convention above
+4. Submit the file using one of the transfer methods described in the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md)
+
+## Related Resources
+
+- [Data Technical Specifications](../standards/disease-tracking-report-standard.md) - Complete field definitions and requirements
+- [Example data file](../examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
+- [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
+- [Data dictionary and additional resources](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications

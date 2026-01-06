@@ -12,19 +12,21 @@ This is the comprehensive index for all data standards, templates, and examples 
 ### For Participating Jurisdictions
 
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
-3. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-4. **[Data Standards Overview](standards/data-standards.md)** - Overview of all standards documentation
+2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field requirements and valid values
+4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+5. **[Validation Rules](standards/validation.md)** - Data validation requirements
 
 ## Data Standards
 
 ### Active Standards
 
-1. **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** (v1.0.0)
+1. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** (v1.0.0)
    - Status: Draft
-   - Last Updated: 2026-01-05
-   - Defines required and optional fields for aggregate disease tracking reports
-   - [Example Data](examples/disease_tracking_report_example.csv)
+   - Last Updated: 2026-01-06
+   - Complete technical specifications including field definitions, data types, and valid value sets
+   - [Template file](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv)
+   - [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv)
 2. **[Validation Rules](standards/validation.md)**
    - Comprehensive validation requirements for data submissions
    - Includes format, data type, logical, and cross-field validation
@@ -43,8 +45,11 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 All example data files are located in the `examples/` directory:
 
-- [disease_tracking_report_example.csv](examples/disease_tracking_report_example.csv) - Complete disease tracking report with all fields
-- [disease_tracking_report_minimal.csv](examples/disease_tracking_report_minimal.csv) - Minimal valid disease tracking report
+- [disease_tracking_report_WA_2025-09-30.csv](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data from Washington state
+
+Template files are located in the `templates/` directory:
+
+- [disease_tracking_report_{state}_{disease}_{report_date}.csv](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Empty template with correct field structure
 
 ## Validation Scripts
 

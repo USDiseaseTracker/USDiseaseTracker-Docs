@@ -1,56 +1,49 @@
 # Data Standards
 
-This directory contains the formal data standard definitions for the US Disease Tracker project.
+This directory contains the technical data standard specifications for the US Disease Tracker project.
 
 ## Documentation Structure
 
-The data standards documentation is organized into several focused documents:
+The data standards documentation is organized as follows:
 
-- **[data-standards.md](data-standards.md)** - Overview and index of all standards documentation
-- **[disease-tracking-report-standard.md](disease-tracking-report-standard.md)** - Technical specification for data submissions
+- **[disease-tracking-report-standard.md](disease-tracking-report-standard.md)** - Complete technical specifications for data submissions, including field definitions, data types, and valid value sets
 - **[validation.md](validation.md)** - Validation rules and requirements for data submissions
 
 ## Related Documentation
 
-For complete guidance on participating in the pilot phase, see:
+For complete guidance on participating in the project:
 
+- **[Data Submission Guide](../DATA-SUBMISSION-GUIDE.md)** - High-level overview of what to submit, when to submit, and submission requirements
+- **[Data Transfer Guide](../DATA-TRANSFER-GUIDE.md)** - Technical details on how to transfer data to the system
 - **[Pilot Phase Overview](../PILOT-OVERVIEW.md)** - Project background and goals
-- **[Data Submission Guide](../DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
-- **[Data Transfer Guide](../DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 
 ## Current Standards
 
-### Disease Tracking Report Standard
+### Data Technical Specifications
 
-The disease tracking report standard defines the required and optional fields for aggregate disease tracking reports in the pilot phase.
+The data technical specifications (in [disease-tracking-report-standard.md](disease-tracking-report-standard.md)) define all required and optional fields for aggregate disease tracking reports.
 
-See [disease-tracking-report-standard.md](disease-tracking-report-standard.md) for complete details including:
-- Field definitions and data types
-- Valid value sets
-- Example data formats
+This includes:
+- Complete field definitions with data types
+- Valid value sets for each field
+- Data formatting requirements
+- Example data and templates
 - Metadata requirements
 
-See [validation.md](validation.md) for validation rules and requirements.
+### Validation Rules
 
-## Standard Structure
+See [validation.md](validation.md) for comprehensive validation rules including:
+- Format validation
+- Data type validation
+- Logical validation
+- Cross-field validation rules
 
-Each data standard includes:
-- Field definitions with data types
-- Validation rules
-- Valid value sets
-- Version history
-- Example data
-- References to supporting documentation
+## Quick Start
 
-## Planned Standards
+For jurisdictions getting started:
 
-Future standards may include:
-
-### Laboratory Data Standard
-Specifications for laboratory test results and interpretations.
-
-### Demographic Data Standard
-Required demographic information for case tracking at more granular levels.
-
-### Additional Outcome Standards
-Standards for reporting hospitalizations, deaths, and other outcomes beyond case counts.
+1. Review the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) for an overview of submission requirements
+2. Review the [Data Technical Specifications](disease-tracking-report-standard.md) for detailed field requirements
+3. Download the [template file](../templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) and [example data](../examples/disease_tracking_report_WA_2025-09-30.csv)
+4. Consult the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) to select a transfer method
+5. Contact the project team through your jurisdiction's liaison

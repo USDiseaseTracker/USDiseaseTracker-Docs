@@ -169,27 +169,37 @@ If your jurisdiction has a data portal, please provide:
 
 ### Naming Convention
 
-JHU will rename submitted files according to the following convention:
+Jurisdictions should name submitted files according to the following convention:
 
 ```
-[Submission_Date_Time_Stamp]_[State_2-Letter_Abbr]_[Username].csv
+disease_tracking_report_{state}_{report_date}.csv
 ```
 
-**Example:**
+Where:
+- `{state}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
+- `{report_date}` = Date of submission in YYYY-MM-DD format
+
+**Examples:**
 ```
-2025-01-15_143022_CA_jdoe.csv
+disease_tracking_report_WA_2025-09-30.csv
+disease_tracking_report_CA_2025-10-15.csv
+disease_tracking_report_NYC_2025-11-01.csv
 ```
+
+JHU may add additional metadata to filenames for internal tracking purposes (e.g., submission timestamp, username) but will preserve the original file content.
 
 ### File Content
 
-Files should not be altered after generation. JHU will not modify file contents, only filenames for internal tracking.
+Files should not be altered after generation. JHU will not modify file contents, only may add metadata to filenames for internal tracking.
 
-For detailed field specifications, see the [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md).
+For detailed field specifications, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
 
-### Template
+### Template and Examples
 
-Use the official data submission template:
-- [Download Template](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=2Xea8R)
+Use the official data submission template and examples:
+- [Empty template](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Template with correct field structure
+- [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
+- [Data dictionary and additional resources](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and valid value sets
 
 ## Validation
 
