@@ -44,6 +44,6 @@ For jurisdictions getting started:
 
 1. Review the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) for an overview of submission requirements
 2. Review the [Data Technical Specifications](disease-tracking-report-standard.md) for detailed field requirements
-3. Download the [template file](../templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) and [example data](../examples/disease_tracking_report_WA_2025-09-30.csv)
+3. Download the [template file](../templates/disease_tracking_report_{state}_{report_date}.csv) and [example data](../examples/disease_tracking_report_WA_2025-09-30.csv)
 4. Consult the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) to select a transfer method
 5. Contact the project team through your jurisdiction's liaison

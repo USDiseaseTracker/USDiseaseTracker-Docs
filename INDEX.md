@@ -25,7 +25,7 @@ This is the comprehensive index for all data standards, templates, and examples 
    - Status: Draft
    - Last Updated: 2026-01-06
    - Complete technical specifications including field definitions, data types, and valid value sets
-   - [Template file](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv)
+   - [Template file](templates/disease_tracking_report_{state}_{report_date}.csv)
    - [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv)
 2. **[Validation Rules](standards/validation.md)**
    - Comprehensive validation requirements for data submissions
@@ -49,7 +49,7 @@ All example data files are located in the `examples/` directory:
 
 Template files are located in the `templates/` directory:
 
-- [disease_tracking_report_{state}_{disease}_{report_date}.csv](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Empty template with correct field structure
+- [disease_tracking_report_{state}_{report_date}.csv](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
 
 ## Validation Scripts
 

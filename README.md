@@ -31,7 +31,7 @@ See also:
 - **Example data:** See `examples/` directory
   - [disease_tracking_report_WA_2025-09-30.csv](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
 - **Templates:** See `templates/` directory
-  - [disease_tracking_report_{state}_{disease}_{report_date}.csv](templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Empty template with correct field structure
+  - [disease_tracking_report_{state}_{report_date}.csv](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
 - **External resources:**
   - [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 

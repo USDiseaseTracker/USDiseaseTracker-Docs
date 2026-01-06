@@ -132,7 +132,7 @@ Example data files are available to help understand the required format:
 
 **In this repository:**
 - [Complete example](../examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
-- [Empty template](../templates/disease_tracking_report_{state}_{disease}_{report_date}.csv) - Template file with correct structure
+- [Empty template](../templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
 
 **External resources:**
 - [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and valid value sets

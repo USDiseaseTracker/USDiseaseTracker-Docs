@@ -53,7 +53,7 @@ For quick access to key information:
 | Invasive Meningococcal Disease | Monthly | Confirmed and probable |
 
 **Templates and Examples:**
-- [Data submission template](../templates/disease_tracking_report_{state}_{disease}_{report_date}.csv)
+- [Data submission template](../templates/disease_tracking_report_{state}_{report_date}.csv)
 - [Example data file](../examples/disease_tracking_report_WA_2025-09-30.csv)
 - [Data dictionary and additional examples](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
