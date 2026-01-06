@@ -22,7 +22,7 @@ For jurisdictions participating or interested in participating, the following pa
 - Example data files are provided in `examples/`: 
 - Templates for data files are provided in `templates/`:
 
-## Validating Data
+## Data Validation
 
 Data are validated upon submission for completeness, format, and errors. Data are validated against the **[Data Reporting Schema](validation/data_reporting_schema.json)**.
 
