@@ -29,10 +29,7 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 ### Planned Standards
 
-- Laboratory Data Standard
-- Demographic Data Standard
-- Outbreak Investigation Standard
-- Contact Tracing Standard
+- TBD
 
 ## Templates
 
@@ -49,18 +46,11 @@ All example data files are located in the `examples/` directory:
 
 ## Validation Scripts
 
-Validation scripts are coming soon. Check the `data-raw/` directory for updates.
+Validation scripts are coming soon. Check back for updates.
 
 ## Contributing
 
-To contribute a new data standard:
-
-1. Copy the [standard definition template](templates/standard-definition-template.md)
-2. Fill in all required sections
-3. Create example data files in `examples/`
-4. Create a validation script in `data-raw/`
-5. Update this index
-6. Submit a pull request
+To contribute, Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
 
 ## Version History
 
