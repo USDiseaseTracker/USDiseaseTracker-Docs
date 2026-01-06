@@ -3,9 +3,11 @@
 **Last Updated:** January 5, 2026  
 **Status:** Work in Progress
 
+
 ## Overview
 
 This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Data Project pilot phase.
+
 
 ## Submission Summary
 
@@ -34,14 +36,13 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 - Cases × month × jurisdiction × age group
 - Cases × month × jurisdiction × serogroup
 
+
 ## Reportable Data Specifications
 
 ### Time Period
 
-**Start Date:** December 29, 2024* (start of MMWR week 1, 2025)  
+**Start Date:** December 29, 2024 (start of MMWR week 1, 2025)  
 **End Date:** Through present
-
-*This start date provides a reasonable baseline of data for visualization during the pilot.
 
 ### Time Aggregation
 
@@ -50,8 +51,6 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 | Measles | ✓ | ✓ |
 | Pertussis | | ✓ |
 | Invasive Meningococcal Disease | | ✓ |
-
-Measles requires both weekly and monthly aggregation to allow for more timely updates and enhanced situational awareness.
 
 ### Reporting Frequency
 
