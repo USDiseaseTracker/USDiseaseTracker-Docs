@@ -6,12 +6,14 @@
 
 ## Overview
 
-This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Data Project pilot phase.
+This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Tracker project to contribute reportable disease count data. 
+
 
 ## Submission Summary
 
 ### Frequency
 **Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
+<br>
 <br>
 
 ## Reportable Data Specifications
@@ -73,7 +75,7 @@ Weekly reports can follow one of two formats. In both formats, all diseases and 
    - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
-<br>
+<br> <br>
 
 ### Case Classification by Time
 
