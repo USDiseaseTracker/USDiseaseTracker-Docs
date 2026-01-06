@@ -1,7 +1,7 @@
 # Disease Tracking Report Data Standard
 
 **Version:** 1.0.0  
-**Last Updated:** 2026-01-05  
+**Last Updated:** 2026-01-06  
 **Status:** Draft
 
 ## Overview
@@ -150,29 +150,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 ## Example Data
 
-### Example 1: Weekly Measles Count by County
-
-```csv
-time_unit,report_period_start,report_period_end,date_type,disease_name,outcome,confirmation_status,reporting_jurisdiction,state,geo_unit,geo_name,count
-week,2025-01-05,2025-01-11,cccd,measles,cases,confirmed,CA,CA,county,Los Angeles,3
-```
-
-### Example 2: Monthly Pertussis Count by Age Group
-
-```csv
-time_unit,report_period_start,report_period_end,date_type,disease_name,outcome,confirmation_status,reporting_jurisdiction,state,geo_unit,geo_name,age_group,count
-month,2024-12-29,2025-01-25,cccd,pertussis,cases,confirmed and probable,NY,NY,state,New York,1-4 y,12
-```
-
-### Example 3: Monthly Meningococcal Count with Serogroup
-
-```csv
-time_unit,report_period_start,report_period_end,date_type,disease_name,outcome,confirmation_status,reporting_jurisdiction,state,geo_unit,geo_name,disease_subtype,count
-month,2024-12-29,2025-01-25,cccd,meningococcus,cases,confirmed and probable,TX,TX,state,Texas,B,5
-```
-
-## Complete Examples
-
 See the following files in the `examples/` directory:
 
 - `disease_tracking_report_example.csv` - Complete example with all field types
@@ -215,7 +192,7 @@ Validation errors will be reported back to submitters with specific error descri
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0 | 2026-01-05 | Initial draft for pilot phase |
+| 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
 
 ## References
 
