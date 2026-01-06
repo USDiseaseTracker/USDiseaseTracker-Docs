@@ -1,2 +1,0 @@
-case_id,report_date,disease_code,jurisdiction,age,sex,race,ethnicity,symptom_onset_date,hospitalized
-CASE-2026-001-TX,2026-01-05,COVID-19,TX,42,F,White,Non-Hispanic,2026-01-02,false
