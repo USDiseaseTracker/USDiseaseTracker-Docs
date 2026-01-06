@@ -1,4 +1,4 @@
-# Disease Tracking Report Data Standard
+# Disease Tracking Technical Specifications and Data Standards
 
 **Version:** 1.0.0  
 **Last Updated:** 2026-01-06  
@@ -6,9 +6,9 @@
 
 ## Overview
 
-This document defines the data standard for disease tracking reports in the US Disease Tracker system. This standard specifies the required and optional fields for submitting aggregate disease case counts during the pilot phase.
+This document defines the technical specification and data standards for disease tracking reports in the US Disease Tracker system. These details specify the required and optional fields for submitting aggregate disease case count data.
 
-**Important:** This standard is for aggregate data only. No line-level (individual case) data should be submitted.
+**Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
 ## Data Structure
 
@@ -119,34 +119,10 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `unknown` when subtyping was not performed
 - Use `unspecified` when subtype is known but suppressed
 
-## Data Validation Rules
+## Validation
 
-### Format Validation
+See [Submission Validation]`standards/validation.md` for details on file and data validation.
 
-- File must be valid CSV format
-- Required fields must be present in all rows
-- Field names must match specification exactly (case-sensitive)
-
-### Data Type Validation
-
-- Dates must be in YYYY-MM-DD format
-- Counts must be positive integers
-- String fields must use exact valid values (case-sensitive)
-
-### Logical Validation
-
-- `report_period_end` must be after or equal to `report_period_start`
-- Date ranges must align with MMWR week/month boundaries
-- Geographic units must be consistent with reporting jurisdiction
-- Age group required for age-stratified aggregations
-- Disease subtype only valid for applicable diseases
-
-### Cross-Field Validation
-
-- Measles confirmation_status must be `confirmed`
-- Pertussis and meningococcus confirmation_status must be `confirmed and probable`
-- Measles requires both weekly and monthly time_unit submissions
-- Pertussis and meningococcus require monthly time_unit submissions
 
 ## Example Data
 
@@ -175,18 +151,6 @@ Jurisdictions should provide accompanying metadata including:
    - Technical point of contact
    - Data quality contact
 
-## Validation
-
-Validation scripts are under development. The validation process will check:
-
-- File format and structure
-- Required field presence
-- Data type compliance
-- Valid value adherence
-- Logical consistency
-- Cross-field rules
-
-Validation errors will be reported back to submitters with specific error descriptions.
 
 ## Version History
 
