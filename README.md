@@ -16,25 +16,63 @@ The goal of this project is establish the processes, standards, data formats and
 
 For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
 
+
+
+## For Jurisdictions Submitting Data
+
+1. **[Data Submission Guide](../guides/DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
+   - What data to submit
+   - When to submit
+   - Submission requirements and frequencies
+   - Case classification methods
+   - Geographic assignment rules
+   - Data suppression guidelines
+
+2. **[Data Technical Specifications](../guides/DATA-TECHNICAL-SPECS.md)** - Detailed technical requirements
+   - Complete field definitions
+   - Data types and formats
+   - Valid value sets
+   - Example data and templates
+
+3. **[Data Transfer Guide](../guides/DATA-TRANSFER-GUIDE.md)** - How to transfer data
+   - Transfer methods (manual upload, automated pull, automated push)
+   - File naming conventions
+   - Validation processes
+   - Security and authentication
+
+4. **[Validation Rules](../guides/VALIDATION.md)** - Data validation requirements
+   - Format validation
+   - Data type validation
+   - Logical validation
+   - Cross-field validation
+<br>
+
+## Quick Reference
+
+**Key Dates:**
+- **Data Start:** December 29, 2024 (MMWR week 1, 2025)
+- **Submission Frequency:** Weekly (preferred)
+
+**Current Diseases Collected:**
+
+| Disease | Time Aggregation | Confirmation Status |
+|---------|------------------|---------------------|
+| Measles | Weekly + Monthly | Confirmed only |
+| Pertussis | Monthly | Confirmed and probable |
+| Invasive Meningococcal Disease | Monthly | Confirmed and probable |
+
+**Guides and Specifications**
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
 2. **[Data Submission Guide](data-submission-guide.md)** - High-level overview of what and when to submit
 3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field specifications and requirements
 4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 5. **[Validation Rules](standards/validation.md)** - Data validation requirements
 
-See also:
-- **[Data Standards Overview](standards/data-standards.md)** - Quick reference and navigation guide
-
-
-## Examples and Templates
-
-- **Example and Template data:** See `examples-and-templates/` directory
-  - [disease_tracking_report_WA_2025-09-30.csv](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
-  - [disease_tracking_report_{state}_{report_date}.csv](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
-- **Data dictionary:**
-  - [disease_tracking_data_dictionary.csv](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- **External resources:**
-  - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+**Templates and Examples:**
+- [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
+- [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 
 ## Data Validation
