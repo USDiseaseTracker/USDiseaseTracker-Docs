@@ -6,16 +6,18 @@
 
 This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Tracker project to contribute reportable disease count data. 
 
+## Overview
 
-## Submission Summary
-
-### Frequency
-**Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
-<br>
+1. [Reportable Data Specifications](#reportable-data-specifications)
+2. [Data Elements](#data-elements)
+3. [Data Suppression](#data-suppression)
+4. [Data Format](#data-format)
+5. [Metadata Requirements](#metadata-requirements)
+6. [Validation](#validation)
 <br>
 
 ## Reportable Data Specifications
-<br>
+
 
 ### Time Period
 
@@ -31,6 +33,18 @@ This guide provides detailed specifications for state, tribal, local, and territ
 | Pertussis | | ✓ |
 | Invasive Meningococcal Disease | | ✓ |
 <br>
+
+### Confirmation Status
+
+Required confirmation status by disease:
+
+| Disease | Confirmation Status |
+|---------|-------------------|
+| Measles | Confirmed only |
+| Pertussis | Confirmed and probable combined |
+| Invasive Meningococcal Disease | Confirmed and probable combined |
+<br>
+
 
 ### Required Data Aggregations
 
@@ -113,16 +127,6 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 - The project team will work with jurisdictions to ensure completeness details are understood and portrayed correctly
 <br>
 
-### Confirmation Status
-
-Required confirmation status by disease:
-
-| Disease | Confirmation Status |
-|---------|-------------------|
-| Measles | Confirmed only |
-| Pertussis | Confirmed and probable combined |
-| Invasive Meningococcal Disease | Confirmed and probable combined |
-<br>
 
 ### Geographic Assignment
 
