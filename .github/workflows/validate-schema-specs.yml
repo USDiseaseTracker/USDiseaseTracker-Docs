@@ -1,0 +1,59 @@
+name: Validate Schema Specifications
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-and-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run validation
+        id: validate
+        run: |
+          python3 scripts/validate_schema_specs.py
+          echo "validation_passed=$?" >> $GITHUB_OUTPUT
+        continue-on-error: true
+      
+      - name: Update markdown if validation failed
+        if: steps.validate.outputs.validation_passed != '0'
+        run: |
+          python3 scripts/validate_schema_specs.py --update
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add guides/DATA-TECHNICAL-SPECS.md
+          git commit -m "Auto-update DATA-TECHNICAL-SPECS.md from schema"
+          git push
+      
+      - name: Run validation again to ensure success
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          python3 scripts/validate_schema_specs.py
