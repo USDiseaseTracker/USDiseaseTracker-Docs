@@ -1,4 +1,4 @@
-# Disease Tracking Technical Specifications and Data Standards
+# Data Technical Specifications
 
 **Version:** 1.0.0  
 **Last Updated:** 2026-01-06  
@@ -6,9 +6,11 @@
 
 ## Overview
 
-This document defines the technical specification and data standards for disease tracking reports in the US Disease Tracker system. These details specify the required and optional fields for submitting aggregate disease case count data.
+This document provides the complete technical specifications for disease tracking data submissions to the US Disease Tracker system. These specifications define the required and optional fields, data types, valid values, and formatting requirements for submitting aggregate disease case count data.
 
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
+
+**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md).
 
 ## Data Structure
 
@@ -126,10 +128,26 @@ See [Validation](validation.md) for details on file and data validation.
 
 ## Example Data
 
-See the following files in the `examples/` directory:
+Example data files are available to help understand the required format:
 
-- `disease_tracking_report_example.csv` - Complete example with all field types
-- `disease_tracking_report_minimal.csv` - Minimal valid submission
+**In this repository:**
+- [Complete example](../examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
+- [Empty template](../templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
+- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+
+**External resources:**
+- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and external resources
+
+**File naming convention:**
+Files should be named following the pattern:
+```
+disease_tracking_report_{state}_{report_date}.csv
+```
+
+Examples:
+- `disease_tracking_report_WA_2025-09-30.csv` (Washington state, submitted September 30, 2025)
+- `disease_tracking_report_CA_2025-10-15.csv` (California, submitted October 15, 2025)
+- `disease_tracking_report_NYC_2025-11-01.csv` (New York City, submitted November 1, 2025)
 
 ## Metadata Requirements
 
@@ -160,11 +178,15 @@ Jurisdictions should provide accompanying metadata including:
 
 ## References
 
+- [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
+- [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
+- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Validation Rules](validation.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf)
-- [Data Submission Template](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=2Xea8R)
+- [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Questions
 
-For questions about this data standard, see the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) or contact the project team through your jurisdiction's liaison.
+For questions about these technical specifications, see the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) or contact the project team through your jurisdiction's liaison.

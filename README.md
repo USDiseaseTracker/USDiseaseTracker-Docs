@@ -14,19 +14,28 @@ The major goal of this project is establish the processes, standards, data forma
 
 ## Program Documentation
 
-For jurisdictions participating or interested in participating, the following pages provide detailed information how the project, data formatting and standards, and how to submit these data.
+For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
 
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - How to prepare and submit data
-3. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-- **[Data Standards Overview](standards/data-standards.md)** - Overview and index of all standards
-- **[Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)** - Detailed field specifications for data submissions
+2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field specifications and requirements
+4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+5. **[Validation Rules](standards/validation.md)** - Data validation requirements
+
+See also:
+- **[Data Standards Overview](standards/data-standards.md)** - Quick reference and navigation guide
 
 
 ## Examples and Templates
 
-- Example data files are provided in `examples/`: 
-- Templates for data files are provided in `templates/`:
+- **Example data:** See `examples/` directory
+  - [disease_tracking_report_WA_2025-09-30.csv](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
+- **Templates:** See `templates/` directory
+  - [disease_tracking_report_{state}_{report_date}.csv](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
+- **Data dictionary:**
+  - [disease_tracking_data_dictionary.csv](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- **External resources:**
+  - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 
 ## Data Validation
