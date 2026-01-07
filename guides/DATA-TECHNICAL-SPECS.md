@@ -10,7 +10,7 @@ This document provides the complete technical specifications for disease trackin
 
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
-**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](../data-submission-guide.md).
+**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
 
 ## Data Structure
 
@@ -81,8 +81,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Apply jurisdiction data suppression policies before submission
 - Use `geo_name = "unspecified"` for suppressed counts to maintain totals
 
-## Optional Fields
-
 ### Demographic Fields
 
 | Field Name | Data Type | Description | Valid Values |
@@ -107,7 +105,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 **Notes:**
 - Age groups displayed at jurisdiction level only (not sub-jurisdiction)
 - Same age groupings used for all diseases
-- Leave blank or use `total` for non-age-stratified aggregations
+- Use `total` for non-age-stratified aggregations
 
 ### Disease-Specific Fields
 
@@ -118,12 +116,12 @@ Only include rows with non-zero counts. The system will automatically infer zero
 **Notes:**
 - Use for meningococcal disease serogroup reporting
 - Use `NA` for diseases without subtype reporting (measles, pertussis)
-- Use `unknown` when subtyping was not performed
+- Use `unknown` when subtyping was not performed or is otherwise not known
 - Use `unspecified` when subtype is known but suppressed
 
 ## Validation
 
-See [Validation](validation.md) for details on file and data validation.
+See [Validation](VALIDATION.md) for details on file and data validation.
 
 
 ## Example Data
@@ -133,7 +131,7 @@ Example data files are available to help understand the required format:
 **In this repository:**
 - [Complete example](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
 - [Empty template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
-- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 **External resources:**
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and external resources
@@ -176,10 +174,10 @@ Jurisdictions should provide accompanying metadata including:
 
 ## References
 
-- [Data Submission Guide](../data-submission-guide.md) - High-level guidance on what and when to submit
-- [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
-- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Validation Rules](validation.md) - Complete validation requirements
+- [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
+- [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Validation Rules](VALIDATION.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf)
@@ -187,4 +185,4 @@ Jurisdictions should provide accompanying metadata including:
 
 ## Questions
 
-For questions about these technical specifications, see the [Data Submission Guide](../data-submission-guide.md) or contact the project team through your jurisdiction's liaison.
+For questions about these technical specifications, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) or contact the project team through your jurisdiction's liaison.

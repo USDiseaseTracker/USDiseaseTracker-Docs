@@ -27,10 +27,10 @@ The goal of this project is establish the processes, standards, data formats and
 
 **Guides and Specifications**
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](data-submission-guide.md)** - High-level overview of what and when to submit
-3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field specifications and requirements
-4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-5. **[Validation Rules](standards/validation.md)** - Data validation requirements
+2. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+3. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
+4. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+5. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 **Templates and Examples:**
 - [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
@@ -41,7 +41,7 @@ The goal of this project is establish the processes, standards, data formats and
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](standards/validation.md) for detailed validation requirements.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
 
