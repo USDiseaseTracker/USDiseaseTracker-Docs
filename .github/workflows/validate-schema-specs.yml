@@ -26,9 +26,11 @@ jobs:
       - name: Run validation
         id: validate
         run: |
+          set +e
           python3 scripts/validate_schema_specs.py
-          echo "validation_passed=$?" >> $GITHUB_OUTPUT
-        continue-on-error: true
+          EXIT_CODE=$?
+          echo "validation_passed=$EXIT_CODE" >> $GITHUB_OUTPUT
+          exit 0
       
       - name: Update markdown if validation failed
         if: steps.validate.outputs.validation_passed != '0'

@@ -109,7 +109,7 @@ def check_disease_subtype(schema: Dict, markdown: str) -> Tuple[bool, str]:
     disease_subtype_info = field_summary.get('disease_subtype', {})
     valid_values = disease_subtype_info.get('valid_values', '')
     
-    # Parse the valid values: `A`, `B`, `C`, `W`, `X`, `Y`, `unknown`, `unspecified`, `NA`
+    # Parse the valid values from markdown (e.g., `A`, `B`, `C`, etc.)
     md_subtypes = set()
     for match in re.findall(r'`([^`]+)`', valid_values):
         md_subtypes.add(match)
@@ -197,8 +197,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         '45-64 y': 'From 45 year birthday up to but not including 65 year birthday',
         '>=65 y': 'From 65 year birthday and older',
         'total': 'All ages combined',
-        'unknown': 'Age unknown',
-        'unspecified': 'Age known but suppressed'
+        'unknown': 'Age unknown'
     }
     
     age_table = "| Value | Description |\n|-------|-------------|\n"
