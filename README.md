@@ -9,7 +9,7 @@ The documentation website is available at: https://usdiseasetracker.github.io/US
 
 ## Project Goals
 
-The major goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
+The goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
 
 
 ## Program Documentation
