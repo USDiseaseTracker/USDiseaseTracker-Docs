@@ -15,8 +15,6 @@ disease_tracking_report_{state}_{report_date}.csv
 
 Examples:
 - `disease_tracking_report_WA_2025-09-30.csv`
-- `disease_tracking_report_CA_2025-10-15.csv`
-- `disease_tracking_report_NYC_2025-11-01.csv`
 
 ## Usage
 
