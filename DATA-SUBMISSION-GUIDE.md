@@ -156,6 +156,8 @@ All data submissions must include the following types of information:
 
 For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
 <br>
+
+
 ### Age Groups
 
 Age groups are defined to be relevant to both disease epidemiology and vaccine schedules. The same age groupings are used for all diseases to simplify visualizations.
@@ -220,8 +222,8 @@ For measles, the project team recommends **not suppressing data** as a default a
 - Report only non-zero counts
 - If a jurisdiction or age group had no reported outcome during a timeframe, no entry is required
 - The database system will automatically add 0s at higher spatial aggregations
-
 <br>
+
 ### File Format
 
 Data should be submitted in CSV format following the standard template structure. 
