@@ -11,38 +11,6 @@ The documentation website is available at: <a href="https://usdiseasetracker.git
 
 The goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
 
-
-## Program Documentation
-
-For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
-
-1. **[Data Submission Guide](../guides/DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
-   - What data to submit
-   - When to submit
-   - Submission requirements and frequencies
-   - Case classification methods
-   - Geographic assignment rules
-   - Data suppression guidelines
-
-2. **[Data Technical Specifications](../guides/DATA-TECHNICAL-SPECS.md)** - Detailed technical requirements
-   - Complete field definitions
-   - Data types and formats
-   - Valid value sets
-   - Example data and templates
-
-3. **[Data Transfer Guide](../guides/DATA-TRANSFER-GUIDE.md)** - How to transfer data
-   - Transfer methods (manual upload, automated pull, automated push)
-   - File naming conventions
-   - Validation processes
-   - Security and authentication
-
-4. **[Validation Rules](../guides/VALIDATION.md)** - Data validation requirements
-   - Format validation
-   - Data type validation
-   - Logical validation
-   - Cross-field validation
-<br>
-
 ## Quick Reference
 
 **Key Dates:**
