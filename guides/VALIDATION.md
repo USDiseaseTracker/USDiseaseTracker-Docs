@@ -1,5 +1,14 @@
 # Validation
 
+---
+**Version:** 1.0.0  
+**Last Updated:** 2026-01-07
+
+**Changes:**
+- Initial version of documentation repository
+
+---
+
 The validation process checks:
 
 - File format and structure

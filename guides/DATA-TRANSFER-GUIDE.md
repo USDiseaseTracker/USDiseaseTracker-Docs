@@ -1,6 +1,14 @@
 # Data Transfer Guide
 
-**Last Updated:** January 5, 2026  
+---
+**Version:** 1.0.0  
+**Last Updated:** 2026-01-07
+
+**Changes:**
+- Initial version of documentation repository
+
+---
+
 **Status:** Work in Progress
 
 ## Overview
