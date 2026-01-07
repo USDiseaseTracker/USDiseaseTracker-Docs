@@ -23,29 +23,23 @@ Data should be submitted in CSV format with one row per unique combination of:
 
 ### Field Summary
 
-The following table provides a comprehensive overview of all data fields:
+The following table provides a comprehensive overview of all data fields required for submission:
 
 | Field Name | Data Type | Description | Valid Values | Required |
 |------------|-----------|-------------|--------------|----------|
-| **Time Period Fields** |
 | time_unit | String | Time aggregation unit | `week`, `month`, `ytd` | Yes |
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to time periods | `cccd`, `jurisdiction date hierarchy` | Yes |
-| **Disease Fields** |
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus` | Yes |
 | outcome | String | Type of outcome being reported | `cases` | Yes |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` | Yes |
-| **Geographic Fields** |
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` | Yes |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code | Yes |
 | geo_unit | String | Type of geographic unit | `state`, `county`, `hsa`, `planning area`, `region`, `other`, `NA` | Yes |
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
-| **Count Field** |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
-| **Demographic Fields** |
 | age_group | String | Age group of cases | `0-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| **Disease-Specific Fields** |
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `unknown`, `unspecified`, `NA` | Yes |
 
 **Key Notes:**
