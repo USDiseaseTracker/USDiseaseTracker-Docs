@@ -10,7 +10,6 @@ include:
   - standards
   - templates
   - examples
-  - data-raw
 
 exclude:
   - .git
@@ -20,7 +19,7 @@ exclude:
 
 # Navigation (optional)
 header_pages:
-  - INDEX.md
+  - README.md
   - standards/README.md
   - templates/README.md
   - examples/README.md
