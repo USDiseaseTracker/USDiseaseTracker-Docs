@@ -197,8 +197,8 @@ For detailed field specifications, see the [Data Technical Specifications](stand
 ### Template and Examples
 
 Use the official data submission template and examples:
-- [Empty template](templates/disease_tracking_report_{state}_{report_date}.csv) - Template with correct field structure
-- [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
+- [Empty template](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Template with correct field structure
+- [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 - [Data dictionary (CSV)](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and external resources
 

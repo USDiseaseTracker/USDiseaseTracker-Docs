@@ -22,8 +22,7 @@
 ### For New Standards
 
 - [ ] Standard definition document created in `standards/`
-- [ ] At least one complete example in `examples/`
-- [ ] At least one minimal example (required fields only) in `examples/`
+- [ ] At least one complete example in `examples-and-templates/`
 - [ ] Validation script created in `data-raw/`
 - [ ] Entry added to `INDEX.md`
 - [ ] Version number and change log included
