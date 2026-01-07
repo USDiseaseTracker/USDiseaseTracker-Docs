@@ -1,5 +1,18 @@
 # Validation
 
+---
+**Version:** 1.0.0  
+**Last Updated:** 2026-01-07
+
+**Changes:**
+- Initial version of validation rules
+- Defined format validation requirements
+- Established data type validation rules
+- Specified logical validation checks
+- Defined cross-field validation requirements
+
+---
+
 The validation process checks:
 
 - File format and structure

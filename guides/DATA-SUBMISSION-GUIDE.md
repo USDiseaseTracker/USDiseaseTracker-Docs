@@ -1,6 +1,19 @@
 # Data Submission Guide
 
-**Last Updated:** January 6, 2026  
+---
+**Version:** 1.0.0  
+**Last Updated:** 2026-01-07
+
+**Changes:**
+- Initial version of data submission guide
+- Defined reportable data specifications for measles, pertussis, and invasive meningococcal disease
+- Established time aggregation requirements (weekly and monthly)
+- Defined age groups and geographic assignment rules
+- Specified data format and metadata requirements
+- Established validation requirements
+
+---
+
 **Status:** Work in Progress
 
 

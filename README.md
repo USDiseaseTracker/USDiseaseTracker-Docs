@@ -1,5 +1,18 @@
 # USDiseaseTracker-Docs
 
+---
+**Version:** 1.0.0  
+**Last Updated:** 2026-01-07
+
+**Changes:**
+- Initial version of documentation repository
+- Added data standards and specifications
+- Added submission and transfer guides
+- Added validation rules
+- Added templates and examples
+
+---
+
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
 
