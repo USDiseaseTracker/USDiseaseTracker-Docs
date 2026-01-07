@@ -16,10 +16,6 @@ The goal of this project is establish the processes, standards, data formats and
 
 For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
 
-
-
-## For Jurisdictions Submitting Data
-
 1. **[Data Submission Guide](../guides/DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
    - What data to submit
    - When to submit
