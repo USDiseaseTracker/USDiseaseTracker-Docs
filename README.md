@@ -6,10 +6,6 @@
 
 **Changes:**
 - Initial version of documentation repository
-- Added data standards and specifications
-- Added submission and transfer guides
-- Added validation rules
-- Added templates and examples
 
 ---
 
