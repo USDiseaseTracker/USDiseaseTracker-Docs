@@ -1,0 +1,155 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Disease Report Dataset Schema",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "report_date": {
+                "type": "string",
+                "format": "date",
+                "description": "Date of file submission (YYYY-MM-DD)"
+            },
+            "submission_date": {
+                "type": "string",
+                "format": "date",
+                "description": "End date of week/month period; for weeks must align with MMWR week (Saturday); for months must be the first of the month"
+            },
+            "date_type": {
+                "type": "string",
+                "enum": ["calc_case_counting", "onset", "diagnosis", "test_collection", "report_date"],
+                "description": "Calculated Case Counting Date, otherwise specify"
+            },
+            "time_unit": {
+                "type": "string",
+                "enum": ["week", "month"],
+                "description": "Time aggregation unit"
+            },
+            "disease_name": {
+                "type": "string",
+                "enum": ["measles", "pertussis", "meningococcus"],
+                "description": "Name of the disease"
+            },
+            "state": {
+                "type": "string",
+                "pattern": "^[A-Z]{2}$",
+                "enum": [
+                    "AL", "AK", "AZ", "AR", "AS",
+                    "CA", "CO", "CT", "DE", "DC",
+                    "FL", "GA", "GU", "HI", "ID",
+                    "IL", "IN", "IA", "KS", "KY",
+                    "LA", "ME", "MD", "MA", "MI",
+                    "MN", "MS", "MO", "MT", "NE",
+                    "NV", "NH", "NJ", "NM", "NY",
+                    "NC", "ND", "MP", "OH", "OK",
+                    "OR", "PA", "PR", "RI", "SC",
+                    "SD", "TN", "TX", "TT", "UT",
+                    "VT", "VA", "VI", "WA", "WV",
+                    "WI", "WY"
+                ],
+                "description": "2-letter abbreviation for the state of the jurisdiction"
+            },
+            "jurisdiction_name": {
+                "type": "string",
+                "description": "Name of the reporting jurisdiction"
+            },
+            "jurisdiction_level": {
+                "type": "string",
+                "enum": ["county", "state", "region"],
+                "description": "Jurisdiction level"
+            },
+            "age_group": {
+                "type": "string",
+                "enum": [
+                    "0-5 m",
+                    "6-11 m",
+                    "1-4 y",
+                    "5-11 y",
+                    "12-18 y",
+                    "19-22 y",
+                    "23-44 y",
+                    "45-64 y",
+                    ">=65 y",
+                    "total",
+                    "Unknown"
+                ],
+                "description": "Standardized age group"
+            },
+            "observations": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Count of specified outcome for the specified group for this time period"
+            },
+            "confirmation_status": {
+                "type": "string",
+                "enum": ["confirmed", "probable"],
+                "description": "Case classification status"
+            },
+            "outcome": {
+                "type": "string",
+                "enum": ["cases", "hospitalizations", "deaths"],
+                "description": "Reported outcome type"
+            }
+        },
+        "required": [
+            "report_date",
+            "count_date",
+            "date_type",
+            "time_unit",
+            "disease_name",
+            "state",
+            "jurisdiction_name",
+            "jurisdiction_level",
+            "age_group",
+            "observations",
+            "confirmation_status",
+            "outcome"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+            {
+                "oneOf": [
+                    {
+                        "properties": {
+                            "disease_name": { "const": "measles" },
+                            "time_unit": { "enum": ["week", "month"] }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "disease_name": { "const": "pertussis" },
+                            "time_unit": { "const": "month" }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "disease_name": { "const": "meningococcus" },
+                            "time_unit": { "const": "month" }
+                        }
+                    }
+                ]
+            },
+            {
+                "if": { "properties": { "time_unit": { "const": "month" } } },
+                "then": {
+                    "properties": {
+                        "count_date": {
+                            "pattern": "^\\d{4}-\\d{2}-01$",
+                            "description": "When time_unit=month, count_date must be the first day of the month (YYYY-MM-01)"
+                        }
+                    }
+                }
+            },
+            {
+                "if": { "properties": { "time_unit": { "const": "week" } } },
+                "then": {
+                    "properties": {
+                        "count_date": {
+                            "description": "When time_unit=week, count_date must be an MMWR week ending (Saturday). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}
