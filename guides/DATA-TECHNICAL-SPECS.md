@@ -105,7 +105,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 **Notes:**
 - Age groups displayed at jurisdiction level only (not sub-jurisdiction)
 - Same age groupings used for all diseases
-- Leave blank or use `total` for non-age-stratified aggregations
+- Use `total` for non-age-stratified aggregations
 
 ### Disease-Specific Fields
 
@@ -116,7 +116,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 **Notes:**
 - Use for meningococcal disease serogroup reporting
 - Use `NA` for diseases without subtype reporting (measles, pertussis)
-- Use `unknown` when subtyping was not performed
+- Use `unknown` when subtyping was not performed or is otherwise not known
 - Use `unspecified` when subtype is known but suppressed
 
 ## Validation
