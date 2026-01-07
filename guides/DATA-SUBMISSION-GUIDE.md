@@ -17,11 +17,7 @@ This guide provides detailed specifications for state, tribal, local, and territ
 <br>
 
 ## Reportable Data Specifications
-<br>
 
-### Frequency
-**Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
-<br>
 
 ### Time Period
 
