@@ -5,24 +5,24 @@
     "items": {
         "type": "object",
         "properties": {
-            "report_date": {
+            "report_period_start": {
                 "type": "string",
                 "format": "date",
-                "description": "Date of file submission (YYYY-MM-DD)"
+                "description": "Date of report period start (YYYY-MM-DD)"
             },
-            "submission_date": {
+            "report_period_end": {
                 "type": "string",
                 "format": "date",
-                "description": "End date of week/month period; for weeks must align with MMWR week (Saturday); for months must be the first of the month"
+                "description": "Date of report period end (YYYY-MM-DD)"
             },
             "date_type": {
                 "type": "string",
-                "enum": ["calc_case_counting", "onset", "diagnosis", "test_collection", "report_date"],
-                "description": "Calculated Case Counting Date, otherwise specify"
+                "enum": ["cccd", "jurisdiction date hierarchy"],
+                "description": "Calculated Case Counting Date (cccd) or juridiction-defined date hierarchy. Details of juridiction date hierarchy should be provided in metadata."
             },
             "time_unit": {
                 "type": "string",
-                "enum": ["week", "month"],
+                "enum": ["week", "month", "ytd"],
                 "description": "Time aggregation unit"
             },
             "disease_name": {
@@ -30,9 +30,16 @@
                 "enum": ["measles", "pertussis", "meningococcus"],
                 "description": "Name of the disease"
             },
+            "disease_subtype": {
+                "type": "string",
+                "description": "Subtype Name of the disease. This can be used to specify serogroup for meningococcus (e.g., A, B, C, W, Y). If not applicable, use 'NA'. If not known, use 'Unknown'."
+            },
+            "reporting_jurisdiction": {
+                "type": "string",
+                "description": "Abbreviation for the reporting state, city, or territory"
+            },
             "state": {
                 "type": "string",
-                "pattern": "^[A-Z]{2}$",
                 "enum": [
                     "AL", "AK", "AZ", "AR", "AS",
                     "CA", "CO", "CT", "DE", "DC",
@@ -49,14 +56,14 @@
                 ],
                 "description": "2-letter abbreviation for the state of the jurisdiction"
             },
-            "jurisdiction_name": {
+            "geo_name": {
                 "type": "string",
-                "description": "Name of the reporting jurisdiction"
+                "description": "Name of the geographic unit"
             },
-            "jurisdiction_level": {
+            "geo_unit": {
                 "type": "string",
-                "enum": ["county", "state", "region"],
-                "description": "Jurisdiction level"
+                "enum": ["county", "state", "region", "planning area", "hsa", "NA"],
+                "description": "Geographic unit"
             },
             "age_group": {
                 "type": "string",
@@ -71,39 +78,42 @@
                     "45-64 y",
                     ">=65 y",
                     "total",
-                    "Unknown"
+                    "unknown",
+                    "unspecified"
                 ],
                 "description": "Standardized age group"
             },
-            "observations": {
-                "type": "integer",
-                "minimum": 0,
-                "description": "Count of specified outcome for the specified group for this time period"
-            },
             "confirmation_status": {
                 "type": "string",
-                "enum": ["confirmed", "probable"],
+                "enum": ["confirmed", "confirmed and probable"],
                 "description": "Case classification status"
             },
             "outcome": {
                 "type": "string",
                 "enum": ["cases", "hospitalizations", "deaths"],
                 "description": "Reported outcome type"
+            },
+            "count": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Count of specified outcome for the specified group for this time period"
             }
         },
         "required": [
-            "report_date",
-            "count_date",
+            "report_period_start",
+            "report_period_end",
             "date_type",
             "time_unit",
             "disease_name",
+            "disease_subtype",
+            "reporting_jurisdiction",
             "state",
-            "jurisdiction_name",
-            "jurisdiction_level",
+            "geo_name",
+            "geo_unit",
             "age_group",
-            "observations",
             "confirmation_status",
-            "outcome"
+            "outcome",
+            "count"
         ],
         "additionalProperties": false,
         "allOf": [
@@ -133,9 +143,8 @@
                 "if": { "properties": { "time_unit": { "const": "month" } } },
                 "then": {
                     "properties": {
-                        "count_date": {
-                            "pattern": "^\\d{4}-\\d{2}-01$",
-                            "description": "When time_unit=month, count_date must be the first day of the month (YYYY-MM-01)"
+                        "report_period_start": {
+                            "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
                         }
                     }
                 }
@@ -144,11 +153,33 @@
                 "if": { "properties": { "time_unit": { "const": "week" } } },
                 "then": {
                     "properties": {
-                        "count_date": {
-                            "description": "When time_unit=week, count_date must be an MMWR week ending (Saturday). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                        "report_period_start": {
+                            "description": "When time_unit='week', report_period_start must be an MMWR week ending (Saturday). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
                         }
                     }
                 }
+            },
+            {
+                "oneOf": [
+                    {
+                        "properties": {
+                            "disease_name": { "const": "meningococcus" },
+                            "disease_subtype": { "enum": ["A", "B", "C", "W", "Y", "unknown", "unspecified"] }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "disease_name": { "const": "measles" },
+                            "disease_subtype": { "enum": ["NA", "unknown"] }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "disease_name": { "const": "pertussis" },
+                            "disease_subtype": { "enum": ["NA", "unknown"] }
+                        }
+                    }
+                ]
             }
         ]
     }
