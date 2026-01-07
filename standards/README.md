@@ -13,7 +13,7 @@ The data standards documentation is organized as follows:
 
 For complete guidance on participating in the project:
 
-- **[Data Submission Guide](../DATA-SUBMISSION-GUIDE.md)** - High-level overview of what to submit, when to submit, and submission requirements
+- **[Data Submission Guide](../data-submission-guide.md)** - High-level overview of what to submit, when to submit, and submission requirements
 - **[Data Transfer Guide](../DATA-TRANSFER-GUIDE.md)** - Technical details on how to transfer data to the system
 - **[Pilot Phase Overview](../PILOT-OVERVIEW.md)** - Project background and goals
 
@@ -42,7 +42,7 @@ See [validation.md](validation.md) for comprehensive validation rules including:
 
 For jurisdictions getting started:
 
-1. Review the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) for an overview of submission requirements
+1. Review the [Data Submission Guide](../data-submission-guide.md) for an overview of submission requirements
 2. Review the [Data Technical Specifications](disease-tracking-report-standard.md) for detailed field requirements
 3. Download the [template file](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) and [example data](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
 4. Consult the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) to select a transfer method

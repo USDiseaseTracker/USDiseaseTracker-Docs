@@ -5,7 +5,7 @@
 
 ## For Jurisdictions Submitting Data
 
-1. **[Data Submission Guide](../DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
+1. **[Data Submission Guide](../data-submission-guide.md)** - Start here for high-level overview
    - What data to submit
    - When to submit
    - Submission requirements and frequencies
@@ -59,7 +59,7 @@ For quick access to key information:
 For jurisdictions interested in participating:
 
 1. Review the [Pilot Phase Overview](../PILOT-OVERVIEW.md) to understand project goals
-2. Read the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) for submission requirements
+2. Read the [Data Submission Guide](../data-submission-guide.md) for submission requirements
 3. Review the [Data Technical Specifications](disease-tracking-report-standard.md) for field requirements
 4. Consult the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) to select a transfer method
 5. Contact the project team through your jurisdiction's liaison

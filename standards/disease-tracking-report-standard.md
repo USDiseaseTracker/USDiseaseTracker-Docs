@@ -10,7 +10,7 @@ This document provides the complete technical specifications for disease trackin
 
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
-**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md).
+**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](../data-submission-guide.md).
 
 ## Data Structure
 
@@ -176,7 +176,7 @@ Jurisdictions should provide accompanying metadata including:
 
 ## References
 
-- [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
+- [Data Submission Guide](../data-submission-guide.md) - High-level guidance on what and when to submit
 - [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
 - [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Complete validation requirements
@@ -187,4 +187,4 @@ Jurisdictions should provide accompanying metadata including:
 
 ## Questions
 
-For questions about these technical specifications, see the [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) or contact the project team through your jurisdiction's liaison.
+For questions about these technical specifications, see the [Data Submission Guide](../data-submission-guide.md) or contact the project team through your jurisdiction's liaison.

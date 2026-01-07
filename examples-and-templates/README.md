@@ -38,6 +38,6 @@ disease_tracking_report_{state}_{report_date}.csv
 
 ## Related Files
 
-- [Data Submission Guide](../DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
+- [Data Submission Guide](../data-submission-guide.md) - High-level guidance on what and when to submit
 - [Data Technical Specifications](../standards/disease-tracking-report-standard.md) - Complete field definitions and requirements
 - [Data dictionary (CSV)](../standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values

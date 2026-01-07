@@ -17,7 +17,7 @@ The goal of this project is establish the processes, standards, data formats and
 For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
 
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+2. **[Data Submission Guide](data-submission-guide.md)** - High-level overview of what and when to submit
 3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field specifications and requirements
 4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 5. **[Validation Rules](standards/validation.md)** - Data validation requirements

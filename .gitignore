@@ -38,3 +38,8 @@ docs/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Rprojects
+*.Rproj
+.Rproj
+
