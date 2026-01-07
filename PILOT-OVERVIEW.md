@@ -8,10 +8,10 @@
 The Data Dashboard project is a collaborative initiative by CSTE, ASTHO, and Johns Hopkins University, along with epidemiologists and public health officials, to develop a publicly available dashboard for data sharing, visualization and analyses of selected diseases, focusing initially on vaccine preventable disease case counts.
 
 ### Project Resources 
-See the CSTE Sharepoint for the following resources.
+See the CSTE Sharepoint for the following resources:
 
 - Data Dashboard Project Charter
-- Joint Data Dashboard Project Technical Workgroup
+- Joint Data Dashboard Project Technical Workgroup Overview
 - Prior meeting slides
   
 ## Pilot Scope
