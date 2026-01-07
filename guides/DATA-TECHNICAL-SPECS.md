@@ -81,8 +81,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Apply jurisdiction data suppression policies before submission
 - Use `geo_name = "unspecified"` for suppressed counts to maintain totals
 
-## Optional Fields
-
 ### Demographic Fields
 
 | Field Name | Data Type | Description | Valid Values |
