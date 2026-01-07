@@ -1,6 +1,9 @@
 title: US Disease Tracker Data Standards
 description: Data standards and public documentation of the US Disease Tracker project
 theme: jekyll-theme-cayman
+url: "https://usdiseasetracker.github.io"
+baseurl: "/USDiseaseTracker-Docs"
+
 
 # Build settings
 markdown: kramdown
