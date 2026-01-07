@@ -7,6 +7,19 @@
 
 This guide describes the technical methods for transferring data from participating jurisdictions to the Johns Hopkins University (JHU) project database.
 
+- [Transfer Frequency](#transfer-frequency)
+- [Transfer Methods](#transfer-methods)
+- [Pilot Phase Implementation](#pilot-phase-implementation)
+- [File Format Specifications](#file-format-specifications)
+- [Validation](#validation)
+- [Security and Authentication](#security-and-authentication)
+- [Troubleshooting](#troubleshooting)
+- [Support](#support)
+- [Version Control](#version-control)
+- [Future Enhancements](#future-enhancements)
+
+
+
 ## Transfer Frequency
 
 **Recommended:** Weekly
