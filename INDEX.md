@@ -5,7 +5,6 @@ This is the comprehensive index for all data standards, templates, and examples 
 ## Quick Links
 
 - [Disease Tracking Report Standard](standards/disease-tracking-report-standard.md)
-- [Standard Definition Template](templates/standard-definition-template.md)
 
 ## Pilot Program Documentation
 
@@ -25,8 +24,8 @@ This is the comprehensive index for all data standards, templates, and examples 
    - Status: Draft
    - Last Updated: 2026-01-06
    - Complete technical specifications including field definitions, data types, and valid value sets
-   - [Template file](templates/disease_tracking_report_{state}_{report_date}.csv)
-   - [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv)
+   - [Template file](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
+   - [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
 2. **[Validation Rules](standards/validation.md)**
    - Comprehensive validation requirements for data submissions
    - Includes format, data type, logical, and cross-field validation
@@ -35,21 +34,13 @@ This is the comprehensive index for all data standards, templates, and examples 
 
 - TBD
 
-## Templates
 
-- **[Standard Definition Template](templates/standard-definition-template.md)**
-  - Use this template to create new data standard documents
-  - Includes all required sections for a complete standard definition
+## Examples and Templates
 
-## Examples
+All example and template data files are located in the `examples-and-templates/` directory:
 
-All example data files are located in the `examples/` directory:
-
-- [disease_tracking_report_WA_2025-09-30.csv](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data from Washington state
-
-Template files are located in the `templates/` directory:
-
-- [disease_tracking_report_{state}_{report_date}.csv](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
+- [disease_tracking_report_WA_2025-09-30.csv](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data from Washington state
+- [disease_tracking_report_{state}_{report_date}.csv](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
 
 ## Validation Scripts
 

@@ -24,6 +24,5 @@ exclude:
 header_pages:
   - README.md
   - standards/README.md
-  - templates/README.md
-  - examples/README.md
+  - examples-and-templates/README.md
   - CONTRIBUTING.md
