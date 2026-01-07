@@ -36,14 +36,10 @@ The project team will review the proposed standard or modification. Depending on
 
 ## Standard Requirements
 
-All data standards must include:
+All proposed new data standards or modifications must include:
 
 - [ ] Complete standard definition document
-- [ ] At least one complete example
-- [ ] At least one minimal example (required fields only)
-- [ ] Validation script
-- [ ] Entry in `INDEX.md`
-- [ ] Version number and change log
+- [ ] At least one example
 - [ ] Clear field definitions with data types
 - [ ] Validation rules
 

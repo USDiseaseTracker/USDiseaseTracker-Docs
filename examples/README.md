@@ -4,13 +4,8 @@ This directory contains example data files that demonstrate compliance with the 
 
 ## Available Examples
 
-### Disease Tracking Report Examples
-- `disease_tracking_report_example.csv` - Complete disease tracking report following the standard
-- `disease_tracking_report_minimal.csv` - Minimal valid disease tracking report with only required fields
-
-### Planned Examples
-- Laboratory result data examples (when laboratory data standard is completed)
-- Demographic data examples (when demographic data standard is completed)
+### Disease Tracking Report Example
+- `disease_tracking_report_WA_2025-09-30.csv` - Sample data file with measles and pertussis data from Washington state, demonstrating proper format and structure
 
 ## Using Examples
 
@@ -19,3 +14,10 @@ These examples can be used to:
 2. Test data validation scripts
 3. Develop data integration tools
 4. Train users on data standards
+
+## Related Files
+
+- [Empty template](../templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct field structure
+- [Data Technical Specifications](../standards/disease-tracking-report-standard.md) - Complete field definitions and requirements
+- [Data dictionary (CSV)](../standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications
