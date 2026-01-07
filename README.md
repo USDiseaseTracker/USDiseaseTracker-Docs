@@ -17,10 +17,10 @@ The goal of this project is establish the processes, standards, data formats and
 For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
 
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](data-submission-guide.md)** - High-level overview of what and when to submit
-3. **[Data Technical Specifications](standards/disease-tracking-report-standard.md)** - Detailed field specifications and requirements
-4. **[Data Transfer Guide](DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-5. **[Validation Rules](standards/validation.md)** - Data validation requirements
+2. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+3. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
+4. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+5. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 See also:
 - **[Data Standards Overview](standards/data-standards.md)** - Quick reference and navigation guide
@@ -32,14 +32,14 @@ See also:
   - [disease_tracking_report_WA_2025-09-30.csv](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
   - [disease_tracking_report_{state}_{report_date}.csv](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
 - **Data dictionary:**
-  - [disease_tracking_data_dictionary.csv](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+  - [disease_tracking_data_dictionary.csv](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - **External resources:**
   - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](standards/validation.md) for detailed validation requirements.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
 

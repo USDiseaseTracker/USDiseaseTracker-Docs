@@ -5,7 +5,7 @@
 
 ## For Jurisdictions Submitting Data
 
-1. **[Data Submission Guide](../data-submission-guide.md)** - Start here for high-level overview
+1. **[Data Submission Guide](../guides/DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
    - What data to submit
    - When to submit
    - Submission requirements and frequencies
@@ -14,19 +14,19 @@
    - Age group definitions
    - Data suppression guidelines
 
-2. **[Data Technical Specifications](disease-tracking-report-standard.md)** - Detailed technical requirements
+2. **[Data Technical Specifications](../guides/DATA-TECHNICAL-SPECS.md)** - Detailed technical requirements
    - Complete field definitions
    - Data types and formats
    - Valid value sets
    - Example data and templates
 
-3. **[Data Transfer Guide](../DATA-TRANSFER-GUIDE.md)** - How to transfer data
+3. **[Data Transfer Guide](../guides/DATA-TRANSFER-GUIDE.md)** - How to transfer data
    - Transfer methods (manual upload, automated pull, automated push)
    - File naming conventions
    - Validation processes
    - Security and authentication
 
-4. **[Validation Rules](validation.md)** - Data validation requirements
+4. **[Validation Rules](../guides/VALIDATION.md)** - Data validation requirements
    - Format validation
    - Data type validation
    - Logical validation
@@ -51,7 +51,7 @@ For quick access to key information:
 **Templates and Examples:**
 - [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
-- [Data dictionary (CSV)](disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Getting Started
@@ -59,9 +59,9 @@ For quick access to key information:
 For jurisdictions interested in participating:
 
 1. Review the [Pilot Phase Overview](../PILOT-OVERVIEW.md) to understand project goals
-2. Read the [Data Submission Guide](../data-submission-guide.md) for submission requirements
-3. Review the [Data Technical Specifications](disease-tracking-report-standard.md) for field requirements
-4. Consult the [Data Transfer Guide](../DATA-TRANSFER-GUIDE.md) to select a transfer method
+2. Read the [Data Submission Guide](../guides/DATA-SUBMISSION-GUIDE.md) for submission requirements
+3. Review the [Data Technical Specifications](../guides/DATA-TECHNICAL-SPECS.md) for field requirements
+4. Consult the [Data Transfer Guide](../guides/DATA-TRANSFER-GUIDE.md) to select a transfer method
 5. Contact the project team through your jurisdiction's liaison
 
 ## Questions and Support

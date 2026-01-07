@@ -138,7 +138,7 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ## Data Elements
 
-For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
+For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
 
 ### Summary of Required Fields
 
@@ -154,7 +154,7 @@ All data submissions must include the following types of information:
 
 - **disease_subtype:** For meningococcal serogroup reporting
 
-For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](standards/disease-tracking-report-standard.md).
+For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
 <br>
 
 
@@ -229,8 +229,8 @@ For measles, the project team recommends **not suppressing data** as a default a
 Data should be submitted in CSV format following the standard template structure. 
 
 **Template and Example Files:**
-- [Data submission template](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
-- [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
+- [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
+- [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 
 **File Submission Requirements:**
 - Submit a file with all incident disease counts since December 29, 2024
@@ -244,7 +244,7 @@ disease_tracking_report_{state}_{report_date}.csv
 ```
 Example: `disease_tracking_report_WA_2025-09-30.csv`
 
-See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](standards/disease-tracking-report-standard.md) for complete field requirements.
+See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) for complete field requirements.
 <br>
 
 ## Metadata Requirements
@@ -268,9 +268,9 @@ All submitted data must meet validation requirements to ensure data quality and 
 - Required fields are present
 
 **Resources:**
-- [Data Technical Specifications](standards/disease-tracking-report-standard.md) - Complete field definitions and valid value sets
-- [Data dictionary (CSV)](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Validation Rules](standards/validation.md) - Comprehensive validation requirements
+- [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) - Complete field definitions and valid value sets
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Validation Rules](VALIDATION.md) - Comprehensive validation requirements
 - [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications
 
 Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) describes what happens when validation succeeds or fails.
