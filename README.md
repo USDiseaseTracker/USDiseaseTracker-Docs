@@ -1,10 +1,10 @@
 # USDiseaseTracker-Docs
 
-[![Deploy GitHub Pages](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/Deploy%20GitHub%20Pages/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions){:target="_blank" :rel="noopener noreferrer"}
+[![Deploy GitHub Pages](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/workflows/Deploy%20GitHub%20Pages/badge.svg)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/actions)
 
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
 
-The documentation website is available at: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+The documentation website is available at: [usdiseasetracker.github.io/USDiseaseTracker-Docs](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/){:target="_blank" :rel="noopener noreferrer"}
 
 
 ## Project Goals
