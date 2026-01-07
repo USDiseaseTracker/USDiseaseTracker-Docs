@@ -8,42 +8,19 @@ This guide provides detailed specifications for state, tribal, local, and territ
 
 ## Table of Contents
 
-1. [Submission Summary](#submission-summary)
-2. [Reportable Data Specifications](#reportable-data-specifications)
-   - [Time Period](#time-period)
-   - [Time Aggregation](#time-aggregation)
-   - [Required Data Aggregations](#required-data-aggregations)
-   - [Reporting Frequency](#reporting-frequency)
-   - [Case Classification by Time](#case-classification-by-time)
-     - [Time Period Assignment](#time-period-assignment)
-   - [Data Lags and Incompleteness](#data-lags-and-incompleteness)
-   - [Confirmation Status](#confirmation-status)
-   - [Geographic Assignment](#geographic-assignment)
-     - [Sub-jurisdiction Reporting](#sub-jurisdiction-reporting)
-3. [Data Elements](#data-elements)
-   - [Summary of Required Fields](#summary-of-required-fields)
-   - [Summary of Optional Fields](#summary-of-optional-fields)
-   - [Age Groups](#age-groups)
-   - [International Residents](#international-residents)
-4. [Data Suppression](#data-suppression)
-   - [Small Count Suppression](#small-count-suppression)
-   - [Handling Suppressed Data](#handling-suppressed-data)
-   - [Measles Exception](#measles-exception)
-5. [Data Format](#data-format)
-   - [No Zero Reporting](#no-zero-reporting)
-   - [File Format](#file-format)
-6. [Metadata Requirements](#metadata-requirements)
-7. [Validation](#validation)
-8. [Questions](#questions)
-
-## Submission Summary
-
-### Frequency
-**Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
-<br>
+1. [Reportable Data Specifications](#reportable-data-specifications)
+2. [Data Elements](#data-elements)
+3. [Data Suppression](#data-suppression)
+4. [Data Format](#data-format)
+5. [Metadata Requirements](#metadata-requirements)
+6. [Validation](#validation)
 <br>
 
 ## Reportable Data Specifications
+<br>
+
+### Frequency
+**Weekly** submission is preferred (monthly can be arranged if weekly is not possible, in coordination with the project team)
 <br>
 
 ### Time Period
