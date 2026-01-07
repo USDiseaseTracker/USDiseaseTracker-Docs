@@ -11,30 +11,32 @@ The documentation website is available at: <a href="https://usdiseasetracker.git
 
 The goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
 
+## Quick Reference
 
-## Program Documentation
+**Key Dates:**
+- **Data Start:** December 29, 2024 (MMWR week 1, 2025)
+- **Submission Frequency:** Weekly (preferred)
 
-For jurisdictions participating or interested in participating, the following pages provide detailed information about the project, data formatting and standards, and how to submit data:
+**Current Diseases Collected:**
 
+| Disease | Time Aggregation | Confirmation Status |
+|---------|------------------|---------------------|
+| Measles | Weekly + Monthly | Confirmed only |
+| Pertussis | Monthly | Confirmed and probable |
+| Invasive Meningococcal Disease | Monthly | Confirmed and probable |
+
+**Guides and Specifications**
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
 2. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
 3. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
 4. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 5. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
-See also:
-- **[Data Standards Overview](standards/data-standards.md)** - Quick reference and navigation guide
-
-
-## Examples and Templates
-
-- **Example and Template data:** See `examples-and-templates/` directory
-  - [disease_tracking_report_WA_2025-09-30.csv](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
-  - [disease_tracking_report_{state}_{report_date}.csv](examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
-- **Data dictionary:**
-  - [disease_tracking_data_dictionary.csv](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- **External resources:**
-  - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+**Templates and Examples:**
+- [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
+- [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 
 ## Data Validation
