@@ -3,11 +3,7 @@
 **Last Updated:** January 6, 2026  
 **Status:** Work in Progress
 
-## Important Notice
-
-The data standards documentation has been reorganized for clarity. Please use the following documents:
-
-### For Jurisdictions Submitting Data
+## For Jurisdictions Submitting Data
 
 1. **[Data Submission Guide](../DATA-SUBMISSION-GUIDE.md)** - Start here for high-level overview
    - What data to submit
@@ -36,7 +32,7 @@ The data standards documentation has been reorganized for clarity. Please use th
    - Logical validation
    - Cross-field validation
 
-### Quick Reference
+## Quick Reference
 
 For quick access to key information:
 
