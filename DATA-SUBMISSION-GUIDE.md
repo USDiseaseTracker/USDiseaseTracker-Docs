@@ -229,8 +229,6 @@ Data should be submitted in CSV format following the standard template structure
 **Template and Example Files:**
 - [Data submission template](templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
 - [Example data file](examples/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
-- [Data dictionary (CSV)](standards/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and external resources
 
 **File Submission Requirements:**
 - Submit a file with all incident disease counts since December 29, 2024
