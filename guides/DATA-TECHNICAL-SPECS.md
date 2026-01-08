@@ -1,11 +1,9 @@
 # Data Technical Specifications
 
----
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-07
+| Version | Changes from previous version |   
+|---------|---------|
+|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
-**Changes:**
-- Initial version of documentation repository
 
 ---
 
@@ -18,6 +16,19 @@ This document provides the complete technical specifications for disease trackin
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
 **Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
+
+### Contents
+
+- [Data Structure](#data-structure) - Field summary and data organization requirements
+- [Field Specifications](#field-specifications) - Detailed specifications for all required and optional fields
+- [Validation](#validation) - Data validation requirements
+- [Example Data](#example-data) - Sample files and templates
+- [Metadata Requirements](#metadata-requirements) - Required accompanying metadata
+- [Version History](#version-history) - Document version tracking
+- [References](#references) - Related documentation and resources
+<br>
+<br>
+
 
 ## Data Structure
 
@@ -61,7 +72,7 @@ The following table provides a comprehensive overview of all data fields require
 
 Only include rows with non-zero counts. The system will automatically infer zeros for missing combinations at higher aggregation levels.
 
-## Required Fields
+## Fields Specifications
 
 ### Time Period Fields
 
