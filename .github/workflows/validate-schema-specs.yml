@@ -1,0 +1,64 @@
+name: Validate Schema Specifications
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate-and-update:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Run validation
+        id: validate
+        run: |
+          set +e
+          python3 scripts/validate_schema_specs.py
+          EXIT_CODE=$?
+          echo "validation_passed=$EXIT_CODE" >> $GITHUB_OUTPUT
+          exit 0
+      
+      - name: Update markdown and data dictionary if validation failed
+        if: steps.validate.outputs.validation_passed != '0'
+        run: |
+          python3 scripts/validate_schema_specs.py --update
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add guides/DATA-TECHNICAL-SPECS.md examples-and-templates/disease_tracking_data_dictionary.csv
+          git commit -m "Auto-update DATA-TECHNICAL-SPECS.md and data_dictionary.csv from schema"
+          git push
+      
+      - name: Run validation again to ensure success
+        if: steps.check_changes.outputs.changes == 'true'
+        run: |
+          python3 scripts/validate_schema_specs.py
