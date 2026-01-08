@@ -59,6 +59,7 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 #### Measles (confirmed only)
 - Cases × week × jurisdiction (state, DC, NYC, or territory)
 - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
+- Cases × week × jurisdiction × age group
 - Cases × month × jurisdiction (state, DC, NYC, or territory)
 - Cases × month × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
 - Cases × month × jurisdiction × age group
