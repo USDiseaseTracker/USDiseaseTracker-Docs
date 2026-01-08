@@ -28,7 +28,9 @@ This document provides the complete technical specifications for disease trackin
 - [Metadata Requirements](#metadata-requirements) - Required accompanying metadata
 - [Version History](#version-history) - Document version tracking
 - [References](#references) - Related documentation and resources
-- [Questions](#questions) - How to get help
+<br>
+<br>
+
 
 ## Data Structure
 
