@@ -1,11 +1,9 @@
 # Data Technical Specifications
 
----
-**Version:** 1.0.0  
-**Last Updated:** 2026-01-07
+| Version | Changes from previous version |   
+|---------|---------|
+|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
-**Changes:**
-- Initial version of documentation repository
 
 ---
 
