@@ -54,25 +54,25 @@ def parse_csv_values(values_str: str) -> Set[str]:
     if not values_str or values_str.strip() == 'n':
         return set()
     
-    # Remove outer quotes and smart quotes, then split
     values_str = values_str.strip()
     values = []
     
-    # Use regex to find all quoted values and unquoted NA
-    quoted_pattern = r'["""]([^"""]+)["""]'
+    # Use regex to find all quoted values (handles both regular and smart quotes)
+    # Pattern: any opening quote, capture content, any closing quote
+    quoted_pattern = r'[""\"]([^""\"]+)[""\"]'
     quoted_matches = re.findall(quoted_pattern, values_str)
     
-    # Also look for unquoted NA
+    # Also look for unquoted NA (not preceded or followed by quotes)
     if 'NA' in values_str:
-        # Check if NA is not inside quotes
-        if re.search(r'(?<!")NA(?!")', values_str):
+        # Check if NA is not inside any kind of quotes
+        if re.search(r'(?<!["""])NA(?!["""])', values_str):
             quoted_matches.append('NA')
     
     if quoted_matches:
         values = quoted_matches
     else:
         # Fallback to simple comma split
-        values = [v.strip().strip('"') for v in values_str.split(',')]
+        values = [v.strip().strip('"').strip('"').strip('"') for v in values_str.split(',')]
     
     return set(v for v in values if v and v.strip())
 
@@ -375,6 +375,11 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     return updated
 
 
+def format_csv_values(values: List[str]) -> str:
+    """Format values for CSV with proper quoting (quote all except NA)."""
+    return ', '.join([f'"{v}"' if v != 'NA' else v for v in values])
+
+
 def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
     """Update data dictionary CSV file to match schema."""
     # Read the CSV file with proper encoding
@@ -391,6 +396,10 @@ def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
             if enc == 'iso-8859-1':
                 raise
             continue
+    
+    if not rows:
+        print(f"Warning: No rows found in {dict_path}")
+        return
     
     # Get schema values
     schema_age_groups = extract_enum_from_schema(schema, 'age_group')
@@ -412,22 +421,13 @@ def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
         field_name = row.get('Field Name', '')
         
         if field_name == 'age_group':
-            # Format as comma-separated quoted values
-            row['Values/Format'] = ', '.join([f'"{v}"' for v in schema_age_groups])
+            row['Values/Format'] = format_csv_values(schema_age_groups)
         
         elif field_name == 'geo_unit':
-            # Format as comma-separated quoted values, handling NA
-            values_list = []
-            for v in schema_geo_units:
-                if v == 'NA':
-                    values_list.append('NA')
-                else:
-                    values_list.append(f'"{v}"')
-            row['Values/Format'] = ', '.join(values_list)
+            row['Values/Format'] = format_csv_values(schema_geo_units)
         
         elif field_name == 'disease_subtype':
-            # Format as comma-separated quoted values
-            row['Values/Format'] = ', '.join([f'"{v}"' if v != 'NA' else v for v in sorted(schema_subtypes)])
+            row['Values/Format'] = format_csv_values(sorted(schema_subtypes))
     
     # Write back to CSV in UTF-8 encoding
     with open(dict_path, 'w', encoding='utf-8', newline='') as f:
