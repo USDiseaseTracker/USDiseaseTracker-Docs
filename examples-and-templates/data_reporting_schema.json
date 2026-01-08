@@ -62,7 +62,7 @@
             },
             "geo_unit": {
                 "type": "string",
-                "enum": ["county", "state", "region", "planning area", "hsa", "NA"],
+                "enum": ["state", "county", "region", "planning area", "hsa", "NA"],
                 "description": "Geographic unit"
             },
             "age_group": {
@@ -164,7 +164,7 @@
                     {
                         "properties": {
                             "disease_name": { "const": "meningococcus" },
-                            "disease_subtype": { "enum": ["A", "B", "C", "W", "Y", "unknown", "unspecified"] }
+                            "disease_subtype": { "enum": ["A", "B", "C", "W", "Y", "unknown", "unspecified","NA"] }
                         }
                     },
                     {
