@@ -8,11 +8,16 @@
 ---
 
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
+<br>
+<br>
 
 
 ## Project Goals
 
 The goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
+<br>
+<br>
+
 
 ## Quick Reference
 
@@ -40,6 +45,7 @@ The goal of this project is establish the processes, standards, data formats and
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+<br>
 
 
 ## Data Validation
@@ -47,6 +53,8 @@ The goal of this project is establish the processes, standards, data formats and
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+<br>
+<br>
 
 
 ## Key Principles
@@ -70,11 +78,15 @@ Data are validated upon submission for completeness, format, and errors. See the
 - Only data supplied by jurisdictions will be posted publicly
 
 *NOTE: Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.*
+<br>
+<br>
 
 
 ## Contributing
 
 We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+<br>
+<br>
 
 
 This project is licensed under the GNU General Public License v3.0 or later. See [LICENSE](LICENSE) for details.
