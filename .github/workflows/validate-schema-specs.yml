@@ -35,7 +35,7 @@ jobs:
           echo "validation_passed=$EXIT_CODE" >> $GITHUB_OUTPUT
           exit 0
       
-      - name: Update markdown if validation failed
+      - name: Update markdown and data dictionary if validation failed
         if: steps.validate.outputs.validation_passed != '0'
         run: |
           python3 scripts/validate_schema_specs.py --update
@@ -54,8 +54,8 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add guides/DATA-TECHNICAL-SPECS.md
-          git commit -m "Auto-update DATA-TECHNICAL-SPECS.md from schema"
+          git add guides/DATA-TECHNICAL-SPECS.md examples-and-templates/disease_tracking_data_dictionary.csv
+          git commit -m "Auto-update DATA-TECHNICAL-SPECS.md and data_dictionary.csv from schema"
           git push
       
       - name: Run validation again to ensure success

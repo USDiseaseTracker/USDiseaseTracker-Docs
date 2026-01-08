@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 """
-Validate that DATA-TECHNICAL-SPECS.md matches data_reporting_schema.json
-and optionally update the markdown from the schema.
+Validate that DATA-TECHNICAL-SPECS.md and data dictionary match data_reporting_schema.json.
+The JSON schema is the source of truth. Can optionally update markdown and data dictionary
+from the schema.
 """
 
+import csv
 import json
 import re
 import sys
 from pathlib import Path
-from typing import Dict, List, Tuple, Any
+from typing import Dict, List, Tuple, Any, Set
 
 
 def load_schema(schema_path: Path) -> Dict[str, Any]:
@@ -21,6 +23,58 @@ def load_markdown(md_path: Path) -> str:
     """Load the markdown specifications file."""
     with open(md_path, 'r') as f:
         return f.read()
+
+
+def load_data_dictionary(csv_path: Path) -> Dict[str, Dict[str, str]]:
+    """Load the data dictionary CSV file."""
+    data_dict = {}
+    # Try different encodings
+    for encoding in ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1']:
+        try:
+            with open(csv_path, 'r', encoding=encoding) as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    if row.get('Field Name'):
+                        data_dict[row['Field Name']] = {
+                            'data_type': row.get('Data Type', ''),
+                            'values': row.get('Values/Format', ''),
+                            'validated': row.get('Validated (format sensitive)*', ''),
+                            'description': row.get('Description', '')
+                        }
+            break
+        except UnicodeDecodeError:
+            if encoding == 'iso-8859-1':
+                raise
+            continue
+    return data_dict
+
+
+def parse_csv_values(values_str: str) -> Set[str]:
+    """Parse comma-separated values from CSV, handling quoted values."""
+    if not values_str or values_str.strip() == 'n':
+        return set()
+    
+    values_str = values_str.strip()
+    values = []
+    
+    # Use regex to find all quoted values (handles both regular and smart quotes)
+    # Pattern: any opening quote, capture content, any closing quote
+    quoted_pattern = r'[""\"]([^""\"]+)[""\"]'
+    quoted_matches = re.findall(quoted_pattern, values_str)
+    
+    # Also look for unquoted NA (not preceded or followed by quotes)
+    if 'NA' in values_str:
+        # Check if NA is not inside any kind of quotes
+        if re.search(r'(?<!["""])NA(?!["""])', values_str):
+            quoted_matches.append('NA')
+    
+    if quoted_matches:
+        values = quoted_matches
+    else:
+        # Fallback to simple comma split
+        values = [v.strip().strip('"').strip('"').strip('"') for v in values_str.split(',')]
+    
+    return set(v for v in values if v and v.strip())
 
 
 def extract_enum_from_schema(schema: Dict, field_name: str) -> List[str]:
@@ -177,6 +231,78 @@ def check_required_fields(schema: Dict, markdown: str) -> Tuple[bool, str]:
     return True, "Required fields match"
 
 
+def check_data_dict_age_groups(schema: Dict, data_dict: Dict) -> Tuple[bool, str]:
+    """Check if age group values in data dictionary match schema."""
+    schema_age_groups = set(extract_enum_from_schema(schema, 'age_group'))
+    
+    age_group_entry = data_dict.get('age_group', {})
+    dict_values_str = age_group_entry.get('values', '')
+    dict_age_groups = parse_csv_values(dict_values_str)
+    
+    if schema_age_groups != dict_age_groups:
+        missing_in_dict = schema_age_groups - dict_age_groups
+        missing_in_schema = dict_age_groups - schema_age_groups
+        msg = "Data dictionary age groups mismatch:\n"
+        if missing_in_dict:
+            msg += f"  In schema but not in data dictionary: {sorted(missing_in_dict)}\n"
+        if missing_in_schema:
+            msg += f"  In data dictionary but not in schema: {sorted(missing_in_schema)}\n"
+        return False, msg
+    
+    return True, "Data dictionary age groups match"
+
+
+def check_data_dict_disease_subtype(schema: Dict, data_dict: Dict) -> Tuple[bool, str]:
+    """Check disease subtype values in data dictionary."""
+    allOf = schema.get('items', {}).get('allOf', [])
+    schema_subtypes = set()
+    
+    for condition in allOf:
+        if 'oneOf' in condition:
+            for option in condition['oneOf']:
+                props = option.get('properties', {})
+                if 'disease_subtype' in props:
+                    subtype_enum = props['disease_subtype'].get('enum', [])
+                    schema_subtypes.update(subtype_enum)
+    
+    disease_subtype_entry = data_dict.get('disease_subtype', {})
+    dict_values_str = disease_subtype_entry.get('values', '')
+    dict_subtypes = parse_csv_values(dict_values_str)
+    
+    if schema_subtypes != dict_subtypes:
+        missing_in_dict = schema_subtypes - dict_subtypes
+        missing_in_schema = dict_subtypes - schema_subtypes
+        msg = "Data dictionary disease subtype values mismatch:\n"
+        if missing_in_dict:
+            msg += f"  In schema but not in data dictionary: {sorted(missing_in_dict)}\n"
+        if missing_in_schema:
+            msg += f"  In data dictionary but not in schema: {sorted(missing_in_schema)}\n"
+        return False, msg
+    
+    return True, "Data dictionary disease subtype values match"
+
+
+def check_data_dict_geo_unit(schema: Dict, data_dict: Dict) -> Tuple[bool, str]:
+    """Check geo_unit values in data dictionary."""
+    schema_geo_units = set(extract_enum_from_schema(schema, 'geo_unit'))
+    
+    geo_unit_entry = data_dict.get('geo_unit', {})
+    dict_values_str = geo_unit_entry.get('values', '')
+    dict_geo_units = parse_csv_values(dict_values_str)
+    
+    if schema_geo_units != dict_geo_units:
+        missing_in_dict = schema_geo_units - dict_geo_units
+        missing_in_schema = dict_geo_units - schema_geo_units
+        msg = "Data dictionary geo_unit values mismatch:\n"
+        if missing_in_dict:
+            msg += f"  In schema but not in data dictionary: {sorted(missing_in_dict)}\n"
+        if missing_in_schema:
+            msg += f"  In data dictionary but not in schema: {sorted(missing_in_schema)}\n"
+        return False, msg
+    
+    return True, "Data dictionary geo_unit values match"
+
+
 def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) -> str:
     """Update markdown to match schema."""
     updated = markdown
@@ -197,7 +323,8 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         '45-64 y': 'From 45 year birthday up to but not including 65 year birthday',
         '>=65 y': 'From 65 year birthday and older',
         'total': 'All ages combined',
-        'unknown': 'Age unknown'
+        'unknown': 'Age unknown',
+        'unspecified': 'Age known but suppressed'
     }
     
     age_table = "| Value | Description |\n|-------|-------------|\n"
@@ -248,11 +375,74 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     return updated
 
 
+def format_csv_values(values: List[str]) -> str:
+    """Format values for CSV with proper quoting (quote all except NA)."""
+    return ', '.join([f'"{v}"' if v != 'NA' else v for v in values])
+
+
+def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
+    """Update data dictionary CSV file to match schema."""
+    # Read the CSV file with proper encoding
+    rows = []
+    encoding = None
+    for enc in ['utf-8', 'latin-1', 'cp1252', 'iso-8859-1']:
+        try:
+            with open(dict_path, 'r', encoding=enc, newline='') as f:
+                reader = csv.DictReader(f)
+                rows = list(reader)
+                encoding = enc
+                break
+        except UnicodeDecodeError:
+            if enc == 'iso-8859-1':
+                raise
+            continue
+    
+    if not rows:
+        print(f"Warning: No rows found in {dict_path}")
+        return
+    
+    # Get schema values
+    schema_age_groups = extract_enum_from_schema(schema, 'age_group')
+    schema_geo_units = extract_enum_from_schema(schema, 'geo_unit')
+    
+    # Get disease subtypes from schema
+    allOf = schema.get('items', {}).get('allOf', [])
+    schema_subtypes = set()
+    for condition in allOf:
+        if 'oneOf' in condition:
+            for option in condition['oneOf']:
+                props = option.get('properties', {})
+                if 'disease_subtype' in props:
+                    subtype_enum = props['disease_subtype'].get('enum', [])
+                    schema_subtypes.update(subtype_enum)
+    
+    # Update rows
+    for row in rows:
+        field_name = row.get('Field Name', '')
+        
+        if field_name == 'age_group':
+            row['Values/Format'] = format_csv_values(schema_age_groups)
+        
+        elif field_name == 'geo_unit':
+            row['Values/Format'] = format_csv_values(schema_geo_units)
+        
+        elif field_name == 'disease_subtype':
+            row['Values/Format'] = format_csv_values(sorted(schema_subtypes))
+    
+    # Write back to CSV in UTF-8 encoding
+    with open(dict_path, 'w', encoding='utf-8', newline='') as f:
+        fieldnames = list(rows[0].keys())
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(rows)
+
+
 def main():
     """Main validation function."""
     repo_root = Path(__file__).parent.parent
     schema_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.json'
     md_path = repo_root / 'guides' / 'DATA-TECHNICAL-SPECS.md'
+    dict_path = repo_root / 'examples-and-templates' / 'disease_tracking_data_dictionary.csv'
     
     if not schema_path.exists():
         print(f"Error: Schema file not found at {schema_path}")
@@ -262,23 +452,43 @@ def main():
         print(f"Error: Markdown file not found at {md_path}")
         sys.exit(1)
     
+    if not dict_path.exists():
+        print(f"Error: Data dictionary file not found at {dict_path}")
+        sys.exit(1)
+    
     schema = load_schema(schema_path)
     markdown = load_markdown(md_path)
+    data_dict = load_data_dictionary(dict_path)
     
-    print("Validating schema matches markdown specifications...\n")
+    print("Validating that markdown and data dictionary match schema (schema is source of truth)...\n")
     
-    checks = [
-        ("Age groups", check_age_groups),
-        ("Disease subtype values", check_disease_subtype),
-        ("Geo unit values", check_geo_unit),
-        ("Required fields", check_required_fields),
+    markdown_checks = [
+        ("Markdown: Age groups", lambda s, m: check_age_groups(s, m)),
+        ("Markdown: Disease subtype values", lambda s, m: check_disease_subtype(s, m)),
+        ("Markdown: Geo unit values", lambda s, m: check_geo_unit(s, m)),
+        ("Markdown: Required fields", lambda s, m: check_required_fields(s, m)),
+    ]
+    
+    data_dict_checks = [
+        ("Data Dictionary: Age groups", lambda s, d: check_data_dict_age_groups(s, d)),
+        ("Data Dictionary: Disease subtype values", lambda s, d: check_data_dict_disease_subtype(s, d)),
+        ("Data Dictionary: Geo unit values", lambda s, d: check_data_dict_geo_unit(s, d)),
     ]
     
     all_passed = True
     failed_checks = []
     
-    for check_name, check_func in checks:
+    for check_name, check_func in markdown_checks:
         passed, message = check_func(schema, markdown)
+        status = "✓ PASS" if passed else "✗ FAIL"
+        print(f"{status}: {check_name}")
+        if not passed:
+            print(f"  {message}")
+            all_passed = False
+            failed_checks.append(check_name)
+    
+    for check_name, check_func in data_dict_checks:
+        passed, message = check_func(schema, data_dict)
         status = "✓ PASS" if passed else "✗ FAIL"
         print(f"{status}: {check_name}")
         if not passed:
@@ -292,16 +502,19 @@ def main():
     else:
         print(f"\n✗ {len(failed_checks)} check(s) failed")
         
-        # Check if we should update the markdown
+        # Check if we should update the markdown and data dictionary
         if '--update' in sys.argv:
-            print("\nUpdating markdown from schema...")
+            print("\nUpdating markdown and data dictionary from schema...")
             updated_markdown = update_markdown_from_schema(schema, markdown, schema_path)
             with open(md_path, 'w') as f:
                 f.write(updated_markdown)
             print(f"✓ Updated {md_path}")
+            
+            update_data_dictionary_from_schema(schema, dict_path)
+            print(f"✓ Updated {dict_path}")
             sys.exit(0)
         else:
-            print("\nRun with --update flag to automatically update the markdown from schema")
+            print("\nRun with --update flag to automatically update markdown and data dictionary from schema")
             sys.exit(1)
 
 
