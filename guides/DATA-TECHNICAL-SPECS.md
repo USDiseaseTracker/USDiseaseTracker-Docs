@@ -47,7 +47,7 @@ The following table provides a comprehensive overview of all data fields require
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
 | age_group | String | Age group of cases | `0-5 m`, `6-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `Y`, `unknown`, `unspecified`, `NA` | Yes |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `Y`, `unknown`, `unspecified` | Yes |
 
 **Key Notes:**
 - **Time Period:** Use MMWR week boundaries for weekly reporting, MMWR week-to-month crosswalk for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
@@ -149,7 +149,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `Y`, `unknown`, `unspecified`, `NA` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `Y`, `unknown`, `unspecified` |
 
 **Notes:**
 - Use for meningococcal disease serogroup reporting
