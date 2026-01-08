@@ -22,7 +22,7 @@ This document provides the complete technical specifications for disease trackin
 ### Contents
 
 - [Data Structure](#data-structure) - Field summary and data organization requirements
-- [Required Fields](#required-fields) - Detailed specifications for all required fields including time period, disease, geographic, count, demographic, and disease-specific fields
+- [Field Specifications](#field-specifications) - Detailed specifications for all required and optional fields
 - [Validation](#validation) - Data validation requirements
 - [Example Data](#example-data) - Sample files and templates
 - [Metadata Requirements](#metadata-requirements) - Required accompanying metadata
@@ -72,7 +72,7 @@ The following table provides a comprehensive overview of all data fields require
 
 Only include rows with non-zero counts. The system will automatically infer zeros for missing combinations at higher aggregation levels.
 
-## Required Fields
+## Fields Specifications
 
 ### Time Period Fields
 
