@@ -19,6 +19,17 @@ This document provides the complete technical specifications for disease trackin
 
 **Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
 
+### Contents
+
+- [Data Structure](#data-structure) - Field summary and data organization requirements
+- [Required Fields](#required-fields) - Detailed specifications for all required fields including time period, disease, geographic, count, demographic, and disease-specific fields
+- [Validation](#validation) - Data validation requirements
+- [Example Data](#example-data) - Sample files and templates
+- [Metadata Requirements](#metadata-requirements) - Required accompanying metadata
+- [Version History](#version-history) - Document version tracking
+- [References](#references) - Related documentation and resources
+- [Questions](#questions) - How to get help
+
 ## Data Structure
 
 Data should be submitted in CSV format with one row per unique combination of:
