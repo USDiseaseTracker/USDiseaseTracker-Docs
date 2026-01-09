@@ -199,7 +199,7 @@ Examples:
 Jurisdictions should provide accompanying metadata including:
 
 1. **Date Classification Method**
-   - If using CCCD, indicate "CCCD"
+   - If using CCCD, indicate "cccd"
    - If using custom hierarchy, provide detailed description
 
 2. **Geographic Units**
