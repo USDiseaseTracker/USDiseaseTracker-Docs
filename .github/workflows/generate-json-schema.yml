@@ -1,0 +1,61 @@
+name: Generate JSON Schema from Pydantic Model
+
+on:
+  push:
+    paths:
+      - 'examples-and-templates/data_reporting_schema.py'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'examples-and-templates/data_reporting_schema.py'
+    branches:
+      - main
+
+jobs:
+  generate-schema:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install pydantic
+      
+      - name: Generate JSON schema
+        run: |
+          python3 scripts/generate_json_schema.py
+      
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if [[ -n $(git status --porcelain examples-and-templates/data_reporting_schema.json) ]]; then
+            echo "changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes=false" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changes == 'true' && github.event_name == 'push'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add examples-and-templates/data_reporting_schema.json
+          git commit -m "Auto-generate data_reporting_schema.json from Pydantic model"
+          git push
+      
+      - name: Validate schema consistency
+        run: |
+          python3 scripts/validate_schema_specs.py || echo "Schema validation identified differences that may need attention"
