@@ -64,7 +64,7 @@ jobs:
             BRANCH="${{ github.ref_name }}"
           fi
           
-          git push origin HEAD:$BRANCH
+          git push origin HEAD:"$BRANCH"
       
       - name: Run validation again to ensure success
         if: steps.check_changes.outputs.changes == 'true'
