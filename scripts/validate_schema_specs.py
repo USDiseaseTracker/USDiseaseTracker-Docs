@@ -303,6 +303,54 @@ def check_data_dict_geo_unit(schema: Dict, data_dict: Dict) -> Tuple[bool, str]:
     return True, "Data dictionary geo_unit values match"
 
 
+def check_enum_field(schema: Dict, markdown: str, field_name: str) -> Tuple[bool, str]:
+    """Check if enum values for a field match between schema and markdown."""
+    schema_values = set(extract_enum_from_schema(schema, field_name))
+    
+    # Extract from markdown field summary table
+    field_summary = extract_field_summary_table(markdown)
+    field_info = field_summary.get(field_name, {})
+    valid_values = field_info.get('valid_values', '')
+    
+    # Parse the valid values from markdown (e.g., `value1`, `value2`, etc.)
+    md_values = set()
+    for match in re.findall(r'`([^`]+)`', valid_values):
+        md_values.add(match)
+    
+    if schema_values != md_values:
+        missing_in_md = schema_values - md_values
+        missing_in_schema = md_values - schema_values
+        msg = f"{field_name} values mismatch:\n"
+        if missing_in_md:
+            msg += f"  In schema but not in markdown: {sorted(missing_in_md)}\n"
+        if missing_in_schema:
+            msg += f"  In markdown but not in schema: {sorted(missing_in_schema)}\n"
+        return False, msg
+    
+    return True, f"{field_name} values match"
+
+
+def check_data_dict_enum_field(schema: Dict, data_dict: Dict, field_name: str) -> Tuple[bool, str]:
+    """Check if enum values for a field match between schema and data dictionary."""
+    schema_values = set(extract_enum_from_schema(schema, field_name))
+    
+    field_entry = data_dict.get(field_name, {})
+    dict_values_str = field_entry.get('values', '')
+    dict_values = parse_csv_values(dict_values_str)
+    
+    if schema_values != dict_values:
+        missing_in_dict = schema_values - dict_values
+        missing_in_schema = dict_values - schema_values
+        msg = f"Data dictionary {field_name} values mismatch:\n"
+        if missing_in_dict:
+            msg += f"  In schema but not in data dictionary: {sorted(missing_in_dict)}\n"
+        if missing_in_schema:
+            msg += f"  In data dictionary but not in schema: {sorted(missing_in_schema)}\n"
+        return False, msg
+    
+    return True, f"Data dictionary {field_name} values match"
+
+
 def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) -> str:
     """Update markdown to match schema."""
     updated = markdown
@@ -353,6 +401,10 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     schema_geo_units = extract_enum_from_schema(schema, 'geo_unit')
     geo_unit_values = ', '.join([f'`{v}`' for v in schema_geo_units])
     
+    # Update outcome in field summary table
+    schema_outcomes = extract_enum_from_schema(schema, 'outcome')
+    outcome_values = ', '.join([f'`{v}`' for v in schema_outcomes])
+    
     # Update the field summary table
     def replace_field_value(field_name: str, new_values: str) -> None:
         nonlocal updated
@@ -362,6 +414,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     
     replace_field_value('disease_subtype', subtype_values)
     replace_field_value('geo_unit', geo_unit_values)
+    replace_field_value('outcome', outcome_values)
     
     # Update the detailed field tables as well
     # Update disease_subtype in Disease-Specific Fields table
@@ -371,6 +424,10 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     # Update geo_unit in Geographic Fields table
     detailed_geo_pattern = r'(\| geo_unit \| String \| Type of geographic unit \| )([^|]+)( \|)'
     updated = re.sub(detailed_geo_pattern, r'\1' + geo_unit_values + r'\3', updated)
+    
+    # Update outcome in Disease Fields table
+    detailed_outcome_pattern = r'(\| outcome \| String \| Type of outcome being reported \| )([^|]+)( \|)'
+    updated = re.sub(detailed_outcome_pattern, r'\1' + outcome_values + r'\3', updated)
     
     return updated
 
@@ -467,12 +524,26 @@ def main():
         ("Markdown: Disease subtype values", lambda s, m: check_disease_subtype(s, m)),
         ("Markdown: Geo unit values", lambda s, m: check_geo_unit(s, m)),
         ("Markdown: Required fields", lambda s, m: check_required_fields(s, m)),
+        ("Markdown: outcome values", lambda s, m: check_enum_field(s, m, 'outcome')),
+        ("Markdown: date_type values", lambda s, m: check_enum_field(s, m, 'date_type')),
+        ("Markdown: time_unit values", lambda s, m: check_enum_field(s, m, 'time_unit')),
+        ("Markdown: disease_name values", lambda s, m: check_enum_field(s, m, 'disease_name')),
+        ("Markdown: confirmation_status values", lambda s, m: check_enum_field(s, m, 'confirmation_status')),
+        # Note: 'state' field is not validated in markdown as it's documented generically
+        # as "Two-letter state/territory code" for readability rather than listing all 56 codes.
+        # The data dictionary contains the full enumeration and is validated below.
     ]
     
     data_dict_checks = [
         ("Data Dictionary: Age groups", lambda s, d: check_data_dict_age_groups(s, d)),
         ("Data Dictionary: Disease subtype values", lambda s, d: check_data_dict_disease_subtype(s, d)),
         ("Data Dictionary: Geo unit values", lambda s, d: check_data_dict_geo_unit(s, d)),
+        ("Data Dictionary: outcome values", lambda s, d: check_data_dict_enum_field(s, d, 'outcome')),
+        ("Data Dictionary: date_type values", lambda s, d: check_data_dict_enum_field(s, d, 'date_type')),
+        ("Data Dictionary: time_unit values", lambda s, d: check_data_dict_enum_field(s, d, 'time_unit')),
+        ("Data Dictionary: disease_name values", lambda s, d: check_data_dict_enum_field(s, d, 'disease_name')),
+        ("Data Dictionary: confirmation_status values", lambda s, d: check_data_dict_enum_field(s, d, 'confirmation_status')),
+        ("Data Dictionary: state values", lambda s, d: check_data_dict_enum_field(s, d, 'state')),
     ]
     
     all_passed = True
