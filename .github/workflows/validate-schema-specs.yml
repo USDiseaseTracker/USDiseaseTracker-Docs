@@ -56,7 +56,15 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add guides/DATA-TECHNICAL-SPECS.md examples-and-templates/disease_tracking_data_dictionary.csv
           git commit -m "Auto-update DATA-TECHNICAL-SPECS.md and data_dictionary.csv from schema"
-          git push
+          
+          # Determine the target branch
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BRANCH="${{ github.head_ref }}"
+          else
+            BRANCH="${{ github.ref_name }}"
+          fi
+          
+          git push origin HEAD:"$BRANCH"
       
       - name: Run validation again to ensure success
         if: steps.check_changes.outputs.changes == 'true'
