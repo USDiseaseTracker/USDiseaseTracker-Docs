@@ -21,7 +21,7 @@
                     "cccd",
                     "jurisdiction date hierarchy"
                 ],
-                "description": "Calculated Case Counting Date (cccd) or juridiction-defined date hierarchy. Details of juridiction date hierarchy should be provided in metadata."
+                "description": "Calculated Case Counting Date (cccd) or jurisdiction-defined date hierarchy. Details of jurisdiction date hierarchy should be provided in metadata."
             },
             "time_unit": {
                 "type": "string",

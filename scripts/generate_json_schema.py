@@ -10,6 +10,7 @@ data_reporting_schema.json structure.
 import json
 import sys
 from pathlib import Path
+from pydantic_core import PydanticUndefined
 
 # Add the examples-and-templates directory to the path so we can import the schema
 sys.path.insert(0, str(Path(__file__).parent.parent / 'examples-and-templates'))
@@ -53,7 +54,7 @@ def generate_json_schema():
     properties["date_type"] = {
         "type": "string",
         "enum": get_enum_values(fields["date_type"]),
-        "description": "Calculated Case Counting Date (cccd) or juridiction-defined date hierarchy. Details of juridiction date hierarchy should be provided in metadata."
+        "description": "Calculated Case Counting Date (cccd) or jurisdiction-defined date hierarchy. Details of jurisdiction date hierarchy should be provided in metadata."
     }
     
     # time_unit
@@ -209,7 +210,7 @@ def generate_json_schema():
     # Get required fields from the model
     required_fields = [
         field_name for field_name, field_info in fields.items()
-        if field_info.is_required()
+        if field_info.is_required() or field_info.default is PydanticUndefined
     ]
     
     # Build the complete JSON schema
