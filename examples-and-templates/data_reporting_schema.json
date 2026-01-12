@@ -164,7 +164,7 @@
                     {
                         "properties": {
                             "disease_name": { "const": "meningococcus" },
-                            "disease_subtype": { "enum": ["A", "B", "C", "W", "Y", "unknown", "unspecified","NA"] }
+                            "disease_subtype": { "enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "NA"] }
                         }
                     },
                     {
