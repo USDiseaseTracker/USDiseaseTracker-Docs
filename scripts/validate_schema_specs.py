@@ -529,6 +529,9 @@ def main():
         ("Markdown: time_unit values", lambda s, m: check_enum_field(s, m, 'time_unit')),
         ("Markdown: disease_name values", lambda s, m: check_enum_field(s, m, 'disease_name')),
         ("Markdown: confirmation_status values", lambda s, m: check_enum_field(s, m, 'confirmation_status')),
+        # Note: 'state' field is not validated in markdown as it's documented generically
+        # as "Two-letter state/territory code" for readability rather than listing all 56 codes.
+        # The data dictionary contains the full enumeration and is validated below.
     ]
     
     data_dict_checks = [
