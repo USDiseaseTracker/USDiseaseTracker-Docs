@@ -27,11 +27,11 @@ The goal of this project is establish the processes, standards, data formats and
 
 **Current Diseases Collected:**
 
-| Disease | Time Aggregation | Confirmation Status |
-|---------|------------------|---------------------|
-| Measles | Weekly + Monthly | Confirmed only |
-| Pertussis | Monthly | Confirmed and probable |
-| Invasive Meningococcal Disease | Monthly | Confirmed and probable |
+| Disease | Time Aggregation | Confirmation Status | Outcomes |
+|---------|------------------|---------------------|----------|
+| Measles | Weekly + Monthly | Confirmed only | Cases |
+| Pertussis | Monthly | Confirmed and probable | Cases |
+| Invasive Meningococcal Disease | Monthly | Confirmed and probable | Cases |
 
 **Guides and Specifications**
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
