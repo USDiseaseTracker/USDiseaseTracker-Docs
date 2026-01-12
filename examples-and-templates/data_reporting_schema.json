@@ -17,17 +17,28 @@
             },
             "date_type": {
                 "type": "string",
-                "enum": ["cccd", "jurisdiction date hierarchy"],
+                "enum": [
+                    "cccd",
+                    "jurisdiction date hierarchy"
+                ],
                 "description": "Calculated Case Counting Date (cccd) or juridiction-defined date hierarchy. Details of juridiction date hierarchy should be provided in metadata."
             },
             "time_unit": {
                 "type": "string",
-                "enum": ["week", "month", "ytd"],
+                "enum": [
+                    "week",
+                    "month",
+                    "ytd"
+                ],
                 "description": "Time aggregation unit"
             },
             "disease_name": {
                 "type": "string",
-                "enum": ["measles", "pertussis", "meningococcus"],
+                "enum": [
+                    "measles",
+                    "pertussis",
+                    "meningococcus"
+                ],
                 "description": "Name of the disease"
             },
             "disease_subtype": {
@@ -41,18 +52,63 @@
             "state": {
                 "type": "string",
                 "enum": [
-                    "AL", "AK", "AZ", "AR", "AS",
-                    "CA", "CO", "CT", "DE", "DC",
-                    "FL", "GA", "GU", "HI", "ID",
-                    "IL", "IN", "IA", "KS", "KY",
-                    "LA", "ME", "MD", "MA", "MI",
-                    "MN", "MS", "MO", "MT", "NE",
-                    "NV", "NH", "NJ", "NM", "NY",
-                    "NC", "ND", "MP", "OH", "OK",
-                    "OR", "PA", "PR", "RI", "SC",
-                    "SD", "TN", "TX", "TT", "UT",
-                    "VT", "VA", "VI", "WA", "WV",
-                    "WI", "WY"
+                    "AL",
+                    "AK",
+                    "AZ",
+                    "AR",
+                    "AS",
+                    "CA",
+                    "CO",
+                    "CT",
+                    "DE",
+                    "DC",
+                    "FL",
+                    "GA",
+                    "GU",
+                    "HI",
+                    "ID",
+                    "IL",
+                    "IN",
+                    "IA",
+                    "KS",
+                    "KY",
+                    "LA",
+                    "ME",
+                    "MD",
+                    "MA",
+                    "MI",
+                    "MN",
+                    "MS",
+                    "MO",
+                    "MT",
+                    "NE",
+                    "NV",
+                    "NH",
+                    "NJ",
+                    "NM",
+                    "NY",
+                    "NC",
+                    "ND",
+                    "MP",
+                    "OH",
+                    "OK",
+                    "OR",
+                    "PA",
+                    "PR",
+                    "RI",
+                    "SC",
+                    "SD",
+                    "TN",
+                    "TX",
+                    "TT",
+                    "UT",
+                    "VT",
+                    "VA",
+                    "VI",
+                    "WA",
+                    "WV",
+                    "WI",
+                    "WY"
                 ],
                 "description": "2-letter abbreviation for the state of the jurisdiction"
             },
@@ -62,7 +118,14 @@
             },
             "geo_unit": {
                 "type": "string",
-                "enum": ["state", "county", "region", "planning area", "hsa", "NA"],
+                "enum": [
+                    "county",
+                    "state",
+                    "region",
+                    "planning area",
+                    "hsa",
+                    "NA"
+                ],
                 "description": "Geographic unit"
             },
             "age_group": {
@@ -85,12 +148,19 @@
             },
             "confirmation_status": {
                 "type": "string",
-                "enum": ["confirmed", "confirmed and probable"],
+                "enum": [
+                    "confirmed",
+                    "confirmed and probable"
+                ],
                 "description": "Case classification status"
             },
             "outcome": {
                 "type": "string",
-                "enum": ["cases", "hospitalizations", "deaths"],
+                "enum": [
+                    "cases",
+                    "hospitalizations",
+                    "deaths"
+                ],
                 "description": "Reported outcome type"
             },
             "count": {
@@ -100,11 +170,11 @@
             }
         },
         "required": [
+            "disease_name",
             "report_period_start",
             "report_period_end",
             "date_type",
             "time_unit",
-            "disease_name",
             "disease_subtype",
             "reporting_jurisdiction",
             "state",
@@ -121,26 +191,47 @@
                 "oneOf": [
                     {
                         "properties": {
-                            "disease_name": { "const": "measles" },
-                            "time_unit": { "enum": ["week", "month"] }
+                            "disease_name": {
+                                "const": "measles"
+                            },
+                            "time_unit": {
+                                "enum": [
+                                    "week",
+                                    "month"
+                                ]
+                            }
                         }
                     },
                     {
                         "properties": {
-                            "disease_name": { "const": "pertussis" },
-                            "time_unit": { "const": "month" }
+                            "disease_name": {
+                                "const": "pertussis"
+                            },
+                            "time_unit": {
+                                "const": "month"
+                            }
                         }
                     },
                     {
                         "properties": {
-                            "disease_name": { "const": "meningococcus" },
-                            "time_unit": { "const": "month" }
+                            "disease_name": {
+                                "const": "meningococcus"
+                            },
+                            "time_unit": {
+                                "const": "month"
+                            }
                         }
                     }
                 ]
             },
             {
-                "if": { "properties": { "time_unit": { "const": "month" } } },
+                "if": {
+                    "properties": {
+                        "time_unit": {
+                            "const": "month"
+                        }
+                    }
+                },
                 "then": {
                     "properties": {
                         "report_period_start": {
@@ -150,7 +241,13 @@
                 }
             },
             {
-                "if": { "properties": { "time_unit": { "const": "week" } } },
+                "if": {
+                    "properties": {
+                        "time_unit": {
+                            "const": "week"
+                        }
+                    }
+                },
                 "then": {
                     "properties": {
                         "report_period_start": {
@@ -163,20 +260,49 @@
                 "oneOf": [
                     {
                         "properties": {
-                            "disease_name": { "const": "meningococcus" },
-                            "disease_subtype": { "enum": ["A", "B", "C", "W", "Y", "unknown", "unspecified","NA"] }
+                            "disease_name": {
+                                "const": "meningococcus"
+                            },
+                            "disease_subtype": {
+                                "enum": [
+                                    "A",
+                                    "B",
+                                    "C",
+                                    "W",
+                                    "X",
+                                    "Y",
+                                    "Z",
+                                    "unknown",
+                                    "unspecified",
+                                    "NA"
+                                ]
+                            }
                         }
                     },
                     {
                         "properties": {
-                            "disease_name": { "const": "measles" },
-                            "disease_subtype": { "enum": ["NA", "unknown"] }
+                            "disease_name": {
+                                "const": "measles"
+                            },
+                            "disease_subtype": {
+                                "enum": [
+                                    "NA",
+                                    "unknown"
+                                ]
+                            }
                         }
                     },
                     {
                         "properties": {
-                            "disease_name": { "const": "pertussis" },
-                            "disease_subtype": { "enum": ["NA", "unknown"] }
+                            "disease_name": {
+                                "const": "pertussis"
+                            },
+                            "disease_subtype": {
+                                "enum": [
+                                    "NA",
+                                    "unknown"
+                                ]
+                            }
                         }
                     }
                 ]
