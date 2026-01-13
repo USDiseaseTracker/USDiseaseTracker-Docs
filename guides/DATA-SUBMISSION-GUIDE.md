@@ -54,7 +54,7 @@ Required confirmation status by disease:
 
 ### Required Data Aggregations
 
-Each aggregation stream should provide complete data from December 29, 2024 through the present.
+Each aggregation stream should provide complete data from December 29, 2024 through the present. See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods.
 
 #### Measles (confirmed only)
 - Cases × week × jurisdiction (state, DC, NYC, or territory)
