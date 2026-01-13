@@ -85,12 +85,12 @@ Weekly reports can follow one of two formats. In both formats, all diseases and 
 1. **Continuously Updated Report**
    - Includes a refresh of all historic weekly and monthly data
    - Includes the new week's data for <u>current week and month for weekly reported diseases</u>
-   - Includes the new week's data for <u>current month for monthly reported diseases</u>
+   - Includes the new week's data <u> added to current month for monthly reported diseases</u>
 
 2. **Reporting Period Updated Report** - Full report once per month, with interim weekly reports
    - Includes a refresh of all <u>prior</u> historic weekly and monthly data
    - Includes the new week's data for <u>current week and month for weekly reported diseases</u> (must update both so totals match)
-   - <u>Does not</u> include the new week's data for <u>current month for monthly reported diseases</u>
+   - <u>Does not</u> include the new week's data <u>added to current month for monthly reported diseases</u>
    - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
@@ -98,7 +98,7 @@ Weekly reports can follow one of two formats. In both formats, all diseases and 
 
 ### Case Classification by Time
 
-Cases should be classified according to a hierarchical date algorithm. 
+Cases should be classified in time according to a hierarchical date algorithm. 
 
 **Recommended:** Use the **Calculated Case Counting Date (CCCD)** ([CSTE Data Standardization Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)).
 
@@ -112,7 +112,7 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 
 **Alternative:** If CCCD is not implemented, use a similar hierarchical algorithm or an existing case classification date such as Event Date in your system.
 
-**Required:** Provide metadata on the algorithm used for each jurisdiction.
+**Required:** Provide metadata on the algorithm used by your jurisdiction.
 
 #### Time Period Assignment
 
@@ -124,7 +124,7 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 
 ### Data Lags and Incompleteness
 
-- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable
+- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probablem, and are ready for public release
 - Data from recent weeks/months may be incomplete
 - The project team will clearly indicate provisional data through:
   - Dashed lines on epidemic curves
@@ -192,7 +192,7 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 
 ### International Residents
 
-International residents (international travelers who are not residents of the reporting jurisdiction but were identified in that jurisdiction) can be included in reported data but should be:
+International residents (residents of countries outside the US but who had a case identified in that jursidiction) can be included in reported data but should be:
 
 - Designated as "international resident" using:
   - `geo_name = "international resident"`
@@ -225,14 +225,15 @@ To ensure total counts add to 100% of cases:
 
 For measles, the project team recommends **not suppressing data** as a default and releasing any cases that have already been publicly released. This is to ensure comparability with counts being produced through various "web-scraping" efforts that exist, which often capture cases reported individually through press releases. Individual requests to suppress data can be discussed with the project team.
 <br>
+<br>
 
 ## Data Format
 <br>
 
 ### No Zero Reporting
-
-- Report only non-zero counts
-- If a jurisdiction or age group had no reported outcome during a timeframe, no entry is required
+- Report only non-zero counts (i.e., do not include rows in data where the count equals 0)
+- For example, if an age group had no reported outcome during a timeframe, no entry is required (e.g., if age group >= 65 has 0 cases of measles for that week for a state, do *not* include a row with `count = 0` for `age_group = ">=65"`)
+- If a jurisdiction had no reported counts of any disease or outcome during a timeframe, they should still submit the data, even if it has no new additional rows since the prior week's submission. This will enable us to limit missingness and uncertainty in the data.
 - The database system will automatically add 0s at higher spatial aggregations
 <br>
 
@@ -246,13 +247,13 @@ Data should be submitted in CSV format following the standard template structure
 
 **File Submission Requirements:**
 - Submit a file with all incident disease counts since December 29, 2024
-- Add new rows each week/month for new cases
+- Each submission should include all updates to current and prior data, with new rows for new time periods
 - Files will be date-stamped by the system for version control
 - Changes to prior observation counts will be taken as revisions
 
 **File Naming:** Jurisdictions should name files following the pattern:
 ```
-disease_tracking_report_{state}_{report_date}.csv
+disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 Example: `disease_tracking_report_WA_2025-09-30.csv`
 
@@ -263,8 +264,8 @@ See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on d
 
 Jurisdictions should provide metadata including:
 
-- Date classification algorithm used (CCCD or alternative)
-- List of geographic units used for reporting
+- Algorithm used to classify cases in time (e.g., CCCD or alternative)
+- List of substate geographic units used by jurisdiction
 - Data suppression policies and rules
 - Any jurisdiction-specific notes or caveats
 <br>
@@ -283,8 +284,7 @@ All submitted data must meet validation requirements to ensure data quality and 
 - [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) - Complete field definitions and valid value sets
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](VALIDATION.md) - Comprehensive validation requirements
-- [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - External reference with detailed specifications
-
+  
 Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) describes what happens when validation succeeds or fails.
 <br>
 
