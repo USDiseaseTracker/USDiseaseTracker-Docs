@@ -12,7 +12,7 @@ The goal of the US Disease Tracker project is to provide consolidated epidemiolo
 <br>
 <br>
 
-
+### This repository
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 <br>
 
