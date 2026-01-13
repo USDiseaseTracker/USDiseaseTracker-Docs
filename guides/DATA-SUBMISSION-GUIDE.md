@@ -42,7 +42,7 @@ This guide provides detailed specifications for state, tribal, local, and territ
 
 ### Confirmation Status
 
-Required confirmation status by disease:
+Required **case** confirmation status by disease:
 
 | Disease | Confirmation Status |
 |---------|-------------------|
