@@ -200,9 +200,9 @@ International residents (residents of countries outside the US but who had a cas
 - Excluded from jurisdiction total counts and age group stratifications
 - Excluded from displayed totals, epidemic curves, etc. for the jurisdiction
 <br>
+<br>
 
 ## Data Suppression
-<br>
 
 ### Small Count Suppression
 
@@ -228,7 +228,6 @@ For measles, the project team recommends **not suppressing data** as a default a
 <br>
 
 ## Data Format
-<br>
 
 ### No Zero Reporting
 - Report only non-zero counts (i.e., do not include rows in data where the count equals 0)
@@ -259,6 +258,8 @@ Example: `disease_tracking_report_WA_2025-09-30.csv`
 
 See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) for complete field requirements.
 <br>
+<br>
+
 
 ## Metadata Requirements
 
@@ -269,6 +270,8 @@ Jurisdictions should provide metadata including:
 - Data suppression policies and rules
 - Any jurisdiction-specific notes or caveats
 <br>
+<br>
+
 
 ## Validation
 
