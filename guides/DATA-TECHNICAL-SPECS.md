@@ -179,7 +179,7 @@ Example data files are available to help understand the required format:
 
 **In this repository:**
 - [Complete example](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
-- [Empty template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
+- [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 **File naming convention:**
@@ -193,7 +193,7 @@ Examples:
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata including:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. Metadata required includes:
 
 1. **Date Classification Method**
    - If using CCCD, indicate "cccd"
