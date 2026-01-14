@@ -233,4 +233,4 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 ## Questions
 
-For questions about these technical specifications, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) or contact the project team through your jurisdiction's liaison.
+For questions about these technical specifications, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) or contact the project team.
