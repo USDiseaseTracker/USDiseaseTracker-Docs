@@ -185,7 +185,7 @@ Example data files are available to help understand the required format:
 **File naming convention:**
 Files should be named following the pattern:
 ```
-disease_tracking_report_{state}_{report_date}.csv
+disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Examples:

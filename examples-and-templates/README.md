@@ -19,12 +19,12 @@ These examples can be used to:
 ## Available Templates
 
 ### Disease Tracking Report Template
-- `disease_tracking_report_{state}_{report_date}.csv` - Empty template file with correct field structure for data submission
+- `disease_tracking_report_{jurisdiction}_{report_date}.csv` - Empty template file with correct field structure for data submission
 
 **File naming convention:**
 When using this template, rename the file following the pattern:
 ```
-disease_tracking_report_{state}_{report_date}.csv
+disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 ## Using Templates
