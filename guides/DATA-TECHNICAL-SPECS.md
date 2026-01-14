@@ -49,7 +49,7 @@ The following table provides a comprehensive overview of all data fields require
 | time_unit | String | Time aggregation unit | `week`, `month`, `ytd` | Yes |
 | report_period_start | Date | Start date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
-| date_type | String | Method used to assign cases to time periods | `cccd`, `jurisdiction date hierarchy` | Yes |
+| date_type | String | Method used to assign cases to reporting periods | `cccd`, `jurisdiction date hierarchy` | Yes |
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus` | Yes |
 | outcome | String | Type of outcome being reported | `cases`, `hospitalizations`, `deaths` | Yes |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` | Yes |
@@ -62,7 +62,7 @@ The following table provides a comprehensive overview of all data fields require
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
 
 **Key Notes:**
-- **Time Period:** Use MMWR week boundaries for weekly reporting, MMWR week-to-month crosswalk for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
+- **Report Period:** Use MMWR week boundaries for weekly reporting, [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
 - **Disease-Specific Rules:** Measles uses `confirmed` only; Pertussis and Meningococcus use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
@@ -75,18 +75,18 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 ## Fields Specifications
 
-### Time Period Fields
+### Reporting Period Fields
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
 | time_unit | String | Time aggregation unit | `week`, `month`, `ytd` |
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
-| date_type | String | Method used to assign cases to time periods | `cccd`, `jurisdiction date hierarchy` |
+| date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
 
 **Notes:**
 - Use MMWR week boundaries for weekly reporting
-- Use MMWR week-to-month crosswalk for monthly reporting
+- Use MMWR week-to-month crosswalk for monthly reporting. Use [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for reference.
 - For `ytd`, use MMWR week 1 start (2024-12-29) through end of last complete week
 - Provide metadata describing custom date hierarchies if not using CCCD
 
@@ -228,6 +228,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://health.maryland.gov/phpa/OIDEOR/CIDSOR/NEDSS/MMWR_Calendar.pdf)
+- [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) - Reference table for crosswalk/aggregation of MMWR weeks into correct reporting months.
 - [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Questions
