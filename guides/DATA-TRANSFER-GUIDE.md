@@ -195,7 +195,7 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Where:
-- `{jurisdiction}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
+- `{state}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
 - `{report_date}` = Date of submission in YYYY-MM-DD format
 
 **Examples:**
