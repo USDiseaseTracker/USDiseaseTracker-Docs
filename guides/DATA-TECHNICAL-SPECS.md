@@ -182,9 +182,6 @@ Example data files are available to help understand the required format:
 - [Empty template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Template file with correct structure
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
-**External resources:**
-- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete reference with field definitions and external resources
-
 **File naming convention:**
 Files should be named following the pattern:
 ```
