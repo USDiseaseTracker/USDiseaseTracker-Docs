@@ -191,11 +191,11 @@ If your jurisdiction has a data portal, please provide:
 Jurisdictions should name submitted files according to the following convention:
 
 ```
-disease_tracking_report_{state}_{report_date}.csv
+disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Where:
-- `{state}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
+- `{jurisdiction}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
 - `{report_date}` = Date of submission in YYYY-MM-DD format
 
 **Examples:**
@@ -216,7 +216,7 @@ For detailed field specifications, see the [Data Technical Specifications](DATA-
 ### Template and Examples
 
 Use the official data submission template and examples:
-- [Empty template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Template with correct field structure
+- [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and external resources

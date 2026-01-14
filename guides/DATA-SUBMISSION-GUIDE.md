@@ -242,7 +242,7 @@ For measles, the project team recommends **not suppressing data** as a default a
 Data should be submitted in CSV format following the standard template structure. 
 
 **Template and Example Files:**
-- [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv) - Empty template with correct field structure
+- [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 
 **File Submission Requirements:**
