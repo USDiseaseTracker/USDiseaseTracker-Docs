@@ -46,8 +46,8 @@ The following table provides a comprehensive overview of all data fields require
 | Field Name | Data Type | Description | Valid Values | Required |
 |------------|-----------|-------------|--------------|----------|
 | time_unit | String | Time aggregation unit | `week`, `month`, `ytd` | Yes |
-| report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
-| report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
+| report_period_start | Date | Start date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
+| report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to time periods | `cccd`, `jurisdiction date hierarchy` | Yes |
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus` | Yes |
 | outcome | String | Type of outcome being reported | `cases`, `hospitalizations`, `deaths` | Yes |
