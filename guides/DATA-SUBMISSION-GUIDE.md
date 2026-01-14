@@ -200,7 +200,7 @@ International residents (residents of countries outside the US but who had a cas
 - Excluded from jurisdiction total counts and age group stratifications
 - Excluded from displayed totals, epidemic curves, etc. for the jurisdiction
 <br>
-<br>
+
 
 ## Data Suppression
 
