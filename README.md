@@ -4,20 +4,20 @@
 |---------|---------|
 |  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
-
 ---
-
-This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data.
-<br>
-<br>
-
 
 ## Project Goals
 
-The goal of this project is establish the processes, standards, data formats and build a preliminary database and dashboard, with the aim of producing epidemiologically sound data that is as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. Some differences can be accommodated during the pilot phase.
-<br>
+The goal of the US Disease Tracker project is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. To accomplish this, this project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. 
 <br>
 
+#### ***The USDiseaseTracker-Docs repository***
+This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
+<br>
+
+While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves. All changes will be reflected and described here.
+<br>
+<br>
 
 ## Quick Reference
 
@@ -41,7 +41,7 @@ The goal of this project is establish the processes, standards, data formats and
 5. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 **Templates and Examples:**
-- [Data submission template](../examples-and-templates/disease_tracking_report_{state}_{report_date}.csv)
+- [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
