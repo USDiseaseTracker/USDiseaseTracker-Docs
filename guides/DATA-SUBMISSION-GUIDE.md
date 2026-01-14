@@ -192,7 +192,7 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 
 ### International Residents
 
-International residents (residents of countries outside the US but who had a case identified in that jursidiction) can be included in reported data but should be:
+International residents (residents of countries outside the US but who had a case identified in that jurisdiction) can be included in reported data but should be:
 
 - Designated as "international resident" using:
   - `geo_name = "international resident"`
