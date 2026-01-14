@@ -10,7 +10,7 @@
 **Status:** Work in Progress
 
 
-This guide provides detailed specifications for state, tribal, local, and territorial health departments participating in the US Disease Tracker project to contribute reportable disease count data. 
+This guide provides detailed specifications for health departments participating in the US Disease Tracker project to contribute reportable disease count data. To date, this project is seeking data from jurisdictions already sending case notification data through NNDSS.
 
 ## Overview
 
@@ -78,9 +78,11 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 
 ### Reporting Frequency
 
-Data should be reported **weekly** during non-emergency periods.
+Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all all diseases and aggregations should be included, even if there are no updates. Because some diseases are currently reportable a the monthly time-scale, there are two options for how to update monthly reporting counts: (1) update continuously or (2) update only for complete reporting periods. In these options, for (1), each weeks additional case counts would be added to 
+but differ based on update frequency of monthly reporting. Choice of format is at the jurisdiction's discretion.
 
-Weekly reports can follow one of two formats. In both formats, all diseases and aggregations should be included, but differ based on update frequency of monthly reporting. Choice of format is at the jurisdiction's discretion.
+
+
 
 1. **Continuously Updated Report**
    - Includes a refresh of all historic weekly and monthly data
