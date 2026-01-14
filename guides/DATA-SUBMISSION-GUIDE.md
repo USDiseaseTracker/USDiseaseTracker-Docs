@@ -156,7 +156,7 @@ For complete field definitions, data types, valid values, and detailed validatio
 All data submissions must include the following types of information:
 
 - **Time fields:** When the cases occurred (report period dates and time unit)
-- **Disease fields:** What disease is being reported and case confirmation status
+- **Disease fields:** What disease is being reported, case confirmation status, and outcome
 - **Geographic fields:** Where the cases occurred (jurisdiction and geographic unit)
 - **Count field:** Number of cases for this combination
 - **Demographic fields:** Age group (for age-stratified aggregations)
