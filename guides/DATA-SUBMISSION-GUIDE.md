@@ -124,7 +124,7 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 
 ### Data Lags and Incompleteness
 
-- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probablem, and are ready for public release
+- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
 - Data from recent weeks/months may be incomplete
 - The project team will clearly indicate provisional data through:
   - Dashed lines on epidemic curves
