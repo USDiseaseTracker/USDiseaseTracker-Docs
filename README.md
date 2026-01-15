@@ -30,8 +30,8 @@ While we aim to limit changes once data standards and processes are established,
 | Disease | Time Aggregation | Confirmation Status | Outcomes |
 |---------|------------------|---------------------|----------|
 | Measles | Weekly + Monthly | Confirmed only | Cases |
-| Pertussis | Monthly | Confirmed and probable | Cases |
-| Invasive Meningococcal Disease | Monthly | Confirmed and probable | Cases |
+| Pertussis | Monthly | Confirmed and probable (combined) | Cases |
+| Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | Cases |
 
 **Guides and Specifications**
 1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
