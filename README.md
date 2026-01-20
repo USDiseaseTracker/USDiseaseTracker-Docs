@@ -34,11 +34,10 @@ While we aim to limit changes once data standards and processes are established,
 | Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | Cases |
 
 **Guides and Specifications**
-1. **[Pilot Phase Overview](PILOT-OVERVIEW.md)** - Background and project information
-2. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
-3. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
-4. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-5. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
+1. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
+2. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
+3. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
+4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 **Templates and Examples:**
 - [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
