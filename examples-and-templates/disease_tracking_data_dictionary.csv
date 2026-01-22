@@ -13,4 +13,3 @@ age_group,TEXT,"""0-5 m"", ""6-11 m"", ""1-4 y"", ""5-11 y"", ""12-18 y"", ""19-
 count,INTEGER,n,yes,Aggregate count of specified outcome for the specified group for this time period
 confirmation_status,TEXT,"""confirmed"", ""confirmed and probable""",yes,Case confirmation status reported
 outcome,TEXT,"""cases"", ""hospitalizations"", ""deaths""",yes,Epidemiologic outcome reported (NOTE for pilot: cases only)
-
