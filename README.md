@@ -1,5 +1,7 @@
 # USDiseaseTracker-Docs
 
+📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
+
 | Version | Changes from previous version |   
 |---------|---------|
 |  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
