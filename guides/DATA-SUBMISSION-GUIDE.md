@@ -184,6 +184,8 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 | >=65 y | From 65 year birthday and older |
 | total | Total counts, all ages |
 | unknown | Counts of individuals with unknown age |
+| unspecified | Aggregated counts of individuals from age groups being suppressed |
+
 
 **Important:** Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 <br>
