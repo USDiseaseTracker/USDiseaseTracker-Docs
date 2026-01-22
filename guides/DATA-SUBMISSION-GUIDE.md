@@ -57,19 +57,17 @@ Required **case** confirmation status by disease:
 Each aggregation stream should provide complete data from December 29, 2024 through the present. See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods.
 
 #### Measles (confirmed only)
-- Cases × week × jurisdiction (state, DC, NYC, or territory)
 - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
-- Cases × week × jurisdiction × age group
+- Cases × week × age group × jurisdiction (state, DC, NYC, or territory)
 
 #### Pertussis (confirmed and probable)
-- Cases × month × jurisdiction (state, DC, NYC, or territory)
-- Cases × month × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
-- Cases × month × jurisdiction × age group
+- Cases × month × sub-jurisdiction unit
+- Cases × week × age group × jurisdiction 
 
 #### Invasive Meningococcal Disease (confirmed and probable)
-- Cases × month × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
-- Cases × month × jurisdiction × age group
-- Cases × month × jurisdiction × serogroup
+- Cases × month × sub-jurisdiction unit 
+- Cases × week × age group × jurisdiction 
+- Cases × week × serogroup × jurisdiction 
 <br>
 
 ### Reporting Frequency
