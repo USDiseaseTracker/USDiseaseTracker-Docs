@@ -46,7 +46,7 @@ This guide provides detailed specifications for health departments participating
 Required **case** confirmation status by disease:
 
 | Disease | Confirmation Status |
-|---------|-------------------|
+|---------|---------------------|
 | Measles | Confirmed only |
 | Pertussis | Confirmed and probable combined |
 | Invasive Meningococcal Disease | Confirmed and probable combined |
