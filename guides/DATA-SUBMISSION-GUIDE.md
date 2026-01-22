@@ -67,7 +67,6 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 - Cases × month × jurisdiction × age group
 
 #### Invasive Meningococcal Disease (confirmed and probable)
-- Cases × month × jurisdiction (state, DC, NYC, or territory)
 - Cases × month × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
 - Cases × month × jurisdiction × age group
 - Cases × month × jurisdiction × serogroup
