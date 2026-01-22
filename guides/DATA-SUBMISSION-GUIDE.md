@@ -50,6 +50,7 @@ Required **case** confirmation status by disease:
 | Measles | Confirmed only |
 | Pertussis | Confirmed and probable combined |
 | Invasive Meningococcal Disease | Confirmed and probable combined |
+
 <br>
 
 
