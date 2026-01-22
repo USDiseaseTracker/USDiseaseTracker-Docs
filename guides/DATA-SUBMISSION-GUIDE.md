@@ -214,9 +214,13 @@ Jurisdictions should work with the project team to ensure visualized data do not
 To ensure total counts add to 100% of cases:
 
 1. Cases that cannot be assigned to specific disaggregations should be aggregated in an "unspecified" category
-      For example, if county counts in a week are too low to release for particular counties but for other counties are sufficient:
-      - Aggregate suppressed county counts together
-      - Report as `geo_name = "unspecified"`
+      Example 1: If county counts in a week are too low to release for particular counties but for other counties are sufficient:
+      - Aggregate all counts from counties that need to be suppressed (e.g., all counties with counts < 5 but greater than 0)
+      - Set `geo_name = "unspecified"`
+      - Ex: County A has 1 case and County B has 3 cases, and your jurisdiction has a suppression threshold of 5 for any cell. Report `geo_name = "unspecified"` with `count = 4`. Do not include a row for County A or County B for that week.
+      Example 2: If age counts in a week are too low to release for particular age groups but for other counties are sufficient:
+      - Aggregate all counts from age groups that need to be suppressed (e.g., all age groups with counts < 5 but greater than 0)
+      - Set `age_group = "unspecified"`
 2. Perform allocation of suppression rules and "unspecified" aggregation prior to data release
 3. Share all suppression rules with the project team for accurate description/footnoting
 <br>
