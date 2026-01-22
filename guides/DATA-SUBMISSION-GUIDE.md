@@ -35,9 +35,10 @@ This guide provides detailed specifications for health departments participating
 
 | Disease | Weekly | Monthly |
 |---------|--------|---------|
-| Measles | ✓ |   |
+| Measles | ✓ | |
 | Pertussis | | ✓ |
 | Invasive Meningococcal Disease | | ✓ |
+
 <br>
 
 ### Confirmation Status
