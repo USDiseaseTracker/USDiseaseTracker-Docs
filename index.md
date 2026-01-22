@@ -1,6 +1,9 @@
-# USDiseaseTracker-Docs
+---
+layout: default
+title: Home
+---
 
-📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
+# US Disease Tracker Documentation
 
 | Version | Changes from previous version |   
 |---------|---------|
@@ -42,9 +45,9 @@ While we aim to limit changes once data standards and processes are established,
 4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 **Templates and Examples:**
-- [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
-- [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
+- [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
+- [Data dictionary (CSV)](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 <br>
 

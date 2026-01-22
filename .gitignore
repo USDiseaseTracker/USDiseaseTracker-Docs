@@ -32,9 +32,6 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
-# GitHub Pages / Jekyll
-docs/
-
 # OS files
 .DS_Store
 Thumbs.db

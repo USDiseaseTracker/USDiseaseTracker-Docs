@@ -35,9 +35,10 @@ This guide provides detailed specifications for health departments participating
 
 | Disease | Weekly | Monthly |
 |---------|--------|---------|
-| Measles | ✓ |   |
+| Measles | ✓ | |
 | Pertussis | | ✓ |
 | Invasive Meningococcal Disease | | ✓ |
+
 <br>
 
 ### Confirmation Status
@@ -45,10 +46,11 @@ This guide provides detailed specifications for health departments participating
 Required **case** confirmation status by disease:
 
 | Disease | Confirmation Status |
-|---------|-------------------|
+|---------|---------------------|
 | Measles | Confirmed only |
 | Pertussis | Confirmed and probable combined |
 | Invasive Meningococcal Disease | Confirmed and probable combined |
+
 <br>
 
 
@@ -56,18 +58,19 @@ Required **case** confirmation status by disease:
 
 Each aggregation stream should provide complete data from December 29, 2024 through the present. See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods.
 
-#### Measles (confirmed only)
-- Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
-- Cases × week × age group × jurisdiction (state, DC, NYC, or territory)
+    Measles
+    - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
+    - Cases × week × age group × jurisdiction (state, DC, NYC, or territory)
 
-#### Pertussis (confirmed and probable)
-- Cases × month × sub-jurisdiction unit
-- Cases × week × age group × jurisdiction 
+    Pertussis
+    - Cases × month × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction 
 
-#### Invasive Meningococcal Disease (confirmed and probable)
-- Cases × month × sub-jurisdiction unit 
-- Cases × week × age group × jurisdiction 
-- Cases × week × serogroup × jurisdiction 
+    Invasive Meningococcal Disease
+    - Cases × month × sub-jurisdiction unit 
+    - Cases × week × age group × jurisdiction 
+    - Cases × week × serogroup × jurisdiction
+
 <br>
 
 ### Reporting Frequency
