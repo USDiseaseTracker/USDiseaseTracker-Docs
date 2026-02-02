@@ -208,7 +208,10 @@
                                 "const": "pertussis"
                             },
                             "time_unit": {
-                                "const": "month"
+                                "enum": [
+                                    "week",
+                                    "month"
+                                ]
                             }
                         }
                     },
@@ -218,7 +221,10 @@
                                 "const": "meningococcus"
                             },
                             "time_unit": {
-                                "const": "month"
+                                "enum": [
+                                    "week",
+                                    "month"
+                                ]
                             }
                         }
                     }

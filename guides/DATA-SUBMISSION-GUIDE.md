@@ -36,8 +36,8 @@ This guide provides detailed specifications for health departments participating
 | Disease | Weekly | Monthly |
 |---------|--------|---------|
 | Measles | ✓ | |
-| Pertussis | | ✓ |
-| Invasive Meningococcal Disease | | ✓ |
+| Pertussis | ✓ | |
+| Invasive Meningococcal Disease | ✓ | |
 
 <br>
 
@@ -63,11 +63,11 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
     - Cases × week × age group × jurisdiction (state, DC, NYC, or territory)
 
     Pertussis
-    - Cases × month × sub-jurisdiction unit
+    - Cases × week × sub-jurisdiction unit
     - Cases × week × age group × jurisdiction 
 
     Invasive Meningococcal Disease
-    - Cases × month × sub-jurisdiction unit 
+    - Cases × week × sub-jurisdiction unit 
     - Cases × week × age group × jurisdiction 
     - Cases × week × serogroup × jurisdiction
 
@@ -75,22 +75,11 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 
 ### Reporting Frequency
 
-Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all all diseases and aggregations should be included, even if there are no updates. Because some diseases are currently reportable a the monthly time-scale, there are two options for how to update monthly reporting counts: (1) update continuously or (2) update only for complete reporting periods. In these options, for (1), each weeks additional case counts would be added to 
-but differ based on update frequency of monthly reporting. Choice of format is at the jurisdiction's discretion.
+Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all diseases and aggregations should be included, even if there are no updates.
 
-
-
-
-1. **Continuously Updated Report**
-   - Includes a refresh of all historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u>
-   - Includes the new week's data <u> added to current month for monthly reported diseases</u>
-
-2. **Reporting Period Updated Report** - Full report once per month, with interim weekly reports
-   - Includes a refresh of all <u>prior</u> historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u> (must update both so totals match)
-   - <u>Does not</u> include the new week's data <u>added to current month for monthly reported diseases</u>
-   - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
+Each weekly submission should include:
+- A refresh of all historic weekly data
+- The new week's data for all diseases
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
 <br> <br>

@@ -44,5 +44,5 @@ Validation errors will be reported back to submitters with specific error descri
 
 - Measles confirmation_status must be `confirmed`
 - Pertussis and meningococcus confirmation_status must be `confirmed and probable`
-- Measles requires both weekly and monthly time_unit submissions
-- Pertussis and meningococcus require monthly time_unit submissions
+- All diseases support weekly time_unit submissions
+- Monthly time_unit submissions are also accepted for compatibility
