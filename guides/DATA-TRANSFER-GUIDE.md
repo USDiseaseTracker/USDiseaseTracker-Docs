@@ -18,6 +18,7 @@ This guide describes the technical methods for transferring data from participat
 - [Pilot Phase Implementation](#pilot-phase-implementation)
 - [File Format Specifications](#file-format-specifications)
 - [Validation](#validation)
+- [Retry Policy](#retry-policy)
 - [Security and Authentication](#security-and-authentication)
 - [Troubleshooting](#troubleshooting)
 - [Support](#support)
@@ -251,6 +252,207 @@ If validation succeeds:
 3. Confirmation message provided to user
 4. Email notification sent to jurisdiction
 
+## Retry Policy
+
+### Overview
+
+The system implements automatic retry mechanisms for transient failures during data transfer. This section describes retry behavior for each transfer method and provides guidance on when manual intervention is required.
+
+### Automatic Retry Behavior
+
+#### Manual File Upload (Web Portal)
+
+**Automatic Retries:** Not applicable - user initiates retry manually
+
+**User Action Required:**
+- If upload fails due to transient errors (network issues, server timeouts), users should retry the upload
+- Wait 5-10 minutes before retrying if server is experiencing high load
+- If errors persist after 3 attempts, contact technical support
+
+**When NOT to Retry:**
+- Validation failures (fix data errors first)
+- Authentication failures (verify credentials)
+- File format errors (correct file format first)
+
+#### Scheduled Pull by JHU (Automated)
+
+**Automatic Retries:** Yes
+
+**Retry Configuration:**
+- **Maximum attempts:** 3 retries per scheduled pull
+- **Retry delay:** Exponential backoff starting at 5 minutes
+  - 1st retry: 5 minutes after initial failure
+  - 2nd retry: 15 minutes after 1st retry
+  - 3rd retry: 30 minutes after 2nd retry
+- **Total retry window:** Approximately 50 minutes
+
+**Transient Failures (Automatic Retry):**
+- Network connectivity issues
+- Temporary server unavailability (HTTP 503, 504)
+- DNS resolution failures
+- Connection timeouts
+- SSL/TLS handshake failures
+
+**Permanent Failures (No Retry - Requires Intervention):**
+- Authentication failures (HTTP 401, 403)
+- Resource not found (HTTP 404)
+- Validation failures in retrieved data
+- Malformed response data
+- Certificate validation failures
+
+**Notifications:**
+- After all retries exhausted: Email sent to jurisdiction and JHU monitoring team
+- Email includes error details and timestamp of attempts
+- Jurisdiction should investigate and resolve underlying issue
+
+#### Scheduled Push by Jurisdiction (Automated)
+
+**Automatic Retries:** Yes (if implemented in jurisdiction's script)
+
+**Recommended Configuration:**
+- **Maximum attempts:** 3 retries per scheduled push
+- **Retry delay:** Exponential backoff starting at 5 minutes
+  - 1st retry: 5 minutes after initial failure
+  - 2nd retry: 15 minutes after 1st retry
+  - 3rd retry: 30 minutes after 2nd retry
+
+**Implementation Notes:**
+- Jurisdictions implementing automated push should include retry logic in their scripts
+- JHU-provided example scripts include retry functionality
+- Jurisdictions using custom scripts should implement similar retry mechanisms
+
+**Transient Failures (Should Retry):**
+- Network connectivity issues
+- JHU server temporarily unavailable (HTTP 503, 504)
+- Connection timeouts
+- Rate limiting (HTTP 429) - implement longer backoff
+
+**Permanent Failures (Should Not Retry):**
+- Authentication failures (HTTP 401, 403) - verify credentials
+- Validation failures - fix data errors
+- File format errors - correct file format
+
+**Monitoring:**
+- Jurisdictions should monitor their push logs for failures
+- After retries exhausted, notify JHU technical support
+- Maintain local logs of all transfer attempts
+
+### Retry Best Practices
+
+#### For Manual Uploads
+
+1. **First Attempt Fails:**
+   - Check error message for specific issue
+   - For transient errors (timeouts, server errors), wait 5 minutes and retry
+   - For validation errors, fix data and resubmit
+
+2. **Second Attempt Fails:**
+   - Wait 10-15 minutes before third attempt
+   - Verify network connectivity
+   - Check system status page (if available)
+
+3. **Third Attempt Fails:**
+   - Contact technical support with error details
+   - Include timestamps and error messages from all attempts
+   - Have the data file ready for troubleshooting
+
+#### For Automated Transfers
+
+1. **Monitor Logs:**
+   - Review automated transfer logs regularly
+   - Set up alerts for failed transfers
+   - Track retry patterns to identify systematic issues
+
+2. **Investigate Patterns:**
+   - Multiple retries needed regularly? Investigate root cause
+   - Consistent failures at same time? Check scheduled maintenance windows
+   - Authentication failures? Verify credential rotation schedule
+
+3. **Escalation:**
+   - If automated retries consistently fail, escalate to technical support
+   - Provide log excerpts showing failure pattern
+   - Include configuration details for troubleshooting
+
+### Rate Limiting
+
+To ensure fair resource allocation and system stability:
+
+**Manual Uploads:**
+- Maximum 10 upload attempts per hour per jurisdiction
+- Rate limit resets every hour
+- Exceeding limit results in temporary 1-hour restriction
+
+**Automated Transfers:**
+- Scheduled transfers subject to jurisdiction-specific quotas
+- Default: 1 transfer per 15 minutes (accounts for retries)
+- Higher frequency can be negotiated with JHU team
+
+**Rate Limit Exceeded:**
+- HTTP 429 (Too Many Requests) returned
+- Retry-After header indicates when to retry
+- Implement exponential backoff with longer delays
+
+### Emergency Procedures
+
+#### Critical Data Submission
+
+For time-sensitive data during public health emergencies:
+
+1. **Priority Support:**
+   - Contact emergency support line (provided separately)
+   - Identify as emergency/urgent submission
+   - Support team may bypass standard retry procedures
+
+2. **Manual Override:**
+   - Support team can manually process failed submissions
+   - Requires coordination with jurisdiction contact
+   - Used only for critical, time-sensitive data
+
+3. **Alternative Transfer:**
+   - If all automated methods fail, secure email transfer available
+   - Must be encrypted and approved by JHU security team
+   - Contact technical support for instructions
+
+### Monitoring and Alerts
+
+#### JHU Monitoring
+
+- All transfer attempts logged and monitored
+- Automated alerts for consecutive failures
+- Regular reports on transfer success rates by jurisdiction
+
+#### Jurisdiction Monitoring
+
+**Recommended:**
+- Monitor confirmation emails for successful uploads
+- Track upload attempt logs (for automated transfers)
+- Set up alerts for transfer failures
+- Review weekly summary of transfer status
+
+**Alert Thresholds:**
+- 2 consecutive failures: Monitor situation
+- 3 consecutive failures: Investigate and contact support
+- Missing scheduled transfer: Verify automation is running
+
+### Support and Escalation
+
+**For Retry-Related Issues:**
+
+1. **First Contact:** Technical support email/phone (see Support section)
+2. **Provide:**
+   - Jurisdiction identifier
+   - Timestamps of all attempts
+   - Error messages received
+   - Transfer method used
+3. **Response Time:**
+   - Standard: Within 24 hours
+   - Urgent/emergency: Within 2 hours
+
+**Self-Service Resources:**
+- System status dashboard (coming soon)
+- Known issues page (coming soon)
+- Automated retry log viewer (coming soon)
+
 ## Security and Authentication
 
 ### Authentication Requirements
@@ -272,28 +474,35 @@ All data transfer methods require secure authentication:
 
 ### Common Issues
 
+**For retry-specific guidance, see the [Retry Policy](#retry-policy) section.**
+
 **File Upload Fails:**
 - Check file format (must be CSV)
 - Verify file follows template structure
 - Check for special characters or encoding issues
 - Ensure file size is within limits
+- See [Retry Best Practices](#retry-best-practices) for manual upload retry guidance
 
 **Validation Errors:**
 - Review error message for specific issues
 - Check field values against valid value sets
 - Verify date formats (YYYY-MM-DD)
 - Ensure required fields are populated
+- **Note:** Do not retry until validation errors are fixed
 
 **Authentication Issues:**
 - Verify username and password
 - Check 2FA device/app is working
 - Contact JHU support for account issues
+- **Note:** Authentication failures are permanent - do not retry without fixing credentials
 
 **Automated Transfer Failures:**
 - Verify network connectivity
 - Check credentials/API keys are valid
 - Review firewall/security settings
-- Contact JHU technical support
+- Check retry logs to see if automatic retries are exhausted
+- See [Retry Policy](#retry-policy) for automatic retry behavior
+- Contact JHU technical support if retries are exhausted
 
 ## Support
 
