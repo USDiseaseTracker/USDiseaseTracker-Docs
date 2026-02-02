@@ -2,7 +2,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
 
 ---
@@ -217,7 +217,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
+| 1.1.0 | 2026-01-06 | Initial draft for pilot phase |
 
 ## References
 
