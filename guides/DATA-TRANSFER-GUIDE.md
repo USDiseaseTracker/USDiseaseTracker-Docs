@@ -399,7 +399,7 @@ To ensure fair resource allocation and system stability:
 For time-sensitive data during public health emergencies:
 
 1. **Priority Support:**
-   - Contact emergency support line (provided separately)
+   - Contact emergency support line (contact information provided through your jurisdiction's project liaison)
    - Identify as emergency/urgent submission
    - Support team may bypass standard retry procedures
 
@@ -448,10 +448,12 @@ For time-sensitive data during public health emergencies:
    - Standard: Within 24 hours
    - Urgent/emergency: Within 2 hours
 
-**Self-Service Resources:**
-- System status dashboard (coming soon)
-- Known issues page (coming soon)
-- Automated retry log viewer (coming soon)
+**Self-Service Resources (Planned for Future Releases):**
+- System status dashboard
+- Known issues page
+- Automated retry log viewer
+
+These tools are under development and will be made available as the system matures beyond the pilot phase.
 
 ## Security and Authentication
 
