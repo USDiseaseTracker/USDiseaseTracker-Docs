@@ -146,13 +146,13 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"enum": ["week", "month"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"enum": ["week", "month"]}
                 }
             }
         ]

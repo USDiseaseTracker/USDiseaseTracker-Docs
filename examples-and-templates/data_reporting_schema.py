@@ -80,10 +80,10 @@ class DiseaseReport(BaseModel):
         
         if disease_name == "measles" and v not in ["week", "month"]:
             raise ValueError("measles must have time_unit of 'week' or 'month'")
-        if disease_name == "pertussis" and v != "month":
-            raise ValueError("pertussis must have time_unit of 'month'")
-        if disease_name == "meningococcus" and v != "month":
-            raise ValueError("meningococcus must have time_unit of 'month'")
+        if disease_name == "pertussis" and v not in ["week", "month"]:
+            raise ValueError("pertussis must have time_unit of 'week' or 'month'")
+        if disease_name == "meningococcus" and v not in ["week", "month"]:
+            raise ValueError("meningococcus must have time_unit of 'week' or 'month'")
         
         return v
 
