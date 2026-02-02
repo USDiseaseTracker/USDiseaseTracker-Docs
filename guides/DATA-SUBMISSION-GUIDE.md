@@ -64,7 +64,7 @@ Each aggregation stream should provide complete data from December 29, 2024 thro
 
     Pertussis
     - Cases × month × sub-jurisdiction unit
-    - Cases × week × age group × jurisdiction 
+    - Cases × month × age group × jurisdiction 
 
     Invasive Meningococcal Disease
     - Cases × month × sub-jurisdiction unit 
