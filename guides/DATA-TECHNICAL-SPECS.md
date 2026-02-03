@@ -56,17 +56,17 @@ The following table provides a comprehensive overview of all data fields require
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` | Yes |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code | Yes |
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` | Yes |
-| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
+| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unknown`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
-| age_group | String | Age group of cases | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
+| age_group | String | Age group of cases | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` | Yes |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` | No |
 
 **Key Notes:**
 - **Report Period:** Use MMWR week boundaries for weekly reporting and [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting
 - **Disease-Specific Rules:** Measles uses `confirmed` only; Pertussis and Meningococcus use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
-- **Disease Subtype:** Use `NA` for diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
+- **Disease Subtype:** Use `total` for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
 
 ### No Zero Reporting
@@ -109,13 +109,19 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code |
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` |
-| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` |
+| geo_name | String | Name of the geographic unit | Name string or `unspecified`, `unknown`, `international resident` |
 
 **Notes:**
 - Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.)
 - For international residents: use `geo_name = "international resident"` and `geo_unit = "NA"`
-- For suppressed small counts: use `geo_name = "unspecified"`
-- Provide metadata listing all geographic unit names used
+- Metadata should include all geographic unit names used
+  
+- Disease subtype is currently collected at jurisdiction level only (not sub-jurisdiction)
+- Currently only use for meningococcal disease serogroup reporting
+- Use `total` for non-subtype-stratified aggregations
+- Use `total` diseases without subtype reporting (measles, pertussis)
+- Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
+- Use `unspecified` when geo_name is known but suppressed in subjurisdiction aggregations
 
 ### Count Field
 
@@ -151,21 +157,27 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | `unspecified` | Age known but suppressed |
 
 **Notes:**
-- Age groups displayed at jurisdiction level only (not sub-jurisdiction)
+- Age group is currently accepted at jurisdiction level only (not sub-jurisdiction)
 - Same age groupings used for all diseases
 - Use `total` for non-age-stratified aggregations
+- Use `unknown` when age information is truely unknown (only for age_group aggregations)
+- Use `unspecified` when age group is known but suppressed
+
 
 ### Disease-Specific Fields
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified`,`total` |
 
 **Notes:**
-- Use for meningococcal disease serogroup reporting
-- Use `NA` for diseases without subtype reporting (measles, pertussis)
-- Use `unknown` when subtyping was not performed or is otherwise not known
+- Disease subtype is currently accepted at jurisdiction level only (not sub-jurisdiction)
+- Currently only use for meningococcal disease serogroup reporting
+- Use `total` for non-subtype-stratified aggregations
+- Use `total` diseases without subtype reporting (measles, pertussis)
+- Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when subtype is known but suppressed
+
 
 ## Validation
 
