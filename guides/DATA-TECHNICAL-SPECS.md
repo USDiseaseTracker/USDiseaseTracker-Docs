@@ -16,6 +16,7 @@ This document provides the complete technical specifications for disease trackin
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
 **Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
+<br>
 
 ### Contents
 
@@ -39,6 +40,7 @@ Data should be submitted in CSV format with one row per unique combination of:
 - Age group (when applicable)
 - Disease subtype (when applicable)
 - Outcome (currently only cases)
+<br>
 
 ### Field Summary
 
@@ -68,10 +70,13 @@ The following table provides a comprehensive overview of all data fields require
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
 - **Disease Subtype:** Use `total` for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
+<br>
 
 ### No Zero Reporting
 
 Only include rows with non-zero counts. The system will automatically infer zeros for missing combinations at higher aggregation levels.
+<br>
+<br>
 
 ## Fields Specifications
 
@@ -88,6 +93,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use MMWR week boundaries for weekly reporting
 - Use MMWR week-to-month crosswalk for monthly reporting. Use [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for reference.
 - Provide metadata describing custom date hierarchies if not using CCCD
+<br>
 
 ### Disease Fields
 
@@ -101,6 +107,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Measles: Use `confirmed` only
 - Pertussis and Meningococcus: Use `confirmed and probable`
 - Additional outcomes (hospitalizations, deaths) planned for future
+<br>
 
 ### Geographic Fields
 
@@ -122,6 +129,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `total` diseases without subtype reporting (measles, pertussis)
 - Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when geo_name is known but suppressed in subjurisdiction aggregations
+<br>
 
 ### Count Field
 
@@ -133,6 +141,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Only include non-zero counts
 - Apply jurisdiction data suppression policies before submission
 - Use `geo_name = "unspecified"` for suppressed counts to maintain totals
+<br>
 
 ### Demographic Fields
 
@@ -162,7 +171,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `total` for non-age-stratified aggregations
 - Use `unknown` when age information is truely unknown (only for age_group aggregations)
 - Use `unspecified` when age group is known but suppressed
-
+<br>
 
 ### Disease-Specific Fields
 
@@ -177,12 +186,14 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `total` diseases without subtype reporting (measles, pertussis)
 - Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when subtype is known but suppressed
-
+<br>
+<br>
 
 ## Validation
 
 See [Validation](VALIDATION.md) for details on file and data validation.
-
+<br>
+<br>
 
 ## Example Data
 
@@ -201,6 +212,9 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 
 Examples:
 - `disease_tracking_report_WA_2025-09-30.csv` (Washington state, submitted September 30, 2025)
+<br>
+<br>
+
 
 ## Metadata Requirements
 
@@ -221,13 +235,16 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 4. **Contact Information**
    - Technical point of contact
    - Data quality contact
-
+<br>
+<br>
 
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.1.0 | 2026-01-06 | Initial draft for pilot phase |
+<br>
+<br>
 
 ## References
 
@@ -240,6 +257,8 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 - [MMWR Week Calendar](https://health.maryland.gov/phpa/OIDEOR/CIDSOR/NEDSS/MMWR_Calendar.pdf)
 - [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) - Reference table for crosswalk/aggregation of MMWR weeks into correct reporting months.
 - [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+<br>
+<br>
 
 ## Questions
 
