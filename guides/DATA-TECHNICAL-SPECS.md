@@ -58,7 +58,7 @@ The following table provides a comprehensive overview of all data fields require
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` | Yes |
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
-| age_group | String | Age group of cases | `0-5 m`, `6-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
+| age_group | String | Age group of cases | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
 
 **Key Notes:**
@@ -138,8 +138,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Value | Description |
 |-------|-------------|
-| `0-5 m` | From birth up to but not including 6 months |
-| `6-11 m` | From 6 months up to but not including 1 year birthday |
+| `<1 y` | From birth up to but not including 1 year birthday |
 | `1-4 y` | From 1 year birthday up to but not including 5 year birthday |
 | `5-11 y` | From 5 year birthday up to but not including 12 year birthday |
 | `12-18 y` | From 12 year birthday up to but not including 19 year birthday |

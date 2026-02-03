@@ -28,7 +28,7 @@ class DiseaseReport(BaseModel):
     geo_name: str
     geo_unit: Literal["county", "state", "region", "planning area", "hsa", "NA"]
     age_group: Literal[
-        "0-5 m", "6-11 m", "1-4 y", "5-11 y", "12-18 y",
+        "<1 y", "1-4 y", "5-11 y", "12-18 y",
         "19-22 y", "23-44 y", "45-64 y", ">=65 y",
         "total", "unknown", "unspecified"
     ]
