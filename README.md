@@ -23,6 +23,9 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
+**🛠️ Interactive Tool:**
+- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/decision-tree.html)** - Interactive tool to explore valid data field options and generate example data
+
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
 - **Submission Frequency:** Weekly (preferred)
