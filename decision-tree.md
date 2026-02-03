@@ -648,27 +648,35 @@ This tool helps you understand the valid data options for disease tracking submi
         return;
       }
 
-      // Create the table row
+      // Create the table row safely to prevent XSS
       const tableBody = document.getElementById('data-table-body');
       tableBody.innerHTML = '';
       
       const row = document.createElement('tr');
-      row.innerHTML = `
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.report_period_start}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.report_period_end}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.date_type}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.time_unit}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.disease_name}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.disease_subtype || 'NA'}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.reporting_jurisdiction}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.state}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.geo_name}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.geo_unit}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.age_group}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.confirmation_status}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.outcome}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${fields.count}</td>
-      `;
+      const fieldOrder = [
+        fields.report_period_start,
+        fields.report_period_end,
+        fields.date_type,
+        fields.time_unit,
+        fields.disease_name,
+        fields.disease_subtype || 'NA',
+        fields.reporting_jurisdiction,
+        fields.state,
+        fields.geo_name,
+        fields.geo_unit,
+        fields.age_group,
+        fields.confirmation_status,
+        fields.outcome,
+        fields.count
+      ];
+      
+      fieldOrder.forEach(value => {
+        const cell = document.createElement('td');
+        cell.style.padding = '8px';
+        cell.style.border = '1px solid #ddd';
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
       
       tableBody.appendChild(row);
       
