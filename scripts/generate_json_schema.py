@@ -140,37 +140,25 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "time_unit": {"enum": ["week", "month"]}
+                    "time_unit": {"enum": ["week", "ytd"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"enum": ["week", "ytd"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"enum": ["week", "ytd"]}
                 }
             }
         ]
     })
     
-    # Validation 2: time_unit = month description
-    all_of.append({
-        "if": {"properties": {"time_unit": {"const": "month"}}},
-        "then": {
-            "properties": {
-                "report_period_start": {
-                    "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
-                }
-            }
-        }
-    })
-    
-    # Validation 3: time_unit = week description
+    # Validation 2: time_unit = week description
     all_of.append({
         "if": {"properties": {"time_unit": {"const": "week"}}},
         "then": {

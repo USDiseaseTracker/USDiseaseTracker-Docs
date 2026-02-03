@@ -8,7 +8,7 @@ class DiseaseReport(BaseModel):
     report_period_start: date
     report_period_end: date
     date_type: Literal["cccd", "jurisdiction date hierarchy"]
-    time_unit: Literal["week", "month", "ytd"]
+    time_unit: Literal["week", "ytd"]
     disease_subtype: str
     reporting_jurisdiction: str
     state: Literal[
@@ -78,12 +78,8 @@ class DiseaseReport(BaseModel):
         """
         disease_name = info.data.get('disease_name')
         
-        if disease_name == "measles" and v not in ["week", "month"]:
-            raise ValueError("measles must have time_unit of 'week' or 'month'")
-        if disease_name == "pertussis" and v != "month":
-            raise ValueError("pertussis must have time_unit of 'month'")
-        if disease_name == "meningococcus" and v != "month":
-            raise ValueError("meningococcus must have time_unit of 'month'")
+        if v not in ["week", "ytd"]:
+            raise ValueError(f"{disease_name} must have time_unit of 'week' or 'ytd'")
         
         return v
 

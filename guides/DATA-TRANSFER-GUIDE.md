@@ -34,24 +34,14 @@ Data should be transferred to the project database on a weekly basis unless an e
 
 ### Weekly Transfer Requirements
 
-- Submit a single file with all diseases and cases aggregated by week or month
+- Submit a single file with all diseases and cases aggregated by week
 - Use the calculated case counting date (or alternative hierarchical date)
 - Update file each week with new data and changes to previous aggregate values
 - If no updates are available, submit either:
   - A statement: "No data updates for this week"
   - The current file with no changes (to ensure data are not assumed missing)
 
-### Monthly Disease Updates
-
-For diseases reported on monthly timescales, jurisdictions can:
-- Update monthly totals each week, OR
-- Update month counts following completion of the reporting month
-
 Counts will be marked as "provisional" for a specified lag period on visualizations.
-
-### Monthly Transfer Option
-
-Individual jurisdictions may request monthly data transfer instead of weekly. This must be discussed and agreed upon with the project team. Weekly data sharing is strongly preferred.
 
 ## Transfer Methods
 
