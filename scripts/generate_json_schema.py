@@ -74,7 +74,7 @@ def generate_json_schema():
     # disease_subtype
     properties["disease_subtype"] = {
         "type": "string",
-        "description": "Subtype Name of the disease. This can be used to specify serogroup for meningococcus (e.g., A, B, C, W, Y). If not applicable, use 'NA'. If not known, use 'Unknown'."
+        "description": "Disease subtype (meningococcal serogroup). Use 'total' for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis). Use 'unknown' when subtyping was not performed. Use 'unspecified' when subtype is known but suppressed."
     }
     
     # reporting_jurisdiction
@@ -189,19 +189,19 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "NA"]}
+                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
                 }
             }
         ]
