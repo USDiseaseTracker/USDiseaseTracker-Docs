@@ -38,6 +38,14 @@ This tool helps you understand the valid data options for disease tracking submi
       cursor: not-allowed;
     }
     
+    .field-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    
     .field-help {
       margin-top: 5px;
       font-size: 12px;
@@ -261,19 +269,19 @@ This tool helps you understand the valid data options for disease tracking submi
 
   <div class="field-group">
     <label for="report_period_start">Report Period Start *</label>
-    <input type="date" id="report_period_start" placeholder="YYYY-MM-DD" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+    <input type="date" id="report_period_start" placeholder="YYYY-MM-DD">
     <div class="field-help">Example: <span class="example-value">2025-01-05</span> (YYYY-MM-DD format, must align with MMWR week/month boundaries)</div>
   </div>
 
   <div class="field-group">
     <label for="report_period_end">Report Period End *</label>
-    <input type="date" id="report_period_end" placeholder="YYYY-MM-DD" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+    <input type="date" id="report_period_end" placeholder="YYYY-MM-DD">
     <div class="field-help">Example: <span class="example-value">2025-01-11</span> (YYYY-MM-DD format, must be after or equal to start date)</div>
   </div>
 
   <div class="field-group">
     <label for="count">Count *</label>
-    <input type="number" id="count" placeholder="Enter count" min="1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+    <input type="number" id="count" placeholder="Enter count" min="1">
     <div class="field-help">Example: <span class="example-value">5</span> (positive integer, only non-zero counts should be submitted)</div>
   </div>
 
