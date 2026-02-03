@@ -33,7 +33,7 @@ This document provides the complete technical specifications for disease trackin
 ## Data Structure
 
 Data should be submitted in CSV format with one row per unique combination of:
-- Time period (week or month)
+- Time period (week)
 - Geographic unit
 - Disease
 - Age group (when applicable)
@@ -46,7 +46,7 @@ The following table provides a comprehensive overview of all data fields require
 
 | Field Name | Data Type | Description | Valid Values | Required |
 |------------|-----------|-------------|--------------|----------|
-| time_unit | String | Time aggregation unit | `week`, `month` | Yes |
+| time_unit | String | Time aggregation unit | `week` | Yes |
 | report_period_start | Date | Start date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to reporting periods | `cccd`, `jurisdiction date hierarchy` | Yes |
@@ -59,7 +59,7 @@ The following table provides a comprehensive overview of all data fields require
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
 | age_group | String | Age group of cases | `0-5 m`, `6-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | Yes |
 
 **Key Notes:**
 - **Report Period:** Use MMWR week boundaries for weekly reporting
@@ -226,7 +226,6 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://health.maryland.gov/phpa/OIDEOR/CIDSOR/NEDSS/MMWR_Calendar.pdf)
-- [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) - Reference table for crosswalk/aggregation of MMWR weeks into correct reporting months.
 - [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 
 ## Questions

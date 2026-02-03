@@ -1,8 +1,8 @@
 Field Name,Data Type,Values/Format,Validated (format sensitive)*,Description
-report_period_start,DATE,YYYY-MM-DD,yes,Start date of MMWR week/MMWR month period (for aggregate reporting)
-report_period_end,DATE,YYYY-MM-DD,yes,End date of MMWR week/MMWR month period (for aggregate reporting)
+report_period_start,DATE,YYYY-MM-DD,yes,Start date of MMWR week period (for aggregate reporting)
+report_period_end,DATE,YYYY-MM-DD,yes,End date of MMWR week period (for aggregate reporting)
 date_type,TEXT,"""cccd"", ""jurisdiction date hierarchy""",yes,"Calculated Case Counting Date, otherwise specify (Note: if other, please reach out to have your date included in valdiation value set. Strong preference for hierarchical date types)"
-time_unit,TEXT,"""week"", ""month""",yes,Time aggregation unit: 'week' or 'month'
+time_unit,TEXT,"""week""",yes,Time aggregation unit: 'week'
 disease_name,TEXT,"""measles"", ""pertussis"", ""meningococcus""",yes,"Name of the disease (e.g., measles, pertussis)"
 disease_subtype,TEXT,"""A"", ""B"", ""C"", NA, ""W"", ""X"", ""Y"", ""Z"", ""unknown"", ""unspecified""",no,"Subspecies, type, strain, or other distinguishing classification of the disease or pathogen that is important for reporting and tracking. For invasive meningococcal disease, this enables the option to provide serogroup once/if it is available. ""disease_subtype"" is not required and should be left NA if nothing to report."
 reporting_jurisdiction,TEXT,"""AL"", ""AK"", ""AZ"", ""..."", ""WY"", ""DC"", ""NYC"", {other territory, i.e., ""PR"")",no,"Abbreviation for the reporting state, city, or territory"
