@@ -34,7 +34,7 @@ Data should be transferred to the project database on a weekly basis unless an e
 
 ### Weekly Transfer Requirements
 
-- Submit a single file with all diseases and cases aggregated by week or month
+- Submit a single file with all diseases and cases aggregated by week
 - Use the calculated case counting date (or alternative hierarchical date)
 - Update file each week with new data and changes to previous aggregate values
 - If no updates are available, submit either:

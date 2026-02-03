@@ -35,7 +35,7 @@ Validation errors will be reported back to submitters with specific error descri
 ### Logical Validation
 
 - `report_period_end` must be after or equal to `report_period_start`
-- Date ranges must align with MMWR week/month boundaries
+- Date ranges must align with MMWR week boundaries
 - Geographic units must be consistent with reporting jurisdiction
 - Age group required for age-stratified aggregations
 - Disease subtype only valid for applicable diseases
