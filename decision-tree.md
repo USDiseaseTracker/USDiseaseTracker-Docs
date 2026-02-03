@@ -297,8 +297,8 @@ This tool helps you understand the valid data options for disease tracking submi
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">time_unit</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">disease_name</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">disease_subtype</th>
-            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">reporting_jurisdiction</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">state</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">reporting_jurisdiction</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">geo_name</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">geo_unit</th>
             <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">age_group</th>
@@ -337,7 +337,7 @@ This tool helps you understand the valid data options for disease tracking submi
       disease_subtype: {
         measles: ['NA', 'unknown'],
         pertussis: ['NA', 'unknown'],
-        meningococcus: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'total', 'unknown', 'unspecified']
+        meningococcus: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified']
       },
       
       geo_unit: ['county', 'state', 'region', 'planning area', 'hsa', 'NA'],
@@ -592,7 +592,7 @@ This tool helps you understand the valid data options for disease tracking submi
       };
 
       // Check if all required fields are filled
-      const requiredFields = ['disease_name', 'time_unit', 'confirmation_status', 'outcome', 
+      const requiredFields = ['disease_name', 'disease_subtype', 'time_unit', 'confirmation_status', 'outcome', 
                               'date_type', 'state', 'reporting_jurisdiction', 'geo_unit', 
                               'geo_name', 'age_group', 'report_period_start', 'report_period_end', 'count'];
       
