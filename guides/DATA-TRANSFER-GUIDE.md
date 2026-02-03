@@ -41,18 +41,6 @@ Data should be transferred to the project database on a weekly basis unless an e
   - A statement: "No data updates for this week"
   - The current file with no changes (to ensure data are not assumed missing)
 
-### Monthly Disease Updates
-
-For diseases reported on monthly timescales, jurisdictions can:
-- Update monthly totals each week, OR
-- Update month counts following completion of the reporting month
-
-Counts will be marked as "provisional" for a specified lag period on visualizations.
-
-### Monthly Transfer Option
-
-Individual jurisdictions may request monthly data transfer instead of weekly. This must be discussed and agreed upon with the project team. Weekly data sharing is strongly preferred.
-
 ## Transfer Methods
 
 The project team is working with submitting jurisdictions to provide multiple mechanisms for data transfer. During the pilot, mechanisms matching current capabilities of jurisdictions will be prioritized.
