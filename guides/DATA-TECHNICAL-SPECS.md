@@ -33,7 +33,7 @@ This document provides the complete technical specifications for disease trackin
 ## Data Structure
 
 Data should be submitted in CSV format with one row per unique combination of:
-- Time period (week, month, or year-to-date)
+- Time period (week or month)
 - Geographic unit
 - Disease
 - Age group (when applicable)
@@ -46,7 +46,7 @@ The following table provides a comprehensive overview of all data fields require
 
 | Field Name | Data Type | Description | Valid Values | Required |
 |------------|-----------|-------------|--------------|----------|
-| time_unit | String | Time aggregation unit | `week`, `month`, `ytd` | Yes |
+| time_unit | String | Time aggregation unit | `week`, `month` | Yes |
 | report_period_start | Date | Start date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to reporting periods | `cccd`, `jurisdiction date hierarchy` | Yes |
@@ -62,7 +62,7 @@ The following table provides a comprehensive overview of all data fields require
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
 
 **Key Notes:**
-- **Report Period:** Use MMWR week boundaries for weekly reporting, [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
+- **Report Period:** Use MMWR week boundaries for weekly reporting and [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting
 - **Disease-Specific Rules:** Measles uses `confirmed` only; Pertussis and Meningococcus use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
@@ -79,7 +79,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| time_unit | String | Time aggregation unit | `week`, `month`, `ytd` |
+| time_unit | String | Time aggregation unit | `week`, `month` |
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
@@ -87,7 +87,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 **Notes:**
 - Use MMWR week boundaries for weekly reporting
 - Use MMWR week-to-month crosswalk for monthly reporting. Use [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for reference.
-- For `ytd`, use MMWR week 1 start (2024-12-29) through end of last complete week
 - Provide metadata describing custom date hierarchies if not using CCCD
 
 ### Disease Fields

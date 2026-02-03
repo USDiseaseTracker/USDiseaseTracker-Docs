@@ -27,8 +27,7 @@
                 "type": "string",
                 "enum": [
                     "week",
-                    "month",
-                    "ytd"
+                    "month"
                 ],
                 "description": "Time aggregation unit"
             },
