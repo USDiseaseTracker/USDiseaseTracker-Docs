@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Home
+title: US Disease Tracker - Data Standards
 ---
 
-# US Disease Tracker Documentation
+# US Disease Tracker
 
 | Version | Changes from previous version |   
 |---------|---------|
