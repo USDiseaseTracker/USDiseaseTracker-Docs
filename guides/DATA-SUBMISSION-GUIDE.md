@@ -56,7 +56,7 @@ Required **case** confirmation status by disease:
 
 ### Required Data Aggregations
 
-To limit identifiability and data suppression, each disagreegation of the disease counts will be collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We are calling these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, and each need to be complete and equivalent in time with diseases (e.g., cumulative cases in the age group aggregation must equal cumulative cases in the sub-jurisdiction aggregation). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods.
+To limit identifiability and data suppression, each disagreegation of the disease counts will be collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We are calling these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, and each need to be complete and equivalent in time with diseases (e.g., cumulative cases in the age group aggregation must equal cumulative cases in the sub-jurisdiction aggregation). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data aggregations listed below will be accepted; new aggregations will be added as needed for new demographics, diseases, conditions or outcomes, etc.
 
     Measles
     - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
