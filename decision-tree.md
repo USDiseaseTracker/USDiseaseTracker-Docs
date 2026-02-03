@@ -261,25 +261,19 @@ This tool helps you understand the valid data options for disease tracking submi
 
   <div class="field-group">
     <label for="report_period_start">Report Period Start *</label>
-    <select id="report_period_start" onchange="updateFields()">
-      <option value="">-- Select or enter date --</option>
-    </select>
+    <input type="date" id="report_period_start" placeholder="YYYY-MM-DD" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
     <div class="field-help">Example: <span class="example-value">2025-01-05</span> (YYYY-MM-DD format, must align with MMWR week/month boundaries)</div>
   </div>
 
   <div class="field-group">
     <label for="report_period_end">Report Period End *</label>
-    <select id="report_period_end" onchange="updateFields()">
-      <option value="">-- Select or enter date --</option>
-    </select>
+    <input type="date" id="report_period_end" placeholder="YYYY-MM-DD" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
     <div class="field-help">Example: <span class="example-value">2025-01-11</span> (YYYY-MM-DD format, must be after or equal to start date)</div>
   </div>
 
   <div class="field-group">
     <label for="count">Count *</label>
-    <select id="count" onchange="updateFields()">
-      <option value="">-- Enter count --</option>
-    </select>
+    <input type="number" id="count" placeholder="Enter count" min="1" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
     <div class="field-help">Example: <span class="example-value">5</span> (positive integer, only non-zero counts should be submitted)</div>
   </div>
 
@@ -366,9 +360,6 @@ This tool helps you understand the valid data options for disease tracking submi
       
       // Update geo_name based on geo_unit
       updateGeoName(geoUnit, state);
-      
-      // Populate example values for date and count fields
-      updateExampleFields();
     }
 
     function updateTimeUnit(disease) {
@@ -525,52 +516,24 @@ This tool helps you understand the valid data options for disease tracking submi
       }
     }
 
-    function updateExampleFields() {
-      // Update date fields with examples
-      const dateStartSelect = document.getElementById('report_period_start');
-      const dateEndSelect = document.getElementById('report_period_end');
-      const countSelect = document.getElementById('count');
-      
-      // Provide examples rather than full dropdowns for these fields
-      if (dateStartSelect.options.length === 1) {
-        const option = document.createElement('option');
-        option.value = '2025-01-05';
-        option.textContent = '2025-01-05 (example - enter your date in YYYY-MM-DD format)';
-        dateStartSelect.appendChild(option);
-      }
-      
-      if (dateEndSelect.options.length === 1) {
-        const option = document.createElement('option');
-        option.value = '2025-01-11';
-        option.textContent = '2025-01-11 (example - enter your date in YYYY-MM-DD format)';
-        dateEndSelect.appendChild(option);
-      }
-      
-      if (countSelect.options.length === 1) {
-        ['1', '5', '10', '25'].forEach(value => {
-          const option = document.createElement('option');
-          option.value = value;
-          option.textContent = value + ' (example)';
-          countSelect.appendChild(option);
-        });
-      }
-    }
-
     function resetForm() {
       const selects = document.querySelectorAll('select');
       selects.forEach(select => {
         select.selectedIndex = 0;
         if (select.id !== 'disease_name' && select.id !== 'outcome' && 
             select.id !== 'date_type' && select.id !== 'state' && 
-            select.id !== 'geo_unit' && select.id !== 'age_group' &&
-            select.id !== 'report_period_start' && select.id !== 'report_period_end' &&
-            select.id !== 'count') {
+            select.id !== 'geo_unit' && select.id !== 'age_group') {
           select.disabled = true;
           select.innerHTML = '<option value="">-- Select --</option>';
         }
       });
+      
+      // Clear input fields
+      document.getElementById('report_period_start').value = '';
+      document.getElementById('report_period_end').value = '';
+      document.getElementById('count').value = '';
+      
       document.getElementById('example-table').style.display = 'none';
-      updateExampleFields();
     }
 
     function generateExample() {
@@ -647,11 +610,6 @@ This tool helps you understand the valid data options for disease tracking submi
       // Scroll to the table
       document.getElementById('example-table').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-
-    // Initialize the form
-    document.addEventListener('DOMContentLoaded', function() {
-      updateExampleFields();
-    });
   </script>
 </div>
 
