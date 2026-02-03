@@ -367,7 +367,7 @@ This tool helps you understand the valid data options for disease tracking submi
       // Update geo_name based on geo_unit
       updateGeoName(geoUnit, state);
       
-      // Update examples for date and count fields
+      // Populate example values for date and count fields
       updateExampleFields();
     }
 
