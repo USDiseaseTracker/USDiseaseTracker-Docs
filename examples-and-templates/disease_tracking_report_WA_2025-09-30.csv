@@ -1,32 +1,16 @@
 report_period_start,report_period_end,date_type,time_unit,disease_name,disease_subtype,state,reporting_jurisdiction,geo_name,geo_unit,age_group,confirmation_status,outcome,count,...15,NOTE,...17,...18,...19,...20,...21,...22
-2025-02-02,2025-03-01,cccd,month,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-02-23,2025-03-01,cccd,week,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-02-23,2025-03-01,cccd,week,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,measles,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,measles,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-03-16,2025-03-22,cccd,week,measles,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-03-16,2025-03-22,cccd,week,measles,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-03-30,2025-04-05,cccd,week,measles,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-03-30,2025-04-05,cccd,week,measles,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,measles,NA,WA,WA,King,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,measles,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,measles,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,measles,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-04-06,2025-04-12,cccd,week,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-04-06,2025-04-12,cccd,week,measles,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-04-20,2025-04-26,cccd,week,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-04-20,2025-04-26,cccd,week,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-05-18,2025-05-24,cccd,week,measles,NA,WA,WA,King,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-05-18,2025-05-24,cccd,week,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,measles,NA,WA,WA,King,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,measles,NA,WA,WA,Whatcom,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,measles,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-06-15,2025-06-21,cccd,week,measles,NA,WA,WA,Whatcom,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-06-15,2025-06-21,cccd,week,measles,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-06-22,2025-06-28,cccd,week,measles,NA,WA,WA,King,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
@@ -34,139 +18,5 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,disease_s
 2025-06-22,2025-06-28,cccd,week,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-06-22,2025-06-28,cccd,week,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-06-22,2025-06-28,cccd,week,measles,NA,WA,WA,WA,state,5-11 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,measles,NA,WA,WA,Spokane,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-08-24,2025-08-30,cccd,week,measles,NA,WA,WA,Spokane,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-08-24,2025-08-30,cccd,week,measles,NA,WA,WA,WA,state,1-4 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Adams,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Benton,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Chelan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Cowlitz,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Grays Harbor,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Island,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,17,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Klickitat,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Skagit,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,Whitman,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,14,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,9,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2024-12-29,2025-02-01,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,18,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Adams,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Asotin,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Benton,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Clallam,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Grays Harbor,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,8,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,Yakima,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,8,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-02-02,2025-03-01,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,13,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Grant,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Jefferson,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,7,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Kittitas,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Skagit,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,Walla Walla,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,7,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-02,2025-03-29,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Benton,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Chelan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Douglas,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Island,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,9,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Okanogan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,12,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-03-30,2025-04-26,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,15,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Chelan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Cowlitz,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Grant,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Grays Harbor,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,11,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Kittitas,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Lewis,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,10,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-04-27,2025-05-31,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,13,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Jefferson,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Kitsap,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,San Juan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,Whitman,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-01,2025-06-28,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Clallam,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,7,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Spokane,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,Whatcom,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,4,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,WA,state,23-44 y,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-06-29,2025-08-02,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Douglas,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,5,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Mason,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Skagit,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,Yakima,county,total,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,11,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-03,2025-08-30,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,7,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Chelan,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Clark,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Garfield,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,King,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Pierce,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Snohomish,county,total,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,Thurston,county,total,confirmed,cases,2,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-09-01,2025-09-30,CCCD,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
