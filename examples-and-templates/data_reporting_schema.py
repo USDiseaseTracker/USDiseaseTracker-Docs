@@ -9,7 +9,7 @@ class DiseaseReport(BaseModel):
     report_period_end: date
     date_type: Literal["cccd", "jurisdiction date hierarchy"]
     time_unit: Literal["week", "month"]
-    disease_subtype: str | None = None
+    disease_subtype: str
     reporting_jurisdiction: str
     state: Literal[
         "AL", "AK", "AZ", "AR", "AS",
@@ -56,10 +56,6 @@ class DiseaseReport(BaseModel):
         validate disease_subtype based on disease_name
         """
         disease_name = info.data.get('disease_name')
-        
-        # disease_subtype is optional, so None is valid
-        if v is None:
-            return v
         
         if disease_name == "meningococcus":
             if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]:

@@ -173,6 +173,7 @@
             "report_period_end",
             "date_type",
             "time_unit",
+            "disease_subtype",
             "reporting_jurisdiction",
             "state",
             "geo_name",
