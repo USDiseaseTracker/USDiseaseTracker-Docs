@@ -562,12 +562,15 @@ This tool helps you understand the valid data options for disease tracking submi
         select.selectedIndex = 0;
         if (select.id !== 'disease_name' && select.id !== 'outcome' && 
             select.id !== 'date_type' && select.id !== 'state' && 
-            select.id !== 'geo_unit' && select.id !== 'age_group') {
+            select.id !== 'geo_unit' && select.id !== 'age_group' &&
+            select.id !== 'report_period_start' && select.id !== 'report_period_end' &&
+            select.id !== 'count') {
           select.disabled = true;
           select.innerHTML = '<option value="">-- Select --</option>';
         }
       });
       document.getElementById('example-table').style.display = 'none';
+      updateExampleFields();
     }
 
     function generateExample() {
