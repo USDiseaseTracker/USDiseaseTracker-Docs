@@ -610,30 +610,30 @@
                 report_period_end: document.getElementById('report_period_end').value,
                 date_type: document.getElementById('date_type').value,
                 time_unit: document.getElementById('time_unit').value,
-                disease_subtype: document.getElementById('disease_subtype').value,
                 reporting_jurisdiction: document.getElementById('reporting_jurisdiction').value,
                 state: document.getElementById('state').value,
                 geo_name: document.getElementById('geo_name').value,
                 geo_unit: document.getElementById('geo_unit').value,
                 age_group: document.getElementById('age_group').value,
+                disease_subtype: document.getElementById('disease_subtype').value,
                 confirmation_status: document.getElementById('confirmation_status').value,
                 outcome: document.getElementById('outcome').value,
                 count: parseInt(document.getElementById('count').value)
             };
             
-            // Format as CSV row
+            // Format as CSV row (field order matches data schema with disease_subtype after age_group)
             const csvRow = [
                 formData.disease_name,
                 formData.report_period_start,
                 formData.report_period_end,
                 formData.date_type,
                 formData.time_unit,
-                formData.disease_subtype,
                 formData.reporting_jurisdiction,
                 formData.state,
                 formData.geo_name,
                 formData.geo_unit,
                 formData.age_group,
+                formData.disease_subtype,
                 formData.confirmation_status,
                 formData.outcome,
                 formData.count
@@ -646,7 +646,7 @@
                 return stringVal;
             }).join(',');
             
-            const csvHeader = 'disease_name,report_period_start,report_period_end,date_type,time_unit,disease_subtype,reporting_jurisdiction,state,geo_name,geo_unit,age_group,confirmation_status,outcome,count';
+            const csvHeader = 'disease_name,report_period_start,report_period_end,date_type,time_unit,reporting_jurisdiction,state,geo_name,geo_unit,age_group,disease_subtype,confirmation_status,outcome,count';
             
             const output = csvHeader + '\n' + csvRow;
             
