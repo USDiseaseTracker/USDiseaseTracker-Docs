@@ -621,13 +621,13 @@
                 count: parseInt(document.getElementById('count').value)
             };
             
-            // Format as CSV row (field order matches data schema with disease_subtype after age_group)
+            // Format as CSV row (field order: disease_subtype moved after age_group per requirements)
             const csvRow = [
-                formData.disease_name,
                 formData.report_period_start,
                 formData.report_period_end,
                 formData.date_type,
                 formData.time_unit,
+                formData.disease_name,
                 formData.reporting_jurisdiction,
                 formData.state,
                 formData.geo_name,
@@ -646,7 +646,7 @@
                 return stringVal;
             }).join(',');
             
-            const csvHeader = 'disease_name,report_period_start,report_period_end,date_type,time_unit,reporting_jurisdiction,state,geo_name,geo_unit,age_group,disease_subtype,confirmation_status,outcome,count';
+            const csvHeader = 'report_period_start,report_period_end,date_type,time_unit,disease_name,reporting_jurisdiction,state,geo_name,geo_unit,age_group,disease_subtype,confirmation_status,outcome,count';
             
             const output = csvHeader + '\n' + csvRow;
             
