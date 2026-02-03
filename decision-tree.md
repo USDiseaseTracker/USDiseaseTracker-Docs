@@ -317,11 +317,6 @@ This tool helps you understand the valid data options for disease tracking submi
     </p>
   </div>
 
-  <div id="summary" class="info-box" style="display: none; margin-top: 30px;">
-    <h4>Current Selection Summary</h4>
-    <div id="summary-content"></div>
-  </div>
-
   <script>
     // Validation rules based on schema and documentation
     const validationRules = {
@@ -374,9 +369,6 @@ This tool helps you understand the valid data options for disease tracking submi
       
       // Update examples for date and count fields
       updateExampleFields();
-      
-      // Update summary
-      updateSummary();
     }
 
     function updateTimeUnit(disease) {
@@ -564,39 +556,6 @@ This tool helps you understand the valid data options for disease tracking submi
       }
     }
 
-    function updateSummary() {
-      const fields = [
-        'disease_name', 'time_unit', 'confirmation_status', 'disease_subtype',
-        'outcome', 'date_type', 'state', 'reporting_jurisdiction', 
-        'geo_unit', 'geo_name', 'age_group', 'report_period_start',
-        'report_period_end', 'count'
-      ];
-      
-      let hasSelections = false;
-      let summary = '<ul style="margin: 10px 0; padding-left: 20px;">';
-      
-      fields.forEach(field => {
-        const element = document.getElementById(field);
-        if (element && element.value) {
-          hasSelections = true;
-          const label = element.previousElementSibling.textContent.replace(' *', '');
-          summary += `<li><strong>${label}:</strong> <span class="example-value">${element.value}</span></li>`;
-        }
-      });
-      
-      summary += '</ul>';
-      
-      const summaryDiv = document.getElementById('summary');
-      const summaryContent = document.getElementById('summary-content');
-      
-      if (hasSelections) {
-        summaryContent.innerHTML = summary;
-        summaryDiv.style.display = 'block';
-      } else {
-        summaryDiv.style.display = 'none';
-      }
-    }
-
     function resetForm() {
       const selects = document.querySelectorAll('select');
       selects.forEach(select => {
@@ -608,7 +567,6 @@ This tool helps you understand the valid data options for disease tracking submi
           select.innerHTML = '<option value="">-- Select --</option>';
         }
       });
-      document.getElementById('summary').style.display = 'none';
       document.getElementById('example-table').style.display = 'none';
     }
 
