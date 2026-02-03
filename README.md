@@ -53,7 +53,7 @@ While we aim to limit changes once data standards and processes are established,
 
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
 
-***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+**[Data Standards Tool](data-standards-tool.html)** - Interactive tool to help create compliant disease tracking data records
 <br>
 <br>
 

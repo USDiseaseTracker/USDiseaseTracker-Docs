@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Standards Tool - US Disease Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #159957;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        
+        h2 {
+            color: #159957;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #159957;
+            padding-bottom: 5px;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .variable-name {
+            color: #666;
+            font-weight: normal;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #159957;
+            box-shadow: 0 0 0 2px rgba(21, 153, 87, 0.1);
+        }
+        
+        input.error,
+        select.error {
+            border-color: #d73a49;
+        }
+        
+        .error-message {
+            color: #d73a49;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .help-text {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .button-group {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+        
+        button {
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: #159957;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0f7043;
+        }
+        
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+        
+        .output-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .output-section.show {
+            display: block;
+        }
+        
+        pre {
+            background-color: white;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        
+        .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .alert-warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Standards Tool</h1>
+        <p class="subtitle">Interactive tool to help create compliant disease tracking reports</p>
+        
+        <div class="alert alert-info">
+            <strong>Note:</strong> This tool helps you create individual data records that match the US Disease Tracker data standards. 
+            Fill in the form below and click "Generate Record" to create a properly formatted data entry.
+        </div>
+        
+        <form id="dataForm">
+            <h2>Disease Information</h2>
+            
+            <div class="form-group">
+                <label for="disease_name">Disease Name <span class="variable-name">(disease_name)</span> *</label>
+                <select id="disease_name" name="disease_name" required>
+                    <option value="">-- Select Disease --</option>
+                    <option value="measles">Measles</option>
+                    <option value="pertussis">Pertussis</option>
+                    <option value="meningococcus">Invasive Meningococcal Disease</option>
+                </select>
+                <div class="error-message" id="disease_name_error"></div>
+            </div>
+            
+            <h2>Time Period</h2>
+            
+            <div class="form-group">
+                <label for="report_period_start">Report Period Start <span class="variable-name">(report_period_start)</span> *</label>
+                <input type="date" id="report_period_start" name="report_period_start" required>
+                <div class="help-text">Format: YYYY-MM-DD</div>
+                <div class="error-message" id="report_period_start_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="report_period_end">Report Period End <span class="variable-name">(report_period_end)</span> *</label>
+                <input type="date" id="report_period_end" name="report_period_end" required>
+                <div class="help-text">Format: YYYY-MM-DD</div>
+                <div class="error-message" id="report_period_end_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="date_type">Date Type <span class="variable-name">(date_type)</span> *</label>
+                <select id="date_type" name="date_type" required>
+                    <option value="">-- Select Date Type --</option>
+                    <option value="cccd">CCCD (Calculated Case Counting Date)</option>
+                    <option value="jurisdiction date hierarchy">Jurisdiction Date Hierarchy</option>
+                </select>
+                <div class="error-message" id="date_type_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="time_unit">Time Unit <span class="variable-name">(time_unit)</span> *</label>
+                <select id="time_unit" name="time_unit" required>
+                    <option value="">-- Select Time Unit --</option>
+                    <option value="week">Week</option>
+                    <option value="month">Month</option>
+                    <option value="ytd">Year-to-Date</option>
+                </select>
+                <div class="help-text">Measles: week or month; Pertussis/Meningococcus: month only</div>
+                <div class="error-message" id="time_unit_error"></div>
+            </div>
+            
+            <h2>Geographic Information</h2>
+            
+            <div class="form-group">
+                <label for="reporting_jurisdiction">Reporting Jurisdiction <span class="variable-name">(reporting_jurisdiction)</span> *</label>
+                <input type="text" id="reporting_jurisdiction" name="reporting_jurisdiction" placeholder="e.g., WA, NYC, PR" required>
+                <div class="help-text">State abbreviation, city, or territory</div>
+                <div class="error-message" id="reporting_jurisdiction_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="state">State <span class="variable-name">(state)</span> *</label>
+                <select id="state" name="state" required>
+                    <option value="">-- Select State --</option>
+                    <option value="AL">AL - Alabama</option>
+                    <option value="AK">AK - Alaska</option>
+                    <option value="AZ">AZ - Arizona</option>
+                    <option value="AR">AR - Arkansas</option>
+                    <option value="AS">AS - American Samoa</option>
+                    <option value="CA">CA - California</option>
+                    <option value="CO">CO - Colorado</option>
+                    <option value="CT">CT - Connecticut</option>
+                    <option value="DE">DE - Delaware</option>
+                    <option value="DC">DC - District of Columbia</option>
+                    <option value="FL">FL - Florida</option>
+                    <option value="GA">GA - Georgia</option>
+                    <option value="GU">GU - Guam</option>
+                    <option value="HI">HI - Hawaii</option>
+                    <option value="ID">ID - Idaho</option>
+                    <option value="IL">IL - Illinois</option>
+                    <option value="IN">IN - Indiana</option>
+                    <option value="IA">IA - Iowa</option>
+                    <option value="KS">KS - Kansas</option>
+                    <option value="KY">KY - Kentucky</option>
+                    <option value="LA">LA - Louisiana</option>
+                    <option value="ME">ME - Maine</option>
+                    <option value="MD">MD - Maryland</option>
+                    <option value="MA">MA - Massachusetts</option>
+                    <option value="MI">MI - Michigan</option>
+                    <option value="MN">MN - Minnesota</option>
+                    <option value="MS">MS - Mississippi</option>
+                    <option value="MO">MO - Missouri</option>
+                    <option value="MT">MT - Montana</option>
+                    <option value="NE">NE - Nebraska</option>
+                    <option value="NV">NV - Nevada</option>
+                    <option value="NH">NH - New Hampshire</option>
+                    <option value="NJ">NJ - New Jersey</option>
+                    <option value="NM">NM - New Mexico</option>
+                    <option value="NY">NY - New York</option>
+                    <option value="NC">NC - North Carolina</option>
+                    <option value="ND">ND - North Dakota</option>
+                    <option value="MP">MP - Northern Mariana Islands</option>
+                    <option value="OH">OH - Ohio</option>
+                    <option value="OK">OK - Oklahoma</option>
+                    <option value="OR">OR - Oregon</option>
+                    <option value="PA">PA - Pennsylvania</option>
+                    <option value="PR">PR - Puerto Rico</option>
+                    <option value="RI">RI - Rhode Island</option>
+                    <option value="SC">SC - South Carolina</option>
+                    <option value="SD">SD - South Dakota</option>
+                    <option value="TN">TN - Tennessee</option>
+                    <option value="TX">TX - Texas</option>
+                    <option value="TT">TT - Trust Territories</option>
+                    <option value="UT">UT - Utah</option>
+                    <option value="VT">VT - Vermont</option>
+                    <option value="VA">VA - Virginia</option>
+                    <option value="VI">VI - Virgin Islands</option>
+                    <option value="WA">WA - Washington</option>
+                    <option value="WV">WV - West Virginia</option>
+                    <option value="WI">WI - Wisconsin</option>
+                    <option value="WY">WY - Wyoming</option>
+                </select>
+                <div class="error-message" id="state_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="geo_name">Geographic Name <span class="variable-name">(geo_name)</span> *</label>
+                <input type="text" id="geo_name" name="geo_name" placeholder="e.g., King County, international resident, unspecified" list="geo_name_suggestions" required>
+                <datalist id="geo_name_suggestions">
+                    <option value="King County (example)">
+                    <option value="international resident">
+                    <option value="unspecified">
+                </datalist>
+                <div class="help-text">Name of county or sub-jurisdiction geography. Use "international resident" for non-US residents.</div>
+                <div class="error-message" id="geo_name_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="geo_unit">Geographic Unit <span class="variable-name">(geo_unit)</span> *</label>
+                <select id="geo_unit" name="geo_unit" required>
+                    <option value="">-- Select Geographic Unit --</option>
+                    <option value="county">County</option>
+                    <option value="state">State</option>
+                    <option value="region">Region</option>
+                    <option value="planning area">Planning Area</option>
+                    <option value="hsa">HSA (Health Service Area)</option>
+                    <option value="NA">NA (Not Applicable)</option>
+                </select>
+                <div class="help-text" id="geo_unit_help">Type of geographic unit</div>
+                <div class="error-message" id="geo_unit_error"></div>
+            </div>
+            
+            <h2>Demographics and Classification</h2>
+            
+            <div class="form-group">
+                <label for="age_group">Age Group <span class="variable-name">(age_group)</span> *</label>
+                <select id="age_group" name="age_group" required>
+                    <option value="">-- Select Age Group --</option>
+                    <option value="0-5 m">0-5 months</option>
+                    <option value="6-11 m">6-11 months</option>
+                    <option value="1-4 y">1-4 years</option>
+                    <option value="5-11 y">5-11 years</option>
+                    <option value="12-18 y">12-18 years</option>
+                    <option value="19-22 y">19-22 years</option>
+                    <option value="23-44 y">23-44 years</option>
+                    <option value="45-64 y">45-64 years</option>
+                    <option value=">=65 y">65+ years</option>
+                    <option value="total">Total (all ages)</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="unspecified">Unspecified</option>
+                </select>
+                <div class="error-message" id="age_group_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="disease_subtype">Disease Subtype <span class="variable-name">(disease_subtype)</span> *</label>
+                <select id="disease_subtype" name="disease_subtype" required>
+                    <option value="">-- Select Disease First --</option>
+                </select>
+                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; NA for measles/pertussis</div>
+                <div class="error-message" id="disease_subtype_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmation_status">Confirmation Status <span class="variable-name">(confirmation_status)</span> *</label>
+                <select id="confirmation_status" name="confirmation_status" required>
+                    <option value="">-- Select Confirmation Status --</option>
+                    <option value="confirmed">Confirmed</option>
+                    <option value="confirmed and probable">Confirmed and Probable</option>
+                </select>
+                <div class="help-text">Measles: confirmed only; Pertussis/Meningococcus: confirmed and probable</div>
+                <div class="error-message" id="confirmation_status_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="outcome">Outcome <span class="variable-name">(outcome)</span> *</label>
+                <select id="outcome" name="outcome" required>
+                    <option value="">-- Select Outcome --</option>
+                    <option value="cases">Cases</option>
+                    <option value="hospitalizations">Hospitalizations</option>
+                    <option value="deaths">Deaths</option>
+                </select>
+                <div class="help-text">For pilot: cases only</div>
+                <div class="error-message" id="outcome_error"></div>
+            </div>
+            
+            <div class="form-group">
+                <label for="count">Count <span class="variable-name">(count)</span> *</label>
+                <input type="number" id="count" name="count" min="0" step="1" placeholder="0" required>
+                <div class="help-text">Must be a non-negative integer</div>
+                <div class="error-message" id="count_error"></div>
+            </div>
+            
+            <div class="button-group">
+                <button type="submit" class="btn-primary">Generate Record</button>
+                <button type="button" class="btn-secondary" onclick="resetForm()">Reset Form</button>
+            </div>
+        </form>
+        
+        <div id="outputSection" class="output-section">
+            <h2>Generated Data Record</h2>
+            <div class="alert alert-success">
+                <strong>Success!</strong> Your data record has been generated and validated.
+            </div>
+            <pre id="outputData"></pre>
+        </div>
+    </div>
+    
+    <script>
+        // Disease-specific validation rules
+        const diseaseRules = {
+            measles: {
+                time_unit: ['week', 'month'],
+                disease_subtype: ['NA', 'unknown'],
+                confirmation_status: ['confirmed']
+            },
+            pertussis: {
+                time_unit: ['month'],
+                disease_subtype: ['NA', 'unknown'],
+                confirmation_status: ['confirmed and probable']
+            },
+            meningococcus: {
+                time_unit: ['month'],
+                disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'NA'],
+                confirmation_status: ['confirmed and probable']
+            }
+        };
+        
+        // Initialize form handlers
+        document.getElementById('dataForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            if (validateForm()) {
+                generateOutput();
+            }
+        });
+        
+        // Disease name change handler - update dependent fields
+        document.getElementById('disease_name').addEventListener('change', function() {
+            updateDiseaseSubtypeOptions();
+            updateTimeUnitOptions();
+            updateConfirmationStatusOptions();
+        });
+        
+        // Geographic name change handler - auto-set geo_unit to NA for international resident
+        document.getElementById('geo_name').addEventListener('input', function() {
+            const geoName = this.value.trim().toLowerCase();
+            const geoUnitSelect = document.getElementById('geo_unit');
+            const geoUnitHelp = document.getElementById('geo_unit_help');
+            
+            if (geoName === 'international resident') {
+                geoUnitSelect.value = 'NA';
+                geoUnitHelp.textContent = 'Automatically set to NA for international residents';
+                geoUnitHelp.style.color = '#856404';
+            } else {
+                geoUnitHelp.textContent = 'Type of geographic unit';
+                geoUnitHelp.style.color = '#666';
+            }
+        });
+        
+        function updateDiseaseSubtypeOptions() {
+            const diseaseName = document.getElementById('disease_name').value;
+            const diseaseSubtypeSelect = document.getElementById('disease_subtype');
+            const diseaseSubtypeHelp = document.getElementById('disease_subtype_help');
+            
+            diseaseSubtypeSelect.innerHTML = '<option value="">-- Select Disease Subtype --</option>';
+            
+            if (diseaseName && diseaseRules[diseaseName]) {
+                const options = diseaseRules[diseaseName].disease_subtype;
+                options.forEach(option => {
+                    const optEl = document.createElement('option');
+                    optEl.value = option;
+                    optEl.textContent = option;
+                    diseaseSubtypeSelect.appendChild(optEl);
+                });
+                
+                if (diseaseName === 'meningococcus') {
+                    diseaseSubtypeHelp.textContent = 'Serogroup (A, B, C, W, X, Y, Z) or unknown/unspecified/NA';
+                } else {
+                    diseaseSubtypeHelp.textContent = 'For ' + diseaseName + ', use NA or unknown';
+                }
+            }
+        }
+        
+        function updateTimeUnitOptions() {
+            const diseaseName = document.getElementById('disease_name').value;
+            const timeUnitSelect = document.getElementById('time_unit');
+            
+            if (diseaseName && diseaseRules[diseaseName]) {
+                const allowedUnits = diseaseRules[diseaseName].time_unit;
+                const options = timeUnitSelect.querySelectorAll('option');
+                
+                options.forEach(option => {
+                    if (option.value === '') return;
+                    option.disabled = !allowedUnits.includes(option.value);
+                });
+            }
+        }
+        
+        function updateConfirmationStatusOptions() {
+            const diseaseName = document.getElementById('disease_name').value;
+            const confirmationStatusSelect = document.getElementById('confirmation_status');
+            
+            if (diseaseName && diseaseRules[diseaseName]) {
+                const allowedStatuses = diseaseRules[diseaseName].confirmation_status;
+                const options = confirmationStatusSelect.querySelectorAll('option');
+                
+                options.forEach(option => {
+                    if (option.value === '') return;
+                    option.disabled = !allowedStatuses.includes(option.value);
+                });
+            }
+        }
+        
+        function validateForm() {
+            let isValid = true;
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            
+            // Get form values
+            const diseaseName = document.getElementById('disease_name').value;
+            const timeUnit = document.getElementById('time_unit').value;
+            const diseaseSubtype = document.getElementById('disease_subtype').value;
+            const confirmationStatus = document.getElementById('confirmation_status').value;
+            const reportPeriodStart = document.getElementById('report_period_start').value;
+            const reportPeriodEnd = document.getElementById('report_period_end').value;
+            const count = document.getElementById('count').value;
+            const geoName = document.getElementById('geo_name').value.trim().toLowerCase();
+            const geoUnit = document.getElementById('geo_unit').value;
+            
+            // Validate disease-specific rules
+            if (diseaseName && diseaseRules[diseaseName]) {
+                const rules = diseaseRules[diseaseName];
+                
+                if (timeUnit && !rules.time_unit.includes(timeUnit)) {
+                    showError('time_unit', `For ${diseaseName}, time_unit must be ${rules.time_unit.join(' or ')}`);
+                    isValid = false;
+                }
+                
+                if (diseaseSubtype && !rules.disease_subtype.includes(diseaseSubtype)) {
+                    showError('disease_subtype', `Invalid disease_subtype for ${diseaseName}`);
+                    isValid = false;
+                }
+                
+                if (confirmationStatus && !rules.confirmation_status.includes(confirmationStatus)) {
+                    showError('confirmation_status', `For ${diseaseName}, confirmation_status must be ${rules.confirmation_status.join(' or ')}`);
+                    isValid = false;
+                }
+            }
+            
+            // Validate date range
+            if (reportPeriodStart && reportPeriodEnd) {
+                if (new Date(reportPeriodEnd) < new Date(reportPeriodStart)) {
+                    showError('report_period_end', 'Report period end must be after or equal to start date');
+                    isValid = false;
+                }
+            }
+            
+            // Validate count is non-negative
+            if (count !== '' && parseInt(count) < 0) {
+                showError('count', 'Count must be non-negative');
+                isValid = false;
+            }
+            
+            // Validate international resident geo_unit
+            if (geoName === 'international resident' && geoUnit !== 'NA') {
+                showError('geo_unit', 'For international resident, geo_unit must be NA');
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+        
+        function showError(fieldName, message) {
+            const errorEl = document.getElementById(fieldName + '_error');
+            const fieldEl = document.getElementById(fieldName);
+            
+            if (errorEl && fieldEl) {
+                errorEl.textContent = message;
+                errorEl.style.display = 'block';
+                fieldEl.classList.add('error');
+            }
+        }
+        
+        function generateOutput() {
+            const formData = {
+                disease_name: document.getElementById('disease_name').value,
+                report_period_start: document.getElementById('report_period_start').value,
+                report_period_end: document.getElementById('report_period_end').value,
+                date_type: document.getElementById('date_type').value,
+                time_unit: document.getElementById('time_unit').value,
+                disease_subtype: document.getElementById('disease_subtype').value,
+                reporting_jurisdiction: document.getElementById('reporting_jurisdiction').value,
+                state: document.getElementById('state').value,
+                geo_name: document.getElementById('geo_name').value,
+                geo_unit: document.getElementById('geo_unit').value,
+                age_group: document.getElementById('age_group').value,
+                confirmation_status: document.getElementById('confirmation_status').value,
+                outcome: document.getElementById('outcome').value,
+                count: parseInt(document.getElementById('count').value)
+            };
+            
+            // Format as CSV row
+            const csvRow = [
+                formData.disease_name,
+                formData.report_period_start,
+                formData.report_period_end,
+                formData.date_type,
+                formData.time_unit,
+                formData.disease_subtype,
+                formData.reporting_jurisdiction,
+                formData.state,
+                formData.geo_name,
+                formData.geo_unit,
+                formData.age_group,
+                formData.confirmation_status,
+                formData.outcome,
+                formData.count
+            ].map(val => {
+                // Escape values that contain commas or quotes
+                const stringVal = String(val);
+                if (stringVal.includes(',') || stringVal.includes('"') || stringVal.includes('\n')) {
+                    return '"' + stringVal.replace(/"/g, '""') + '"';
+                }
+                return stringVal;
+            }).join(',');
+            
+            const csvHeader = 'disease_name,report_period_start,report_period_end,date_type,time_unit,disease_subtype,reporting_jurisdiction,state,geo_name,geo_unit,age_group,confirmation_status,outcome,count';
+            
+            const output = csvHeader + '\n' + csvRow;
+            
+            document.getElementById('outputData').textContent = output;
+            document.getElementById('outputSection').classList.add('show');
+            document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function resetForm() {
+            document.getElementById('dataForm').reset();
+            document.getElementById('outputSection').classList.remove('show');
+            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            document.getElementById('disease_subtype').innerHTML = '<option value="">-- Select Disease First --</option>';
+        }
+    </script>
+</body>
+</html>
