@@ -43,6 +43,7 @@ While we aim to limit changes once data standards and processes are established,
 2. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
 3. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
+5. **[Interactive Decision Tree](decision-tree.md)** - Interactive tool to explore valid data field options
 
 **Templates and Examples:**
 - [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
