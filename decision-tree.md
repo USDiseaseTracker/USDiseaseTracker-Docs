@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Interactive Decision Tree
+title: USDT Data Standards Tool
 ---
 
-# Interactive Data Field Decision Tree
+# USDT Data Standards Tool
 
 This tool helps you understand the valid data options for disease tracking submissions. Select values from the dropdowns to see which options are available for other fields based on the validation rules.
 
@@ -281,6 +281,40 @@ This tool helps you understand the valid data options for disease tracking submi
       <option value="">-- Enter count --</option>
     </select>
     <div class="field-help">Example: <span class="example-value">5</span> (positive integer, only non-zero counts should be submitted)</div>
+  </div>
+
+  <button class="reset-button" onclick="generateExample()" style="margin-top: 20px;">Generate Example</button>
+
+  <div id="example-table" class="info-box" style="display: none; margin-top: 30px;">
+    <h4>Example Data Table</h4>
+    <div style="overflow-x: auto;">
+      <table id="data-table" style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+          <tr style="background-color: #159957; color: white;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">report_period_start</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">report_period_end</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">date_type</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">time_unit</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">disease_name</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">disease_subtype</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">reporting_jurisdiction</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">state</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">geo_name</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">geo_unit</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">age_group</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">confirmation_status</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">outcome</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">count</th>
+          </tr>
+        </thead>
+        <tbody id="data-table-body">
+          <!-- Table rows will be inserted here -->
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top: 10px; font-size: 12px; color: #666;">
+      <strong>Note:</strong> This is how your data should be formatted for submission. Copy this table format to create your CSV file.
+    </p>
   </div>
 
   <div id="summary" class="info-box" style="display: none; margin-top: 30px;">
@@ -575,6 +609,74 @@ This tool helps you understand the valid data options for disease tracking submi
         }
       });
       document.getElementById('summary').style.display = 'none';
+      document.getElementById('example-table').style.display = 'none';
+    }
+
+    function generateExample() {
+      const fields = {
+        report_period_start: document.getElementById('report_period_start').value,
+        report_period_end: document.getElementById('report_period_end').value,
+        date_type: document.getElementById('date_type').value,
+        time_unit: document.getElementById('time_unit').value,
+        disease_name: document.getElementById('disease_name').value,
+        disease_subtype: document.getElementById('disease_subtype').value,
+        reporting_jurisdiction: document.getElementById('reporting_jurisdiction').value,
+        state: document.getElementById('state').value,
+        geo_name: document.getElementById('geo_name').value,
+        geo_unit: document.getElementById('geo_unit').value,
+        age_group: document.getElementById('age_group').value,
+        confirmation_status: document.getElementById('confirmation_status').value,
+        outcome: document.getElementById('outcome').value,
+        count: document.getElementById('count').value
+      };
+
+      // Check if all required fields are filled
+      const requiredFields = ['disease_name', 'time_unit', 'confirmation_status', 'outcome', 
+                              'date_type', 'state', 'reporting_jurisdiction', 'geo_unit', 
+                              'geo_name', 'age_group', 'report_period_start', 'report_period_end', 'count'];
+      
+      const missingFields = [];
+      requiredFields.forEach(field => {
+        if (!fields[field]) {
+          missingFields.push(field.replace(/_/g, ' '));
+        }
+      });
+
+      if (missingFields.length > 0) {
+        alert('Please fill in all required fields before generating an example:\n\n' + 
+              missingFields.map(f => '- ' + f).join('\n'));
+        return;
+      }
+
+      // Create the table row
+      const tableBody = document.getElementById('data-table-body');
+      tableBody.innerHTML = '';
+      
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.report_period_start}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.report_period_end}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.date_type}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.time_unit}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.disease_name}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.disease_subtype || 'NA'}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.reporting_jurisdiction}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.state}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.geo_name}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.geo_unit}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.age_group}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.confirmation_status}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.outcome}</td>
+        <td style="padding: 8px; border: 1px solid #ddd;">${fields.count}</td>
+      `;
+      
+      tableBody.appendChild(row);
+      
+      // Show the example table
+      document.getElementById('example-table').style.display = 'block';
+      
+      // Scroll to the table
+      document.getElementById('example-table').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
     // Initialize the form
