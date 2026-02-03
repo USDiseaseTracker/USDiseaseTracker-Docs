@@ -58,14 +58,14 @@ class DiseaseReport(BaseModel):
         disease_name = info.data.get('disease_name')
         
         if disease_name == "meningococcus":
-            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified"]:
+            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]:
                 raise ValueError(
-                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified. got: {v}"
+                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified, total. got: {v}"
                 )
         elif disease_name in ["measles", "pertussis"]:
-            if v not in ["NA", "unknown"]:
+            if v not in ["total", "unknown", "unspecified"]:
                 raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'NA' or 'unknown'. got: {v}"
+                    f"for {disease_name}, disease_subtype must be 'total', 'unknown', or 'unspecified'. got: {v}"
                 )
         
         return v
