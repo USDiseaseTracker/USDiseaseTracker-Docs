@@ -631,8 +631,20 @@
             
             // Validate date range
             if (reportPeriodStart && reportPeriodEnd) {
-                if (new Date(reportPeriodEnd) < new Date(reportPeriodStart)) {
+                const startDate = new Date(reportPeriodStart);
+                const endDate = new Date(reportPeriodEnd);
+
+                // Ensure end date is not before start date
+                if (endDate < startDate) {
                     showError('report_period_end', 'Report period end must be after or equal to start date');
+                    isValid = false;
+                }
+
+                // Optional sanity check: flag dates unreasonably far in the past or future
+                const now = new Date();
+                const hundredYearsInMs = 100 * 365 * 24 * 60 * 60 * 1000;
+                if (Math.abs(startDate - now) > hundredYearsInMs || Math.abs(endDate - now) > hundredYearsInMs) {
+                    showError('report_period_end', 'Report period dates appear invalid (too far in the past or future)');
                     isValid = false;
                 }
             }
