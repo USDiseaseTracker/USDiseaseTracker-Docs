@@ -1,10 +1,9 @@
 ---
-title: Documentation Home
+title: US Disease Tracker Standards and Documentation
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-## US Disease Tracker Documentation
 
 Welcome to the US Disease Tracker documentation repository. This site provides comprehensive data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
