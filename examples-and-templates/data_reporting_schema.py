@@ -69,23 +69,6 @@ class DiseaseReport(BaseModel):
                 )
         
         return v
-    
-    @field_validator('time_unit')
-    @classmethod
-    def validate_time_unit(cls, v, info: ValidationInfo):
-        """
-        validate time_unit based on disease_name
-        """
-        disease_name = info.data.get('disease_name')
-        
-        if disease_name == "measles" and v != "week":
-            raise ValueError("measles must have time_unit of 'week'")
-        if disease_name == "pertussis" and v != "week":
-            raise ValueError("pertussis must have time_unit of 'week'")
-        if disease_name == "meningococcus" and v != "week":
-            raise ValueError("meningococcus must have time_unit of 'week'")
-        
-        return v
 
 class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
     pass
