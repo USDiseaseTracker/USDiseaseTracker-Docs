@@ -418,9 +418,33 @@
                     <option value="confirmed">Confirmed</option>
                     <option value="confirmed and probable">Confirmed and Probable</option>
                 </select>
-                <div class="help-text">Measles: confirmed only; Pertussis/Meningococcus: confirmed and probable</div>
+                <div class="help-text" id="confirmation_status_help">Select the appropriate confirmation status based on the selected disease.</div>
                 <div class="error-message" id="confirmation_status_error"></div>
             </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var diseaseSelect = document.getElementById('disease');
+                    var confirmationHelp = document.getElementById('confirmation_status_help');
+
+                    if (!diseaseSelect || !confirmationHelp) {
+                        return;
+                    }
+
+                    function updateConfirmationStatusHelp() {
+                        var disease = (diseaseSelect.value || '').toLowerCase();
+                        if (disease === 'measles') {
+                            confirmationHelp.textContent = 'Measles: confirmed only';
+                        } else if (disease === 'pertussis' || disease === 'meningococcus') {
+                            confirmationHelp.textContent = 'Pertussis/Meningococcus: confirmed and probable';
+                        } else {
+                            confirmationHelp.textContent = 'Select the appropriate confirmation status based on the selected disease.';
+                        }
+                    }
+
+                    diseaseSelect.addEventListener('change', updateConfirmationStatusHelp);
+                    updateConfirmationStatusHelp();
+                });
+            </script>
             
             <div class="form-group">
                 <label for="outcome">Outcome <span class="variable-name">(outcome)</span> *</label>
