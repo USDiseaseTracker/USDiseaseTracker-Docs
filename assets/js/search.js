@@ -32,7 +32,9 @@
 
   // Load search data from JSON file
   function loadSearchData() {
-    const baseUrl = window.location.origin + (typeof baseurl !== 'undefined' ? baseurl : '/USDiseaseTracker-Docs');
+    // Get baseurl from the page's base tag or use default
+    const baseTag = document.querySelector('base');
+    const baseUrl = baseTag ? baseTag.href : window.location.origin + '/USDiseaseTracker-Docs';
     
     fetch(baseUrl + '/search-data.json')
       .then(response => {
@@ -116,19 +118,28 @@
       return;
     }
 
-    const resultsHTML = results.map(result => {
+    // Clear previous results
+    searchResults.innerHTML = '';
+    
+    results.forEach(result => {
       const highlightedTitle = highlightText(result.title, query);
       const excerpt = createExcerpt(result.content, query);
       
-      return `
-        <div class="search-result-item" onclick="window.location.href='${result.url}'">
-          <div class="search-result-title">${highlightedTitle}</div>
-          <div class="search-result-excerpt">${excerpt}</div>
-        </div>
+      const resultItem = document.createElement('div');
+      resultItem.className = 'search-result-item';
+      resultItem.innerHTML = `
+        <div class="search-result-title">${highlightedTitle}</div>
+        <div class="search-result-excerpt">${excerpt}</div>
       `;
-    }).join('');
+      
+      // Add click handler to navigate to result
+      resultItem.addEventListener('click', function() {
+        window.location.href = result.url;
+      });
+      
+      searchResults.appendChild(resultItem);
+    });
 
-    searchResults.innerHTML = resultsHTML;
     searchResults.classList.add('active');
   }
 
