@@ -1,3 +1,8 @@
+---
+title: Validation
+permalink: /docs/validation/
+---
+
 # Validation
 
 | Version | Changes from previous version |   
@@ -18,12 +23,7 @@ The validation process checks:
 
 Validation errors will be reported back to submitters with specific error descriptions.
 
-#---
-title: Validation Rules
-permalink: /docs/validation/
----
-
-# Validation Rules
+## Validation Rules
 
 ### Format Validation
 
