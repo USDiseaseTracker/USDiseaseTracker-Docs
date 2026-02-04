@@ -684,7 +684,7 @@
                 disease_subtype: document.getElementById('disease_subtype').value,
                 confirmation_status: document.getElementById('confirmation_status').value,
                 outcome: document.getElementById('outcome').value,
-                count: parseInt(document.getElementById('count').value)
+                count: parseInt(document.getElementById('count').value, 10)
             };
             
             // Define field order
@@ -745,6 +745,13 @@
             document.querySelectorAll('#time_unit option, #confirmation_status option').forEach(option => {
                 option.disabled = false;
             });
+            
+            // Reset geo_unit help text to default
+            const geoUnitHelp = document.getElementById('geo_unit_help');
+            if (geoUnitHelp) {
+                geoUnitHelp.textContent = 'Type of geographic unit';
+                geoUnitHelp.style.color = '#666';
+            }
         }
     </script>
 </body>
