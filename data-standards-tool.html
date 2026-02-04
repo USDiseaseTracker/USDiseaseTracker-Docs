@@ -728,13 +728,17 @@
             }
         }
         
-        function generateOutput() {
-            // Hide general error message on successful generation
+        function clearFormError() {
             const formError = document.getElementById('form_error');
             if (formError) {
                 formError.style.display = 'none';
                 formError.textContent = '';
             }
+        }
+        
+        function generateOutput() {
+            // Hide general error message on successful generation
+            clearFormError();
             
             const formData = {
                 disease_name: document.getElementById('disease_name').value,
