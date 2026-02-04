@@ -63,9 +63,9 @@ class DiseaseReport(BaseModel):
                     f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified. got: {v}"
                 )
         elif disease_name in ["measles", "pertussis"]:
-            if v not in ["NA", "unknown"]:
+            if v != "total":
                 raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'NA' or 'unknown'. got: {v}"
+                    f"for {disease_name}, disease_subtype must be 'total'. got: {v}"
                 )
         
         return v

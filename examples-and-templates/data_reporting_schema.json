@@ -273,8 +273,7 @@
                                     "Y",
                                     "Z",
                                     "unknown",
-                                    "unspecified",
-                                    "NA"
+                                    "unspecified"
                                 ]
                             }
                         }
@@ -286,8 +285,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "NA",
-                                    "unknown"
+                                    "total"
                                 ]
                             }
                         }
@@ -299,8 +297,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "NA",
-                                    "unknown"
+                                    "total"
                                 ]
                             }
                         }

@@ -204,7 +204,7 @@
                 <label for="disease_name">Disease Name <span class="variable-name">(disease_name)</span> *</label>
                 <select id="disease_name" name="disease_name" required>
                     <option value="">-- Select Disease --</option>
-                    <option value="measles">Measles</option>
+                    <option value="measles" selected>Measles</option>
                     <option value="pertussis">Pertussis</option>
                     <option value="meningococcus">Invasive Meningococcal Disease</option>
                 </select>
@@ -215,14 +215,14 @@
             
             <div class="form-group">
                 <label for="report_period_start">Report Period Start <span class="variable-name">(report_period_start)</span> *</label>
-                <input type="date" id="report_period_start" name="report_period_start" required>
+                <input type="date" id="report_period_start" name="report_period_start" value="2025-01-05" required>
                 <div class="help-text">Format: YYYY-MM-DD</div>
                 <div class="error-message" id="report_period_start_error"></div>
             </div>
             
             <div class="form-group">
                 <label for="report_period_end">Report Period End <span class="variable-name">(report_period_end)</span> *</label>
-                <input type="date" id="report_period_end" name="report_period_end" required>
+                <input type="date" id="report_period_end" name="report_period_end" value="2025-01-11" required>
                 <div class="help-text">Format: YYYY-MM-DD</div>
                 <div class="error-message" id="report_period_end_error"></div>
             </div>
@@ -231,7 +231,7 @@
                 <label for="date_type">Date Type <span class="variable-name">(date_type)</span> *</label>
                 <select id="date_type" name="date_type" required>
                     <option value="">-- Select Date Type --</option>
-                    <option value="cccd">CCCD (Calculated Case Counting Date)</option>
+                    <option value="cccd" selected>CCCD (Calculated Case Counting Date)</option>
                     <option value="jurisdiction date hierarchy">Jurisdiction Date Hierarchy</option>
                 </select>
                 <div class="error-message" id="date_type_error"></div>
@@ -241,7 +241,7 @@
                 <label for="time_unit">Time Unit <span class="variable-name">(time_unit)</span> *</label>
                 <select id="time_unit" name="time_unit" required>
                     <option value="">-- Select Time Unit --</option>
-                    <option value="week">Week</option>
+                    <option value="week" selected>Week</option>
                     <option value="month">Month</option>
                     <option value="ytd">Year-to-Date</option>
                 </select>
@@ -253,7 +253,7 @@
             
             <div class="form-group">
                 <label for="reporting_jurisdiction">Reporting Jurisdiction <span class="variable-name">(reporting_jurisdiction)</span> *</label>
-                <input type="text" id="reporting_jurisdiction" name="reporting_jurisdiction" placeholder="e.g., WA, NYC, PR" required>
+                <input type="text" id="reporting_jurisdiction" name="reporting_jurisdiction" placeholder="e.g., WA, NYC, PR" value="WA" required>
                 <div class="help-text">State abbreviation, city, or territory</div>
                 <div class="error-message" id="reporting_jurisdiction_error"></div>
             </div>
@@ -315,7 +315,7 @@
                     <option value="VT">VT - Vermont</option>
                     <option value="VA">VA - Virginia</option>
                     <option value="VI">VI - Virgin Islands</option>
-                    <option value="WA">WA - Washington</option>
+                    <option value="WA" selected>WA - Washington</option>
                     <option value="WV">WV - West Virginia</option>
                     <option value="WI">WI - Wisconsin</option>
                     <option value="WY">WY - Wyoming</option>
@@ -325,7 +325,7 @@
             
             <div class="form-group">
                 <label for="geo_name">Geographic Name <span class="variable-name">(geo_name)</span> *</label>
-                <input type="text" id="geo_name" name="geo_name" placeholder="e.g., King County, international resident, unspecified" list="geo_name_suggestions" required>
+                <input type="text" id="geo_name" name="geo_name" placeholder="e.g., King County, international resident, unspecified" list="geo_name_suggestions" value="King County" required>
                 <datalist id="geo_name_suggestions">
                     <option value="King County (example)">
                     <option value="international resident">
@@ -339,7 +339,7 @@
                 <label for="geo_unit">Geographic Unit <span class="variable-name">(geo_unit)</span> *</label>
                 <select id="geo_unit" name="geo_unit" required>
                     <option value="">-- Select Geographic Unit --</option>
-                    <option value="county">County</option>
+                    <option value="county" selected>County</option>
                     <option value="state">State</option>
                     <option value="region">Region</option>
                     <option value="planning area">Planning Area</option>
@@ -365,7 +365,7 @@
                     <option value="23-44 y">23-44 years</option>
                     <option value="45-64 y">45-64 years</option>
                     <option value=">=65 y">65+ years</option>
-                    <option value="total">Total (all ages)</option>
+                    <option value="total" selected>Total (all ages)</option>
                     <option value="unknown">Unknown</option>
                     <option value="unspecified">Unspecified</option>
                 </select>
@@ -377,7 +377,7 @@
                 <select id="disease_subtype" name="disease_subtype" required>
                     <option value="">-- Select Disease First --</option>
                 </select>
-                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; NA for measles/pertussis</div>
+                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; total for measles/pertussis</div>
                 <div class="error-message" id="disease_subtype_error"></div>
             </div>
             
@@ -385,7 +385,7 @@
                 <label for="confirmation_status">Confirmation Status <span class="variable-name">(confirmation_status)</span> *</label>
                 <select id="confirmation_status" name="confirmation_status" required>
                     <option value="">-- Select Confirmation Status --</option>
-                    <option value="confirmed">Confirmed</option>
+                    <option value="confirmed" selected>Confirmed</option>
                     <option value="confirmed and probable">Confirmed and Probable</option>
                 </select>
                 <div class="help-text">Measles: confirmed only; Pertussis/Meningococcus: confirmed and probable</div>
@@ -396,7 +396,7 @@
                 <label for="outcome">Outcome <span class="variable-name">(outcome)</span> *</label>
                 <select id="outcome" name="outcome" required>
                     <option value="">-- Select Outcome --</option>
-                    <option value="cases">Cases</option>
+                    <option value="cases" selected>Cases</option>
                     <option value="hospitalizations">Hospitalizations</option>
                     <option value="deaths">Deaths</option>
                 </select>
@@ -406,7 +406,7 @@
             
             <div class="form-group">
                 <label for="count">Count <span class="variable-name">(count)</span> *</label>
-                <input type="number" id="count" name="count" min="0" step="1" placeholder="0" required>
+                <input type="number" id="count" name="count" min="0" step="1" placeholder="0" value="1" required>
                 <div class="help-text">Must be a non-negative integer</div>
                 <div class="error-message" id="count_error"></div>
             </div>
@@ -431,17 +431,17 @@
         const diseaseRules = {
             measles: {
                 time_unit: ['week', 'month'],
-                disease_subtype: ['NA', 'unknown'],
+                disease_subtype: ['total'],
                 confirmation_status: ['confirmed']
             },
             pertussis: {
                 time_unit: ['month'],
-                disease_subtype: ['NA', 'unknown'],
+                disease_subtype: ['total'],
                 confirmation_status: ['confirmed and probable']
             },
             meningococcus: {
                 time_unit: ['month'],
-                disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'NA'],
+                disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified'],
                 confirmation_status: ['confirmed and probable']
             }
         };
@@ -494,9 +494,9 @@
                 });
                 
                 if (diseaseName === 'meningococcus') {
-                    diseaseSubtypeHelp.textContent = 'Serogroup (A, B, C, W, X, Y, Z) or unknown/unspecified/NA';
+                    diseaseSubtypeHelp.textContent = 'Serogroup (A, B, C, W, X, Y, Z) or unknown/unspecified';
                 } else {
-                    diseaseSubtypeHelp.textContent = 'For ' + diseaseName + ', use NA or unknown';
+                    diseaseSubtypeHelp.textContent = 'For ' + diseaseName + ', use total';
                 }
             }
         }
@@ -662,6 +662,20 @@
             document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
             document.getElementById('disease_subtype').innerHTML = '<option value="">-- Select Disease First --</option>';
         }
+        
+        // Initialize form with default values on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger disease change to populate disease_subtype options
+            updateDiseaseSubtypeOptions();
+            updateTimeUnitOptions();
+            updateConfirmationStatusOptions();
+            
+            // Set default disease_subtype value for measles
+            const diseaseSubtypeSelect = document.getElementById('disease_subtype');
+            if (diseaseSubtypeSelect.options.length > 1) {
+                diseaseSubtypeSelect.value = 'total';
+            }
+        });
     </script>
 </body>
 </html>
