@@ -230,9 +230,9 @@ permalink: /data-standards-tool/
                 <label for="disease_name">Disease Name <span class="variable-name">(disease_name)</span> *</label>
                 <select id="disease_name" name="disease_name" required>
                     <option value="">-- Select Disease --</option>
-                    <option value="measles">Measles</option>
-                    <option value="pertussis">Pertussis</option>
-                    <option value="meningococcus">Invasive Meningococcal Disease</option>
+                    <option value="measles">measles</option>
+                    <option value="pertussis">pertussis</option>
+                    <option value="meningococcus">meningococcus (Invasive Meningococcal Disease)</option>
                 </select>
                 <div class="error-message" id="disease_name_error"></div>
             </div>
@@ -257,8 +257,8 @@ permalink: /data-standards-tool/
                 <label for="date_type">Date Type <span class="variable-name">(date_type)</span> *</label>
                 <select id="date_type" name="date_type" required>
                     <option value="">-- Select Date Type --</option>
-                    <option value="cccd">CCCD (Calculated Case Counting Date)</option>
-                    <option value="jurisdiction date hierarchy">Jurisdiction Date Hierarchy</option>
+                    <option value="cccd">cccd (Calculated Case Counting Date)</option>
+                    <option value="jurisdiction date hierarchy">jurisdiction date hierarchy</option>
                 </select>
                 <div class="error-message" id="date_type_error"></div>
             </div>
@@ -267,8 +267,8 @@ permalink: /data-standards-tool/
                 <label for="time_unit">Time Unit <span class="variable-name">(time_unit)</span> *</label>
                 <select id="time_unit" name="time_unit" required>
                     <option value="">-- Select Time Unit --</option>
-                    <option value="week">Week</option>
-                    <option value="month">Month</option>
+                    <option value="week">week</option>
+                    <option value="month">month</option>
                 </select>
                 <div class="help-text">Valid time units depend on the selected disease. See disease-specific guidance above.</div>
                 <div class="error-message" id="time_unit_error"></div>
@@ -364,11 +364,11 @@ permalink: /data-standards-tool/
                 <label for="geo_unit">Geographic Unit <span class="variable-name">(geo_unit)</span> *</label>
                 <select id="geo_unit" name="geo_unit" required>
                     <option value="">-- Select Geographic Unit --</option>
-                    <option value="county">County</option>
-                    <option value="state">State</option>
-                    <option value="region">Region</option>
-                    <option value="planning area">Planning Area</option>
-                    <option value="hsa">HSA (Health Service Area)</option>
+                    <option value="county">county</option>
+                    <option value="state">state</option>
+                    <option value="region">region</option>
+                    <option value="planning area">planning area</option>
+                    <option value="hsa">hsa (Health Service Area)</option>
                     <option value="NA">NA (Not Applicable)</option>
                 </select>
                 <div class="help-text" id="geo_unit_help">Type of geographic unit</div>
@@ -389,9 +389,9 @@ permalink: /data-standards-tool/
                     <option value="23-44 y">23-44 years</option>
                     <option value="45-64 y">45-64 years</option>
                     <option value=">=65 y">65+ years</option>
-                    <option value="total">Total (all ages)</option>
-                    <option value="unknown">Unknown</option>
-                    <option value="unspecified">Unspecified</option>
+                    <option value="total">total (all ages)</option>
+                    <option value="unknown">unknown</option>
+                    <option value="unspecified">unspecified</option>
                 </select>
                 <div class="error-message" id="age_group_error"></div>
             </div>
@@ -409,8 +409,8 @@ permalink: /data-standards-tool/
                 <label for="confirmation_status">Confirmation Status <span class="variable-name">(confirmation_status)</span> *</label>
                 <select id="confirmation_status" name="confirmation_status" required>
                     <option value="">-- Select Confirmation Status --</option>
-                    <option value="confirmed">Confirmed</option>
-                    <option value="confirmed and probable">Confirmed and Probable</option>
+                    <option value="confirmed">confirmed</option>
+                    <option value="confirmed and probable">confirmed and probable</option>
                 </select>
                 <div class="help-text" id="confirmation_status_help">Select the appropriate confirmation status based on the selected disease.</div>
                 <div class="error-message" id="confirmation_status_error"></div>
@@ -444,7 +444,7 @@ permalink: /data-standards-tool/
                 <label for="outcome">Outcome <span class="variable-name">(outcome)</span> *</label>
                 <select id="outcome" name="outcome" required>
                     <option value="">-- Select Outcome --</option>
-                    <option value="cases">Cases</option>
+                    <option value="cases">cases</option>
 
                 </select>
                 <div class="help-text">For pilot: cases only</div>
