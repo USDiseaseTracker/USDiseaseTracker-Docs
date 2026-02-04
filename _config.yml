@@ -3,6 +3,7 @@ title: US Disease Tracker Documentation
 description: Data standards, templates, examples, and validation documentation for the US Disease Tracker project
 baseurl: "/USDiseaseTracker-Docs"
 url: "https://usdiseasetracker.github.io"
+repository: USDiseaseTracker/USDiseaseTracker-Docs
 
 # Theme
 theme: jekyll-theme-cayman

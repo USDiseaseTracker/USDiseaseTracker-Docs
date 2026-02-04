@@ -1,0 +1,45 @@
+---
+layout: none
+---
+[
+  {
+    "title": "{{ site.title }}",
+    "url": "{{ site.baseurl }}/",
+    "content": "{{ site.description }} US Disease Tracker Documentation data standards templates examples validation disease surveillance epidemiology Measles Pertussis Invasive Meningococcal Disease weekly monthly reporting"
+  },
+  {
+    "title": "Data Submission Guide",
+    "url": "{{ site.baseurl }}/guides/DATA-SUBMISSION-GUIDE",
+    "content": "Data Submission Guide overview requirements submission process weekly monthly reporting jurisdiction disease tracking Measles Pertussis Invasive Meningococcal Disease data format CSV template"
+  },
+  {
+    "title": "Data Technical Specifications",
+    "url": "{{ site.baseurl }}/guides/DATA-TECHNICAL-SPECS",
+    "content": "Data Technical Specifications field definitions requirements data types valid values disease tracking schema jurisdiction report date age groups case counts confirmed probable"
+  },
+  {
+    "title": "Data Transfer Guide",
+    "url": "{{ site.baseurl }}/guides/DATA-TRANSFER-GUIDE",
+    "content": "Data Transfer Guide methods SFTP secure file transfer submission process technical transfer protocols authentication encryption"
+  },
+  {
+    "title": "Validation Rules",
+    "url": "{{ site.baseurl }}/guides/VALIDATION",
+    "content": "Validation Rules data quality checks completeness format errors required fields valid values age groups disease codes date formats jurisdiction validation schema"
+  },
+  {
+    "title": "Contributing Guide",
+    "url": "{{ site.baseurl }}/CONTRIBUTING",
+    "content": "Contributing Guide how to contribute data standards feedback suggestions changes pull requests documentation"
+  },
+  {
+    "title": "GitHub Pages Setup",
+    "url": "{{ site.baseurl }}/GITHUB-PAGES-SETUP",
+    "content": "GitHub Pages Setup Jekyll configuration deployment build theme customization"
+  },
+  {
+    "title": "README",
+    "url": "{{ site.baseurl }}/README",
+    "content": "README US Disease Tracker Documentation repository overview project goals data standards templates examples validation quick reference diseases Measles Pertussis Invasive Meningococcal Disease"
+  }
+]
