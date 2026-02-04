@@ -637,10 +637,16 @@
                 }
             }
             
-            // Validate count is non-negative
-            if (count !== '' && parseInt(count) < 0) {
-                showError('count', 'Count must be non-negative');
+            // Validate count is required and non-negative
+            if (count == null || count.trim() === '') {
+                showError('count', 'Count is required');
                 isValid = false;
+            } else {
+                const parsedCount = parseInt(count, 10);
+                if (isNaN(parsedCount) || parsedCount < 0) {
+                    showError('count', 'Count must be a non-negative number');
+                    isValid = false;
+                }
             }
             
             // Validate international resident geo_unit
