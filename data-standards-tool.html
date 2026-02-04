@@ -728,6 +728,10 @@
             document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
             document.getElementById('disease_subtype').innerHTML = '<option value="">-- Select Disease First --</option>';
+            // Re-enable any options that may have been disabled dynamically
+            document.querySelectorAll('#time_unit option, #confirmation_status option').forEach(option => {
+                option.disabled = false;
+            });
         }
     </script>
 </body>
