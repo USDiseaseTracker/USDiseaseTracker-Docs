@@ -100,6 +100,10 @@
             display: none;
         }
         
+        .error-message[style*="display: block"] {
+            display: block;
+        }
+        
         .help-text {
             font-size: 0.9em;
             color: #666;
@@ -594,9 +598,17 @@
         function validateForm() {
             let isValid = true;
             
-            // Clear previous errors
-            document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
-            document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+            // Clear previous errors and ARIA attributes
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+                el.removeAttribute('role');
+                el.removeAttribute('aria-live');
+            });
+            document.querySelectorAll('.error').forEach(el => {
+                el.classList.remove('error');
+                el.removeAttribute('aria-invalid');
+                el.removeAttribute('aria-describedby');
+            });
             
             // Get form values
             const diseaseName = document.getElementById('disease_name').value;
@@ -608,6 +620,8 @@
             const count = document.getElementById('count').value;
             const geoName = document.getElementById('geo_name').value.trim().toLowerCase();
             const geoUnit = document.getElementById('geo_unit').value;
+            const reportingJurisdiction = document.getElementById('reporting_jurisdiction').value.trim().toUpperCase();
+            const state = document.getElementById('state').value;
             
             // Validate disease-specific rules
             if (diseaseName && diseaseRules[diseaseName]) {
@@ -667,6 +681,17 @@
                 isValid = false;
             }
             
+            // Validate consistency between reporting_jurisdiction and state
+            // Common exceptions: NYC (New York City), PR (Puerto Rico), DC, VI, GU, AS, MP, TT
+            const exceptions = ['NYC', 'PR', 'DC', 'VI', 'GU', 'AS', 'MP', 'TT'];
+            if (reportingJurisdiction && state && !exceptions.includes(reportingJurisdiction)) {
+                // For standard state abbreviations, they should match
+                if (reportingJurisdiction !== state && reportingJurisdiction.length === 2) {
+                    showError('state', 'State should match reporting jurisdiction. If reporting jurisdiction is a city or territory, ensure state is set appropriately.');
+                    isValid = false;
+                }
+            }
+            
             return isValid;
         }
         
@@ -677,7 +702,11 @@
             if (errorEl && fieldEl) {
                 errorEl.textContent = message;
                 errorEl.style.display = 'block';
+                errorEl.setAttribute('role', 'alert');
+                errorEl.setAttribute('aria-live', 'polite');
                 fieldEl.classList.add('error');
+                fieldEl.setAttribute('aria-invalid', 'true');
+                fieldEl.setAttribute('aria-describedby', fieldName + '_error');
             }
         }
         
