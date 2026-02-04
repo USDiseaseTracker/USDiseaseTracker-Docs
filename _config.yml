@@ -1,27 +1,35 @@
 # Site settings
 title: US Disease Tracker Documentation
-description: Data standards, templates, examples, and validation documentation for the US Disease Tracker project
+email: support@example.com
+description: >
+  Data standards, templates, examples, and validation documentation 
+  for the US Disease Tracker project
+lang: en-US
+
 baseurl: "/USDiseaseTracker-Docs"
 url: "https://usdiseasetracker.github.io"
+git_address: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
+git_edit_address: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main
 
-# Theme
-theme: jekyll-theme-cayman
+# theme options from https://bootswatch.com/3/
+# comment out this to use default Bootstrap
+bootwatch: flatly # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
 
-# Include/Exclude settings
-include:
-  - README.md
-  - CONTRIBUTING.md
-  - LICENSE
-  - guides
-  - examples-and-templates
-  - scripts
+# Plugins (previously gems:)
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
+# Include/Exclude settings
 exclude:
   - .git
   - .github
@@ -29,13 +37,33 @@ exclude:
   - vendor
   - Gemfile
   - Gemfile.lock
+  - README.md
 
-# Navigation structure
-# GitHub Pages will automatically convert markdown files to HTML
-# Links in markdown files should work as-is
+timezone: America/New_York
 
 # Collections for better organization
 collections:
-  guides:
+  docs:
+    permalink: /:collection/:path/
     output: true
-    permalink: /guides/:name/
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
+
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+

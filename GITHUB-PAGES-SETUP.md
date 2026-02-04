@@ -5,27 +5,51 @@ This repository is configured to be published as a GitHub Pages website at:
 
 ## How It Works
 
-The repository uses Jekyll to automatically convert Markdown files into a website. The site is built and deployed automatically whenever changes are pushed to the `main` branch.
+The repository uses Jekyll with the "Documentation" theme from [jekyllthemes.io](https://jekyllthemes.io/theme/documentation) to automatically convert Markdown files into a professional documentation website. The site is built and deployed automatically whenever changes are pushed to the `main` branch.
 
 ### Key Components
 
 1. **`_config.yml`** - Jekyll configuration file that controls:
    - Site title and description
-   - Theme (currently using `jekyll-theme-cayman`)
+   - Theme settings (using Documentation theme with Flatly Bootstrap theme)
    - Build settings
-   - Which files to include/exclude
+   - Collections and defaults
 
-2. **`index.md`** - The landing page of the website
+2. **`index.html`** - The landing page of the website with hero section
 
-3. **`.github/workflows/deploy-pages.yml`** - GitHub Actions workflow that:
+3. **`_docs/`** - Documentation pages organized as a collection:
+   - `_docs/index.md` - Documentation home page
+   - `_docs/data-submission-guide.md` - Data submission guide
+   - `_docs/data-technical-specs.md` - Technical specifications
+   - `_docs/data-transfer-guide.md` - Data transfer methods
+   - `_docs/validation.md` - Validation rules
+   - `_docs/pilot-overview.md` - Pilot program overview
+
+4. **`_data/docs.yml`** - Navigation structure for the documentation sidebar
+
+5. **`_layouts/`** - Page layouts:
+   - `default.html` - Base layout with navigation
+   - `docs.html` - Documentation page layout with sidebar
+   - `page.html` - Simple page layout
+   - `post.html` - Blog post layout
+
+6. **`_includes/`** - Reusable components:
+   - `topnav.html` - Top navigation bar
+   - `docs_nav.html` - Documentation sidebar navigation
+   - `footer.html` - Site footer
+   - `head.html` - HTML head with meta tags and CSS
+   - Others
+
+7. **`assets/`** - Static assets including:
+   - CSS files (Bootstrap with Bootswatch themes)
+   - JavaScript files
+   - Images
+   - Font Awesome icons
+
+8. **`.github/workflows/deploy-pages.yml`** - GitHub Actions workflow that:
    - Builds the Jekyll site
    - Deploys it to GitHub Pages
    - Runs automatically on push to `main` branch
-
-4. **Markdown Files** - All `.md` files in the repository are automatically converted to HTML pages:
-   - `guides/*.md` → Available at `/guides/filename/`
-   - `README.md` → Available at `/README/`
-   - etc.
 
 ## Enabling GitHub Pages
 
@@ -38,9 +62,27 @@ To enable the website, a repository administrator needs to:
 
 ## Making Changes
 
-Simply edit the Markdown files and push to `main`:
-- Changes to `index.md` update the homepage
-- Changes to files in `guides/` update those documentation pages
+### Adding a New Documentation Page
+
+1. Create a new Markdown file in `_docs/` (e.g., `_docs/my-new-page.md`)
+2. Add front matter at the top:
+   ```yaml
+   ---
+   title: My New Page
+   permalink: /docs/my-new-page/
+   ---
+   ```
+3. Add the page to navigation by editing `_data/docs.yml`:
+   ```yaml
+   - title: My Section
+     docs:
+     - my-new-page
+   ```
+
+### Updating Existing Pages
+
+Simply edit the Markdown files in `_docs/` and push to `main`:
+- Changes to documentation pages update automatically
 - The site rebuilds automatically (takes 1-2 minutes)
 
 ## Local Development
@@ -48,12 +90,8 @@ Simply edit the Markdown files and push to `main`:
 To preview the site locally:
 
 ```bash
-# Install Jekyll (requires Ruby)
-gem install bundler jekyll
-
-# Create a Gemfile (one-time setup)
-echo "source 'https://rubygems.org'" > Gemfile
-echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
+# Install Ruby and Bundler (requires Ruby 2.5+)
+gem install bundler
 
 # Install dependencies
 bundle install
@@ -66,28 +104,26 @@ bundle exec jekyll serve
 
 ## Theme Customization
 
-The site currently uses the Cayman theme. To customize:
+The site uses the Documentation theme with these customizations:
 
-1. **Change theme**: Edit `theme:` in `_config.yml`
-   - Available themes: https://pages.github.com/themes/
+1. **Bootstrap theme**: Set in `_config.yml` with `bootwatch: flatly`
+   - Available themes: cerulean, cosmo, cyborg, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, slate, solar, spacelab, superhero, united, yeti
 
-2. **Custom CSS**: Create `assets/css/style.scss`:
-   ```scss
-   ---
-   ---
-   @import "{{ site.theme }}";
-   
-   /* Your custom CSS here */
-   ```
+2. **Custom CSS**: Modify `_sass/_jekyll-doc-theme.scss` for custom styles
 
-3. **Custom layouts**: Create `_layouts/default.html` to override theme layout
+3. **Logo**: Replace `assets/img/logonav.png` with your own logo
+
+4. **Favicon**: Replace `favicon.ico` in the root directory
 
 ## Troubleshooting
 
 - **Site not updating?** Check the Actions tab for build status
-- **Links broken?** Ensure relative links use correct paths
-- **404 errors?** Check that files are included in `_config.yml`
+- **Links broken?** Ensure relative links use `{{ "/path/" | relative_url }}` in Liquid templates
+- **Sidebar not showing?** Check that pages are listed in `_data/docs.yml`
+- **404 errors?** Verify the permalink in the page's front matter
 
 For more information, see:
 - [GitHub Pages Documentation](https://docs.github.com/en/pages)
 - [Jekyll Documentation](https://jekyllrb.com/docs/)
+- [Documentation Theme](https://aksakalli.github.io/jekyll-doc-theme/)
+

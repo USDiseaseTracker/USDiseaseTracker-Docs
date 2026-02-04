@@ -1,3 +1,9 @@
+---
+layout: page
+title: Contributing
+permalink: /CONTRIBUTING/
+---
+
 # Contributing to the US Disease Tracker
 
 Thank you for your interest in contributing to the US Disease Tracker project! This document provides guidelines for contributing data on reportable diseases from public health jurisdictions, reporting errors or issues, and proposing new data standards.
