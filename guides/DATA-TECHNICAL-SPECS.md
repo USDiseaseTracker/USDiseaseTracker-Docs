@@ -59,14 +59,14 @@ The following table provides a comprehensive overview of all data fields require
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
 | age_group | String | Age group of cases | `0-5 m`, `6-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | No |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` | Yes |
 
 **Key Notes:**
 - **Report Period:** Use MMWR week boundaries for weekly reporting, [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
 - **Disease-Specific Rules:** Measles uses `confirmed` only; Pertussis and Meningococcus use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
-- **Disease Subtype:** Use `NA` for diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
+- **Disease Subtype:** Use `total` for diseases without subtype reporting (measles, pertussis); use serogroup (A, B, C, W, X, Y, Z) for meningococcus; use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
 
 ### No Zero Reporting
@@ -161,11 +161,11 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` |
 
 **Notes:**
 - Use for meningococcal disease serogroup reporting
-- Use `NA` for diseases without subtype reporting (measles, pertussis)
+- Use `total` for diseases without subtype reporting (measles, pertussis)
 - Use `unknown` when subtyping was not performed or is otherwise not known
 - Use `unspecified` when subtype is known but suppressed
 
