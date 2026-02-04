@@ -24,7 +24,7 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
    - Responsive Bootstrap grid layout
    - Clean, professional appearance
 
-2. **Documentation Pages (_docs/)**
+2. **Documentation Pages (webpage/_docs/)**
    - Left sidebar navigation with collapsible sections
    - Main content area with readable width
    - Top navigation bar with search
@@ -46,13 +46,13 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
 
 ## Key Files and Structure
 
-### Layouts (_layouts/)
+### Layouts (webpage/_layouts/)
 - `default.html` - Base layout with navigation and footer
 - `docs.html` - Documentation layout with sidebar
 - `page.html` - Simple page layout
 - `post.html` - Blog post layout (if needed)
 
-### Includes (_includes/)
+### Includes (webpage/_includes/)
 - `topnav.html` - Top navigation bar
 - `docs_nav.html` - Documentation sidebar navigation
 - `section_nav.html` - Section navigation helper
@@ -60,10 +60,10 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
 - `head.html` - HTML head with meta tags and CSS
 - `js_files.html` - JavaScript includes
 
-### Data (_data/)
+### Data (webpage/_data/)
 - `docs.yml` - Navigation structure for documentation
 
-### Documentation Collection (_docs/)
+### Documentation Collection (webpage/_docs/)
 All guide files converted to Jekyll collection format with proper front matter:
 - `index.md` - Documentation home page
 - `data-submission-guide.md` - Data submission guide
@@ -72,7 +72,7 @@ All guide files converted to Jekyll collection format with proper front matter:
 - `validation.md` - Validation rules
 - `pilot-overview.md` - Pilot program overview
 
-### Assets (assets/)
+### Assets (webpage/assets/)
 - `css/` - Bootstrap CSS and Bootswatch themes
 - `js/` - JavaScript (Bootstrap, search functionality)
 - `fonts/` - Font Awesome icons
@@ -107,7 +107,7 @@ All guide files converted to Jekyll collection format with proper front matter:
 
 ## Theme Customization Options
 
-The theme can be customized by changing the `bootwatch` variable in `_config.yml`:
+The theme can be customized by changing the `bootwatch` variable in `webpage/_config.yml`:
 
 Available Bootswatch themes:
 - **flatly** (current) - Clean, modern design
@@ -133,12 +133,13 @@ Available Bootswatch themes:
 ### What Changed
 1. ✅ Replaced `jekyll-theme-cayman` with custom Documentation theme
 2. ✅ Created new homepage with hero section and features
-3. ✅ Converted guides/ to _docs/ collection format
-4. ✅ Added structured navigation via _data/docs.yml
+3. ✅ Converted guides/ to webpage/_docs/ collection format
+4. ✅ Added structured navigation via webpage/_data/docs.yml
 5. ✅ Implemented top navigation with key links
 6. ✅ Added search functionality
 7. ✅ Included Font Awesome icons
 8. ✅ Added Bootswatch themes for easy styling
+9. ✅ Organized all webpage files into webpage/ directory
 
 ### What Stayed the Same
 1. ✅ All original content preserved
@@ -154,7 +155,7 @@ Available Bootswatch themes:
 1. Merge this PR to main branch to deploy to GitHub Pages
 2. Review the live site at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
 3. Make any additional customizations as needed
-4. Update logo in `assets/img/logonav.png` if desired
+4. Update logo in `webpage/assets/img/logonav.png` if desired
 5. Consider adding more documentation pages as the project grows
 
 ## Preview
