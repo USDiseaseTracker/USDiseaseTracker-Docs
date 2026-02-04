@@ -450,8 +450,7 @@
                 <select id="outcome" name="outcome" required>
                     <option value="">-- Select Outcome --</option>
                     <option value="cases">Cases</option>
-                    <option value="hospitalizations">Hospitalizations</option>
-                    <option value="deaths">Deaths</option>
+
                 </select>
                 <div class="help-text">For pilot: cases only</div>
                 <div class="error-message" id="outcome_error"></div>
@@ -509,8 +508,13 @@
         // Initialize form handlers
         document.getElementById('dataForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            if (validateForm()) {
-                generateOutput();
+            try {
+                if (validateForm()) {
+                    generateOutput();
+                }
+            } catch (error) {
+                console.error('Unexpected error during form submission:', error);
+                alert('An unexpected error occurred while processing the form. Please try again or contact support if the problem persists.');
             }
         });
         
