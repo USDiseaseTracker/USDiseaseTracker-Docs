@@ -7,47 +7,49 @@ This repository is configured to be published as a GitHub Pages website at:
 
 The repository uses Jekyll with the "Documentation" theme from [jekyllthemes.io](https://jekyllthemes.io/theme/documentation) to automatically convert Markdown files into a professional documentation website. The site is built and deployed automatically whenever changes are pushed to the `main` branch.
 
+All webpage-related files are organized in the `webpage/` directory.
+
 ### Key Components
 
-1. **`_config.yml`** - Jekyll configuration file that controls:
+1. **`webpage/_config.yml`** - Jekyll configuration file that controls:
    - Site title and description
    - Theme settings (using Documentation theme with Flatly Bootstrap theme)
    - Build settings
    - Collections and defaults
 
-2. **`index.html`** - The landing page of the website with hero section
+2. **`webpage/index.html`** - The landing page of the website with hero section
 
-3. **`_docs/`** - Documentation pages organized as a collection:
-   - `_docs/index.md` - Documentation home page
-   - `_docs/data-submission-guide.md` - Data submission guide
-   - `_docs/data-technical-specs.md` - Technical specifications
-   - `_docs/data-transfer-guide.md` - Data transfer methods
-   - `_docs/validation.md` - Validation rules
-   - `_docs/pilot-overview.md` - Pilot program overview
+3. **`webpage/_docs/`** - Documentation pages organized as a collection:
+   - `webpage/_docs/index.md` - Documentation home page
+   - `webpage/_docs/data-submission-guide.md` - Data submission guide
+   - `webpage/_docs/data-technical-specs.md` - Technical specifications
+   - `webpage/_docs/data-transfer-guide.md` - Data transfer methods
+   - `webpage/_docs/validation.md` - Validation rules
+   - `webpage/_docs/pilot-overview.md` - Pilot program overview
 
-4. **`_data/docs.yml`** - Navigation structure for the documentation sidebar
+4. **`webpage/_data/docs.yml`** - Navigation structure for the documentation sidebar
 
-5. **`_layouts/`** - Page layouts:
+5. **`webpage/_layouts/`** - Page layouts:
    - `default.html` - Base layout with navigation
    - `docs.html` - Documentation page layout with sidebar
    - `page.html` - Simple page layout
    - `post.html` - Blog post layout
 
-6. **`_includes/`** - Reusable components:
+6. **`webpage/_includes/`** - Reusable components:
    - `topnav.html` - Top navigation bar
    - `docs_nav.html` - Documentation sidebar navigation
    - `footer.html` - Site footer
    - `head.html` - HTML head with meta tags and CSS
    - Others
 
-7. **`assets/`** - Static assets including:
+7. **`webpage/assets/`** - Static assets including:
    - CSS files (Bootstrap with Bootswatch themes)
    - JavaScript files
    - Images
    - Font Awesome icons
 
 8. **`.github/workflows/deploy-pages.yml`** - GitHub Actions workflow that:
-   - Builds the Jekyll site
+   - Builds the Jekyll site from the `webpage/` directory
    - Deploys it to GitHub Pages
    - Runs automatically on push to `main` branch
 
@@ -64,7 +66,7 @@ To enable the website, a repository administrator needs to:
 
 ### Adding a New Documentation Page
 
-1. Create a new Markdown file in `_docs/` (e.g., `_docs/my-new-page.md`)
+1. Create a new Markdown file in `webpage/_docs/` (e.g., `webpage/_docs/my-new-page.md`)
 2. Add front matter at the top:
    ```yaml
    ---
@@ -72,7 +74,7 @@ To enable the website, a repository administrator needs to:
    permalink: /docs/my-new-page/
    ---
    ```
-3. Add the page to navigation by editing `_data/docs.yml`:
+3. Add the page to navigation by editing `webpage/_data/docs.yml`:
    ```yaml
    - title: My Section
      docs:
@@ -81,7 +83,7 @@ To enable the website, a repository administrator needs to:
 
 ### Updating Existing Pages
 
-Simply edit the Markdown files in `_docs/` and push to `main`:
+Simply edit the Markdown files in `webpage/_docs/` and push to `main`:
 - Changes to documentation pages update automatically
 - The site rebuilds automatically (takes 1-2 minutes)
 
@@ -92,6 +94,9 @@ To preview the site locally:
 ```bash
 # Install Ruby and Bundler (requires Ruby 2.5+)
 gem install bundler
+
+# Navigate to the webpage directory
+cd webpage
 
 # Install dependencies
 bundle install
@@ -106,20 +111,20 @@ bundle exec jekyll serve
 
 The site uses the Documentation theme with these customizations:
 
-1. **Bootstrap theme**: Set in `_config.yml` with `bootwatch: flatly`
+1. **Bootstrap theme**: Set in `webpage/_config.yml` with `bootwatch: flatly`
    - Available themes: cerulean, cosmo, cyborg, darkly, flatly, journal, lumen, paper, readable, sandstone, simplex, slate, solar, spacelab, superhero, united, yeti
 
-2. **Custom CSS**: Modify `_sass/_jekyll-doc-theme.scss` for custom styles
+2. **Custom CSS**: Modify `webpage/_sass/_jekyll-doc-theme.scss` for custom styles
 
-3. **Logo**: Replace `assets/img/logonav.png` with your own logo
+3. **Logo**: Replace `webpage/assets/img/logonav.png` with your own logo
 
-4. **Favicon**: Replace `favicon.ico` in the root directory
+4. **Favicon**: Replace `webpage/favicon.ico`
 
 ## Troubleshooting
 
 - **Site not updating?** Check the Actions tab for build status
 - **Links broken?** Ensure relative links use `{{ "/path/" | relative_url }}` in Liquid templates
-- **Sidebar not showing?** Check that pages are listed in `_data/docs.yml`
+- **Sidebar not showing?** Check that pages are listed in `webpage/_data/docs.yml`
 - **404 errors?** Verify the permalink in the page's front matter
 
 For more information, see:

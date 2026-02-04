@@ -624,6 +624,6 @@ This tool helps you understand the valid data options for disease tracking submi
 ## Additional Resources
 
 For complete technical specifications and validation rules, see:
-- [Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)
-- [Validation Rules](guides/VALIDATION.md)
-- [Data dictionary (CSV)](examples-and-templates/disease_tracking_data_dictionary.csv)
+- [Data Technical Specifications](../guides/DATA-TECHNICAL-SPECS.md)
+- [Validation Rules](../guides/VALIDATION.md)
+- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv)
