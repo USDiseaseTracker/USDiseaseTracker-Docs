@@ -31,9 +31,9 @@ While we aim to limit changes once data standards and processes are established,
 
 | Disease | Time Aggregation | Confirmation Status | Outcomes |
 |---------|------------------|---------------------|----------|
-| Measles | Weekly | Confirmed only | Cases |
-| Pertussis | Monthly | Confirmed and probable (combined) | Cases |
-| Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | Cases |
+| Measles | Weekly | Confirmed only | cases |
+| Pertussis | Monthly | Confirmed and probable (combined) | cases |
+| Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | cases |
 
 **Guides and Specifications**
 1. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit

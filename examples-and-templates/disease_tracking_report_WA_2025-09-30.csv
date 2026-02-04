@@ -169,4 +169,4 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,disease_s
 2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,1-4 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,19-22 y,confirmed,cases,1,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
 2025-08-31,2025-09-27,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,6,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
-2025-09-01,2025-09-30,CCCD,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
+2025-09-01,2025-09-30,cccd,month,pertussis,NA,WA,WA,WA,state,5-11 y,confirmed,cases,3,NA,these are fake data generated for the purposes of providing an example,NA,NA,NA,NA,NA,NA
