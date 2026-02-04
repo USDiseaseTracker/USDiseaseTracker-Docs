@@ -140,37 +140,25 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "time_unit": {"enum": ["week", "month"]}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             }
         ]
     })
     
-    # Validation 2: time_unit = month description
-    all_of.append({
-        "if": {"properties": {"time_unit": {"const": "month"}}},
-        "then": {
-            "properties": {
-                "report_period_start": {
-                    "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
-                }
-            }
-        }
-    })
-    
-    # Validation 3: time_unit = week description
+    # Validation 2: time_unit = week description
     all_of.append({
         "if": {"properties": {"time_unit": {"const": "week"}}},
         "then": {
@@ -182,7 +170,7 @@ def generate_json_schema():
         }
     })
     
-    # Validation 4: disease_name and disease_subtype constraints
+    # Validation 3: disease_name and disease_subtype constraints
     # These values are extracted from the validate_disease_subtype validator in the Pydantic model
     all_of.append({
         "oneOf": [
