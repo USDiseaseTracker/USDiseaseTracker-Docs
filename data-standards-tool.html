@@ -162,6 +162,36 @@
             font-size: 0.9em;
         }
         
+        .output-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: white;
+            font-size: 0.9em;
+            overflow-x: auto;
+            display: block;
+        }
+        
+        .output-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+        }
+        
+        .output-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            white-space: nowrap;
+        }
+        
+        .output-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
         .alert {
             padding: 15px;
             margin-bottom: 20px;
@@ -422,7 +452,14 @@
             <div class="alert alert-success">
                 <strong>Success!</strong> Your data record has been generated and validated.
             </div>
-            <pre id="outputData"></pre>
+            <table class="output-table" id="outputData">
+                <thead>
+                    <tr id="outputHeader"></tr>
+                </thead>
+                <tbody>
+                    <tr id="outputRow"></tr>
+                </tbody>
+            </table>
         </div>
     </div>
     
@@ -621,36 +658,42 @@
                 count: parseInt(document.getElementById('count').value)
             };
             
-            // Format as CSV row (field order: disease_subtype moved after age_group per requirements)
-            const csvRow = [
-                formData.report_period_start,
-                formData.report_period_end,
-                formData.date_type,
-                formData.time_unit,
-                formData.disease_name,
-                formData.reporting_jurisdiction,
-                formData.state,
-                formData.geo_name,
-                formData.geo_unit,
-                formData.age_group,
-                formData.disease_subtype,
-                formData.confirmation_status,
-                formData.outcome,
-                formData.count
-            ].map(val => {
-                // Escape values that contain commas or quotes
-                const stringVal = String(val);
-                if (stringVal.includes(',') || stringVal.includes('"') || stringVal.includes('\n')) {
-                    return '"' + stringVal.replace(/"/g, '""') + '"';
-                }
-                return stringVal;
-            }).join(',');
+            // Define field order
+            const fieldOrder = [
+                'report_period_start',
+                'report_period_end',
+                'date_type',
+                'time_unit',
+                'disease_name',
+                'reporting_jurisdiction',
+                'state',
+                'geo_name',
+                'geo_unit',
+                'age_group',
+                'disease_subtype',
+                'confirmation_status',
+                'outcome',
+                'count'
+            ];
             
-            const csvHeader = 'report_period_start,report_period_end,date_type,time_unit,disease_name,reporting_jurisdiction,state,geo_name,geo_unit,age_group,disease_subtype,confirmation_status,outcome,count';
+            // Generate table header
+            const headerRow = document.getElementById('outputHeader');
+            headerRow.innerHTML = '';
+            fieldOrder.forEach(field => {
+                const th = document.createElement('th');
+                th.textContent = field;
+                headerRow.appendChild(th);
+            });
             
-            const output = csvHeader + '\n' + csvRow;
+            // Generate table data row
+            const dataRow = document.getElementById('outputRow');
+            dataRow.innerHTML = '';
+            fieldOrder.forEach(field => {
+                const td = document.createElement('td');
+                td.textContent = formData[field];
+                dataRow.appendChild(td);
+            });
             
-            document.getElementById('outputData').textContent = output;
             document.getElementById('outputSection').classList.add('show');
             document.getElementById('outputSection').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
