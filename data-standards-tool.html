@@ -511,13 +511,7 @@
         document.getElementById('dataForm').addEventListener('submit', function(e) {
             e.preventDefault();
             try {
-                // Hide the general form error message
                 const formError = document.getElementById('form_error');
-                if (formError) {
-                    formError.style.display = 'none';
-                    formError.textContent = '';
-                }
-                
                 if (validateForm()) {
                     generateOutput();
                 } else {
