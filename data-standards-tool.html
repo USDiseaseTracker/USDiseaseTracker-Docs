@@ -100,10 +100,6 @@
             display: none;
         }
         
-        .error-message[style*="display: block"] {
-            display: block;
-        }
-        
         .help-text {
             font-size: 0.9em;
             color: #666;
@@ -682,10 +678,12 @@
             }
             
             // Validate consistency between reporting_jurisdiction and state
-            // Common exceptions: NYC (New York City), PR (Puerto Rico), DC, VI, GU, AS, MP, TT
+            // Common exceptions: NYC (New York City), PR (Puerto Rico), DC (District of Columbia),
+            // VI (Virgin Islands), GU (Guam), AS (American Samoa), MP (Northern Mariana Islands), TT (Trust Territories)
             const exceptions = ['NYC', 'PR', 'DC', 'VI', 'GU', 'AS', 'MP', 'TT'];
             if (reportingJurisdiction && state && !exceptions.includes(reportingJurisdiction)) {
-                // For standard state abbreviations, they should match
+                // For standard state abbreviations (2 characters), they should match
+                // Non-exception multi-character jurisdictions are allowed (e.g., city names within a state)
                 if (reportingJurisdiction !== state && reportingJurisdiction.length === 2) {
                     showError('state', 'State should match reporting jurisdiction. If reporting jurisdiction is a city or territory, ensure state is set appropriately.');
                     isValid = false;
