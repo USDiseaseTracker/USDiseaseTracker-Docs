@@ -1,9 +1,9 @@
 ---
 layout: default
-title: US Disease Tracker - Data Standards
+title: US Disease Tracker - Data Standards Home
 ---
 
-# US Disease Tracker
+# US Disease Tracker Documentation
 
 | Version | Changes from previous version |   
 |---------|---------|
@@ -26,9 +26,6 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
-**🛠️ Interactive Tool:**
-- **[USDT Data Standards Tool](decision-tree.md)** - Interactive tool to explore valid data field options and generate example data
-
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
 - **Submission Frequency:** Weekly (preferred)
@@ -46,7 +43,6 @@ While we aim to limit changes once data standards and processes are established,
 2. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
 3. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
 4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
-5. **[USDT Data Standards Tool](decision-tree.md)** - Interactive tool to explore valid data field options
 
 **Templates and Examples:**
 - [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
@@ -60,7 +56,7 @@ While we aim to limit changes once data standards and processes are established,
 
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
 
-***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+**[Data Standards Tool](data-standards-tool.html)** - Interactive tool to help create compliant disease tracking data records
 <br>
 <br>
 
