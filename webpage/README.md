@@ -17,7 +17,6 @@ This directory contains the complete Jekyll-based documentation website, includi
 - **`_sass/`** - SASS/SCSS stylesheets
 - **`assets/`** - Static assets (CSS, JavaScript, images, fonts)
 - **`data-standards-tool.html`** - Interactive data standards tool
-- **`decision-tree.md`** - Decision tree tool page
 - **`favicon.ico`** - Website favicon
 
 ## Local Development

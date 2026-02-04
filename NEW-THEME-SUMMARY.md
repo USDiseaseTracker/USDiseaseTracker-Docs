@@ -145,10 +145,9 @@ Available Bootswatch themes:
 1. ✅ All original content preserved
 2. ✅ GitHub Pages deployment workflow
 3. ✅ Data Standards Tool (data-standards-tool.html)
-4. ✅ Decision Tree tool
-5. ✅ Examples and templates
-6. ✅ Scripts directory
-7. ✅ Contributing guidelines
+4. ✅ Examples and templates
+5. ✅ Scripts directory
+6. ✅ Contributing guidelines
 
 ## Next Steps
 
