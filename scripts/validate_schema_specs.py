@@ -412,9 +412,22 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         pattern = r'(\| ' + re.escape(field_name) + r' \| [^|]+ \| [^|]+ \| )([^|]+)( \| [^|]+ \|)'
         updated = re.sub(pattern, r'\1' + new_values + r'\3', updated)
     
+    def replace_field_required(field_name: str, is_required: bool) -> None:
+        nonlocal updated
+        # Match the table row for the field and update the Required column
+        required_val = 'Yes' if is_required else 'No'
+        pattern = r'(\| ' + re.escape(field_name) + r' \| [^|]+ \| [^|]+ \| [^|]+ \| )[^|]+(\s+\|)'
+        updated = re.sub(pattern, r'\1' + required_val + r'\2', updated)
+    
     replace_field_value('disease_subtype', subtype_values)
     replace_field_value('geo_unit', geo_unit_values)
     replace_field_value('outcome', outcome_values)
+    
+    # Update required status for all fields in the field summary table
+    schema_required = set(schema.get('items', {}).get('required', []))
+    all_fields = schema.get('items', {}).get('properties', {}).keys()
+    for field_name in all_fields:
+        replace_field_required(field_name, field_name in schema_required)
     
     # Update the detailed field tables as well
     # Update disease_subtype in Disease-Specific Fields table

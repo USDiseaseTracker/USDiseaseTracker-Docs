@@ -38,10 +38,14 @@ jobs:
         run: |
           python3 scripts/generate_json_schema.py
       
+      - name: Update data standards tool and documentation from schema
+        run: |
+          python3 scripts/validate_schema_specs.py --update
+      
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -n $(git status --porcelain examples-and-templates/data_reporting_schema.json) ]]; then
+          if [[ -n $(git status --porcelain) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
@@ -53,9 +57,11 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add examples-and-templates/data_reporting_schema.json
-          git commit -m "Auto-generate data_reporting_schema.json from Pydantic model"
+          git add examples-and-templates/disease_tracking_data_dictionary.csv
+          git add guides/DATA-TECHNICAL-SPECS.md
+          git commit -m "Auto-update schema, data dictionary, and documentation from Pydantic model"
           git push
       
-      - name: Validate schema consistency
+      - name: Validate final consistency
         run: |
-          python3 scripts/validate_schema_specs.py || echo "Schema validation identified differences that may need attention"
+          python3 scripts/validate_schema_specs.py
