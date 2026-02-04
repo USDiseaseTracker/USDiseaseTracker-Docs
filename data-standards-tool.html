@@ -385,8 +385,7 @@
                 <label for="age_group">Age Group <span class="variable-name">(age_group)</span> *</label>
                 <select id="age_group" name="age_group" required>
                     <option value="">-- Select Age Group --</option>
-                    <option value="0-5 m">0-5 months</option>
-                    <option value="6-11 m">6-11 months</option>
+                    <option value="<1 y">&lt;1 year</option>
                     <option value="1-4 y">1-4 years</option>
                     <option value="5-11 y">5-11 years</option>
                     <option value="12-18 y">12-18 years</option>
@@ -406,7 +405,7 @@
                 <select id="disease_subtype" name="disease_subtype" required>
                     <option value="">-- Select Disease First --</option>
                 </select>
-                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; NA for measles/pertussis</div>
+                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; total/unknown/unspecified for measles/pertussis</div>
                 <div class="error-message" id="disease_subtype_error"></div>
             </div>
             
@@ -467,6 +466,9 @@
                 <button type="submit" class="btn-primary">Generate Record</button>
                 <button type="button" class="btn-secondary" onclick="resetForm()">Reset Form</button>
             </div>
+            
+            <div class="error-message" id="form_error" role="alert" aria-live="polite" style="display: none; margin-top: 15px; font-size: 1em; padding: 10px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 4px;">
+            </div>
         </form>
         
         <div id="outputSection" class="output-section">
@@ -490,17 +492,17 @@
         const diseaseRules = {
             measles: {
                 time_unit: ['week', 'month'],
-                disease_subtype: ['NA', 'unknown'],
+                disease_subtype: ['total', 'unknown', 'unspecified'],
                 confirmation_status: ['confirmed']
             },
             pertussis: {
                 time_unit: ['month'],
-                disease_subtype: ['NA', 'unknown'],
+                disease_subtype: ['total', 'unknown', 'unspecified'],
                 confirmation_status: ['confirmed and probable']
             },
             meningococcus: {
                 time_unit: ['month'],
-                disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'NA'],
+                disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'total'],
                 confirmation_status: ['confirmed and probable']
             }
         };
@@ -509,8 +511,16 @@
         document.getElementById('dataForm').addEventListener('submit', function(e) {
             e.preventDefault();
             try {
+                const formError = document.getElementById('form_error');
                 if (validateForm()) {
                     generateOutput();
+                } else {
+                    // Show general error message when validation fails
+                    if (formError) {
+                        formError.textContent = 'Please fix the errors above before generating a record.';
+                        formError.style.display = 'block';
+                        formError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
                 }
             } catch (error) {
                 console.error('Unexpected error during form submission:', error);
@@ -558,9 +568,9 @@
                 });
                 
                 if (diseaseName === 'meningococcus') {
-                    diseaseSubtypeHelp.textContent = 'Serogroup (A, B, C, W, X, Y, Z) or unknown/unspecified/NA';
+                    diseaseSubtypeHelp.textContent = 'Serogroup (A, B, C, W, X, Y, Z) or total/unknown/unspecified';
                 } else {
-                    diseaseSubtypeHelp.textContent = 'For ' + diseaseName + ', use NA or unknown';
+                    diseaseSubtypeHelp.textContent = 'For ' + diseaseName + ', use total, unknown, or unspecified';
                 }
             }
         }
@@ -712,7 +722,18 @@
             }
         }
         
+        function clearFormError() {
+            const formError = document.getElementById('form_error');
+            if (formError) {
+                formError.style.display = 'none';
+                formError.textContent = '';
+            }
+        }
+        
         function generateOutput() {
+            // Hide general error message on successful generation
+            clearFormError();
+            
             const formData = {
                 disease_name: document.getElementById('disease_name').value,
                 report_period_start: document.getElementById('report_period_start').value,
@@ -786,6 +807,13 @@
             if (geoUnitHelp) {
                 geoUnitHelp.textContent = 'Type of geographic unit';
                 geoUnitHelp.style.color = '#666';
+            }
+            
+            // Hide general form error
+            const formError = document.getElementById('form_error');
+            if (formError) {
+                formError.style.display = 'none';
+                formError.textContent = '';
             }
         }
     </script>
