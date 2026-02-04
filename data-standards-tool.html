@@ -745,14 +745,6 @@
             document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
             document.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
             document.getElementById('disease_subtype').innerHTML = '<option value="">-- Select Disease First --</option>';
-
-            // Re-trigger geo_name input handler so geo_unit help text is reset to its default
-            const geoNameInput = document.getElementById('geo_name');
-            if (geoNameInput) {
-                // Dispatch input (and change) events to invoke any attached handlers
-                geoNameInput.dispatchEvent(new Event('input'));
-                geoNameInput.dispatchEvent(new Event('change'));
-            }
             // Re-enable any options that may have been disabled dynamically
             document.querySelectorAll('#time_unit option, #confirmation_status option').forEach(option => {
                 option.disabled = false;
