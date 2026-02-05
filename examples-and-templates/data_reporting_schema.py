@@ -1,7 +1,6 @@
 from datetime import date
-from pydantic import RootModel
 from typing import List, Literal
-from pydantic import BaseModel, ValidationInfo, field_validator, model_validator
+from pydantic import BaseModel, RootModel, ValidationInfo, field_validator, model_validator
 
 class DiseaseReport(BaseModel):
     disease_name: Literal["measles", "pertussis", "meningococcus"]
