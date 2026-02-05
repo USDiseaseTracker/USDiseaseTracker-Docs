@@ -487,17 +487,17 @@ permalink: /data-standards-tool/
         // Disease-specific validation rules
         const diseaseRules = {
             measles: {
-                time_unit: ['week', 'month'],
+                time_unit: ['week'],
                 disease_subtype: ['total'],
                 confirmation_status: ['confirmed']
             },
             pertussis: {
-                time_unit: ['month'],
+                time_unit: ['week'],
                 disease_subtype: ['total'],
                 confirmation_status: ['confirmed and probable']
             },
             meningococcus: {
-                time_unit: ['month'],
+                time_unit: ['week'],
                 disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'total'],
                 confirmation_status: ['confirmed and probable']
             }
