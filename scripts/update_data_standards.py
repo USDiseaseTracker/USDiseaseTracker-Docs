@@ -36,7 +36,6 @@ def run_command(cmd: list, description: str) -> bool:
 def main():
     """Main function to update data standards."""
     script_dir = Path(__file__).parent
-    repo_root = script_dir.parent
     
     print("="*60)
     print("Data Standards Update Process")
