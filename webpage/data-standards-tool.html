@@ -268,7 +268,6 @@ permalink: /data-standards-tool/
                 <select id="time_unit" name="time_unit" required>
                     <option value="">-- Select Time Unit --</option>
                     <option value="week">week</option>
-                    <option value="month">month</option>
                 </select>
                 <div class="help-text">Valid time units depend on the selected disease. See disease-specific guidance above.</div>
                 <div class="error-message" id="time_unit_error"></div>
@@ -381,14 +380,14 @@ permalink: /data-standards-tool/
                 <label for="age_group">Age Group <span class="variable-name">(age_group)</span> *</label>
                 <select id="age_group" name="age_group" required>
                     <option value="">-- Select Age Group --</option>
-                    <option value="<1 y">&lt;1 year</option>
-                    <option value="1-4 y">1-4 years</option>
-                    <option value="5-11 y">5-11 years</option>
-                    <option value="12-18 y">12-18 years</option>
-                    <option value="19-22 y">19-22 years</option>
-                    <option value="23-44 y">23-44 years</option>
-                    <option value="45-64 y">45-64 years</option>
-                    <option value=">=65 y">65+ years</option>
+                    <option value="<1 y">&lt;1 y</option>
+                    <option value="1-4 y">1-4 y</option>
+                    <option value="5-11 y">5-11 y</option>
+                    <option value="12-18 y">12-18 y</option>
+                    <option value="19-22 y">19-22 y</option>
+                    <option value="23-44 y">23-44 y</option>
+                    <option value="45-64 y">45-64 y</option>
+                    <option value=">=65 y">>=65 y</option>
                     <option value="total">total (all ages)</option>
                     <option value="unknown">unknown</option>
                     <option value="unspecified">unspecified</option>
@@ -734,8 +733,54 @@ permalink: /data-standards-tool/
             
             // Validate that both age_group and disease_subtype cannot be "total" when geo_unit is "state"
             if (geoUnit === 'state' && ageGroup === 'total' && diseaseSubtype === 'total') {
-                showError('age_group', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
-                showError('disease_subtype', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
+                showError('age_group', 'State totals should not be reported separately. Report with age and/or disease subtype aggregations.');
+                showError('disease_subtype', 'State totals should not be reported separately. Report with age and/or disease subtype aggregations.');
+                isValid = false;
+            }
+            
+            // Validate MMWR week: report_period_start must be Sunday when time_unit = "week"
+            if (timeUnit === 'week' && reportPeriodStart) {
+                const startDate = new Date(reportPeriodStart);
+                // In JavaScript, Sunday is 0, Monday is 1, etc.
+                if (startDate.getDay() !== 0) {
+                    showError('report_period_start', 'When time_unit is "week", report_period_start must be a Sunday (MMWR week start)');
+                    isValid = false;
+                }
+            }
+            
+            // Validate MMWR week: report_period_end must be Saturday when time_unit = "week"
+            if (timeUnit === 'week' && reportPeriodEnd) {
+                const endDate = new Date(reportPeriodEnd);
+                // In JavaScript, Saturday is 6
+                if (endDate.getDay() !== 6) {
+                    showError('report_period_end', 'When time_unit is "week", report_period_end must be a Saturday (MMWR week end)');
+                    isValid = false;
+                }
+            }
+            
+            // Validate NA usage: NA should only be used for geo_unit
+            // Check if NA is used for any other field (excluding geo_unit)
+            if (ageGroup === 'NA') {
+                showError('age_group', 'NA is not a valid value for age_group. Use "unknown" or "unspecified" instead.');
+                isValid = false;
+            }
+            if (diseaseSubtype === 'NA') {
+                showError('disease_subtype', 'NA is not a valid value for disease_subtype. Use "unknown" or "unspecified" instead.');
+                isValid = false;
+            }
+            if (reportingJurisdiction === 'NA') {
+                showError('reporting_jurisdiction', 'NA is not a valid value for reporting_jurisdiction');
+                isValid = false;
+            }
+            if (state === 'NA') {
+                showError('state', 'NA is not a valid value for state');
+                isValid = false;
+            }
+            
+            // Validate geo_unit = NA requires geo_name = "international resident"
+            if (geoUnit === 'NA' && geoName !== 'international resident') {
+                showError('geo_name', 'When geo_unit is "NA", geo_name must be "international resident"');
+                showError('geo_unit', 'geo_unit "NA" can only be used with geo_name "international resident"');
                 isValid = false;
             }
             
