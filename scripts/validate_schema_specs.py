@@ -360,9 +360,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     
     # Build age groups table with descriptions
     age_descriptions = {
-        '0-11 m': 'From birth up to but not including 1 year birthday',
-        '0-5 m': 'From birth up to but not including 6 months',
-        '6-11 m': 'From 6 months up to but not including 1 year birthday',
+        '<1 y': 'From birth up to but not including 1 year birthday',
         '1-4 y': 'From 1 year birthday up to but not including 5 year birthday',
         '5-11 y': 'From 5 year birthday up to but not including 12 year birthday',
         '12-18 y': 'From 12 year birthday up to but not including 19 year birthday',

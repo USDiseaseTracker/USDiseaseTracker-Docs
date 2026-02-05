@@ -4,7 +4,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
 ---
 
@@ -23,6 +23,9 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
+**🛠️ Interactive Tool:**
+- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
+
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
 - **Submission Frequency:** Weekly (preferred)
@@ -32,8 +35,8 @@ While we aim to limit changes once data standards and processes are established,
 | Disease | Time Aggregation | Confirmation Status | Outcomes |
 |---------|------------------|---------------------|----------|
 | Measles | Weekly | Confirmed only | Cases |
-| Pertussis | Monthly | Confirmed and probable (combined) | Cases |
-| Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | Cases |
+| Pertussis | Weekly | Confirmed and probable (combined) | Cases |
+| Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases |
 
 **Guides and Specifications**
 1. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
@@ -79,6 +82,20 @@ Data are validated upon submission for completeness, format, and errors. See the
 - Only data supplied by jurisdictions will be posted publicly
 
 *NOTE: Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.*
+<br>
+<br>
+
+
+## Repository Structure
+
+This repository is organized as follows:
+
+- **`webpage/`** - All website-related files (Jekyll site, published at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)
+- **`guides/`** - Documentation guides (DATA-SUBMISSION-GUIDE.md, DATA-TECHNICAL-SPECS.md, etc.)
+- **`examples-and-templates/`** - Data templates, examples, and the data dictionary
+- **`scripts/`** - Validation scripts and schema generators
+
+For more information about the website structure, see [webpage/README.md](webpage/README.md).
 <br>
 <br>
 

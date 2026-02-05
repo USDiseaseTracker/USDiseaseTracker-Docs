@@ -26,9 +26,7 @@
             "time_unit": {
                 "type": "string",
                 "enum": [
-                    "week",
-                    "month",
-                    "ytd"
+                    "week"
                 ],
                 "description": "Time aggregation unit"
             },
@@ -43,7 +41,7 @@
             },
             "disease_subtype": {
                 "type": "string",
-                "description": "Subtype Name of the disease. This can be used to specify serogroup for meningococcus (e.g., A, B, C, W, Y). If not applicable, use 'NA'. If not known, use 'Unknown'."
+                "description": "Disease subtype (meningococcal serogroup). Use 'total' for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis). Use 'unknown' when subtyping was not performed. Use 'unspecified' when subtype is known but suppressed."
             },
             "reporting_jurisdiction": {
                 "type": "string",
@@ -131,8 +129,7 @@
             "age_group": {
                 "type": "string",
                 "enum": [
-                    "0-5 m",
-                    "6-11 m",
+                    "<1 y",
                     "1-4 y",
                     "5-11 y",
                     "12-18 y",
@@ -195,10 +192,7 @@
                                 "const": "measles"
                             },
                             "time_unit": {
-                                "enum": [
-                                    "week",
-                                    "month"
-                                ]
+                                "const": "week"
                             }
                         }
                     },
@@ -208,7 +202,7 @@
                                 "const": "pertussis"
                             },
                             "time_unit": {
-                                "const": "month"
+                                "const": "week"
                             }
                         }
                     },
@@ -218,27 +212,11 @@
                                 "const": "meningococcus"
                             },
                             "time_unit": {
-                                "const": "month"
+                                "const": "week"
                             }
                         }
                     }
                 ]
-            },
-            {
-                "if": {
-                    "properties": {
-                        "time_unit": {
-                            "const": "month"
-                        }
-                    }
-                },
-                "then": {
-                    "properties": {
-                        "report_period_start": {
-                            "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
-                        }
-                    }
-                }
             },
             {
                 "if": {
@@ -274,7 +252,7 @@
                                     "Z",
                                     "unknown",
                                     "unspecified",
-                                    "NA"
+                                    "total"
                                 ]
                             }
                         }
@@ -286,8 +264,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "NA",
-                                    "unknown"
+                                    "total"
                                 ]
                             }
                         }
@@ -299,13 +276,41 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "NA",
-                                    "unknown"
+                                    "total"
                                 ]
                             }
                         }
                     }
                 ]
+            },
+            {
+                "if": {
+                    "properties": {
+                        "geo_unit": {
+                            "const": "state"
+                        }
+                    }
+                },
+                "then": {
+                    "not": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "age_group": {
+                                        "const": "total"
+                                    }
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "disease_subtype": {
+                                        "const": "total"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
             }
         ]
     }

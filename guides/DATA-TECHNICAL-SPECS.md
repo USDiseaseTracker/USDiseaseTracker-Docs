@@ -2,7 +2,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
 
 ---
@@ -16,6 +16,7 @@ This document provides the complete technical specifications for disease trackin
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
 **Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
+<br>
 
 ### Contents
 
@@ -33,12 +34,13 @@ This document provides the complete technical specifications for disease trackin
 ## Data Structure
 
 Data should be submitted in CSV format with one row per unique combination of:
-- Time period (week, month, or year-to-date)
+- Time period (week)
 - Geographic unit
 - Disease
 - Age group (when applicable)
 - Disease subtype (when applicable)
 - Outcome (currently only cases)
+<br>
 
 ### Field Summary
 
@@ -46,7 +48,7 @@ The following table provides a comprehensive overview of all data fields require
 
 | Field Name | Data Type | Description | Valid Values | Required |
 |------------|-----------|-------------|--------------|----------|
-| time_unit | String | Time aggregation unit | `week`, `month`, `ytd` | Yes |
+| time_unit | String | Time aggregation unit | `week` | Yes |
 | report_period_start | Date | Start date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to reporting periods | `cccd`, `jurisdiction date hierarchy` | Yes |
@@ -56,22 +58,25 @@ The following table provides a comprehensive overview of all data fields require
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` | Yes |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code | Yes |
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` | Yes |
-| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` | Yes |
+| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unknown`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
-| age_group | String | Age group of cases | `0-5 m`, `6-11 m`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` | Yes |
+| age_group | String | Age group of cases | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` | Yes |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` | Yes |
 
 **Key Notes:**
-- **Report Period:** Use MMWR week boundaries for weekly reporting, [MMWR week-to-month crosswalk](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for monthly reporting, and MMWR week 1 start (2024-12-29) through end of last complete week for `ytd`
+- **Report Period:** Use MMWR week boundaries for weekly reporting
 - **Disease-Specific Rules:** Measles uses `confirmed` only; Pertussis and Meningococcus use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
 - **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
-- **Disease Subtype:** Use `NA` for diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
+- **Disease Subtype:** Use `total` for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis); use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
+<br>
 
 ### No Zero Reporting
 
 Only include rows with non-zero counts. The system will automatically infer zeros for missing combinations at higher aggregation levels.
+<br>
+<br>
 
 ## Fields Specifications
 
@@ -79,16 +84,15 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| time_unit | String | Time aggregation unit | `week`, `month`, `ytd` |
+| time_unit | String | Time aggregation unit | `week` |
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
 
 **Notes:**
 - Use MMWR week boundaries for weekly reporting
-- Use MMWR week-to-month crosswalk for monthly reporting. Use [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) for reference.
-- For `ytd`, use MMWR week 1 start (2024-12-29) through end of last complete week
 - Provide metadata describing custom date hierarchies if not using CCCD
+<br>
 
 ### Disease Fields
 
@@ -102,6 +106,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Measles: Use `confirmed` only
 - Pertussis and Meningococcus: Use `confirmed and probable`
 - Additional outcomes (hospitalizations, deaths) planned for future
+<br>
 
 ### Geographic Fields
 
@@ -110,13 +115,20 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code |
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` |
-| geo_name | String | Name of the geographic unit | Name string or `international resident`, `unspecified` |
+| geo_name | String | Name of the geographic unit | Name string or `unspecified`, `unknown`, `international resident` |
 
 **Notes:**
 - Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.)
 - For international residents: use `geo_name = "international resident"` and `geo_unit = "NA"`
-- For suppressed small counts: use `geo_name = "unspecified"`
-- Provide metadata listing all geographic unit names used
+- Metadata should include all geographic unit names used
+  
+- Disease subtype is currently collected at jurisdiction level only (not sub-jurisdiction)
+- Currently only use for meningococcal disease serogroup reporting
+- Use `total` for non-subtype-stratified aggregations
+- Use `total` diseases without subtype reporting (measles, pertussis)
+- Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
+- Use `unspecified` when geo_name is known but suppressed in subjurisdiction aggregations
+<br>
 
 ### Count Field
 
@@ -128,6 +140,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Only include non-zero counts
 - Apply jurisdiction data suppression policies before submission
 - Use `geo_name = "unspecified"` for suppressed counts to maintain totals
+<br>
 
 ### Demographic Fields
 
@@ -139,8 +152,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Value | Description |
 |-------|-------------|
-| `0-5 m` | From birth up to but not including 6 months |
-| `6-11 m` | From 6 months up to but not including 1 year birthday |
+| `<1 y` | From birth up to but not including 1 year birthday |
 | `1-4 y` | From 1 year birthday up to but not including 5 year birthday |
 | `5-11 y` | From 5 year birthday up to but not including 12 year birthday |
 | `12-18 y` | From 12 year birthday up to but not including 19 year birthday |
@@ -153,26 +165,34 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | `unspecified` | Age known but suppressed |
 
 **Notes:**
-- Age groups displayed at jurisdiction level only (not sub-jurisdiction)
+- Age group is currently accepted at jurisdiction level only (not sub-jurisdiction)
 - Same age groupings used for all diseases
 - Use `total` for non-age-stratified aggregations
+- Use `unknown` when age information is truely unknown (only for age_group aggregations)
+- Use `unspecified` when age group is known but suppressed
+<br>
 
 ### Disease-Specific Fields
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `NA`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified`,`total` |
 
 **Notes:**
-- Use for meningococcal disease serogroup reporting
-- Use `NA` for diseases without subtype reporting (measles, pertussis)
-- Use `unknown` when subtyping was not performed or is otherwise not known
+- Disease subtype is currently accepted at jurisdiction level only (not sub-jurisdiction)
+- Currently only use for meningococcal disease serogroup reporting
+- Use `total` for non-subtype-stratified aggregations
+- Use `total` diseases without subtype reporting (measles, pertussis)
+- Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when subtype is known but suppressed
+<br>
+<br>
 
 ## Validation
 
 See [Validation](VALIDATION.md) for details on file and data validation.
-
+<br>
+<br>
 
 ## Example Data
 
@@ -191,6 +211,9 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 
 Examples:
 - `disease_tracking_report_WA_2025-09-30.csv` (Washington state, submitted September 30, 2025)
+<br>
+<br>
+
 
 ## Metadata Requirements
 
@@ -211,13 +234,16 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 4. **Contact Information**
    - Technical point of contact
    - Data quality contact
-
+<br>
+<br>
 
 ## Version History
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
+| 1.1.0 | 2026-01-06 | Initial draft for pilot phase |
+<br>
+<br>
 
 ## References
 
@@ -228,8 +254,9 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://health.maryland.gov/phpa/OIDEOR/CIDSOR/NEDSS/MMWR_Calendar.pdf)
-- [MMWR Week-to-Month Crosswalk (CSV)](../examples-and-templates/MMWR_week_to_month_crosswalk.csv) - Reference table for crosswalk/aggregation of MMWR weeks into correct reporting months.
 - [Data dictionary and examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
+<br>
+<br>
 
 ## Questions
 

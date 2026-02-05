@@ -8,7 +8,7 @@ class DiseaseReport(BaseModel):
     report_period_start: date
     report_period_end: date
     date_type: Literal["cccd", "jurisdiction date hierarchy"]
-    time_unit: Literal["week", "month", "ytd"]
+    time_unit: Literal["week"]
     disease_subtype: str
     reporting_jurisdiction: str
     state: Literal[
@@ -28,7 +28,7 @@ class DiseaseReport(BaseModel):
     geo_name: str
     geo_unit: Literal["county", "state", "region", "planning area", "hsa", "NA"]
     age_group: Literal[
-        "0-5 m", "6-11 m", "1-4 y", "5-11 y", "12-18 y",
+        "<1 y", "1-4 y", "5-11 y", "12-18 y",
         "19-22 y", "23-44 y", "45-64 y", ">=65 y",
         "total", "unknown", "unspecified"
     ]
@@ -58,32 +58,15 @@ class DiseaseReport(BaseModel):
         disease_name = info.data.get('disease_name')
         
         if disease_name == "meningococcus":
-            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified"]:
+            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]:
                 raise ValueError(
-                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified. got: {v}"
+                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified, total. got: {v}"
                 )
         elif disease_name in ["measles", "pertussis"]:
-            if v not in ["NA", "unknown"]:
+            if v not in ["total", "unknown", "unspecified"]:
                 raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'NA' or 'unknown'. got: {v}"
+                    f"for {disease_name}, disease_subtype must be 'total', 'unknown', or 'unspecified'. got: {v}"
                 )
-        
-        return v
-    
-    @field_validator('time_unit')
-    @classmethod
-    def validate_time_unit(cls, v, info: ValidationInfo):
-        """
-        validate time_unit based on disease_name
-        """
-        disease_name = info.data.get('disease_name')
-        
-        if disease_name == "measles" and v not in ["week", "month"]:
-            raise ValueError("measles must have time_unit of 'week' or 'month'")
-        if disease_name == "pertussis" and v != "month":
-            raise ValueError("pertussis must have time_unit of 'month'")
-        if disease_name == "meningococcus" and v != "month":
-            raise ValueError("meningococcus must have time_unit of 'month'")
         
         return v
 

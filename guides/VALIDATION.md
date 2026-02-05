@@ -2,7 +2,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository |
 
 
 ---
@@ -35,7 +35,7 @@ Validation errors will be reported back to submitters with specific error descri
 ### Logical Validation
 
 - `report_period_end` must be after or equal to `report_period_start`
-- Date ranges must align with MMWR week/month boundaries
+- Date ranges must align with MMWR week boundaries
 - Geographic units must be consistent with reporting jurisdiction
 - Age group required for age-stratified aggregations
 - Disease subtype only valid for applicable diseases
@@ -44,5 +44,4 @@ Validation errors will be reported back to submitters with specific error descri
 
 - Measles confirmation_status must be `confirmed`
 - Pertussis and meningococcus confirmation_status must be `confirmed and probable`
-- Measles requires both weekly and monthly time_unit submissions
-- Pertussis and meningococcus require monthly time_unit submissions
+- All diseases require weekly time_unit submissions

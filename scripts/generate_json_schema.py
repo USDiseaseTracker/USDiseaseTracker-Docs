@@ -74,7 +74,7 @@ def generate_json_schema():
     # disease_subtype
     properties["disease_subtype"] = {
         "type": "string",
-        "description": "Subtype Name of the disease. This can be used to specify serogroup for meningococcus (e.g., A, B, C, W, Y). If not applicable, use 'NA'. If not known, use 'Unknown'."
+        "description": "Disease subtype (meningococcal serogroup). Use 'total' for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis). Use 'unknown' when subtyping was not performed. Use 'unspecified' when subtype is known but suppressed."
     }
     
     # reporting_jurisdiction
@@ -140,37 +140,25 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "time_unit": {"enum": ["week", "month"]}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             }
         ]
     })
     
-    # Validation 2: time_unit = month description
-    all_of.append({
-        "if": {"properties": {"time_unit": {"const": "month"}}},
-        "then": {
-            "properties": {
-                "report_period_start": {
-                    "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
-                }
-            }
-        }
-    })
-    
-    # Validation 3: time_unit = week description
+    # Validation 2: time_unit = week description
     all_of.append({
         "if": {"properties": {"time_unit": {"const": "week"}}},
         "then": {
@@ -182,26 +170,26 @@ def generate_json_schema():
         }
     })
     
-    # Validation 4: disease_name and disease_subtype constraints
+    # Validation 3: disease_name and disease_subtype constraints
     # These values are extracted from the validate_disease_subtype validator in the Pydantic model
     all_of.append({
         "oneOf": [
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "NA"]}
+                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
                 }
             }
         ]

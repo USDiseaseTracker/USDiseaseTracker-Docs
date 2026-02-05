@@ -1,0 +1,28 @@
+---
+permalink: search.json
+---
+[
+{% assign first = true %}
+{% for section in site.data.docs %}
+  {% for item in section.docs %}
+    {% assign item_url = item | prepend:"/docs/" | append:"/" %}
+    {% assign p = site.docs | where:"url", item_url | first %}
+    {% if p %}
+      {% unless first %},{% endunless %}
+  {
+    "title": "{{ p.title | escape }}",
+    "url": "{{ p.url | relative_url }}"
+  }
+      {% assign first = false %}
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+{% for post in site.posts %}
+  {% unless first %},{% endunless %}
+  {
+    "title": "{{ post.title | escape }}",
+    "url": "{{ post.url | relative_url }}"
+  }
+  {% assign first = false %}
+{% endfor %}
+]

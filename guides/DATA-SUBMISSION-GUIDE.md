@@ -2,7 +2,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
 
 ---
@@ -33,11 +33,11 @@ This guide provides detailed specifications for health departments participating
 
 ### Time Aggregation
 
-| Disease | Weekly | Monthly |
-|---------|--------|---------|
-| Measles | ✓ | |
-| Pertussis | | ✓ |
-| Invasive Meningococcal Disease | | ✓ |
+| Disease | Weekly |
+|---------|--------|
+| Measles | ✓ |
+| Pertussis | ✓ |
+| Invasive Meningococcal Disease | ✓ |
 
 <br>
 
@@ -56,41 +56,26 @@ Required **case** confirmation status by disease:
 
 ### Required Data Aggregations
 
-Each aggregation stream should provide complete data from December 29, 2024 through the present. See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods.
+To limit identifiability and data suppression, each disagreegation of the disease counts will be collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We are calling these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, and each need to be complete and equivalent in time with diseases (e.g., cumulative cases in the age group aggregation must equal cumulative cases in the sub-jurisdiction aggregation). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data aggregations listed below will be accepted; new aggregations will be added as needed for new demographics, diseases, conditions or outcomes, etc.
 
     Measles
     - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
     - Cases × week × age group × jurisdiction (state, DC, NYC, or territory)
 
     Pertussis
-    - Cases × month × sub-jurisdiction unit
-    - Cases × month × age group × jurisdiction 
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction 
 
     Invasive Meningococcal Disease
-    - Cases × month × sub-jurisdiction unit 
-    - Cases × month × age group × jurisdiction 
-    - Cases × month × serogroup × jurisdiction
+    - Cases × week × sub-jurisdiction unit 
+    - Cases × week × age group × jurisdiction 
+    - Cases × week × serogroup × jurisdiction
 
 <br>
 
 ### Reporting Frequency
 
-Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all all diseases and aggregations should be included, even if there are no updates. Because some diseases are currently reportable a the monthly time-scale, there are two options for how to update monthly reporting counts: (1) update continuously or (2) update only for complete reporting periods. In these options, for (1), each weeks additional case counts would be added to 
-but differ based on update frequency of monthly reporting. Choice of format is at the jurisdiction's discretion.
-
-
-
-
-1. **Continuously Updated Report**
-   - Includes a refresh of all historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u>
-   - Includes the new week's data <u> added to current month for monthly reported diseases</u>
-
-2. **Reporting Period Updated Report** - Full report once per month, with interim weekly reports
-   - Includes a refresh of all <u>prior</u> historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u> (must update both so totals match)
-   - <u>Does not</u> include the new week's data <u>added to current month for monthly reported diseases</u>
-   - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
+Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all diseases should be included, even if there are no updates.
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
 <br> <br>
@@ -116,15 +101,13 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 #### Time Period Assignment
 
 - **Weekly counts:** Classify by MMWR week (see [MMWR week table](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf))
-- **Monthly counts:** Use groupings of 4-5 corresponding MMWR weeks (see [MMWR week to month crosswalk](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?rtime=8l2fm2Ig3kg&ActiveCell=MMWR%20week%20to%20month))
-  - Month start = start of first MMWR week that includes at least four days of the new calendar month
 - **Year-to-date counts:** Start of MMWR week 1 (2024-12-29) through end of last included MMWR week
 <br>
 
 ### Data Lags and Incompleteness
 
 - Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
-- Data from recent weeks/months may be incomplete
+- Data from recent weeks may be incomplete
 - The project team will clearly indicate provisional data through:
   - Dashed lines on epidemic curves
   - Asterisks and notes detailing data completeness limitations
@@ -174,8 +157,7 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 
 | Age Group | Description |
 |-----------|-------------|
-| 0-5 m | From birth up to but not including 6 months |
-| 6-11 m | From 6 months up to but not including 1 year birthday |
+| <1 y | From birth up to but not including 1 year birthday |
 | 1-4 y | From 1 year birthday up to but not including 5 year birthday |
 | 5-11 y | From 5 year birthday up to but not including 12 year birthday |
 | 12-18 y | From 12 year birthday up to but not including 19 year birthday |

@@ -1,4 +1,9 @@
-# Contributing to the US Disease Tracker
+---
+layout: page
+title: Contributing to the US Disease Tracker
+permalink: /CONTRIBUTING/
+---
+
 
 Thank you for your interest in contributing to the US Disease Tracker project! This document provides guidelines for contributing data on reportable diseases from public health jurisdictions, reporting errors or issues, and proposing new data standards.
 
@@ -24,7 +29,7 @@ If you find an error in the documentation or have a suggestion:
 2. If not, create a new issue with a clear title and description
 3. Include relevant examples or references
 
-### Proposing New or Modified Standards
+### Proposing New or Modified Data Standards
 
 To propose a new data standard or a modification to an existing one:
 
@@ -38,7 +43,6 @@ The project team will review the proposed standard or modification. Depending on
 
 All proposed new data standards or modifications must include:
 
-- [ ] Complete standard definition document
 - [ ] At least one example
 - [ ] Clear field definitions with data types
 - [ ] Validation rules
