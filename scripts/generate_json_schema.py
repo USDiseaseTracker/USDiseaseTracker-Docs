@@ -183,16 +183,30 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             }
         ]
+    })
+    
+    # Validation 4: state-level stratification
+    # When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'
+    all_of.append({
+        "if": {"properties": {"geo_unit": {"const": "state"}}},
+        "then": {
+            "not": {
+                "allOf": [
+                    {"properties": {"age_group": {"const": "total"}}},
+                    {"properties": {"disease_subtype": {"const": "total"}}}
+                ]
+            }
+        }
     })
     
     # Get required fields from the model
