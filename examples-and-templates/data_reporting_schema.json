@@ -264,9 +264,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "total",
-                                    "unknown",
-                                    "unspecified"
+                                    "total"
                                 ]
                             }
                         }
@@ -278,9 +276,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "total",
-                                    "unknown",
-                                    "unspecified"
+                                    "total"
                                 ]
                             }
                         }
