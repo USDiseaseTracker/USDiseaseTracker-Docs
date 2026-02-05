@@ -73,15 +73,23 @@ class DiseaseReport(BaseModel):
     @model_validator(mode='after')
     def validate_mmwr_week(self):
         """
-        When time_unit='week', report_period_start must be a Sunday (MMWR week start).
-        Sunday is weekday 6 (Monday=0, Sunday=6)
+        When time_unit='week', report_period_start must be a Sunday (MMWR week start)
+        and report_period_end must be a Saturday (MMWR week end).
+        Sunday is weekday 6, Saturday is weekday 5 (Monday=0, Sunday=6)
         """
         if self.time_unit == "week":
-            # Check if the date is a Sunday (weekday 6)
+            # Check if report_period_start is a Sunday (weekday 6)
             if self.report_period_start.weekday() != 6:
                 raise ValueError(
                     f"When time_unit='week', report_period_start must be a Sunday (MMWR week start). "
                     f"Got {self.report_period_start.strftime('%A, %Y-%m-%d')}"
+                )
+            
+            # Check if report_period_end is a Saturday (weekday 5)
+            if self.report_period_end.weekday() != 5:
+                raise ValueError(
+                    f"When time_unit='week', report_period_end must be a Saturday (MMWR week end). "
+                    f"Got {self.report_period_end.strftime('%A, %Y-%m-%d')}"
                 )
         
         return self

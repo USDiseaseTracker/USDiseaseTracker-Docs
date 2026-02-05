@@ -165,6 +165,9 @@ def generate_json_schema():
             "properties": {
                 "report_period_start": {
                     "description": "When time_unit='week', report_period_start must be a Sunday (MMWR week start). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                },
+                "report_period_end": {
+                    "description": "When time_unit='week', report_period_end must be a Saturday (MMWR week end). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
                 }
             }
         }
