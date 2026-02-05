@@ -164,7 +164,10 @@ def generate_json_schema():
         "then": {
             "properties": {
                 "report_period_start": {
-                    "description": "When time_unit='week', report_period_start must be an MMWR week ending (Saturday). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                    "description": "When time_unit='week', report_period_start must be a Sunday (MMWR week start). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                },
+                "report_period_end": {
+                    "description": "When time_unit='week', report_period_end must be a Saturday (MMWR week end). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
                 }
             }
         }
@@ -183,16 +186,30 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "disease_subtype": {"enum": ["total", "unknown", "unspecified"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             }
         ]
+    })
+    
+    # Validation 4: state-level stratification
+    # When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'
+    all_of.append({
+        "if": {"properties": {"geo_unit": {"const": "state"}}},
+        "then": {
+            "not": {
+                "allOf": [
+                    {"properties": {"age_group": {"const": "total"}}},
+                    {"properties": {"disease_subtype": {"const": "total"}}}
+                ]
+            }
+        }
     })
     
     # Get required fields from the model

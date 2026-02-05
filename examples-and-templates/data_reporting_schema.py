@@ -1,7 +1,6 @@
 from datetime import date
-from pydantic import RootModel
 from typing import List, Literal
-from pydantic import BaseModel, ValidationInfo, field_validator
+from pydantic import BaseModel, RootModel, ValidationInfo, field_validator, model_validator
 
 class DiseaseReport(BaseModel):
     disease_name: Literal["measles", "pertussis", "meningococcus"]
@@ -63,12 +62,51 @@ class DiseaseReport(BaseModel):
                     f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified, total. got: {v}"
                 )
         elif disease_name in ["measles", "pertussis"]:
-            if v not in ["total", "unknown", "unspecified"]:
+            if v != "total":
                 raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'total', 'unknown', or 'unspecified'. got: {v}"
+                    f"for {disease_name}, disease_subtype must be 'total'. got: {v}"
                 )
         
         return v
+    
+    @model_validator(mode='after')
+    def validate_mmwr_week(self):
+        """
+        When time_unit='week', report_period_start must be a Sunday (MMWR week start)
+        and report_period_end must be a Saturday (MMWR week end).
+        Sunday is weekday 6, Saturday is weekday 5 (Monday=0, Sunday=6)
+        """
+        if self.time_unit == "week":
+            # Check if report_period_start is a Sunday (weekday 6)
+            if self.report_period_start.weekday() != 6:
+                raise ValueError(
+                    f"When time_unit='week', report_period_start must be a Sunday (MMWR week start). "
+                    f"Got {self.report_period_start.strftime('%A, %Y-%m-%d')}"
+                )
+            
+            # Check if report_period_end is a Saturday (weekday 5)
+            if self.report_period_end.weekday() != 5:
+                raise ValueError(
+                    f"When time_unit='week', report_period_end must be a Saturday (MMWR week end). "
+                    f"Got {self.report_period_end.strftime('%A, %Y-%m-%d')}"
+                )
+        
+        return self
+    
+    @model_validator(mode='after')
+    def validate_state_level_stratification(self):
+        """
+        When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'.
+        This ensures state-level data is stratified.
+        """
+        if self.geo_unit == "state":
+            if self.age_group == "total" and self.disease_subtype == "total":
+                raise ValueError(
+                    "When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'. "
+                    "State-level data must be stratified."
+                )
+        
+        return self
 
 class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
     pass
