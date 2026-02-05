@@ -731,6 +731,14 @@ permalink: /data-standards-tool/
                 isValid = false;
             }
             
+            // Validate that both age_group and disease_subtype cannot be "total" when geo_unit is "state"
+            const ageGroup = document.getElementById('age_group').value;
+            if (geoUnit === 'state' && ageGroup === 'total' && diseaseSubtype === 'total') {
+                showError('age_group', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
+                showError('disease_subtype', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
+                isValid = false;
+            }
+            
             // Validate consistency between reporting_jurisdiction and state
             // Common exceptions: NYC (New York City), PR (Puerto Rico), DC (District of Columbia),
             // VI (Virgin Islands), GU (Guam), AS (American Samoa), MP (Northern Mariana Islands), TT (Trust Territories)

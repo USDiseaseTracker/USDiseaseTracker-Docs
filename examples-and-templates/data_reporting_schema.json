@@ -282,6 +282,35 @@
                         }
                     }
                 ]
+            },
+            {
+                "if": {
+                    "properties": {
+                        "geo_unit": {
+                            "const": "state"
+                        }
+                    }
+                },
+                "then": {
+                    "not": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "age_group": {
+                                        "const": "total"
+                                    }
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "disease_subtype": {
+                                        "const": "total"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
             }
         ]
     }
