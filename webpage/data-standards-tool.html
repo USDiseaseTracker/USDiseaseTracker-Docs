@@ -670,6 +670,7 @@ permalink: /data-standards-tool/
             const count = document.getElementById('count').value;
             const geoName = document.getElementById('geo_name').value.trim().toLowerCase();
             const geoUnit = document.getElementById('geo_unit').value;
+            const ageGroup = document.getElementById('age_group').value;
             const reportingJurisdiction = document.getElementById('reporting_jurisdiction').value.trim().toUpperCase();
             const state = document.getElementById('state').value;
             
@@ -732,7 +733,6 @@ permalink: /data-standards-tool/
             }
             
             // Validate that both age_group and disease_subtype cannot be "total" when geo_unit is "state"
-            const ageGroup = document.getElementById('age_group').value;
             if (geoUnit === 'state' && ageGroup === 'total' && diseaseSubtype === 'total') {
                 showError('age_group', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
                 showError('disease_subtype', 'When geo_unit is "state", age_group and disease_subtype cannot both be "total"');
