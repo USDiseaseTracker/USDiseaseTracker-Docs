@@ -466,7 +466,11 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     schema_required = set(schema.get('items', {}).get('required', []))
     all_fields = schema.get('items', {}).get('properties', {}).keys()
     for field_name in all_fields:
-        replace_field_required(field_name, field_name in schema_required)
+        # Check if field exists in the markdown table before updating
+        field_pattern = r'^\|\s*' + re.escape(field_name) + r'\s*\|.*$'
+        if re.search(field_pattern, updated, flags=re.MULTILINE):
+            replace_field_required(field_name, field_name in schema_required)
+        # If field doesn't exist in table, skip it silently (it may be a new field)
     
     # Update the detailed field tables as well
     # Update disease_subtype in Disease-Specific Fields table
