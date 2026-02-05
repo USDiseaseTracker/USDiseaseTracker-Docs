@@ -1,3 +1,8 @@
+---
+title: Data Technical Specifications
+permalink: /docs/data-technical-specs/
+---
+
 # Data Technical Specifications
 
 | Version | Changes from previous version |   

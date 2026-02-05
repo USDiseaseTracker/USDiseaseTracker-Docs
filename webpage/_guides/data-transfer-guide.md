@@ -1,3 +1,8 @@
+---
+title: Data Transfer Guide
+permalink: /docs/data-transfer-guide/
+---
+
 # Data Transfer Guide
 
 | Version | Changes from previous version |   

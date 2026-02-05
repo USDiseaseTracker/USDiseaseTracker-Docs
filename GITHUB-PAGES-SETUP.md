@@ -19,13 +19,13 @@ All webpage-related files are organized in the `webpage/` directory.
 
 2. **`webpage/index.html`** - The landing page of the website with hero section
 
-3. **`webpage/_docs/`** - Documentation pages organized as a collection:
-   - `webpage/_docs/index.md` - Documentation home page
-   - `webpage/_docs/data-submission-guide.md` - Data submission guide
-   - `webpage/_docs/data-technical-specs.md` - Technical specifications
-   - `webpage/_docs/data-transfer-guide.md` - Data transfer methods
-   - `webpage/_docs/validation.md` - Validation rules
-   - `webpage/_docs/pilot-overview.md` - Pilot program overview
+3. **`webpage/_guides/`** - Documentation pages organized as a collection:
+   - `webpage/_guides/index.md` - Documentation home page
+   - `webpage/_guides/data-submission-guide.md` - Data submission guide
+   - `webpage/_guides/data-technical-specs.md` - Technical specifications
+   - `webpage/_guides/data-transfer-guide.md` - Data transfer methods
+   - `webpage/_guides/validation.md` - Validation rules
+   - `webpage/_guides/pilot-overview.md` - Pilot program overview
 
 4. **`webpage/_data/docs.yml`** - Navigation structure for the documentation sidebar
 
@@ -66,7 +66,7 @@ To enable the website, a repository administrator needs to:
 
 ### Adding a New Documentation Page
 
-1. Create a new Markdown file in `webpage/_docs/` (e.g., `webpage/_docs/my-new-page.md`)
+1. Create a new Markdown file in `webpage/_guides/` (e.g., `webpage/_guides/my-new-page.md`)
 2. Add front matter at the top:
    ```yaml
    ---
@@ -83,7 +83,7 @@ To enable the website, a repository administrator needs to:
 
 ### Updating Existing Pages
 
-Simply edit the Markdown files in `webpage/_docs/` and push to `main`:
+Simply edit the Markdown files in `webpage/_guides/` and push to `main`:
 - Changes to documentation pages update automatically
 - The site rebuilds automatically (takes 1-2 minutes)
 

@@ -11,7 +11,7 @@ This directory contains the complete Jekyll-based documentation website, includi
 - **`Gemfile`** - Ruby dependencies for Jekyll
 - **`index.html`** - Homepage/landing page
 - **`_data/`** - Site data files (navigation structure)
-- **`_docs/`** - Documentation pages (markdown files)
+- **`_guides/`** - Documentation pages (markdown files)
 - **`_includes/`** - Reusable HTML components (header, footer, navigation)
 - **`_layouts/`** - Page layout templates
 - **`_sass/`** - SASS/SCSS stylesheets
