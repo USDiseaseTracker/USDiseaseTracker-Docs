@@ -10,7 +10,7 @@ permalink: search.json
     {% if p %}
       {% unless first %},{% endunless %}
   {
-    "title": "{{ p.title }}",
+    "title": "{{ p.title | escape }}",
     "url": "{{ p.url | relative_url }}"
   }
       {% assign first = false %}
