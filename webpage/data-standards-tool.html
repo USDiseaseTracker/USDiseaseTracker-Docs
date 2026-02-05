@@ -740,7 +740,7 @@ permalink: /data-standards-tool/
             
             // Validate MMWR week: report_period_start must be Sunday when time_unit = "week"
             if (timeUnit === 'week' && reportPeriodStart) {
-                const startDate = new Date(reportPeriodStart);
+                const startDate = new Date(reportPeriodStart + 'T00:00:00');
                 // In JavaScript, Sunday is 0, Monday is 1, etc.
                 if (startDate.getDay() !== 0) {
                     showError('report_period_start', 'When time_unit is "week", report_period_start must be a Sunday (MMWR week start)');
@@ -750,7 +750,7 @@ permalink: /data-standards-tool/
             
             // Validate MMWR week: report_period_end must be Saturday when time_unit = "week"
             if (timeUnit === 'week' && reportPeriodEnd) {
-                const endDate = new Date(reportPeriodEnd);
+                const endDate = new Date(reportPeriodEnd + 'T00:00:00');
                 // In JavaScript, Saturday is 6
                 if (endDate.getDay() !== 6) {
                     showError('report_period_end', 'When time_unit is "week", report_period_end must be a Saturday (MMWR week end)');
