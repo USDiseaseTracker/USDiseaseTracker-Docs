@@ -264,9 +264,7 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "total",
-                                    "unknown",
-                                    "unspecified"
+                                    "total"
                                 ]
                             }
                         }
@@ -278,14 +276,41 @@
                             },
                             "disease_subtype": {
                                 "enum": [
-                                    "total",
-                                    "unknown",
-                                    "unspecified"
+                                    "total"
                                 ]
                             }
                         }
                     }
                 ]
+            },
+            {
+                "if": {
+                    "properties": {
+                        "geo_unit": {
+                            "const": "state"
+                        }
+                    }
+                },
+                "then": {
+                    "not": {
+                        "allOf": [
+                            {
+                                "properties": {
+                                    "age_group": {
+                                        "const": "total"
+                                    }
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "disease_subtype": {
+                                        "const": "total"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
             }
         ]
     }
