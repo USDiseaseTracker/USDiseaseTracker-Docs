@@ -741,10 +741,12 @@ permalink: /data-standards-tool/
             // Validate MMWR week: report_period_start must be Sunday when time_unit = "week"
             if (timeUnit === 'week' && reportPeriodStart) {
                 // Parse date components to avoid timezone issues
+                // HTML5 date input always returns YYYY-MM-DD format
                 const [year, month, day] = reportPeriodStart.split('-').map(Number);
                 const startDate = new Date(year, month - 1, day);
                 // In JavaScript, Sunday is 0, Monday is 1, etc.
-                if (startDate.getDay() !== 0) {
+                // Validate the date is valid and check day of week
+                if (!isNaN(startDate.getTime()) && startDate.getDay() !== 0) {
                     showError('report_period_start', 'When time_unit is "week", report_period_start must be a Sunday (MMWR week start)');
                     isValid = false;
                 }
@@ -753,10 +755,12 @@ permalink: /data-standards-tool/
             // Validate MMWR week: report_period_end must be Saturday when time_unit = "week"
             if (timeUnit === 'week' && reportPeriodEnd) {
                 // Parse date components to avoid timezone issues
+                // HTML5 date input always returns YYYY-MM-DD format
                 const [year, month, day] = reportPeriodEnd.split('-').map(Number);
                 const endDate = new Date(year, month - 1, day);
                 // In JavaScript, Saturday is 6
-                if (endDate.getDay() !== 6) {
+                // Validate the date is valid and check day of week
+                if (!isNaN(endDate.getTime()) && endDate.getDay() !== 6) {
                     showError('report_period_end', 'When time_unit is "week", report_period_end must be a Saturday (MMWR week end)');
                     isValid = false;
                 }
