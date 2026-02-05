@@ -102,7 +102,7 @@ For more information about the website structure, see [webpage/README.md](webpag
 
 ## Contributing
 
-We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+We welcome contributions to the data standards! Please see our [Contributing Guide](contributing.md) for detailed instructions.
 <br>
 <br>
 

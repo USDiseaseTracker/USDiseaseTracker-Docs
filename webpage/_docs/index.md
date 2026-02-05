@@ -57,4 +57,4 @@ Provision of data is voluntary and based on individual jurisdiction capabilities
 
 ### Getting Help
 
-For questions or contributions, please see our [Contributing Guide]({{ site.baseurl }}/CONTRIBUTING/) or review the pilot overview.
+For questions or contributions, please see our [Contributing Guide]({{ site.baseurl }}/contributing/) or review the pilot overview.
