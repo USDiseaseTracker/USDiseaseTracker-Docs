@@ -428,8 +428,31 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         nonlocal updated
         # Match the table row for the field and update the Required column
         required_val = 'Yes' if is_required else 'No'
-        pattern = r'(\| ' + re.escape(field_name) + r' \| [^|]+ \| [^|]+ \| [^|]+ \| )[^|]+(\s+\|)'
-        updated = re.sub(pattern, r'\1' + required_val + r'\2', updated)
+        # First, locate the full table row for this field to validate its structure.
+        row_pattern = r'^\\|\\s*' + re.escape(field_name) + r'\\s*\\|.*$'
+        row_match = re.search(row_pattern, updated, flags=re.MULTILINE)
+        if not row_match:
+            # If the field row does not exist in the table, do nothing.
+            return
+        row_text = row_match.group(0)
+        # Validate that the row has the expected number of columns (currently 5).
+        # Split on '|' and ignore the leading/trailing empty elements from outer pipes.
+        columns = [c.strip() for c in row_text.strip().split('|')[1:-1]]
+        if len(columns) != 5:
+            raise ValueError(
+                f"Unexpected table structure for field '{field_name}': "
+                f"expected 5 columns, found {len(columns)}. "
+                "Update 'replace_field_required' to handle the new layout."
+            )
+        # Perform the substitution on the Required column, ensuring it succeeds.
+        pattern = r'(\\|\\s*' + re.escape(field_name) + r'\\s*\\| [^|]+ \\| [^|]+ \\| [^|]+ \\| )[^|]+(\\s*\\|)'
+        updated_new, count = re.subn(pattern, r'\\1' + required_val + r'\\2', updated)
+        if count == 0:
+            raise ValueError(
+                f"Failed to update 'Required' column for field '{field_name}'. "
+                "The markdown table structure may have changed."
+            )
+        updated = updated_new
     
     replace_field_value('disease_subtype', subtype_values)
     replace_field_value('geo_unit', geo_unit_values)
