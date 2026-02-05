@@ -23,13 +23,15 @@ def run_command(cmd: list, description: str) -> bool:
     print(f"{description}")
     print(f"{'='*60}")
     
-    result = subprocess.run(cmd, capture_output=False)
-    
-    if result.returncode == 0:
+    try:
+        subprocess.run(cmd, capture_output=False, check=True)
         print(f"✓ {description} - SUCCESS")
         return True
-    else:
-        print(f"✗ {description} - FAILED (exit code: {result.returncode})")
+    except subprocess.CalledProcessError as e:
+        print(f"✗ {description} - FAILED (exit code: {e.returncode})")
+        return False
+    except OSError as e:
+        print(f"✗ {description} - FAILED to start command: {e}")
         return False
 
 
