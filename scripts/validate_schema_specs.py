@@ -403,6 +403,20 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     schema_outcomes = extract_enum_from_schema(schema, 'outcome')
     outcome_values = ', '.join([f'`{v}`' for v in schema_outcomes])
     
+    # Update disease_name in field summary table
+    schema_disease_names = extract_enum_from_schema(schema, 'disease_name')
+    disease_name_values = ', '.join([f'`{v}`' for v in schema_disease_names])
+    
+    # Update other enum fields
+    schema_time_units = extract_enum_from_schema(schema, 'time_unit')
+    time_unit_values = ', '.join([f'`{v}`' for v in schema_time_units])
+    
+    schema_date_types = extract_enum_from_schema(schema, 'date_type')
+    date_type_values = ', '.join([f'`{v}`' for v in schema_date_types])
+    
+    schema_confirmation_statuses = extract_enum_from_schema(schema, 'confirmation_status')
+    confirmation_status_values = ', '.join([f'`{v}`' for v in schema_confirmation_statuses])
+    
     # Update the field summary table
     def replace_field_value(field_name: str, new_values: str) -> None:
         nonlocal updated
@@ -410,9 +424,53 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         pattern = r'(\| ' + re.escape(field_name) + r' \| [^|]+ \| [^|]+ \| )([^|]+)( \| [^|]+ \|)'
         updated = re.sub(pattern, r'\1' + new_values + r'\3', updated)
     
+    def replace_field_required(field_name: str, is_required: bool) -> None:
+        nonlocal updated
+        # Match the table row for the field and update the Required column
+        required_val = 'Yes' if is_required else 'No'
+        # First, locate the full table row for this field to validate its structure.
+        row_pattern = r'^\\|\\s*' + re.escape(field_name) + r'\\s*\\|.*$'
+        row_match = re.search(row_pattern, updated, flags=re.MULTILINE)
+        if not row_match:
+            # If the field row does not exist in the table, do nothing.
+            return
+        row_text = row_match.group(0)
+        # Validate that the row has the expected number of columns (currently 5).
+        # Split on '|' and ignore the leading/trailing empty elements from outer pipes.
+        columns = [c.strip() for c in row_text.strip().split('|')[1:-1]]
+        if len(columns) != 5:
+            raise ValueError(
+                f"Unexpected table structure for field '{field_name}': "
+                f"expected 5 columns, found {len(columns)}. "
+                "Update 'replace_field_required' to handle the new layout."
+            )
+        # Perform the substitution on the Required column, ensuring it succeeds.
+        pattern = r'(\\|\\s*' + re.escape(field_name) + r'\\s*\\| [^|]+ \\| [^|]+ \\| [^|]+ \\| )[^|]+(\\s*\\|)'
+        updated_new, count = re.subn(pattern, r'\\1' + required_val + r'\\2', updated)
+        if count == 0:
+            raise ValueError(
+                f"Failed to update 'Required' column for field '{field_name}'. "
+                "The markdown table structure may have changed."
+            )
+        updated = updated_new
+    
     replace_field_value('disease_subtype', subtype_values)
     replace_field_value('geo_unit', geo_unit_values)
     replace_field_value('outcome', outcome_values)
+    replace_field_value('disease_name', disease_name_values)
+    replace_field_value('time_unit', time_unit_values)
+    replace_field_value('date_type', date_type_values)
+    replace_field_value('confirmation_status', confirmation_status_values)
+    
+    # Update required status for all fields in the field summary table
+    schema_required = set(schema.get('items', {}).get('required', []))
+    all_fields = schema.get('items', {}).get('properties', {}).keys()
+    for field_name in all_fields:
+        # Check if field exists in the markdown table before updating
+        field_pattern = r'^\|\s*' + re.escape(field_name) + r'\s*\|.*$'
+        if re.search(field_pattern, updated, flags=re.MULTILINE):
+            replace_field_required(field_name, field_name in schema_required)
+        # If field doesn't exist in table, skip it silently (it may be a new field)
     
     # Update the detailed field tables as well
     # Update disease_subtype in Disease-Specific Fields table
@@ -459,6 +517,12 @@ def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
     # Get schema values
     schema_age_groups = extract_enum_from_schema(schema, 'age_group')
     schema_geo_units = extract_enum_from_schema(schema, 'geo_unit')
+    schema_disease_names = extract_enum_from_schema(schema, 'disease_name')
+    schema_time_units = extract_enum_from_schema(schema, 'time_unit')
+    schema_date_types = extract_enum_from_schema(schema, 'date_type')
+    schema_outcomes = extract_enum_from_schema(schema, 'outcome')
+    schema_confirmation_statuses = extract_enum_from_schema(schema, 'confirmation_status')
+    schema_states = extract_enum_from_schema(schema, 'state')
     
     # Get disease subtypes from schema
     allOf = schema.get('items', {}).get('allOf', [])
@@ -483,6 +547,24 @@ def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
         
         elif field_name == 'disease_subtype':
             row['Values/Format'] = format_csv_values(sorted(schema_subtypes))
+        
+        elif field_name == 'disease_name':
+            row['Values/Format'] = format_csv_values(schema_disease_names)
+        
+        elif field_name == 'time_unit':
+            row['Values/Format'] = format_csv_values(schema_time_units)
+        
+        elif field_name == 'date_type':
+            row['Values/Format'] = format_csv_values(schema_date_types)
+        
+        elif field_name == 'outcome':
+            row['Values/Format'] = format_csv_values(schema_outcomes)
+        
+        elif field_name == 'confirmation_status':
+            row['Values/Format'] = format_csv_values(schema_confirmation_statuses)
+        
+        elif field_name == 'state':
+            row['Values/Format'] = format_csv_values(schema_states)
     
     # Write back to CSV in UTF-8 encoding
     with open(dict_path, 'w', encoding='utf-8', newline='') as f:
