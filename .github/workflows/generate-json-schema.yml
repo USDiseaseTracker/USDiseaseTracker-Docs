@@ -59,7 +59,7 @@ jobs:
           git add examples-and-templates/data_reporting_schema.json
           git add examples-and-templates/disease_tracking_data_dictionary.csv
           git add guides/DATA-TECHNICAL-SPECS.md
-          git commit -m "Auto-update schema, data dictionary, and documentation from Pydantic model"
+          git commit -m "Auto-update schema, data dictionary, and documentation from Pydantic model" -m "Updated files: $(git diff --cached --name-only | tr '\n' ' ')"
           git push
       
       - name: Validate final consistency
