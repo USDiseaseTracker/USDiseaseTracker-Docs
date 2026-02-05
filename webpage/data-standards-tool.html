@@ -549,25 +549,34 @@ permalink: /data-standards-tool/
         
         // Initialize form with valid default values
         function initializeFormDefaults() {
-            // Get today's date for report_period_end
-            const today = new Date();
-            const year = today.getFullYear();
-            const month = String(today.getMonth() + 1).padStart(2, '0');
-            const day = String(today.getDate()).padStart(2, '0');
-            const todayStr = `${year}-${month}-${day}`;
+            // Calculate valid MMWR week dates (Sunday through Saturday)
+            const curr = new Date();
+            const currDayNum = curr.getDay(); // 0=Sunday, 6=Saturday
             
-            // Get date 7 days ago for report_period_start (one week period)
-            const weekAgo = new Date(today);
-            weekAgo.setDate(today.getDate() - 7);
-            const weekAgoYear = weekAgo.getFullYear();
-            const weekAgoMonth = String(weekAgo.getMonth() + 1).padStart(2, '0');
-            const weekAgoDay = String(weekAgo.getDate()).padStart(2, '0');
-            const weekAgoStr = `${weekAgoYear}-${weekAgoMonth}-${weekAgoDay}`;
+            // Find most recent Sunday by subtracting days
+            const offsetToSunday = currDayNum; // if today is Sunday, offset is 0
+            const mmwrStart = new Date(curr);
+            mmwrStart.setDate(curr.getDate() - offsetToSunday);
+            
+            // Saturday is 6 days after Sunday
+            const mmwrEnd = new Date(mmwrStart);
+            mmwrEnd.setDate(mmwrStart.getDate() + 6);
+            
+            // Format dates as YYYY-MM-DD
+            const formatDateStr = (d) => {
+                const yr = d.getFullYear();
+                const mo = String(d.getMonth() + 1).padStart(2, '0');
+                const dy = String(d.getDate()).padStart(2, '0');
+                return `${yr}-${mo}-${dy}`;
+            };
+            
+            const mmwrStartStr = formatDateStr(mmwrStart);
+            const mmwrEndStr = formatDateStr(mmwrEnd);
             
             // Set default values
             document.getElementById('disease_name').value = 'measles';
-            document.getElementById('report_period_start').value = weekAgoStr;
-            document.getElementById('report_period_end').value = todayStr;
+            document.getElementById('report_period_start').value = mmwrStartStr;
+            document.getElementById('report_period_end').value = mmwrEndStr;
             document.getElementById('date_type').value = 'cccd';
             document.getElementById('time_unit').value = 'week';
             document.getElementById('reporting_jurisdiction').value = 'WA';
