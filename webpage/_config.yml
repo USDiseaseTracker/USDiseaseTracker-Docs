@@ -43,7 +43,7 @@ timezone: America/New_York
 
 # Collections for better organization
 collections:
-  docs:
+  guides:
     permalink: /:collection/:path/
     output: true
   posts:
@@ -59,8 +59,8 @@ defaults:
     sectionid: blog
 
 - scope:
-    path: _docs
-    type: docs
+    path: _guides
+    type: guides
   values:
     layout: docs
     sectionid: docs

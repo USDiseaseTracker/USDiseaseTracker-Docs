@@ -38,11 +38,11 @@ This guide provides detailed specifications for health departments participating
 
 ### Time Aggregation
 
-| Disease | Weekly | Monthly |
-|---------|--------|---------|
-| Measles | ✓ | |
-| Pertussis | | ✓ |
-| Invasive Meningococcal Disease | | ✓ |
+| Disease | Weekly |
+|---------|--------|
+| Measles | ✓ |
+| Pertussis | ✓ |
+| Invasive Meningococcal Disease | ✓ |
 
 <br>
 
@@ -80,22 +80,7 @@ To limit identifiability and data suppression, each disagreegation of the diseas
 
 ### Reporting Frequency
 
-Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all all diseases and aggregations should be included, even if there are no updates. Because some diseases are currently reportable a the monthly time-scale, there are two options for how to update monthly reporting counts: (1) update continuously or (2) update only for complete reporting periods. In these options, for (1), each weeks additional case counts would be added to 
-but differ based on update frequency of monthly reporting. Choice of format is at the jurisdiction's discretion.
-
-
-
-
-1. **Continuously Updated Report**
-   - Includes a refresh of all historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u>
-   - Includes the new week's data <u> added to current month for monthly reported diseases</u>
-
-2. **Reporting Period Updated Report** - Full report once per month, with interim weekly reports
-   - Includes a refresh of all <u>prior</u> historic weekly and monthly data
-   - Includes the new week's data for <u>current week and month for weekly reported diseases</u> (must update both so totals match)
-   - <u>Does not</u> include the new week's data <u>added to current month for monthly reported diseases</u>
-   - Includes the new month's data for monthly reported diseases <u>only when month is complete</u>
+Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all diseases should be included, even if there are no updates.
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
 <br> <br>
@@ -121,15 +106,13 @@ The CCCD employs a hierarchy and assigns the case to the earliest of:
 #### Time Period Assignment
 
 - **Weekly counts:** Classify by MMWR week (see [MMWR week table](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf))
-- **Monthly counts:** Use groupings of 4-5 corresponding MMWR weeks (see [MMWR week to month crosswalk](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?rtime=8l2fm2Ig3kg&ActiveCell=MMWR%20week%20to%20month))
-  - Month start = start of first MMWR week that includes at least four days of the new calendar month
 - **Year-to-date counts:** Start of MMWR week 1 (2024-12-29) through end of last included MMWR week
 <br>
 
 ### Data Lags and Incompleteness
 
 - Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
-- Data from recent weeks/months may be incomplete
+- Data from recent weeks may be incomplete
 - The project team will clearly indicate provisional data through:
   - Dashed lines on epidemic curves
   - Asterisks and notes detailing data completeness limitations
@@ -153,7 +136,7 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ## Data Elements
 
-For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](data-technical-specs.md).
 
 ### Summary of Required Fields
 
@@ -169,7 +152,7 @@ All data submissions must include the following types of information:
 
 - **disease_subtype:** For meningococcal serogroup reporting
 
-For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](data-technical-specs.md).
 <br>
 
 
@@ -265,14 +248,14 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 Example: `disease_tracking_report_WA_2025-09-30.csv`
 
-See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) for complete field requirements.
+See the [Data Transfer Guide](data-transfer-guide.md) for technical details on data submission methods and the [Data Technical Specifications](data-technical-specs.md) for complete field requirements.
 <br>
 <br>
 
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. For specifics on metadata, see [Data Technical Specifications](DATA-TECHNICAL-SPECS.md). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
 
 - Algorithm used to classify cases in time (e.g., CCCD or alternative)
 - List of substate geographic units used by jurisdiction
@@ -293,11 +276,11 @@ All submitted data must meet validation requirements to ensure data quality and 
 - Required fields are present
 
 **Resources:**
-- [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) - Complete field definitions and valid value sets
+- [Data Technical Specifications](data-technical-specs.md) - Complete field definitions and valid value sets
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Validation Rules](VALIDATION.md) - Comprehensive validation requirements
+- [Validation Rules](validation.md) - Comprehensive validation requirements
   
-Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) describes what happens when validation succeeds or fails.
+Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](data-transfer-guide.md) describes what happens when validation succeeds or fails.
 <br>
 
 ## Questions

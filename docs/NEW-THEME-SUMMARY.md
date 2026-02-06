@@ -24,7 +24,7 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
    - Responsive Bootstrap grid layout
    - Clean, professional appearance
 
-2. **Documentation Pages (webpage/_docs/)**
+2. **Documentation Pages (guides/)**
    - Left sidebar navigation with collapsible sections
    - Main content area with readable width
    - Top navigation bar with search
@@ -63,9 +63,11 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
 ### Data (webpage/_data/)
 - `docs.yml` - Navigation structure for documentation
 
-### Documentation Collection (webpage/_docs/)
-All guide files converted to Jekyll collection format with proper front matter:
-- `index.md` - Documentation home page
+### Documentation Home Page
+- `webpage/index.md` - Documentation home page
+
+### Documentation Collection (guides/)
+Guide files with Jekyll frontmatter for website generation:
 - `data-submission-guide.md` - Data submission guide
 - `data-technical-specs.md` - Technical specifications
 - `data-transfer-guide.md` - Data transfer methods
@@ -133,7 +135,7 @@ Available Bootswatch themes:
 ### What Changed
 1. ✅ Replaced `jekyll-theme-cayman` with custom Documentation theme
 2. ✅ Created new homepage with hero section and features
-3. ✅ Converted guides/ to webpage/_docs/ collection format
+3. ✅ Consolidated guides/ and webpage/_docs/ into guides/ with Jekyll frontmatter
 4. ✅ Added structured navigation via webpage/_data/docs.yml
 5. ✅ Implemented top navigation with key links
 6. ✅ Added search functionality

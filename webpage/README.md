@@ -11,13 +11,15 @@ This directory contains the complete Jekyll-based documentation website, includi
 - **`Gemfile`** - Ruby dependencies for Jekyll
 - **`index.html`** - Homepage/landing page
 - **`_data/`** - Site data files (navigation structure)
-- **`_docs/`** - Documentation pages (markdown files)
+- **`_guides/`** - Copied from /guides/ during build (see deploy-pages.yml workflow)
 - **`_includes/`** - Reusable HTML components (header, footer, navigation)
 - **`_layouts/`** - Page layout templates
 - **`_sass/`** - SASS/SCSS stylesheets
 - **`assets/`** - Static assets (CSS, JavaScript, images, fonts)
 - **`data-standards-tool.html`** - Interactive data standards tool
 - **`favicon.ico`** - Website favicon
+
+**Note:** Documentation files are maintained in `/guides/` and automatically copied to `webpage/_guides/` during the GitHub Pages build process.
 
 ## Local Development
 
@@ -27,6 +29,9 @@ To preview the website locally:
 # Navigate to this directory
 cd webpage
 
+# Copy guides for local development
+cp -r ../guides _guides
+
 # Install dependencies
 bundle install
 
@@ -35,6 +40,8 @@ bundle exec jekyll serve
 
 # View at http://localhost:4000/USDiseaseTracker-Docs/
 ```
+
+**Note:** When developing locally, you need to manually copy the guides from `/guides/` to `webpage/_guides/` before running Jekyll. The GitHub Pages workflow does this automatically during deployment.
 
 ## Deployment
 

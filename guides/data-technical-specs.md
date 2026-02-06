@@ -1,3 +1,8 @@
+---
+title: Data Technical Specifications
+permalink: /docs/data-technical-specs/
+---
+
 # Data Technical Specifications
 
 | Version | Changes from previous version |   
@@ -15,7 +20,7 @@ This document provides the complete technical specifications for disease trackin
 
 **Important:** This is for aggregate data only. No line-level (individual case) data should be submitted.
 
-**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md).
+**Note:** For high-level submission guidance including what data to submit, when to submit it, and case classification rules, see the [Data Submission Guide](data-submission-guide.md).
 <br>
 
 ### Contents
@@ -190,7 +195,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 ## Validation
 
-See [Validation](VALIDATION.md) for details on file and data validation.
+See [Validation](validation.md) for details on file and data validation.
 <br>
 <br>
 
@@ -247,10 +252,10 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 ## References
 
-- [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) - High-level guidance on what and when to submit
-- [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) - Technical details on how to transfer data
+- [Data Submission Guide](data-submission-guide.md) - High-level guidance on what and when to submit
+- [Data Transfer Guide](data-transfer-guide.md) - Technical details on how to transfer data
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Validation Rules](VALIDATION.md) - Complete validation requirements
+- [Validation Rules](validation.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
 - [MMWR Week Calendar](https://health.maryland.gov/phpa/OIDEOR/CIDSOR/NEDSS/MMWR_Calendar.pdf)
@@ -260,4 +265,4 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 ## Questions
 
-For questions about these technical specifications, see the [Data Submission Guide](DATA-SUBMISSION-GUIDE.md) or contact the project team.
+For questions about these technical specifications, see the [Data Submission Guide](data-submission-guide.md) or contact the project team.

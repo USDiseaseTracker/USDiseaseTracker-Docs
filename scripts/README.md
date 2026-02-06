@@ -44,7 +44,7 @@ The workflow will automatically:
 
 ## validate_schema_specs.py
 
-This script validates that the technical specifications in `guides/DATA-TECHNICAL-SPECS.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the JSON schema in `examples-and-templates/data_reporting_schema.json`.
+This script validates that the technical specifications in `guides/data-technical-specs.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the JSON schema in `examples-and-templates/data_reporting_schema.json`.
 
 **The JSON schema is the source of truth.** The script ensures that documentation and the data dictionary stay synchronized with the schema.
 

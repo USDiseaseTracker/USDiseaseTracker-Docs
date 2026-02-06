@@ -1,3 +1,8 @@
+---
+title: Validation
+permalink: /docs/validation/
+---
+
 # Validation
 
 | Version | Changes from previous version |   
