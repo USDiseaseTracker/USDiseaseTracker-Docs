@@ -136,7 +136,7 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ## Data Elements
 
-For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](data-technical-specs.md).
 
 ### Summary of Required Fields
 
@@ -152,7 +152,7 @@ All data submissions must include the following types of information:
 
 - **disease_subtype:** For meningococcal serogroup reporting
 
-For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](data-technical-specs.md).
 <br>
 
 
@@ -248,14 +248,14 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 Example: `disease_tracking_report_WA_2025-09-30.csv`
 
-See the [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) for technical details on data submission methods and the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) for complete field requirements.
+See the [Data Transfer Guide](data-transfer-guide.md) for technical details on data submission methods and the [Data Technical Specifications](data-technical-specs.md) for complete field requirements.
 <br>
 <br>
 
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. For specifics on metadata, see [Data Technical Specifications](DATA-TECHNICAL-SPECS.md). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
 
 - Algorithm used to classify cases in time (e.g., CCCD or alternative)
 - List of substate geographic units used by jurisdiction
@@ -276,11 +276,11 @@ All submitted data must meet validation requirements to ensure data quality and 
 - Required fields are present
 
 **Resources:**
-- [Data Technical Specifications](DATA-TECHNICAL-SPECS.md) - Complete field definitions and valid value sets
+- [Data Technical Specifications](data-technical-specs.md) - Complete field definitions and valid value sets
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Validation Rules](VALIDATION.md) - Comprehensive validation requirements
+- [Validation Rules](validation.md) - Comprehensive validation requirements
   
-Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](DATA-TRANSFER-GUIDE.md) describes what happens when validation succeeds or fails.
+Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](data-transfer-guide.md) describes what happens when validation succeeds or fails.
 <br>
 
 ## Questions

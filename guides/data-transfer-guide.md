@@ -204,7 +204,7 @@ JHU may add additional metadata to filenames for internal tracking purposes (e.g
 
 Files should not be altered after generation. JHU will not modify file contents, only may add metadata to filenames for internal tracking.
 
-For detailed field specifications, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For detailed field specifications, see the [Data Technical Specifications](data-technical-specs.md).
 
 ### Template and Examples
 
@@ -225,7 +225,7 @@ All submitted files undergo automated validation:
 - **Value checks:** Values within acceptable ranges/enumerations
 - **Reasonableness checks:** Logical consistency (dates, counts, etc.)
 
-See the [Validation Rules](VALIDATION.md) for detailed validation requirements.
+See the [Validation Rules](validation.md) for detailed validation requirements.
 
 ### Validation Errors
 
