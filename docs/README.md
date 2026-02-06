@@ -4,6 +4,7 @@ This directory contains documentation for developers and maintainers of the US D
 
 ## Contents
 
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to the US Disease Tracker project
 - **[GITHUB-PAGES-SETUP.md](GITHUB-PAGES-SETUP.md)** - Guide for setting up and configuring GitHub Pages for the documentation website
 - **[NEW-THEME-SUMMARY.md](NEW-THEME-SUMMARY.md)** - Summary of the Jekyll theme implementation and customization details
 - **[DATA-STANDARDS-TOOL-PREVIEW.md](DATA-STANDARDS-TOOL-PREVIEW.md)** - Preview and documentation of theme updates for the Data Standards Tool
