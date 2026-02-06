@@ -29,6 +29,9 @@ To preview the website locally:
 # Navigate to this directory
 cd webpage
 
+# Copy guides for local development
+cp -r ../guides _guides
+
 # Install dependencies
 bundle install
 
@@ -37,6 +40,8 @@ bundle exec jekyll serve
 
 # View at http://localhost:4000/USDiseaseTracker-Docs/
 ```
+
+**Note:** When developing locally, you need to manually copy the guides from `/guides/` to `webpage/_guides/` before running Jekyll. The GitHub Pages workflow does this automatically during deployment.
 
 ## Deployment
 
