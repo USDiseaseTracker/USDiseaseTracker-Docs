@@ -63,9 +63,11 @@ This repository has been migrated to use the **Documentation** theme from [jekyl
 ### Data (webpage/_data/)
 - `docs.yml` - Navigation structure for documentation
 
+### Documentation Home Page
+- `webpage/index.md` - Documentation home page
+
 ### Documentation Collection (guides/)
-All guide files with Jekyll frontmatter for website generation:
-- `index.md` - Documentation home page
+Guide files with Jekyll frontmatter for website generation:
 - `data-submission-guide.md` - Data submission guide
 - `data-technical-specs.md` - Technical specifications
 - `data-transfer-guide.md` - Data transfer methods
