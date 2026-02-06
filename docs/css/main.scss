@@ -1,0 +1,19 @@
+---
+# Front matter comment to ensure Jekyll processes this file
+---
+@charset "utf-8";
+
+$baseurl: "{{ site.baseurl }}";
+$bootwatch: "{{ site.bootwatch }}";
+
+// Import Bootstrap
+@import "bootstrap";
+
+// Import Bootwatch theme
+@import "bootswatch/{{site.bootwatch}}/variables";
+@import "bootswatch/{{site.bootwatch}}/bootswatch";
+
+// Import custom theme styles
+@import "jekyll-doc-theme";
+@import "syntax-highlighting";
+@import "typeahead";
