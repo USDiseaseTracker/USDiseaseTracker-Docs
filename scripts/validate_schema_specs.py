@@ -496,7 +496,7 @@ def main():
     """Main validation function."""
     repo_root = Path(__file__).parent.parent
     schema_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.json'
-    md_path = repo_root / 'webpage' / '_guides' / 'data-technical-specs.md'
+    md_path = repo_root / 'guides' / 'data-technical-specs.md'
     dict_path = repo_root / 'examples-and-templates' / 'disease_tracking_data_dictionary.csv'
     
     if not schema_path.exists():

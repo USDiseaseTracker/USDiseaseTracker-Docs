@@ -11,13 +11,15 @@ This directory contains the complete Jekyll-based documentation website, includi
 - **`Gemfile`** - Ruby dependencies for Jekyll
 - **`index.html`** - Homepage/landing page
 - **`_data/`** - Site data files (navigation structure)
-- **`_guides/`** - Documentation pages (markdown files)
+- **`_guides/`** - Copied from /guides/ during build (see deploy-pages.yml workflow)
 - **`_includes/`** - Reusable HTML components (header, footer, navigation)
 - **`_layouts/`** - Page layout templates
 - **`_sass/`** - SASS/SCSS stylesheets
 - **`assets/`** - Static assets (CSS, JavaScript, images, fonts)
 - **`data-standards-tool.html`** - Interactive data standards tool
 - **`favicon.ico`** - Website favicon
+
+**Note:** Documentation files are maintained in `/guides/` and automatically copied to `webpage/_guides/` during the GitHub Pages build process.
 
 ## Local Development
 

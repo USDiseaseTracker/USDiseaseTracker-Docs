@@ -52,7 +52,7 @@
 └──────────────────────┴──────────────────────┴─────────────────────┘
 ```
 
-## Documentation Pages (webpage/_guides/)
+## Documentation Pages (guides/)
 
 ### Layout with Sidebar
 ```

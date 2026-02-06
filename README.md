@@ -39,10 +39,10 @@ While we aim to limit changes once data standards and processes are established,
 | Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases |
 
 **Guides and Specifications**
-1. **[Data Submission Guide](webpage/_guides/data-submission-guide.md)** - High-level overview of what and when to submit
-2. **[Data Technical Specifications](webpage/_guides/data-technical-specs.md)** - Detailed field specifications and requirements
-3. **[Data Transfer Guide](webpage/_guides/data-transfer-guide.md)** - Technical transfer methods
-4. **[Validation Rules](webpage/_guides/validation.md)** - Data validation requirements
+1. **[Data Submission Guide](guides/data-submission-guide.md)** - High-level overview of what and when to submit
+2. **[Data Technical Specifications](guides/data-technical-specs.md)** - Detailed field specifications and requirements
+3. **[Data Transfer Guide](guides/data-transfer-guide.md)** - Technical transfer methods
+4. **[Validation Rules](guides/validation.md)** - Data validation requirements
 
 **Templates and Examples:**
 - [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
@@ -54,7 +54,7 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](webpage/_guides/validation.md) for detailed validation requirements.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
 <br>
@@ -91,7 +91,7 @@ Data are validated upon submission for completeness, format, and errors. See the
 This repository is organized as follows:
 
 - **`webpage/`** - All website-related files (Jekyll site, published at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)
-  - **`_guides/`** - Documentation guides (DATA-SUBMISSION-GUIDE.md, DATA-TECHNICAL-SPECS.md, etc.)
+- **`guides/`** - Documentation guides (data-submission-guide.md, data-technical-specs.md, etc.)
 - **`examples-and-templates/`** - Data templates, examples, and the data dictionary
 - **`scripts/`** - Validation scripts and schema generators
 
