@@ -90,19 +90,20 @@ Data are validated upon submission for completeness, format, and errors. See the
 
 This repository is organized as follows:
 
-- **`webpage/`** - All website-related files (Jekyll site, published at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)
+- **`docs/`** - MkDocs documentation source files (website content)
 - **`guides/`** - Documentation guides (data-submission-guide.md, data-technical-specs.md, etc.)
 - **`examples-and-templates/`** - Data templates, examples, and the data dictionary
 - **`scripts/`** - Validation scripts and schema generators
+- **`data_standards_tool/`** - Interactive data standards tool
 
-For more information about the website structure, see [webpage/README.md](webpage/README.md).
+For more information about the documentation website structure, see [docs/README.md](docs/README.md).
 <br>
 <br>
 
 
 ## Contributing
 
-We welcome contributions to the data standards! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for detailed instructions.
+We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
 <br>
 <br>
 

@@ -5,7 +5,7 @@ The USDT Data Standards Tool is an interactive web application that helps you ex
 ## Access the Tool
 
 <div style="text-align: center; margin: 2em 0;">
-    <a href="data-standards-tool.html" style="display: inline-block; padding: 12px 24px; background-color: #009688; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
+    <a href="../data-standards-tool.html" style="display: inline-block; padding: 12px 24px; background-color: #009688; color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">
         🛠️ Open Data Standards Tool
     </a>
 </div>
