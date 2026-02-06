@@ -105,7 +105,7 @@ The Data Standards Tool has been converted to use the jekyll-doc-theme layout sy
    - Removed closing `</body>` and `</html>` tags
 
 3. **Navigation:**
-   - Updated link in `docs/_includes/topnav.html` from `/data-standards-tool.html` to `/data-standards-tool/`
+   - Updated link in `webpage/_includes/topnav.html` from `/data-standards-tool.html` to `/data-standards-tool/`
    - Added active state highlighting for the tool page
 
 ### User Experience

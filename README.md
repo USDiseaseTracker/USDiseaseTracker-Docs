@@ -90,12 +90,12 @@ Data are validated upon submission for completeness, format, and errors. See the
 
 This repository is organized as follows:
 
-- **`webpage/`** - All website-related files (Jekyll site, published at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)
+- **`docs/`** - All website-related files (Jekyll site, published at https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)
 - **`guides/`** - Documentation guides (data-submission-guide.md, data-technical-specs.md, etc.)
 - **`examples-and-templates/`** - Data templates, examples, and the data dictionary
 - **`scripts/`** - Validation scripts and schema generators
 
-For more information about the website structure, see [webpage/README.md](webpage/README.md).
+For more information about the website structure, see [docs/README.md](docs/README.md).
 <br>
 <br>
 

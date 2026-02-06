@@ -1,23 +1,54 @@
-# Developer Documentation
+# Docs Directory
 
-This directory contains documentation for developers and maintainers of the US Disease Tracker Documentation repository.
+This directory contains all files related to the US Disease Tracker documentation website that is published at:
+**https://usdiseasetracker.github.io/USDiseaseTracker-Docs/**
 
 ## Contents
 
-- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Guidelines for contributing to the US Disease Tracker project
-- **[GITHUB-PAGES-SETUP.md](GITHUB-PAGES-SETUP.md)** - Guide for setting up and configuring GitHub Pages for the documentation website
-- **[NEW-THEME-SUMMARY.md](NEW-THEME-SUMMARY.md)** - Summary of the Jekyll theme implementation and customization details
-- **[DATA-STANDARDS-TOOL-PREVIEW.md](DATA-STANDARDS-TOOL-PREVIEW.md)** - Preview and documentation of theme updates for the Data Standards Tool
-- **[VISUAL-PREVIEW.md](VISUAL-PREVIEW.md)** - Visual preview of the theme design and layout
+This directory contains the complete Jekyll-based documentation website, including:
 
-## Purpose
+- **`_config.yml`** - Jekyll configuration file
+- **`Gemfile`** - Ruby dependencies for Jekyll
+- **`index.html`** - Homepage/landing page
+- **`_data/`** - Site data files (navigation structure)
+- **`_guides/`** - Copied from /guides/ during build (see deploy-pages.yml workflow)
+- **`_includes/`** - Reusable HTML components (header, footer, navigation)
+- **`_layouts/`** - Page layout templates
+- **`_sass/`** - SASS/SCSS stylesheets
+- **`assets/`** - Static assets (CSS, JavaScript, images, fonts)
+- **`data-standards-tool.html`** - Interactive data standards tool
+- **`favicon.ico`** - Website favicon
 
-These files provide context and guidance for:
-- Setting up the documentation website locally
-- Understanding the theme architecture and customization
-- Maintaining and updating the website appearance
-- Onboarding new developers to the project
+**Note:** Documentation files are maintained in `/guides/` and automatically copied to `docs/_guides/` during the GitHub Pages build process.
 
-## Related Documentation
+## Local Development
 
-For end-user documentation about data standards and submission guidelines, see the [guides](../guides/) directory and the [webpage](../webpage/) directory.
+To preview the website locally:
+
+```bash
+# Navigate to this directory
+cd docs
+
+# Copy guides for local development
+cp -r ../guides _guides
+
+# Install dependencies
+bundle install
+
+# Serve the site locally
+bundle exec jekyll serve
+
+# View at http://localhost:4000/USDiseaseTracker-Docs/
+```
+
+**Note:** When developing locally, you need to manually copy the guides from `/guides/` to `docs/_guides/` before running Jekyll. The GitHub Pages workflow does this automatically during deployment.
+
+## Deployment
+
+The website is automatically built and deployed via GitHub Actions when changes are pushed to the `main` branch. See `.github/workflows/deploy-pages.yml` for the deployment configuration.
+
+## More Information
+
+For detailed setup and customization instructions, see:
+- [GitHub Pages Setup Guide](GITHUB-PAGES-SETUP.md)
+- [Theme Summary](NEW-THEME-SUMMARY.md)

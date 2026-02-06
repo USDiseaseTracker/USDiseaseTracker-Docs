@@ -7,17 +7,17 @@ This repository is configured to be published as a GitHub Pages website at:
 
 The repository uses Jekyll with the "Documentation" theme from [jekyllthemes.io](https://jekyllthemes.io/theme/documentation) to automatically convert Markdown files into a professional documentation website. The site is built and deployed automatically whenever changes are pushed to the `main` branch.
 
-All webpage-related files are organized in the `docs/` directory.
+All webpage-related files are organized in the `webpage/` directory.
 
 ### Key Components
 
-1. **`docs/_config.yml`** - Jekyll configuration file that controls:
+1. **`webpage/_config.yml`** - Jekyll configuration file that controls:
    - Site title and description
    - Theme settings (using Documentation theme with Flatly Bootstrap theme)
    - Build settings
    - Collections and defaults
 
-2. **`docs/index.html`** - The landing page of the website with hero section
+2. **`webpage/index.html`** - The landing page of the website with hero section
 
 3. **`guides/`** - Documentation pages with Jekyll frontmatter:
    - `guides/data-submission-guide.md` - Data submission guide
@@ -26,24 +26,24 @@ All webpage-related files are organized in the `docs/` directory.
    - `guides/validation.md` - Validation rules
    - `guides/pilot-overview.md` - Pilot program overview
    
-   Note: During deployment, the GitHub Actions workflow copies these files into `docs/_guides/` (for example, via `cp -r guides docs/_guides`), where Jekyll reads them.
+   Note: During deployment, the GitHub Actions workflow copies these files into `webpage/_guides/` (for example, via `cp -r guides webpage/_guides`), where Jekyll reads them.
 
-4. **`docs/_data/docs.yml`** - Navigation structure for the documentation sidebar
+4. **`webpage/_data/docs.yml`** - Navigation structure for the documentation sidebar
 
-5. **`docs/_layouts/`** - Page layouts:
+5. **`webpage/_layouts/`** - Page layouts:
    - `default.html` - Base layout with navigation
    - `docs.html` - Documentation page layout with sidebar
    - `page.html` - Simple page layout
    - `post.html` - Blog post layout
 
-6. **`docs/_includes/`** - Reusable components:
+6. **`webpage/_includes/`** - Reusable components:
    - `topnav.html` - Top navigation bar
    - `docs_nav.html` - Documentation sidebar navigation
    - `footer.html` - Site footer
    - `head.html` - HTML head with meta tags and CSS
    - Others
 
-7. **`docs/assets/`** - Static assets including:
+7. **`webpage/assets/`** - Static assets including:
    - CSS files (Bootstrap with Bootswatch themes)
    - JavaScript files
    - Images
