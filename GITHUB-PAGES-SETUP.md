@@ -20,7 +20,6 @@ All webpage-related files are organized in the `webpage/` directory.
 2. **`webpage/index.html`** - The landing page of the website with hero section
 
 3. **`guides/`** - Documentation pages with Jekyll frontmatter:
-   - `guides/index.md` - Documentation home page
    - `guides/data-submission-guide.md` - Data submission guide
    - `guides/data-technical-specs.md` - Technical specifications
    - `guides/data-transfer-guide.md` - Data transfer methods
