@@ -95,7 +95,7 @@ This repository is organized as follows:
 - **`examples-and-templates/`** - Data templates, examples, and the data dictionary
 - **`scripts/`** - Validation scripts and schema generators
 
-For more information about the website structure, see [webpage/README.md](webpage/README.md).
+For more information about the website structure, see [GitHub Pages Setup Guide](docs/GITHUB-PAGES-SETUP.md).
 <br>
 <br>
 
