@@ -43,5 +43,5 @@ The website is automatically built and deployed via GitHub Actions when changes 
 ## More Information
 
 For detailed setup and customization instructions, see:
-- [GitHub Pages Setup Guide](../GITHUB-PAGES-SETUP.md)
-- [Theme Summary](../NEW-THEME-SUMMARY.md)
+- [GitHub Pages Setup Guide](../docs/GITHUB-PAGES-SETUP.md)
+- [Theme Summary](../docs/NEW-THEME-SUMMARY.md)
