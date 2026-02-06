@@ -1,0 +1,71 @@
+site_name: US Disease Tracker Documentation
+site_url: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+site_description: Data standards, templates, examples, and validation documentation for the US Disease Tracker project
+site_author: US Disease Tracker Team
+
+repo_name: USDiseaseTracker/USDiseaseTracker-Docs
+repo_url: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - tables
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Guides:
+    - Data Submission Guide: guides/data-submission-guide.md
+    - Data Technical Specifications: guides/data-technical-specs.md
+    - Data Transfer Guide: guides/data-transfer-guide.md
+    - Validation Rules: guides/validation.md
+    - Pilot Overview: guides/pilot-overview.md
+  - Tools:
+    - Data Standards Tool: data-standards-tool.md
+  - Examples & Templates: examples-and-templates.md
+  - Contributing: CONTRIBUTING.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs

@@ -26,7 +26,7 @@
 # R Environment Variables
 .Renviron
 
-# Jekyll site
+# Jekyll site (deprecated)
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -34,6 +34,9 @@ _site/
 Gemfile.lock
 vendor/
 webpage/_guides/
+
+# MkDocs build artifacts
+site/
 
 # OS files
 .DS_Store
@@ -49,4 +52,3 @@ __pycache__/
 *$py.class
 *.so
 .Python
-
