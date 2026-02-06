@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Contributing to the US Disease Tracker
-permalink: /CONTRIBUTING/
+permalink: /contributing/
 ---
 
 

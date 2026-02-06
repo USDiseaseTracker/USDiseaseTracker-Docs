@@ -33,6 +33,7 @@ _site/
 .jekyll-metadata
 Gemfile.lock
 vendor/
+webpage/_guides/
 
 # OS files
 .DS_Store
