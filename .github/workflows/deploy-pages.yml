@@ -28,7 +28,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Copy guides to webpage
-        run: cp -r guides webpage/_guides
+        run: cp -r guides webpage/guides
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Build with Jekyll
