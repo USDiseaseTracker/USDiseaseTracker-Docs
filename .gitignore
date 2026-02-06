@@ -35,6 +35,9 @@ Gemfile.lock
 vendor/
 webpage/_guides/
 
+# MkDocs site
+site/
+
 # OS files
 .DS_Store
 Thumbs.db

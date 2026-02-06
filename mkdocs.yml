@@ -1,0 +1,65 @@
+site_name: US Disease Tracker Documentation
+site_url: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+site_description: Data standards, templates, examples, and validation documentation for the US Disease Tracker project
+site_author: US Disease Tracker Team
+
+repo_url: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
+repo_name: USDiseaseTracker/USDiseaseTracker-Docs
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+markdown_extensions:
+  - tables
+  - toc:
+      permalink: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Data Submission Guide: guides/data-submission-guide.md
+      - Data Technical Specifications: guides/data-technical-specs.md
+      - Data Transfer Guide: guides/data-transfer-guide.md
+      - Validation Rules: guides/validation.md
+      - Pilot Overview: guides/pilot-overview.md
+  - Data Standards Tool: data-standards-tool.md
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
