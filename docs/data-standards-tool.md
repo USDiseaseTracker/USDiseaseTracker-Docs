@@ -1,6 +1,6 @@
 # USDT Data Standards Tool
 
-<iframe src="data-standards-tool.html" width="100%" height="1200px" style="border: none;"></iframe>
+<iframe src="/USDiseaseTracker-Docs/data-standards-tool.html" width="100%" height="1200px" style="border: none;"></iframe>
 
 !!! tip "Using the Data Standards Tool"
     This interactive tool allows you to:
@@ -12,4 +12,4 @@
 
 ## Direct Access
 
-You can also access the tool directly at: [data-standards-tool.html](data-standards-tool.html)
+You can also access the tool directly at: [data-standards-tool.html](/USDiseaseTracker-Docs/data-standards-tool.html)
