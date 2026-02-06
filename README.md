@@ -45,9 +45,9 @@ While we aim to limit changes once data standards and processes are established,
 4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
 
 **Templates and Examples:**
-- [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
-- [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
+- [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
+- [Data dictionary (CSV)](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 <br>
 
@@ -102,7 +102,11 @@ For more information about the website structure, see [webpage/README.md](webpag
 
 ## Contributing
 
+<<<<<<< HEAD
 We welcome contributions to the data standards! Please see our [Contributing Guide](contributing.md) for detailed instructions.
+=======
+We welcome contributions to the data standards! Please see our [Contributing Guide](docs/CONTRIBUTING.md) for detailed instructions.
+>>>>>>> c2470787b3b2856628128e3311d106ff26c789e0
 <br>
 <br>
 

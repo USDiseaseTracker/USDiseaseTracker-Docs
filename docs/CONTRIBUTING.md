@@ -18,7 +18,7 @@ By participating in this project, you agree to maintain a respectful and collabo
 To contribute data as a jurisdiction:
 
 1. Review the current data standards and template
-2. Format you data to match the data structure provided in `examples-and-templates/`
+2. Format your data to match the data structure provided in `examples-and-templates/`
 3. Contact the project team to register users and schedule an onboarding meeting (coming soon!)
 
 ### Reporting Issues
