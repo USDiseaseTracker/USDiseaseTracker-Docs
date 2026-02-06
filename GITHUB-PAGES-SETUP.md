@@ -26,7 +26,7 @@ All webpage-related files are organized in the `webpage/` directory.
    - `guides/validation.md` - Validation rules
    - `guides/pilot-overview.md` - Pilot program overview
    
-   Note: Jekyll accesses these via symlink at `webpage/_guides/`
+   Note: During deployment, the GitHub Actions workflow copies these files into `webpage/_guides/` (for example, via `cp -r guides webpage/_guides`), where Jekyll reads them.
 
 4. **`webpage/_data/docs.yml`** - Navigation structure for the documentation sidebar
 
