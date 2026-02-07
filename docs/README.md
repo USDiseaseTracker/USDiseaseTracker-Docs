@@ -37,7 +37,7 @@ To preview the documentation locally:
 mkdocs serve
 ```
 
-This will start a development server at `http://127.0.0.1:8000/USDiseaseTracker-Docs/`
+This will start a development server at `http://127.0.0.1:8000/`
 
 ### Building for Production
 
