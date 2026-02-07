@@ -94,5 +94,5 @@ Current customizations:
 ## Notes
 
 - The `guides/` directory is a symbolic link to `../guides/` to avoid duplication
-- The `data-standards-tool.html` is copied from `../data_standards_tool/` during build
+- The `data-standards-tool.html` file is tracked directly in this `docs/` directory and is not copied during the MkDocs build; update it from `../data_standards_tool/` manually or via a separate script/workflow as needed
 - The site uses the `/USDiseaseTracker-Docs/` base URL for GitHub Pages deployment
