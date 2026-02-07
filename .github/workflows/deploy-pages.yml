@@ -1,9 +1,9 @@
-name: Deploy Jekyll site to Pages
+name: Deploy MkDocs site to Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main", "version1.1.0"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -27,17 +27,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Copy guides to webpage
-        run: cp -r guides webpage/_guides
+      
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      
+      - name: Install MkDocs and dependencies
+        run: |
+          pip install mkdocs-material
+      
+      - name: Build with MkDocs
+        run: mkdocs build
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./webpage
-          destination: ./_site
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
 
   # Deployment job
   deploy:
