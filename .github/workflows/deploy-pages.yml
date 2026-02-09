@@ -3,7 +3,7 @@ name: Deploy MkDocs site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: ["main", "version1.1.0"]
     tags:
       - 'v*'
 
