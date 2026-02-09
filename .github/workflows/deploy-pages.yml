@@ -75,6 +75,11 @@ jobs:
             fi
           done
       
+      - name: Create .nojekyll file
+        run: |
+          # Tell GitHub Pages to skip Jekyll processing
+          touch /tmp/site-artifact/.nojekyll
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
