@@ -12,7 +12,6 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: write
   pages: write
   id-token: write
 
@@ -26,6 +25,8 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push to gh-pages branch
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -48,12 +49,13 @@ jobs:
       
       - name: Deploy with mike (builds and commits to gh-pages branch)
         run: |
-          if [[ $GITHUB_REF == refs/tags/* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/}
-            mike deploy --push --update-aliases $VERSION latest
-            mike set-default --push latest
+          set -euo pipefail
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            VERSION="${GITHUB_REF#refs/tags/}"
+            mike deploy --push --update-aliases "$VERSION" "latest"
+            mike set-default --push "latest"
           else
-            mike deploy --push dev
+            mike deploy --push "dev"
           fi
       
       - name: Checkout gh-pages branch to prepare for artifact upload
@@ -62,13 +64,19 @@ jobs:
           git fetch origin gh-pages
           git checkout gh-pages
       
+      - name: Copy site to clean directory
+        run: |
+          # Create a clean directory with only site content (exclude .git)
+          mkdir -p /tmp/site-artifact
+          rsync -av --exclude='.git' ./ /tmp/site-artifact/
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: /tmp/site-artifact
 
   # Deployment job
   deploy:
