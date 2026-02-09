@@ -93,11 +93,11 @@ To check what combinations of values are valid, check out the [USDT Data Standar
 
 This repository is organized as follows:
 
-- **`docs/`** - MkDocs documentation source files (website content)
 - **`guides/`** - Documentation guides (data-submission-guide.md, data-technical-specs.md, etc.)
 - **`examples-and-templates/`** - Data templates, examples, and the data dictionary
-- **`scripts/`** - Validation scripts and schema generators
 - **`data_standards_tool/`** - Interactive data standards tool
+- **`scripts/`** - Validation scripts and schema generators
+- **`docs/`** - MkDocs documentation source files (website content)
 
 For more information about the documentation website structure, see [docs/README.md](docs/README.md).
 <br>
