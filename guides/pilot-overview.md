@@ -5,8 +5,6 @@ permalink: /docs/pilot-overview/
 
 # US Disease Data Project - Pilot Phase Overview
 
-**Last Updated:** January 5, 2026  
-**Status:** Work in Progress
 
 ## Background
 
