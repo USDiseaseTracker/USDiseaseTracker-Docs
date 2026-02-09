@@ -97,8 +97,6 @@ This repository is organized as follows:
 - **`data_standards_tool/`** - Interactive data standards tool
 - **`scripts/`** - Validation scripts and schema generators
 - **`docs/`** - MkDocs documentation source files (website content)
-
-For more information about the documentation website structure, see [docs/README.md](docs/README.md).
 <br>
 <br>
 
