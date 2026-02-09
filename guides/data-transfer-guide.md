@@ -1,13 +1,16 @@
+---
+title: Data Transfer Guide
+permalink: /docs/data-transfer-guide/
+---
+
 # Data Transfer Guide
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository |
 
 
 ---
-
-**Status:** Work in Progress
 
 ## Overview
 
@@ -34,24 +37,12 @@ Data should be transferred to the project database on a weekly basis unless an e
 
 ### Weekly Transfer Requirements
 
-- Submit a single file with all diseases and cases aggregated by week or month
+- Submit a single file with all diseases and cases aggregated by week
 - Use the calculated case counting date (or alternative hierarchical date)
 - Update file each week with new data and changes to previous aggregate values
 - If no updates are available, submit either:
   - A statement: "No data updates for this week"
   - The current file with no changes (to ensure data are not assumed missing)
-
-### Monthly Disease Updates
-
-For diseases reported on monthly timescales, jurisdictions can:
-- Update monthly totals each week, OR
-- Update month counts following completion of the reporting month
-
-Counts will be marked as "provisional" for a specified lag period on visualizations.
-
-### Monthly Transfer Option
-
-Individual jurisdictions may request monthly data transfer instead of weekly. This must be discussed and agreed upon with the project team. Weekly data sharing is strongly preferred.
 
 ## Transfer Methods
 
@@ -211,7 +202,7 @@ JHU may add additional metadata to filenames for internal tracking purposes (e.g
 
 Files should not be altered after generation. JHU will not modify file contents, only may add metadata to filenames for internal tracking.
 
-For detailed field specifications, see the [Data Technical Specifications](DATA-TECHNICAL-SPECS.md).
+For detailed field specifications, see the [Data Technical Specifications](data-technical-specs.md).
 
 ### Template and Examples
 
@@ -219,7 +210,8 @@ Use the official data submission template and examples:
 - [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
 - [Example data file](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data demonstrating proper format
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Data dictionary and additional resources (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql) - Complete field definitions and external resources
+<br>
+<br>
 
 ## Validation
 
@@ -232,7 +224,7 @@ All submitted files undergo automated validation:
 - **Value checks:** Values within acceptable ranges/enumerations
 - **Reasonableness checks:** Logical consistency (dates, counts, etc.)
 
-See the [Validation Rules](VALIDATION.md) for detailed validation requirements.
+See the [Validation Rules](validation.md) for detailed validation requirements.
 
 ### Validation Errors
 

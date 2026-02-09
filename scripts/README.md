@@ -44,7 +44,7 @@ The workflow will automatically:
 
 ## validate_schema_specs.py
 
-This script validates that the technical specifications in `guides/DATA-TECHNICAL-SPECS.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the JSON schema in `examples-and-templates/data_reporting_schema.json`.
+This script validates that the technical specifications in `guides/data-technical-specs.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the JSON schema in `examples-and-templates/data_reporting_schema.json`.
 
 **The JSON schema is the source of truth.** The script ensures that documentation and the data dictionary stay synchronized with the schema.
 
@@ -86,3 +86,72 @@ If mismatches are detected, the workflow will automatically update the markdown 
 - `0`: All checks passed
 - `1`: One or more checks failed (without `--update` flag)
 - `0`: Checks failed but files were updated successfully (with `--update` flag)
+
+## update_data_standards.py
+
+This is an orchestration script that combines both `generate_json_schema.py` and `validate_schema_specs.py` to perform a complete update of the data standards tool and documentation.
+
+**This script ensures that all data standards artifacts stay synchronized with the validation schema.**
+
+### Usage
+
+**Perform a complete update:**
+```bash
+python3 scripts/update_data_standards.py
+```
+
+### What it does
+
+This script performs the following steps in sequence:
+
+1. **Generate JSON schema**: Runs `generate_json_schema.py` to create the JSON schema from the Pydantic model
+2. **Update data standards**: Runs `validate_schema_specs.py --update` to update:
+   - Data dictionary CSV (`examples-and-templates/disease_tracking_data_dictionary.csv`)
+   - Technical specifications markdown (`guides/DATA-TECHNICAL-SPECS.md`)
+3. **Validate consistency**: Runs `validate_schema_specs.py` to ensure all files are synchronized
+
+### When to use
+
+Use this script when you have manually modified the Pydantic schema (`data_reporting_schema.py`) and want to:
+- Update all derived artifacts (JSON schema, data dictionary, documentation)
+- Verify that everything is consistent
+- Prepare changes for commit
+
+### Automated execution
+
+The GitHub Actions workflow (`.github/workflows/generate-json-schema.yml`) automatically performs these steps when the Pydantic schema is modified, so manual execution is typically only needed for:
+- Local development and testing
+- Troubleshooting schema inconsistencies
+- Generating updates before committing schema changes
+
+## Automated Data Standards Updates
+
+The repository uses GitHub Actions to automatically keep the data standards tool synchronized with validation schemas:
+
+### Workflow: Generate JSON Schema (`generate-json-schema.yml`)
+
+**Triggers when:**
+- `examples-and-templates/data_reporting_schema.py` is modified
+- Changes are pushed to `main` or opened in a pull request
+
+**Actions performed:**
+1. Generates JSON schema from Pydantic model
+2. Updates data dictionary CSV from JSON schema
+3. Updates markdown documentation from JSON schema
+4. Validates final consistency
+5. Commits and pushes changes automatically (on push to main)
+
+This ensures that whenever the validation schema changes, the data standards tool (CSV data dictionary) and documentation are automatically updated to reflect the new values.
+
+### Source of Truth
+
+The data flow is:
+```
+Pydantic Model (data_reporting_schema.py)
+    ↓ [generate_json_schema.py]
+JSON Schema (data_reporting_schema.json)
+    ↓ [validate_schema_specs.py --update]
+Data Dictionary CSV + Markdown Documentation
+```
+
+**Pydantic model is the ultimate source of truth.** All other files are derived from it.

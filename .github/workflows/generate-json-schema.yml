@@ -4,11 +4,19 @@ on:
   push:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
+      # Exclude auto-generated files to prevent workflow loops
+      - '!examples-and-templates/data_reporting_schema.json'
+      - '!examples-and-templates/disease_tracking_data_dictionary.csv'
+      - '!guides/DATA-TECHNICAL-SPECS.md'
     branches:
       - main
   pull_request:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
+      # Exclude auto-generated files to prevent workflow loops
+      - '!examples-and-templates/data_reporting_schema.json'
+      - '!examples-and-templates/disease_tracking_data_dictionary.csv'
+      - '!guides/DATA-TECHNICAL-SPECS.md'
     branches:
       - main
 
@@ -38,24 +46,39 @@ jobs:
         run: |
           python3 scripts/generate_json_schema.py
       
+      - name: Update data standards tool and documentation from schema
+        run: |
+          python3 scripts/validate_schema_specs.py --update
+      
       - name: Check for changes
         id: check_changes
         run: |
-          if [[ -n $(git status --porcelain examples-and-templates/data_reporting_schema.json) ]]; then
+          if [[ -n $(git status --porcelain) ]]; then
             echo "changes=true" >> $GITHUB_OUTPUT
           else
             echo "changes=false" >> $GITHUB_OUTPUT
           fi
       
       - name: Commit and push changes
-        if: steps.check_changes.outputs.changes == 'true' && github.event_name == 'push'
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add examples-and-templates/data_reporting_schema.json
-          git commit -m "Auto-generate data_reporting_schema.json from Pydantic model"
-          git push
+          git add examples-and-templates/disease_tracking_data_dictionary.csv
+          git add guides/DATA-TECHNICAL-SPECS.md
+          git commit -m "Auto-update schema, data dictionary, and documentation from Pydantic model" -m "Updated files: $(git diff --cached --name-only | tr '\n' ' ')"
+          
+          # Determine the target branch
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BRANCH="${{ github.head_ref }}"
+          else
+            BRANCH="${{ github.ref_name }}"
+          fi
+          
+          git push origin HEAD:"$BRANCH"
       
-      - name: Validate schema consistency
+      - name: Validate final consistency
+        if: steps.check_changes.outputs.changes == 'true'
         run: |
-          python3 scripts/validate_schema_specs.py || echo "Schema validation identified differences that may need attention"
+          python3 scripts/validate_schema_specs.py

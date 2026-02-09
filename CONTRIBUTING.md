@@ -1,5 +1,3 @@
-# Contributing to the US Disease Tracker
-
 Thank you for your interest in contributing to the US Disease Tracker project! This document provides guidelines for contributing data on reportable diseases from public health jurisdictions, reporting errors or issues, and proposing new data standards.
 
 ## Code of Conduct
@@ -13,7 +11,7 @@ By participating in this project, you agree to maintain a respectful and collabo
 To contribute data as a jurisdiction:
 
 1. Review the current data standards and template
-2. Format you data to match the data structure provided in `examples-and-templates/`
+2. Format your data to match the data structure provided in `examples-and-templates/`
 3. Contact the project team to register users and schedule an onboarding meeting (coming soon!)
 
 ### Reporting Issues
@@ -24,7 +22,7 @@ If you find an error in the documentation or have a suggestion:
 2. If not, create a new issue with a clear title and description
 3. Include relevant examples or references
 
-### Proposing New or Modified Standards
+### Proposing New or Modified Data Standards
 
 To propose a new data standard or a modification to an existing one:
 
@@ -38,7 +36,6 @@ The project team will review the proposed standard or modification. Depending on
 
 All proposed new data standards or modifications must include:
 
-- [ ] Complete standard definition document
 - [ ] At least one example
 - [ ] Clear field definitions with data types
 - [ ] Validation rules

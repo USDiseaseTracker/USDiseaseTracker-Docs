@@ -4,7 +4,7 @@
 
 | Version | Changes from previous version |   
 |---------|---------|
-|  1.0.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
+|  1.1.0 (updated 2026-01-07) | - Initial version of documentation repository <br>- Fixed contradictions between files |
 
 ---
 
@@ -23,37 +23,42 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
+**🛠️ Interactive Tool:**
+- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
+
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
 - **Submission Frequency:** Weekly (preferred)
 
 **Current Diseases Collected:**
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes |
-|---------|------------------|---------------------|----------|
-| Measles | Weekly | Confirmed only | Cases |
-| Pertussis | Monthly | Confirmed and probable (combined) | Cases |
-| Invasive Meningococcal Disease | Monthly | Confirmed and probable (combined) | Cases |
+| Disease | Time Aggregation | Confirmation Status | Outcomes | Age groups | Disease Subtypes |
+|---------|------------------|---------------------|----------|------------|------------------|
+| Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
+| Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *collected* |
 
 **Guides and Specifications**
-1. **[Data Submission Guide](guides/DATA-SUBMISSION-GUIDE.md)** - High-level overview of what and when to submit
-2. **[Data Technical Specifications](guides/DATA-TECHNICAL-SPECS.md)** - Detailed field specifications and requirements
-3. **[Data Transfer Guide](guides/DATA-TRANSFER-GUIDE.md)** - Technical transfer methods
-4. **[Validation Rules](guides/VALIDATION.md)** - Data validation requirements
+1. **[Data Submission Guide](guides/data-submission-guide.md)** - High-level overview of what and when to submit
+2. **[Data Technical Specifications](guides/data-technical-specs.md)** - Detailed field specifications and requirements
+3. **[Data Transfer Guide](guides/data-transfer-guide.md)** - Technical transfer methods
+4. **[Validation Rules](guides/validation.md)** - Data validation requirements
 
 **Templates and Examples:**
 - [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
 - [Example data file](examples-and-templates/disease_tracking_report_WA_2025-09-30.csv)
 - [Data dictionary (CSV)](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Data dictionary and additional examples (SharePoint)](https://cste.sharepoint.com/:x:/g/EYIPI-VSAaJAqJlUfPpwoagBrjHTQaM862FGjLfhoPjXsA?e=OtN9Ql)
 <br>
 
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/VALIDATION.md) for detailed validation requirements.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements. Data can be submitted to the dashboard at any time to check the validation.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+
+To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
+
 <br>
 <br>
 
@@ -83,9 +88,22 @@ Data are validated upon submission for completeness, format, and errors. See the
 <br>
 
 
+## Repository Structure
+
+This repository is organized as follows:
+
+- **`guides/`** - Documentation guides (data-submission-guide.md, data-technical-specs.md, etc.)
+- **`examples-and-templates/`** - Data templates, examples, and the data dictionary
+- **`data_standards_tool/`** - Interactive data standards tool
+- **`scripts/`** - Validation scripts and schema generators
+- **`docs/`** - MkDocs documentation source files (website content)
+<br>
+<br>
+
+
 ## Contributing
 
-We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+We welcome new jurisdictions to contribute data! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
 <br>
 <br>
 

@@ -74,7 +74,7 @@ def generate_json_schema():
     # disease_subtype
     properties["disease_subtype"] = {
         "type": "string",
-        "description": "Subtype Name of the disease. This can be used to specify serogroup for meningococcus (e.g., A, B, C, W, Y). If not applicable, use 'NA'. If not known, use 'Unknown'."
+        "description": "Disease subtype (meningococcal serogroup). Use 'total' for non-subtype-stratified aggregations or diseases without subtype reporting (measles, pertussis). Use 'unknown' when subtyping was not performed. Use 'unspecified' when subtype is known but suppressed."
     }
     
     # reporting_jurisdiction
@@ -140,71 +140,76 @@ def generate_json_schema():
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "time_unit": {"enum": ["week", "month"]}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "time_unit": {"const": "month"}
+                    "time_unit": {"const": "week"}
                 }
             }
         ]
     })
     
-    # Validation 2: time_unit = month description
-    all_of.append({
-        "if": {"properties": {"time_unit": {"const": "month"}}},
-        "then": {
-            "properties": {
-                "report_period_start": {
-                    "description": "When time_unit='month', report_period_start must follow the MMWR week crosswalk."
-                }
-            }
-        }
-    })
-    
-    # Validation 3: time_unit = week description
+    # Validation 2: time_unit = week description
     all_of.append({
         "if": {"properties": {"time_unit": {"const": "week"}}},
         "then": {
             "properties": {
                 "report_period_start": {
-                    "description": "When time_unit='week', report_period_start must be an MMWR week ending (Saturday). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                    "description": "When time_unit='week', report_period_start must be a Sunday (MMWR week start). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
+                },
+                "report_period_end": {
+                    "description": "When time_unit='week', report_period_end must be a Saturday (MMWR week end). JSON Schema cannot natively validate weekday; must be enforced in ETL or via custom validator."
                 }
             }
         }
     })
     
-    # Validation 4: disease_name and disease_subtype constraints
+    # Validation 3: disease_name and disease_subtype constraints
     # These values are extracted from the validate_disease_subtype validator in the Pydantic model
     all_of.append({
         "oneOf": [
             {
                 "properties": {
                     "disease_name": {"const": "meningococcus"},
-                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "NA"]}
+                    "disease_subtype": {"enum": ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "measles"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             },
             {
                 "properties": {
                     "disease_name": {"const": "pertussis"},
-                    "disease_subtype": {"enum": ["NA", "unknown"]}
+                    "disease_subtype": {"enum": ["total"]}
                 }
             }
         ]
+    })
+    
+    # Validation 4: state-level stratification
+    # When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'
+    all_of.append({
+        "if": {"properties": {"geo_unit": {"const": "state"}}},
+        "then": {
+            "not": {
+                "allOf": [
+                    {"properties": {"age_group": {"const": "total"}}},
+                    {"properties": {"disease_subtype": {"const": "total"}}}
+                ]
+            }
+        }
     })
     
     # Get required fields from the model

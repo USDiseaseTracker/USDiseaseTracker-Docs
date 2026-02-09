@@ -1,14 +1,13 @@
 from datetime import date
-from pydantic import RootModel
 from typing import List, Literal
-from pydantic import BaseModel, ValidationInfo, field_validator
+from pydantic import BaseModel, RootModel, ValidationInfo, field_validator, model_validator
 
 class DiseaseReport(BaseModel):
     disease_name: Literal["measles", "pertussis", "meningococcus"]
     report_period_start: date
     report_period_end: date
     date_type: Literal["cccd", "jurisdiction date hierarchy"]
-    time_unit: Literal["week", "month", "ytd"]
+    time_unit: Literal["week"]
     disease_subtype: str
     reporting_jurisdiction: str
     state: Literal[
@@ -28,7 +27,7 @@ class DiseaseReport(BaseModel):
     geo_name: str
     geo_unit: Literal["county", "state", "region", "planning area", "hsa", "NA"]
     age_group: Literal[
-        "0-5 m", "6-11 m", "1-4 y", "5-11 y", "12-18 y",
+        "<1 y", "1-4 y", "5-11 y", "12-18 y",
         "19-22 y", "23-44 y", "45-64 y", ">=65 y",
         "total", "unknown", "unspecified"
     ]
@@ -58,34 +57,56 @@ class DiseaseReport(BaseModel):
         disease_name = info.data.get('disease_name')
         
         if disease_name == "meningococcus":
-            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified"]:
+            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]:
                 raise ValueError(
-                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified. got: {v}"
+                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified, total. got: {v}"
                 )
         elif disease_name in ["measles", "pertussis"]:
-            if v not in ["NA", "unknown"]:
+            if v != "total":
                 raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'NA' or 'unknown'. got: {v}"
+                    f"for {disease_name}, disease_subtype must be 'total'. got: {v}"
                 )
         
         return v
     
-    @field_validator('time_unit')
-    @classmethod
-    def validate_time_unit(cls, v, info: ValidationInfo):
+    @model_validator(mode='after')
+    def validate_mmwr_week(self):
         """
-        validate time_unit based on disease_name
+        When time_unit='week', report_period_start must be a Sunday (MMWR week start)
+        and report_period_end must be a Saturday (MMWR week end).
+        Sunday is weekday 6, Saturday is weekday 5 (Monday=0, Sunday=6)
         """
-        disease_name = info.data.get('disease_name')
+        if self.time_unit == "week":
+            # Check if report_period_start is a Sunday (weekday 6)
+            if self.report_period_start.weekday() != 6:
+                raise ValueError(
+                    f"When time_unit='week', report_period_start must be a Sunday (MMWR week start). "
+                    f"Got {self.report_period_start.strftime('%A, %Y-%m-%d')}"
+                )
+            
+            # Check if report_period_end is a Saturday (weekday 5)
+            if self.report_period_end.weekday() != 5:
+                raise ValueError(
+                    f"When time_unit='week', report_period_end must be a Saturday (MMWR week end). "
+                    f"Got {self.report_period_end.strftime('%A, %Y-%m-%d')}"
+                )
         
-        if disease_name == "measles" and v not in ["week", "month"]:
-            raise ValueError("measles must have time_unit of 'week' or 'month'")
-        if disease_name == "pertussis" and v != "month":
-            raise ValueError("pertussis must have time_unit of 'month'")
-        if disease_name == "meningococcus" and v != "month":
-            raise ValueError("meningococcus must have time_unit of 'month'")
+        return self
+    
+    @model_validator(mode='after')
+    def validate_state_level_stratification(self):
+        """
+        When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'.
+        This ensures state-level data is stratified.
+        """
+        if self.geo_unit == "state":
+            if self.age_group == "total" and self.disease_subtype == "total":
+                raise ValueError(
+                    "When geo_unit='state', at least one of age_group or disease_subtype must not be 'total'. "
+                    "State-level data must be stratified."
+                )
         
-        return v
+        return self
 
 class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
     pass
