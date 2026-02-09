@@ -58,6 +58,8 @@ jobs:
       
       - name: Checkout gh-pages branch to prepare for artifact upload
         run: |
+          # Fetch gh-pages branch and checkout (mike will have created it)
+          git fetch origin gh-pages
           git checkout gh-pages
       
       - name: Setup Pages
