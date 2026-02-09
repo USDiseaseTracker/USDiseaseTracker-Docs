@@ -3,7 +3,7 @@
 Welcome to the US Disease Tracker Documentation site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
 !!! info "Version"
-    **Version 1.1.0** (updated 2026-01-07)
+    **Version 1.1.0** (updated 2026-02-09)
     
     - Initial version of documentation repository
     - Fixed contradictions between files
