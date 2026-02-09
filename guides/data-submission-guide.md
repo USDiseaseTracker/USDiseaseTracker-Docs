@@ -12,8 +12,6 @@ permalink: /docs/data-submission-guide/
 
 ---
 
-**Status:** Work in Progress
-
 
 This guide provides detailed specifications for health departments participating in the US Disease Tracker project to contribute reportable disease count data. To date, this project is seeking data from jurisdictions already sending case notification data through NNDSS.
 
