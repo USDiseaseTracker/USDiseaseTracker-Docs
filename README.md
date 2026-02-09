@@ -32,11 +32,11 @@ While we aim to limit changes once data standards and processes are established,
 
 **Current Diseases Collected:**
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes |
-|---------|------------------|---------------------|----------|
-| Measles | Weekly | Confirmed only | Cases |
-| Pertussis | Weekly | Confirmed and probable (combined) | Cases |
-| Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases |
+| Disease | Time Aggregation | Confirmation Status | Outcomes | Age groups | Disease Subtypes |
+|---------|------------------|---------------------|----------|------------|------------------|
+| Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
+| Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *collected* |
 
 **Guides and Specifications**
 1. **[Data Submission Guide](guides/data-submission-guide.md)** - High-level overview of what and when to submit
