@@ -103,7 +103,7 @@ For more information about the documentation website structure, see [docs/README
 
 ## Contributing
 
-We welcome contributions to the data standards! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
+We welcome new jurisdictions to contribute data! Please see our [Contributing Guide](CONTRIBUTING.md) for detailed instructions.
 <br>
 <br>
 
