@@ -12,8 +12,6 @@ permalink: /docs/data-technical-specs/
 
 ---
 
-**Status:** Draft
-
 ## Overview
 
 This document provides the complete technical specifications for disease tracking data submissions to the US Disease Tracker system. These specifications define the required and optional fields, data types, valid values, and formatting requirements for submitting aggregate disease case count data.
