@@ -28,14 +28,20 @@ Mike manages versioned documentation on the MkDocs site. Each tagged release cre
 - **Development version**: Commits to the `main` branch deploy to the `dev` version
 - **Tagged releases**: When you create a tag (e.g., `v1.0.0`), the documentation is deployed to that version and marked as `latest`
 - **Version selector**: Users can switch between documentation versions using the version selector in the site header
+- **Build process**: The `mike deploy` command internally runs `mkdocs build` to build the documentation before committing it to the gh-pages branch
 
 ### Workflow
 
-1. **Automatic deployment on push to main**: Documentation is built and deployed as `dev` version
+1. **Automatic deployment on push to main**: 
+   - Mike builds the documentation (internally running `mkdocs build`)
+   - Documentation is committed to gh-pages branch as `dev` version
+   - Workflow uploads gh-pages branch content to GitHub Pages
 2. **Automatic deployment on tag creation**: When a release tag is created (e.g., `v1.0.0`):
-   - Documentation is built and deployed with that version number
+   - Mike builds the documentation for that version
+   - Documentation is committed to gh-pages branch with that version number
    - The version is aliased as `latest`
    - The `latest` alias is set as the default version
+   - Workflow uploads gh-pages branch content to GitHub Pages
 
 ### Manual deployment
 
