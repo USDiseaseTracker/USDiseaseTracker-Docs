@@ -68,7 +68,12 @@ jobs:
         run: |
           # Create a clean directory with only site content (exclude .git)
           mkdir -p /tmp/site-artifact
-          rsync -av --exclude='.git' ./ /tmp/site-artifact/
+          shopt -s dotglob
+          for item in *; do
+            if [ "$item" != ".git" ]; then
+              cp -r "$item" /tmp/site-artifact/
+            fi
+          done
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
