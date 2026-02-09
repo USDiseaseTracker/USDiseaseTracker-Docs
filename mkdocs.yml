@@ -51,6 +51,11 @@ markdown_extensions:
 
 plugins:
   - search
+  - mike:
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
+      canonical_version: null
 
 nav:
   - Home: index.md
@@ -66,6 +71,8 @@ nav:
   - Contributing: CONTRIBUTING.md
 
 extra:
+  version:
+    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
