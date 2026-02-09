@@ -54,9 +54,12 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Data Validation
 
-Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements.
+Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements. Data can be submitted to the dashboard at any time to check the validation.
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
+
+To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
+
 <br>
 <br>
 
