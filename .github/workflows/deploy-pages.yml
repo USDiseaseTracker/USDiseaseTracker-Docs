@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history for mike to work properly
+          fetch-depth: 0  # Fetch all history including gh-pages branch for mike to access version history
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -46,25 +46,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
       
-      - name: Determine version
-        id: version
+      - name: Deploy with mike
         run: |
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             VERSION=${GITHUB_REF#refs/tags/}
-            echo "version=$VERSION" >> $GITHUB_OUTPUT
-            echo "alias=latest" >> $GITHUB_OUTPUT
-            echo "is_tag=true" >> $GITHUB_OUTPUT
-          else
-            echo "version=dev" >> $GITHUB_OUTPUT
-            echo "alias=" >> $GITHUB_OUTPUT
-            echo "is_tag=false" >> $GITHUB_OUTPUT
-          fi
-      
-      - name: Deploy with mike
-        run: |
-          if [[ "${{ steps.version.outputs.is_tag }}" == "true" ]]; then
-            mike deploy --push --update-aliases ${{ steps.version.outputs.version }} ${{ steps.version.outputs.alias }}
+            mike deploy --push --update-aliases $VERSION latest
             mike set-default --push latest
           else
-            mike deploy --push ${{ steps.version.outputs.version }}
+            mike deploy --push dev
           fi
