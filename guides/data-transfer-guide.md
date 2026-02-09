@@ -12,8 +12,6 @@ permalink: /docs/data-transfer-guide/
 
 ---
 
-**Status:** Work in Progress
-
 ## Overview
 
 This guide describes the technical methods for transferring data from participating jurisdictions to the Johns Hopkins University (JHU) project database.
