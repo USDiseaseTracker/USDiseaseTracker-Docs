@@ -45,7 +45,6 @@ The tool applies the same validation rules used in the actual data submission pr
 - Values must match allowed options
 - MMWR week validation
 - Stratification requirements
-- Data suppression rules
 
 ## Related Resources
 
