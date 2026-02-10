@@ -207,7 +207,7 @@ See [Validation](validation.md) for details on file and data validation.
 Example data files are available to help understand the required format:
 
 **In this repository:**
-- [Complete example](../examples-and-templates/disease_tracking_report_WA_2025-09-30.csv) - Sample data file with measles and pertussis data
+- [Complete example](../examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
 - [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
@@ -218,7 +218,7 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Examples:
-- `disease_tracking_report_WA_2025-09-30.csv` (Washington state, submitted September 30, 2025)
+- `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv` (Washington state, submitted February 9, 2026)
 <br>
 <br>
 
