@@ -2,8 +2,7 @@
 
 📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
 
-!!! info "Version"
-    **Version 1.1.0** (updated 2026-02-09)
+!!! info "Version 1.1.0 (updated 2026-02-09)"
     
     - Updated version of documentation to clarify new standards 
     - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
