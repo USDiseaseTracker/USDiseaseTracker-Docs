@@ -4,14 +4,13 @@ on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main", "version1.1.0"]
-    tags:
-      - 'v*'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
+  contents: read
   pages: write
   id-token: write
 
@@ -25,13 +24,9 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write  # Required to push to gh-pages branch
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0  # Fetch all history including gh-pages branch for mike to access version history
       
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -40,45 +35,10 @@ jobs:
       
       - name: Install MkDocs and dependencies
         run: |
-          pip install mkdocs-material mike
+          pip install mkdocs-material
       
-      - name: Configure Git
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-      
-      - name: Deploy with mike (builds and commits to gh-pages branch)
-        run: |
-          set -euo pipefail
-          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
-            VERSION="${GITHUB_REF#refs/tags/}"
-            mike deploy --push --update-aliases "$VERSION" "latest"
-            mike set-default --push "latest"
-          else
-            mike deploy --push "dev"
-          fi
-      
-      - name: Checkout gh-pages branch to prepare for artifact upload
-        run: |
-          # Fetch gh-pages branch and checkout (mike will have created it)
-          git fetch origin gh-pages
-          git checkout gh-pages
-      
-      - name: Copy site to clean directory
-        run: |
-          # Create a clean directory with only site content (exclude .git)
-          mkdir -p /tmp/site-artifact
-          shopt -s dotglob
-          for item in *; do
-            if [ "$item" != ".git" ]; then
-              cp -r "$item" /tmp/site-artifact/
-            fi
-          done
-      
-      - name: Create .nojekyll file
-        run: |
-          # Tell GitHub Pages to skip Jekyll processing
-          touch /tmp/site-artifact/.nojekyll
+      - name: Build with MkDocs
+        run: mkdocs build
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -86,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: /tmp/site-artifact
+          path: ./site
 
   # Deployment job
   deploy:
