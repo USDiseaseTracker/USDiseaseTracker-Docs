@@ -2,8 +2,7 @@
 
 Welcome to the US Disease Tracker Documentation site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
-!!! info "Version"
-    **Version 1.1.0** (updated 2026-02-09)
+!!! info "Version 1.1.0 (updated 2026-02-09)"
     
     - Updated version of documentation to clarify new standards 
     - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
@@ -29,9 +28,9 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
-### 🛠️ Interactive Tool
+!!! tip "New Interactive Tool!"
 
-- **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
+    **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
 
 ### 📅 Key Dates
 

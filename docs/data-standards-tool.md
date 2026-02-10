@@ -25,7 +25,6 @@ The USDT Data Standards Tool is an interactive web application that helps you ex
 3. **Fill in Data Fields**: Enter or select values for each required field
 4. **Review Validation**: Check that your data meets all validation rules
 5. **Generate Example**: Click to generate example CSV data
-6. **Download**: Export the example data for your reference
 
 ## Field Specifications
 
@@ -46,7 +45,6 @@ The tool applies the same validation rules used in the actual data submission pr
 - Values must match allowed options
 - MMWR week validation
 - Stratification requirements
-- Data suppression rules
 
 ## Related Resources
 
