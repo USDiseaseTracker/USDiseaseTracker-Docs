@@ -29,7 +29,7 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
-**🛠️ Interactive Tool:**
+*NEW* **🛠️ Interactive Tool:**
 - **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
 
 **Key Dates:**
