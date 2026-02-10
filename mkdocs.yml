@@ -71,8 +71,6 @@ nav:
   - Contributing: CONTRIBUTING.md
 
 extra:
-  version:
-    provider: mike
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
