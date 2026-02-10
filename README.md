@@ -2,9 +2,16 @@
 
 📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
 
-| Version | Changes from previous version |   
-|---------|---------|
-|  1.1.0 (updated 2026-02-09)<br>Updated version of documentation to clarify new standards | - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.<br>- Age Groups: Reported at the state/reporting jurisdiction level; Combined the <1 year age groups (currently 0-6 months and 6-12 months) for current diseases (measles, pertussis, meningococcus) into a single “<1 year” category.<br>- Removed “YTD” value as a valid option for time_unit.<br>- Removed monthly aggregations; only weekly aggregation of cases by MMWR week for all diseases.<br>- `total`, `unknown`, `unspecified` values: New value uses implemented; `NA` is only valid if `geo_name = "international resident"`. |
+!!! info "Version"
+    **Version 1.1.0** (updated 2026-02-09)
+    
+    - Updated version of documentation to clarify new standards 
+    - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
+    - Age Groups: Reported at the state/reporting jurisdiction level; Combined the <1 year age groups (currently 0-6 months and 6-12 months) for current diseases (measles, pertussis, meningococcus) into a single “<1 year” category.
+    - Removed “YTD” value as a valid option for time_unit.
+    - Removed monthly aggregations; only weekly aggregation of cases by MMWR week for all diseases.
+    - New value uses implemented: `total`, `unknown`, `unspecified` have specified meaning and uses, `NA` is only valid if `geo_name = "international resident"`.
+
 
 ---
 
