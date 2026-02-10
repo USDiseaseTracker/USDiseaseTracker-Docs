@@ -28,9 +28,9 @@ While we aim to limit changes once data standards and processes are established,
 
 ## Quick Reference
 
-### 🛠️ Interactive Tool
+!!! tip "New Interactive Tool!"
 
-- **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
+    **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
 
 ### 📅 Key Dates
 
