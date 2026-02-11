@@ -5,7 +5,7 @@ This directory contains example data files that demonstrate compliance with the 
 ## Available Examples
 
 ### Disease Tracking Report Example
-- `disease_tracking_report_WA_2025-09-30.csv` - Sample data file with measles and pertussis data from Washington state, demonstrating proper format and structure
+- `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv` - Sample data file with measles and pertussis data from Washington state, demonstrating proper format and structure
 
 ## Using Examples
 
