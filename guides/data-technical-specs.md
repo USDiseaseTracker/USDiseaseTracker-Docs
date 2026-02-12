@@ -99,7 +99,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
-<br>
+
 
 **Notes:**
 
@@ -115,8 +115,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus` |
 | outcome | String | Type of outcome being reported | `cases`, `hospitalizations`, `deaths` |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` |
-
-<br>
 
 **Notes:**
 
@@ -134,8 +132,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code |
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` |
 | geo_name | String | Name of the geographic unit | Name string or `unspecified`, `unknown`, `international resident` |
-
-<br>
 
 **Notes:**
 
@@ -158,7 +154,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | count | Integer | Number of cases for this combination | Positive integers |
 
 <br>
-
 **Notes:**
 
 - Only include non-zero counts
