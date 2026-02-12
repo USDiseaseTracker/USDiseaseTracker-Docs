@@ -278,7 +278,7 @@ See the [Data Transfer Guide](data-transfer-guide.md) for technical details on d
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
 
 - Algorithm used to classify cases in time (e.g., CCCD or alternative)
 - List of substate geographic units used by jurisdiction

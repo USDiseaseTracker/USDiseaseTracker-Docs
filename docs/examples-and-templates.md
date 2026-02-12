@@ -15,6 +15,20 @@ This template includes:
 - Placeholder values showing the expected format
 - Comments explaining each field
 
+### Jurisdiction Metadata Template
+
+The template for submitting required metadata about your jurisdiction's data:
+
+**📄 [disease-tracking-metadata-{jurisdiction}.yaml](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml)**
+
+This template includes:
+- Date classification method (CCCD or custom hierarchy)
+- Geographic units and their relationships
+- Data suppression policies and rules
+- Contact information for technical and data quality questions
+
+When using this template, rename it with your jurisdiction's two-letter abbreviation (e.g., `disease-tracking-metadata-WA.yaml`).
+
 ### Example Data File
 
 A complete example showing real data submission:
@@ -96,11 +110,12 @@ This SharePoint resource provides:
 
 ## How to Use These Resources
 
-1. **Start with the Template**: Download the CSV template to understand the structure
+1. **Start with the Templates**: Download the CSV template and metadata template to understand the structure
 2. **Review the Example**: Look at the example data file to see proper formatting
-3. **Consult the Data Dictionary**: Use this as your primary reference for field specifications
-4. **Validate with Schema**: Use the JSON or Python schema to validate your data
-5. **Check MMWR Crosswalk**: Reference this when converting dates to MMWR weeks
+3. **Complete Metadata**: Fill out the metadata template with your jurisdiction's information
+4. **Consult the Data Dictionary**: Use this as your primary reference for field specifications
+5. **Validate with Schema**: Use the JSON or Python schema to validate your data
+6. **Check MMWR Crosswalk**: Reference this when converting dates to MMWR weeks
 
 ## Related Guides
 
