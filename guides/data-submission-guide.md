@@ -98,16 +98,16 @@ Cases should be classified in time according to a hierarchical date algorithm.
 
 !!! tip "**Recommended:** Use the **Calculated Case Counting Date (CCCD)**" 
 
-   ([CSTE Data Standardization Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)).
+   See [CSTE Data Standardization Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf) for details.
 
    The CCCD employs a hierarchy and assigns the case to the earliest of:
 
-   1. Symptom onset date
-   2. Clinical diagnosis date
-   3. Earliest specimen collection date associated with a positive lab result
-   4. Earliest result date for a positive lab result
-   5. Date first received by a public health agency
-   6. Date entered/record initiated
+      1. Symptom onset date
+      2. Clinical diagnosis date
+      3. Earliest specimen collection date associated with a positive lab result
+      4. Earliest result date for a positive lab result
+      5. Date first received by a public health agency
+      6. Date entered/record initiated
 
 **Alternative:** If CCCD is not implemented, use a similar hierarchical algorithm or an existing case classification date such as Event Date in your system.
 
@@ -189,9 +189,10 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 | unspecified | Aggregated counts of individuals from age groups being suppressed |
 
 
-!!! note 
+!!! info "Important"
+   
+   Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 
-   **Important:** Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 
 <br>
 
@@ -224,13 +225,13 @@ To ensure total counts add to 100% of cases:
 3. Allocation of suppression rules and "unspecified" aggregation must be performed prior to data transfer/submission.
 4. Suppression rules should be shared with the project team for accurate description/footnoting.
 
-!!! tip "Example"
+!!! example "Example"
 
-      Example: A jurisdiction has a suppression rule that requires suppression of any count <5. During a week, County A has 1 case, County B has 3 cases, County C and D have 12 and 15 cases, respectively.
+   A jurisdiction with a suppression rule that requires suppression of any count <5, records 31 total cases of measles during a week. County A has 1 case, County B has 3 cases, County C and D have 12 and 15 cases, respectively. For the `county-level` aggregation of these counts, these should be reported as:
 
-         1. Include a row for each `geo_name = "County C"` and `geo_name = "County D"` with `count = 12` and `count = 15`.
-         2. Include a row with `geo_name = "unspecified"` and a value in `count` that sums all suppressed county counts for this week. In this case `count = 4`.
-         3. **Do not** include a row for `geo_name = "County A"` or `geo_name = "County B"`. 
+   1. Include a row for each `geo_name = "County C"` and `geo_name = "County D"` with `count = 12` and `count = 15`.
+   2. Include a row with `geo_name = "unspecified"` and a value in `count` that sums all suppressed county counts for this week. In this case `count = 4`.
+   3. **Do not** include a row for `geo_name = "County A"` or `geo_name = "County B"`. 
 
 <br>
 
