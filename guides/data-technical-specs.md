@@ -99,10 +99,13 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | report_period_start | Date | Start date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
+<br>
 
 **Notes:**
+
 - Use MMWR week boundaries for weekly reporting
 - Provide metadata describing custom date hierarchies if not using CCCD
+
 <br>
 
 ### Disease Fields
@@ -113,10 +116,14 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | outcome | String | Type of outcome being reported | `cases`, `hospitalizations`, `deaths` |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` |
 
+<br>
+
 **Notes:**
+
 - Measles: Use `confirmed` only
 - Pertussis and Meningococcus: Use `confirmed and probable`
 - Additional outcomes (hospitalizations, deaths) planned for future
+
 <br>
 
 ### Geographic Fields
@@ -128,17 +135,20 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | geo_unit | String | Type of geographic unit | `county`, `state`, `region`, `planning area`, `hsa`, `NA` |
 | geo_name | String | Name of the geographic unit | Name string or `unspecified`, `unknown`, `international resident` |
 
+<br>
+
 **Notes:**
+
 - Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.)
 - For international residents: use `geo_name = "international resident"` and `geo_unit = "NA"`
 - Metadata should include all geographic unit names used
-  
 - Disease subtype is currently collected at jurisdiction level only (not sub-jurisdiction)
 - Currently only use for meningococcal disease serogroup reporting
 - Use `total` for non-subtype-stratified aggregations
 - Use `total` diseases without subtype reporting (measles, pertussis)
 - Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when geo_name is known but suppressed in subjurisdiction aggregations
+
 <br>
 
 ### Count Field
@@ -147,10 +157,14 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |------------|-----------|-------------|--------------|
 | count | Integer | Number of cases for this combination | Positive integers |
 
+<br>
+
 **Notes:**
+
 - Only include non-zero counts
 - Apply jurisdiction data suppression policies before submission
 - Use `geo_name = "unspecified"` for suppressed counts to maintain totals
+
 <br>
 
 ### Demographic Fields
@@ -175,12 +189,16 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | `unknown` | Age unknown |
 | `unspecified` | Age known but suppressed |
 
+<br>
+
 **Notes:**
+
 - Age group is currently accepted at jurisdiction level only (not sub-jurisdiction)
 - Same age groupings used for all diseases
 - Use `total` for non-age-stratified aggregations
 - Use `unknown` when age information is truely unknown (only for age_group aggregations)
 - Use `unspecified` when age group is known but suppressed
+
 <br>
 
 ### Disease-Specific Fields
@@ -189,19 +207,24 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |------------|-----------|-------------|--------------|
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified`,`total` |
 
+<br>
+
 **Notes:**
+
 - Disease subtype is currently accepted at jurisdiction level only (not sub-jurisdiction)
 - Currently only use for meningococcal disease serogroup reporting
 - Use `total` for non-subtype-stratified aggregations
 - Use `total` diseases without subtype reporting (measles, pertussis)
 - Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when subtype is known but suppressed
+
 <br>
 <br>
 
 ## Validation
 
 See [Validation](validation.md) for details on file and data validation.
+
 <br>
 <br>
 
@@ -221,7 +244,8 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Examples:
-- `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv` (Washington state, submitted February 9, 2026)
+- `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv` (Washington state, submitted February 9, 2026. These are partially simulated data and should not be be assumed to be real data.)
+
 <br>
 <br>
 
@@ -231,20 +255,21 @@ Examples:
 Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. Metadata required includes:
 
 1. **Date Classification Method**
-   - If using CCCD, indicate "cccd"
-   - If using custom hierarchy, provide detailed description
+   * If using CCCD, indicate "cccd"
+   * If using custom hierarchy, provide detailed description
 
 2. **Geographic Units**
-   - List of all geographic unit names used
-   - Mapping of units to parent jurisdictions (if applicable)
+   * List of all geographic unit names used
+   * Mapping of units to parent jurisdictions (if applicable)
 
 3. **Data Suppression Policies**
-   - Rules for small count suppression
-   - How suppressed counts are aggregated
+   * Rules for small count suppression
+   * How suppressed counts are aggregated
 
 4. **Contact Information**
-   - Technical point of contact
-   - Data quality contact
+   * Technical point of contact
+   * Data quality contact
+
 <br>
 <br>
 
@@ -252,7 +277,9 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 1.1.0 | 2026-01-06 | Initial draft for pilot phase |
+| 1.1.0 | 2026-02-09 | Updated standards. Moves to weekly only, clarifies value use-cases, removes `ytd`, clarifies data sub-aggregations |
+| 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
+
 <br>
 <br>
 
