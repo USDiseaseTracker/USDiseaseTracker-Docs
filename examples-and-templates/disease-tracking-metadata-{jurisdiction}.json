@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Jurisdiction Reporting Metadata Template",
+  "version": "1.0.0",
+  "jurisdiction": "{jurisdiction}",
+  "last_updated": "YYYY-MM-DD",
+  
+  "date_classification_method": {
+    "method_type": "cccd",
+    "description": "If using CCCD, set method_type to 'cccd'. If using a custom hierarchy, set method_type to 'custom' and provide a detailed description below.",
+    "custom_hierarchy_description": "Provide detailed description of custom date hierarchy here if method_type is 'custom'. Include the order of dates considered (e.g., earliest date, date of onset, lab date, report date) and logic for how cases are classified in time."
+  },
+  
+  "geographic_units": {
+    "description": "List all geographic unit names and levels used by this jurisdiction",
+    "units": [
+      {
+        "geo_name": "Example County",
+        "geo_unit": "county",
+        "parent_jurisdiction": "State abbreviation (if applicable)",
+        "notes": "Any additional notes about this geographic unit"
+      },
+      {
+        "geo_name": "Example Region",
+        "geo_unit": "region",
+        "parent_jurisdiction": "State abbreviation (if applicable)",
+        "notes": "Any additional notes about this geographic unit"
+      }
+    ],
+    "geo_unit_levels": [
+      "county",
+      "state"
+    ],
+    "notes": "Add any additional notes about geographic unit definitions, naming conventions, or special cases (e.g., how planning areas are defined, what constitutes a health service area)"
+  },
+  
+  "data_suppression_policies": {
+    "description": "Rules and policies for data suppression to protect patient privacy",
+    "small_count_suppression": {
+      "enabled": true,
+      "threshold": 5,
+      "rule_description": "Describe the rule for small count suppression. For example: 'Any count less than 5 is suppressed and aggregated into the unspecified category.'",
+      "applies_to": [
+        "geographic units",
+        "age groups",
+        "disease subtypes"
+      ]
+    },
+    "secondary_suppression": {
+      "enabled": false,
+      "rule_description": "If secondary suppression is used (to prevent calculation of suppressed values), describe the rules here."
+    },
+    "aggregation_of_suppressed_counts": {
+      "method": "unspecified_category",
+      "description": "Suppressed counts are aggregated in a row with geo_name='unspecified' (or age_group='unspecified', disease_subtype='unspecified' as appropriate) to ensure totals add up correctly.",
+      "notes": "All suppression is applied prior to data submission. Suppressed values are never included in individual rows but are always included in aggregate unspecified categories."
+    },
+    "additional_policies": "List any other suppression policies or rules that apply to the data, such as policies based on population size, geographic area, or other factors."
+  },
+  
+  "contact_information": {
+    "technical_contact": {
+      "name": "Technical Contact Name",
+      "title": "Position/Title",
+      "organization": "Organization/Department",
+      "email": "technical.contact@jurisdiction.gov",
+      "phone": "XXX-XXX-XXXX",
+      "notes": "Primary contact for technical questions about data submission, file formats, transfer methods, etc."
+    },
+    "data_quality_contact": {
+      "name": "Data Quality Contact Name",
+      "title": "Position/Title",
+      "organization": "Organization/Department",
+      "email": "data.quality@jurisdiction.gov",
+      "phone": "XXX-XXX-XXXX",
+      "notes": "Primary contact for questions about data quality, validation issues, data definitions, and data interpretation."
+    },
+    "alternate_contact": {
+      "name": "Alternate Contact Name (Optional)",
+      "title": "Position/Title",
+      "organization": "Organization/Department",
+      "email": "alternate.contact@jurisdiction.gov",
+      "phone": "XXX-XXX-XXXX",
+      "notes": "Alternate or backup contact if primary contacts are unavailable."
+    }
+  },
+  
+  "additional_notes": {
+    "jurisdiction_specific_notes": "Add any jurisdiction-specific notes, caveats, or additional information that would be helpful for understanding the data submitted by this jurisdiction.",
+    "data_quality_notes": "Note any known data quality issues, limitations, or special considerations.",
+    "update_frequency": "weekly",
+    "historical_data_availability": "Describe the time period for which historical data is available (e.g., 'Data available from December 29, 2024 onwards').",
+    "other": "Any other relevant information"
+  }
+}
