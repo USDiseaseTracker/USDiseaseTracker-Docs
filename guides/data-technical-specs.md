@@ -48,6 +48,7 @@ Data should be submitted in CSV format with one row per unique combination of:
 - Age group (when applicable)
 - Disease subtype (when applicable)
 - Outcome (currently only cases)
+
 <br>
 
 ### Field Summary
