@@ -270,6 +270,7 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 Example: `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv`
 
 See the [Data Transfer Guide](data-transfer-guide.md) for technical details on data submission methods and the [Data Technical Specifications](data-technical-specs.md) for complete field requirements.
+
 <br>
 <br>
 
@@ -282,6 +283,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 - List of substate geographic units used by jurisdiction
 - Data suppression policies and rules
 - Any jurisdiction-specific notes or caveats
+
 <br>
 <br>
 
@@ -302,6 +304,7 @@ All submitted data must meet validation requirements to ensure data quality and 
 - [Validation Rules](validation.md) - Comprehensive validation requirements
   
 Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](data-transfer-guide.md) describes what happens when validation succeeds or fails.
+
 <br>
 
 ## Questions
