@@ -104,7 +104,8 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
 
-!!! note
+**Notes:**
+
 - Use MMWR week boundaries for weekly reporting
 - Provide metadata describing custom date hierarchies if not using CCCD
 
