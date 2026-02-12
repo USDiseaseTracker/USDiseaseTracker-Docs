@@ -5,8 +5,7 @@ permalink: /docs/data-technical-specs/
 
 # Data Technical Specifications
 
-!!! info "Version"
-    **Version 1.1.0** (updated 2026-02-09)
+!!! info "**Version 1.1.0** (updated 2026-02-09)"
     
     - Updated version of documentation to clarify new standards 
     - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
@@ -251,20 +250,20 @@ Examples:
 Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.json) [*Coming Soon*]. Metadata required includes:
 
 1. **Date Classification Method**
-   * If using CCCD, indicate "cccd"
-   * If using custom hierarchy, provide detailed description
+   a. If using CCCD, indicate "cccd"
+   b. If using custom hierarchy, provide detailed description
 
 2. **Geographic Units**
-   * List of all geographic unit names used
-   * Mapping of units to parent jurisdictions (if applicable)
+   a. List of all geographic unit names used
+   b. Mapping of units to parent jurisdictions (if applicable)
 
 3. **Data Suppression Policies**
-   * Rules for small count suppression
-   * How suppressed counts are aggregated
+   a. Rules for small count suppression
+   b. How suppressed counts are aggregated
 
 4. **Contact Information**
-   * Technical point of contact
-   * Data quality contact
+   a. Technical point of contact
+   b. Data quality contact
 
 <br>
 <br>
