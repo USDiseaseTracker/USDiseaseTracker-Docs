@@ -19,7 +19,7 @@ This template includes:
 
 The template for submitting required metadata about your jurisdiction's data:
 
-**📄 [disease-tracking-metadata-{jurisdiction}.json](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.json)**
+**📄 [disease-tracking-metadata-{jurisdiction}.yaml](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml)**
 
 This template includes:
 - Date classification method (CCCD or custom hierarchy)
@@ -27,7 +27,7 @@ This template includes:
 - Data suppression policies and rules
 - Contact information for technical and data quality questions
 
-When using this template, rename it with your jurisdiction's two-letter abbreviation (e.g., `disease-tracking-metadata-WA.json`).
+When using this template, rename it with your jurisdiction's two-letter abbreviation (e.g., `disease-tracking-metadata-WA.yaml`).
 
 ### Example Data File
 

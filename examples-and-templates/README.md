@@ -28,14 +28,14 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 ### Jurisdiction Reporting Metadata Template
-- `disease-tracking-metadata-{jurisdiction}.json` - Template for jurisdictions to provide required metadata about their data submission
+- `disease-tracking-metadata-{jurisdiction}.yaml` - Template for jurisdictions to provide required metadata about their data submission
 
 **File naming convention:**
 When using this template, rename the file following the pattern:
 ```
-disease-tracking-metadata-{jurisdiction}.json
+disease-tracking-metadata-{jurisdiction}.yaml
 ```
-Replace `{jurisdiction}` with your jurisdiction's two-letter abbreviation (e.g., `disease-tracking-metadata-WA.json`).
+Replace `{jurisdiction}` with your jurisdiction's two-letter abbreviation (e.g., `disease-tracking-metadata-WA.yaml`).
 
 ## Using Templates
 
@@ -45,7 +45,7 @@ Replace `{jurisdiction}` with your jurisdiction's two-letter abbreviation (e.g.,
 4. Submit the file using one of the transfer methods described in the [Data Transfer Guide](../guides/data-transfer-guide.md)
 
 **For the metadata template:**
-1. Download `disease-tracking-metadata-{jurisdiction}.json`
+1. Download `disease-tracking-metadata-{jurisdiction}.yaml`
 2. Complete all required fields with your jurisdiction's information:
    - Date classification method (CCCD or custom hierarchy)
    - List of geographic units and their relationships
