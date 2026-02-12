@@ -42,6 +42,7 @@ This document provides the complete technical specifications for disease trackin
 ## Data Structure
 
 Data should be submitted in CSV format with one row per unique combination of:
+
 - Time period (week)
 - Geographic unit
 - Disease
@@ -92,6 +93,8 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 ## Fields Specifications
 
+<br>
+
 ### Reporting Period Fields
 
 | Field Name | Data Type | Description | Valid Values |
@@ -101,9 +104,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | report_period_end | Date | End date of reporting period (MMWR-aligned) | ISO 8601 format (YYYY-MM-DD) |
 | date_type | String | Method used to assign cases to reporting time periods | `cccd`, `jurisdiction date hierarchy` |
 
-
-**Notes:**
-
+!!! note
 - Use MMWR week boundaries for weekly reporting
 - Provide metadata describing custom date hierarchies if not using CCCD
 
@@ -154,7 +155,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |------------|-----------|-------------|--------------|
 | count | Integer | Number of cases for this combination | Positive integers |
 
-<br>
 **Notes:**
 
 - Only include non-zero counts
@@ -168,6 +168,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
 | age_group | String | Age group of cases | See age group table below |
+
 
 **Valid Age Groups:**
 
@@ -185,8 +186,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | `unknown` | Age unknown |
 | `unspecified` | Age known but suppressed |
 
-<br>
-
 **Notes:**
 
 - Age group is currently accepted at jurisdiction level only (not sub-jurisdiction)
@@ -202,8 +201,6 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
 | disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `unknown`, `unspecified`,`total` |
-
-<br>
 
 **Notes:**
 
@@ -228,18 +225,20 @@ See [Validation](validation.md) for details on file and data validation.
 
 Example data files are available to help understand the required format:
 
-**In this repository:**
 - [Complete example](../examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
 - [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 **File naming convention:**
+
 Files should be named following the pattern:
+
 ```
 disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Examples:
+
 - `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv` (Washington state, submitted February 9, 2026. These are partially simulated data and should not be be assumed to be real data.)
 
 <br>
