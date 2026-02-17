@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """
-Validate that data-technical-specs.md and data dictionary match data_reporting_schema.json.
-The JSON schema is the source of truth. Can optionally update markdown and data dictionary
+Validate that data-technical-specs.md and data dictionary match data_reporting_schema.yaml.
+The YAML schema is the source of truth. Can optionally update markdown and data dictionary
 from the schema.
 """
 
 import csv
-import json
 import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Tuple, Any, Set
+import yaml
 
 
 def load_schema(schema_path: Path) -> Dict[str, Any]:
-    """Load the JSON schema file."""
+    """Load the YAML schema file."""
     with open(schema_path, 'r') as f:
-        return json.load(f)
+        return yaml.safe_load(f)
 
 
 def load_markdown(md_path: Path) -> str:
@@ -577,7 +577,7 @@ def update_data_dictionary_from_schema(schema: Dict, dict_path: Path) -> None:
 def main():
     """Main validation function."""
     repo_root = Path(__file__).parent.parent
-    schema_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.json'
+    schema_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.yaml'
     md_path = repo_root / 'guides' / 'data-technical-specs.md'
     dict_path = repo_root / 'examples-and-templates' / 'disease_tracking_data_dictionary.csv'
     

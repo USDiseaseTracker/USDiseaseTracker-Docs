@@ -3,9 +3,9 @@
 Update data standards tool and documentation from validation schema.
 
 This script orchestrates the complete update process:
-1. Generates JSON schema from Pydantic model (data_reporting_schema.py)
-2. Updates data dictionary CSV from JSON schema
-3. Updates markdown documentation from JSON schema
+1. Generates YAML schema from Pydantic model (data_reporting_schema.py)
+2. Updates data dictionary CSV from YAML schema
+3. Updates markdown documentation from YAML schema
 4. Validates consistency across all files
 
 This ensures that the data standards tool (data_dictionary.csv) and
@@ -43,23 +43,23 @@ def main():
     print("Data Standards Update Process")
     print("="*60)
     print("\nThis script will:")
-    print("  1. Generate JSON schema from Pydantic model")
-    print("  2. Update data dictionary CSV from JSON schema")
-    print("  3. Update markdown documentation from JSON schema")
+    print("  1. Generate YAML schema from Pydantic model")
+    print("  2. Update data dictionary CSV from YAML schema")
+    print("  3. Update markdown documentation from YAML schema")
     print("  4. Validate consistency across all files")
     
-    # Step 1: Generate JSON schema from Pydantic model
+    # Step 1: Generate YAML schema from Pydantic model
     if not run_command(
         [sys.executable, str(script_dir / "generate_json_schema.py")],
-        "Step 1: Generate JSON schema from Pydantic model"
+        "Step 1: Generate YAML schema from Pydantic model"
     ):
-        print("\n✗ Failed to generate JSON schema")
+        print("\n✗ Failed to generate YAML schema")
         sys.exit(1)
     
-    # Step 2: Update data dictionary and markdown from JSON schema
+    # Step 2: Update data dictionary and markdown from YAML schema
     if not run_command(
         [sys.executable, str(script_dir / "validate_schema_specs.py"), "--update"],
-        "Step 2: Update data dictionary and markdown from JSON schema"
+        "Step 2: Update data dictionary and markdown from YAML schema"
     ):
         print("\n✗ Failed to update data dictionary and markdown")
         sys.exit(1)
@@ -76,7 +76,6 @@ def main():
     print("✓ Data standards update completed successfully!")
     print("="*60)
     print("\nUpdated files:")
-    print("  - examples-and-templates/data_reporting_schema.json")
     print("  - examples-and-templates/data_reporting_schema.yaml")
     print("  - examples-and-templates/disease_tracking_data_dictionary.csv")
     print("  - guides/data-technical-specs.md")

@@ -1,11 +1,10 @@
-name: Generate Schemas from Pydantic Model
+name: Generate Schema from Pydantic Model
 
 on:
   push:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
       # Exclude auto-generated files to prevent workflow loops
-      - '!examples-and-templates/data_reporting_schema.json'
       - '!examples-and-templates/data_reporting_schema.yaml'
       - '!examples-and-templates/disease_tracking_data_dictionary.csv'
       - '!guides/data-technical-specs.md'
@@ -15,7 +14,6 @@ on:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
       # Exclude auto-generated files to prevent workflow loops
-      - '!examples-and-templates/data_reporting_schema.json'
       - '!examples-and-templates/data_reporting_schema.yaml'
       - '!examples-and-templates/disease_tracking_data_dictionary.csv'
       - '!guides/data-technical-specs.md'
@@ -44,7 +42,7 @@ jobs:
         run: |
           pip install pydantic pyyaml
       
-      - name: Generate JSON and YAML schemas
+      - name: Generate YAML schema
         run: |
           python3 scripts/generate_json_schema.py
       
@@ -66,7 +64,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add examples-and-templates/data_reporting_schema.json
           git add examples-and-templates/data_reporting_schema.yaml
           git add examples-and-templates/disease_tracking_data_dictionary.csv
           git add guides/data-technical-specs.md

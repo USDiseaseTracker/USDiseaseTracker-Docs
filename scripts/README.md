@@ -4,13 +4,13 @@ This directory contains utility scripts for the USDiseaseTracker-Docs repository
 
 ## generate_json_schema.py
 
-This script generates `data_reporting_schema.json` and `data_reporting_schema.yaml` from the Pydantic model definitions in `examples-and-templates/data_reporting_schema.py`.
+This script generates `data_reporting_schema.yaml` from the Pydantic model definitions in `examples-and-templates/data_reporting_schema.py`.
 
-**The Pydantic model (`data_reporting_schema.py`) is the source of truth.** This script ensures that the JSON and YAML schemas stay synchronized with the Pydantic model.
+**The Pydantic model (`data_reporting_schema.py`) is the source of truth.** This script ensures that the YAML schema stays synchronized with the Pydantic model.
 
 ### Usage
 
-**Generate the JSON and YAML schemas:**
+**Generate the YAML schema:**
 ```bash
 python3 scripts/generate_json_schema.py
 ```
@@ -18,13 +18,12 @@ python3 scripts/generate_json_schema.py
 This will:
 1. Import the Pydantic `DiseaseReport` model
 2. Extract field definitions, types, and validation rules
-3. Generate a JSON Schema file in the same format as the existing schema
-4. Write the JSON output to `examples-and-templates/data_reporting_schema.json`
-5. Write the YAML output to `examples-and-templates/data_reporting_schema.yaml`
+3. Generate a schema file
+4. Write the YAML output to `examples-and-templates/data_reporting_schema.yaml`
 
 ### What it generates
 
-The script generates a complete schema (in both JSON and YAML formats) including:
+The script generates a complete schema in YAML format including:
 - **Field definitions**: All field types and descriptions
 - **Enum constraints**: For fields like `disease_name`, `state`, `age_group`, etc.
 - **Validation rules**: Cross-field validations (e.g., disease-specific time_unit constraints)
@@ -45,9 +44,9 @@ The workflow will automatically:
 
 ## validate_schema_specs.py
 
-This script validates that the technical specifications in `guides/data-technical-specs.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the JSON schema in `examples-and-templates/data_reporting_schema.json`.
+This script validates that the technical specifications in `guides/data-technical-specs.md` and the data dictionary in `examples-and-templates/disease_tracking_data_dictionary.csv` match the YAML schema in `examples-and-templates/data_reporting_schema.yaml`.
 
-**The JSON schema is the source of truth.** The script ensures that documentation and the data dictionary stay synchronized with the schema.
+**The YAML schema is the source of truth.** The script ensures that documentation and the data dictionary stay synchronized with the schema.
 
 ### Usage
 
@@ -105,7 +104,7 @@ python3 scripts/update_data_standards.py
 
 This script performs the following steps in sequence:
 
-1. **Generate JSON schema**: Runs `generate_json_schema.py` to create the JSON schema from the Pydantic model
+1. **Generate YAML schema**: Runs `generate_json_schema.py` to create the YAML schema from the Pydantic model
 2. **Update data standards**: Runs `validate_schema_specs.py --update` to update:
    - Data dictionary CSV (`examples-and-templates/disease_tracking_data_dictionary.csv`)
    - Technical specifications markdown (`guides/data-technical-specs.md`)
@@ -114,7 +113,7 @@ This script performs the following steps in sequence:
 ### When to use
 
 Use this script when you have manually modified the Pydantic schema (`data_reporting_schema.py`) and want to:
-- Update all derived artifacts (JSON schema, data dictionary, documentation)
+- Update all derived artifacts (YAML schema, data dictionary, documentation)
 - Verify that everything is consistent
 - Prepare changes for commit
 
@@ -129,16 +128,16 @@ The GitHub Actions workflow (`.github/workflows/generate-json-schema.yml`) autom
 
 The repository uses GitHub Actions to automatically keep the data standards tool synchronized with validation schemas:
 
-### Workflow: Generate JSON Schema (`generate-json-schema.yml`)
+### Workflow: Generate Schema (`generate-json-schema.yml`)
 
 **Triggers when:**
 - `examples-and-templates/data_reporting_schema.py` is modified
 - Changes are pushed to `main` or opened in a pull request
 
 **Actions performed:**
-1. Generates JSON schema from Pydantic model
-2. Updates data dictionary CSV from JSON schema
-3. Updates markdown documentation from JSON schema
+1. Generates YAML schema from Pydantic model
+2. Updates data dictionary CSV from YAML schema
+3. Updates markdown documentation from YAML schema
 4. Validates final consistency
 5. Commits and pushes changes automatically (on push to main)
 
@@ -150,7 +149,7 @@ The data flow is:
 ```
 Pydantic Model (data_reporting_schema.py)
     ↓ [generate_json_schema.py]
-JSON Schema (data_reporting_schema.json)
+YAML Schema (data_reporting_schema.yaml)
     ↓ [validate_schema_specs.py --update]
 Data Dictionary CSV + Markdown Documentation
 ```
