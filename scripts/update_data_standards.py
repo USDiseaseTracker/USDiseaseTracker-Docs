@@ -50,7 +50,7 @@ def main():
     
     # Step 1: Generate YAML schema from Pydantic model
     if not run_command(
-        [sys.executable, str(script_dir / "generate_json_schema.py")],
+        [sys.executable, str(script_dir / "generate_yaml_schema.py")],
         "Step 1: Generate YAML schema from Pydantic model"
     ):
         print("\n✗ Failed to generate YAML schema")

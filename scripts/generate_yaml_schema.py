@@ -4,8 +4,6 @@ Generate data_reporting_schema.yaml from data_reporting_schema.py.
 
 This script reads the Pydantic model definitions in data_reporting_schema.py
 and converts them to a YAML Schema format.
-
-Note: Script name references JSON for historical reasons but now generates YAML only.
 """
 
 import sys

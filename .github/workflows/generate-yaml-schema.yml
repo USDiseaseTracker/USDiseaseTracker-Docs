@@ -44,7 +44,7 @@ jobs:
       
       - name: Generate YAML schema
         run: |
-          python3 scripts/generate_json_schema.py
+          python3 scripts/generate_yaml_schema.py
       
       - name: Update data standards tool and documentation from schema
         run: |
