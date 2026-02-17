@@ -191,7 +191,7 @@ Where:
 
 **Examples:**
 ```
-disease_tracking_report_CA-EXAMPLE_2026-02-09.csv
+disease_tracking_report_CA_2026-02-09.csv
 disease_tracking_report_WA_2025-10-15.csv
 disease_tracking_report_NYC_2025-11-01.csv
 ```
