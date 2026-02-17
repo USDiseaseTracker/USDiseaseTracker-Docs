@@ -504,7 +504,7 @@ reported_data %>%
 # save as disease_tracking_report_{state}_{report_date}
 
 # write_csv(reported_data %>% filter(state == "MA"), "examples-and-templates/disease_tracking_report_MA-EXAMPLE_2026-02-09.csv")
-write_csv(reported_data %>% filter(state == "WA"), "examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv")
+# write_csv(reported_data %>% filter(state == "WA"), "examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv")
 write_csv(reported_data %>% filter(state == "CA"), "examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv")
 
 

@@ -191,8 +191,8 @@ Where:
 
 **Examples:**
 ```
-disease_tracking_report_WA-EXAMPLE_2026-02-09.csv
-disease_tracking_report_CA_2025-10-15.csv
+disease_tracking_report_CA-EXAMPLE_2026-02-09.csv
+disease_tracking_report_WA_2025-10-15.csv
 disease_tracking_report_NYC_2025-11-01.csv
 ```
 
@@ -208,7 +208,7 @@ For detailed field specifications, see the [Data Technical Specifications](data-
 
 Use the official data submission template and examples:
 - [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
-- [Example data file](../examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Example data file](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 <br>
 <br>
