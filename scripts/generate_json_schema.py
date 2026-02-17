@@ -12,10 +12,12 @@ import sys
 from pathlib import Path
 from pydantic_core import PydanticUndefined
 
+# Try to import yaml for YAML schema generation (optional)
 try:
     import yaml
+    YAML_AVAILABLE = True
 except ImportError:
-    yaml = None
+    YAML_AVAILABLE = False
 
 # Add the examples-and-templates directory to the path so we can import the schema
 sys.path.insert(0, str(Path(__file__).parent.parent / 'examples-and-templates'))
@@ -261,12 +263,13 @@ def main():
     print(f"  {len(schema['items']['allOf'])} conditional validations")
     
     # Write YAML schema if PyYAML is available
-    if yaml is not None:
+    if YAML_AVAILABLE:
         with open(yaml_output_path, 'w') as f:
             yaml.dump(schema, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
         print(f"✓ Generated {yaml_output_path}")
     else:
         print(f"⚠ PyYAML not installed, skipping YAML schema generation")
+        print(f"  Install with: pip install pyyaml")
 
 
 if __name__ == '__main__':
