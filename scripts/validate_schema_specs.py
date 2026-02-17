@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Validate that DATA-TECHNICAL-SPECS.md and data dictionary match data_reporting_schema.json.
+Validate that data-technical-specs.md and data dictionary match data_reporting_schema.json.
 The JSON schema is the source of truth. Can optionally update markdown and data dictionary
 from the schema.
 """

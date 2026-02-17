@@ -4,13 +4,13 @@ This directory contains utility scripts for the USDiseaseTracker-Docs repository
 
 ## generate_json_schema.py
 
-This script generates `data_reporting_schema.json` from the Pydantic model definitions in `examples-and-templates/data_reporting_schema.py`.
+This script generates `data_reporting_schema.json` and `data_reporting_schema.yaml` from the Pydantic model definitions in `examples-and-templates/data_reporting_schema.py`.
 
-**The Pydantic model (`data_reporting_schema.py`) is the source of truth.** This script ensures that the JSON schema stays synchronized with the Pydantic model.
+**The Pydantic model (`data_reporting_schema.py`) is the source of truth.** This script ensures that the JSON and YAML schemas stay synchronized with the Pydantic model.
 
 ### Usage
 
-**Generate the JSON schema:**
+**Generate the JSON and YAML schemas:**
 ```bash
 python3 scripts/generate_json_schema.py
 ```
@@ -19,11 +19,12 @@ This will:
 1. Import the Pydantic `DiseaseReport` model
 2. Extract field definitions, types, and validation rules
 3. Generate a JSON Schema file in the same format as the existing schema
-4. Write the output to `examples-and-templates/data_reporting_schema.json`
+4. Write the JSON output to `examples-and-templates/data_reporting_schema.json`
+5. Write the YAML output to `examples-and-templates/data_reporting_schema.yaml`
 
 ### What it generates
 
-The script generates a complete JSON Schema including:
+The script generates a complete schema (in both JSON and YAML formats) including:
 - **Field definitions**: All field types and descriptions
 - **Enum constraints**: For fields like `disease_name`, `state`, `age_group`, etc.
 - **Validation rules**: Cross-field validations (e.g., disease-specific time_unit constraints)
@@ -107,7 +108,7 @@ This script performs the following steps in sequence:
 1. **Generate JSON schema**: Runs `generate_json_schema.py` to create the JSON schema from the Pydantic model
 2. **Update data standards**: Runs `validate_schema_specs.py --update` to update:
    - Data dictionary CSV (`examples-and-templates/disease_tracking_data_dictionary.csv`)
-   - Technical specifications markdown (`guides/DATA-TECHNICAL-SPECS.md`)
+   - Technical specifications markdown (`guides/data-technical-specs.md`)
 3. **Validate consistency**: Runs `validate_schema_specs.py` to ensure all files are synchronized
 
 ### When to use

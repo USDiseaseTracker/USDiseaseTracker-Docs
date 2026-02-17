@@ -77,8 +77,9 @@ def main():
     print("="*60)
     print("\nUpdated files:")
     print("  - examples-and-templates/data_reporting_schema.json")
+    print("  - examples-and-templates/data_reporting_schema.yaml")
     print("  - examples-and-templates/disease_tracking_data_dictionary.csv")
-    print("  - guides/DATA-TECHNICAL-SPECS.md")
+    print("  - guides/data-technical-specs.md")
     print("\nThe data standards tool now reflects the current validation schema.")
 
 
