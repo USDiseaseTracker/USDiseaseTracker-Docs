@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Generate data_reporting_schema.json from data_reporting_schema.py.
+Generate data_reporting_schema.json and data_reporting_schema.yaml from data_reporting_schema.py.
 
 This script reads the Pydantic model definitions in data_reporting_schema.py
-and converts them to a JSON Schema format that matches the existing
+and converts them to both JSON Schema and YAML Schema formats that match the existing
 data_reporting_schema.json structure.
 """
 
@@ -11,6 +11,11 @@ import json
 import sys
 from pathlib import Path
 from pydantic_core import PydanticUndefined
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 # Add the examples-and-templates directory to the path so we can import the schema
 sys.path.insert(0, str(Path(__file__).parent.parent / 'examples-and-templates'))
@@ -236,23 +241,32 @@ def generate_json_schema():
 
 
 def main():
-    """Main function to generate and write the JSON schema."""
+    """Main function to generate and write the JSON and YAML schemas."""
     # Define paths
     script_dir = Path(__file__).parent
     repo_root = script_dir.parent
-    output_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.json'
+    json_output_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.json'
+    yaml_output_path = repo_root / 'examples-and-templates' / 'data_reporting_schema.yaml'
     
     # Generate the schema
     schema = generate_json_schema()
     
-    # Write to file with nice formatting
-    with open(output_path, 'w') as f:
+    # Write JSON schema with nice formatting
+    with open(json_output_path, 'w') as f:
         json.dump(schema, f, indent=4)
     
-    print(f"✓ Generated {output_path}")
+    print(f"✓ Generated {json_output_path}")
     print(f"  Schema contains {len(schema['items']['properties'])} properties")
     print(f"  {len(schema['items']['required'])} required fields")
     print(f"  {len(schema['items']['allOf'])} conditional validations")
+    
+    # Write YAML schema if PyYAML is available
+    if yaml is not None:
+        with open(yaml_output_path, 'w') as f:
+            yaml.dump(schema, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
+        print(f"✓ Generated {yaml_output_path}")
+    else:
+        print(f"⚠ PyYAML not installed, skipping YAML schema generation")
 
 
 if __name__ == '__main__':
