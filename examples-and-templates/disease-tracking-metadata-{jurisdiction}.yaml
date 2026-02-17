@@ -30,13 +30,13 @@ geographic_units:
   
   # List each geographic unit used
   units:
-    - geo_name: Example County
-      geo_unit: county
-      parent_jurisdiction: State abbreviation (if applicable)
+    - geo_unit: state
+      geo_name: State Name
+      parent_jurisdiction: NA
       notes: Any additional notes about this geographic unit
     
-    - geo_name: Example Region
-      geo_unit: region
+    - geo_name: county
+      geo_name: [Example1 County, Example2 County, etc.] 
       parent_jurisdiction: State abbreviation (if applicable)
       notes: Any additional notes about this geographic unit
   
@@ -57,7 +57,6 @@ data_suppression_policies:
   
   # Small count suppression rules
   small_count_suppression:
-    enabled: true
     threshold: 5
     rule_description: >
       Describe the rule for small count suppression. For example: 
@@ -69,12 +68,10 @@ data_suppression_policies:
   
   # Secondary suppression (to prevent calculation of suppressed values)
   secondary_suppression:
-    enabled: false
     rule_description: >
-      If secondary suppression is used (to prevent calculation of suppressed values), 
-      describe the rules here.
+      If secondary suppression is used, describe the rules here.
   
-  # How suppressed counts are aggregated
+  # How suppressed counts are aggregated (leave this unless you are explicitly doing something different)
   aggregation_of_suppressed_counts:
     method: unspecified_category
     description: >
