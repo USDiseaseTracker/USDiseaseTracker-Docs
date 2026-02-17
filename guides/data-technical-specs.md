@@ -239,7 +239,7 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 
 Examples:
 
-- `disease_tracking_report_CA-EXAMPLE_2026-02-09.csv` (California state, submitted February 9, 2026. These are partially simulated data and should not be be assumed to be real data.)
+- `disease_tracking_report_CA-EXAMPLE_2026-02-09.csv` (California state, submitted February 9, 2026. These are partially simulated data and should not be assumed to be real data.)
 
 <br>
 <br>
