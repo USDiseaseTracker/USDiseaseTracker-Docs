@@ -256,7 +256,7 @@ Data should be submitted in CSV format following the standard template structure
 
 **Template and Example Files:**
 - [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
-- [Example data file](../examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Example data file](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
 
 **File Submission Requirements:**
 - Submit a file with all incident disease counts since December 29, 2024
@@ -268,7 +268,7 @@ Data should be submitted in CSV format following the standard template structure
 ```
 disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
-Example: `disease_tracking_report_WA-EXAMPLE_2026-02-09.csv`
+Example: `disease_tracking_report_CA-EXAMPLE_2026-02-09.csv`
 
 See the [Data Transfer Guide](data-transfer-guide.md) for technical details on data submission methods and the [Data Technical Specifications](data-technical-specs.md) for complete field requirements.
 
