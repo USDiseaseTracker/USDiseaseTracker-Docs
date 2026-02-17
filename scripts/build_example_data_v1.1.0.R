@@ -42,7 +42,8 @@ measles_dat_weekly <- measles_dat %>%
              reporting_jurisdiction, state, geo_name, geo_unit, age_group, disease_subtype, confirmation_status, outcome) %>%
     summarize(count = sum(count, na.rm = TRUE)) %>%
     ungroup() %>%
-    mutate(geo_name = ifelse(geo_unit == "county" & !grepl("city", geo_name,ignore.case = TRUE), paste0(geo_name, " County"), geo_name))
+    mutate(geo_name = ifelse(geo_unit == "county" & !grepl("city|county", geo_name,ignore.case = TRUE), paste0(geo_name, " County"), geo_name)) %>%
+    mutate(geo_name = ifelse(geo_unit == "county" & grepl("unknown", geo_name, ignore.case = TRUE), "unknown", geo_name))
 
 
 
@@ -494,6 +495,18 @@ total_check %>%
 reported_data %>%
   filter(disease_subtype != "total") %>%
   View()
+
+
+
+
+
+# Check CA
+
+reported_ca <- reported_data %>% filter(state == "CA")
+View(reported_ca %>% filter(grepl("unknown", geo_name, ignore.case = TRUE)))
+
+
+
 
 
 

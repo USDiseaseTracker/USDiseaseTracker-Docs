@@ -27,7 +27,7 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2025-06-08,2025-06-14,cccd,week,measles,CA,CA,county,Los Angeles County,total,total,confirmed,cases,1
 2025-06-08,2025-06-14,cccd,week,measles,CA,CA,state,CA,1-4 y,total,confirmed,cases,1
 2025-06-15,2025-06-21,cccd,week,measles,CA,CA,county,Sacramento County,total,total,confirmed,cases,1
-2025-06-15,2025-06-21,cccd,week,measles,CA,CA,county,Unknown County County,total,total,confirmed,cases,1
+2025-06-15,2025-06-21,cccd,week,measles,CA,CA,county,unknown,total,total,confirmed,cases,1
 2025-06-15,2025-06-21,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,2
 2025-07-20,2025-07-26,cccd,week,measles,CA,CA,county,Tulare County,total,total,confirmed,cases,2
 2025-07-20,2025-07-26,cccd,week,measles,CA,CA,state,CA,19-22 y,total,confirmed,cases,1
@@ -36,15 +36,15 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2025-08-10,2025-08-16,cccd,week,measles,CA,CA,state,CA,23-44 y,total,confirmed,cases,1
 2025-09-28,2025-10-04,cccd,week,measles,CA,CA,county,Orange County,total,total,confirmed,cases,1
 2025-09-28,2025-10-04,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,1
-2025-10-12,2025-10-18,cccd,week,measles,CA,CA,county,Unknown County County,total,total,confirmed,cases,1
+2025-10-12,2025-10-18,cccd,week,measles,CA,CA,county,unknown,total,total,confirmed,cases,1
 2025-10-12,2025-10-18,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,1
-2025-12-07,2025-12-13,cccd,week,measles,CA,CA,county,Unknown County County,total,total,confirmed,cases,1
+2025-12-07,2025-12-13,cccd,week,measles,CA,CA,county,unknown,total,total,confirmed,cases,1
 2025-12-07,2025-12-13,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,1
 2025-12-14,2025-12-20,cccd,week,measles,CA,CA,county,San Luis Obispo County,total,total,confirmed,cases,1
 2025-12-14,2025-12-20,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,1
 2025-12-21,2025-12-27,cccd,week,measles,CA,CA,county,Contra Costa County,total,total,confirmed,cases,1
 2025-12-21,2025-12-27,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,1
-2026-01-04,2026-01-10,cccd,week,measles,CA,CA,county,Unknown County County,total,total,confirmed,cases,1
+2026-01-04,2026-01-10,cccd,week,measles,CA,CA,county,unknown,total,total,confirmed,cases,1
 2026-01-04,2026-01-10,cccd,week,measles,CA,CA,state,CA,1-4 y,total,confirmed,cases,1
 2026-01-18,2026-01-24,cccd,week,measles,CA,CA,county,Napa County,total,total,confirmed,cases,1
 2026-01-18,2026-01-24,cccd,week,measles,CA,CA,county,San Mateo County,total,total,confirmed,cases,1
@@ -96,7 +96,7 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,county,Stanislaus County,total,total,confirmed and probable,cases,1
 2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
 2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,total,Y,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,total,A,confirmed and probable,cases,1
 2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
 2025-05-11,2025-05-17,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
 2025-05-11,2025-05-17,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
