@@ -64,105 +64,105 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2026-02-08,2026-02-14,cccd,week,measles,CA,CA,state,CA,19-22 y,total,confirmed,cases,2
 2026-02-08,2026-02-14,cccd,week,measles,CA,CA,state,CA,23-44 y,total,confirmed,cases,2
 2026-02-08,2026-02-14,cccd,week,measles,CA,CA,state,CA,5-11 y,total,confirmed,cases,2
-2025-01-19,2025-01-25,cccd,week,meningicoccus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
-2025-01-19,2025-01-25,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-01-19,2025-01-25,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-02-02,2025-02-08,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-02-02,2025-02-08,cccd,week,meningicoccus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
-2025-02-02,2025-02-08,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-02-16,2025-02-22,cccd,week,meningicoccus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
-2025-02-16,2025-02-22,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-02-16,2025-02-22,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-03-09,2025-03-15,cccd,week,meningicoccus,CA,CA,county,San Mateo County,total,total,confirmed and probable,cases,1
-2025-03-09,2025-03-15,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-03-09,2025-03-15,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,county,Alameda County,total,total,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,county,Santa Barbara County,total,total,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,2
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,state,CA,total,B,confirmed and probable,cases,1
-2025-03-16,2025-03-22,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-03-23,2025-03-29,cccd,week,meningicoccus,CA,CA,county,Sonoma County,total,total,confirmed and probable,cases,1
-2025-03-23,2025-03-29,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-03-23,2025-03-29,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-03-30,2025-04-05,cccd,week,meningicoccus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
-2025-03-30,2025-04-05,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-03-30,2025-04-05,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-04-20,2025-04-26,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-04-20,2025-04-26,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-04-20,2025-04-26,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,county,Alameda County,total,total,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,county,Stanislaus County,total,total,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,total,A,confirmed and probable,cases,1
-2025-05-04,2025-05-10,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-05-11,2025-05-17,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-05-11,2025-05-17,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-05-11,2025-05-17,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-05-18,2025-05-24,cccd,week,meningicoccus,CA,CA,county,Sacramento County,total,total,confirmed and probable,cases,1
-2025-05-18,2025-05-24,cccd,week,meningicoccus,CA,CA,county,Siskiyou County,total,total,confirmed and probable,cases,1
-2025-05-18,2025-05-24,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,2
-2025-05-18,2025-05-24,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-06-01,2025-06-07,cccd,week,meningicoccus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
-2025-06-01,2025-06-07,cccd,week,meningicoccus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
-2025-06-01,2025-06-07,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-06-08,2025-06-14,cccd,week,meningicoccus,CA,CA,county,San Joaquin County,total,total,confirmed and probable,cases,1
-2025-06-08,2025-06-14,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-06-08,2025-06-14,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-06-08,2025-06-14,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-06-08,2025-06-14,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-06-22,2025-06-28,cccd,week,meningicoccus,CA,CA,county,Sacramento County,total,total,confirmed and probable,cases,1
-2025-06-22,2025-06-28,cccd,week,meningicoccus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
-2025-06-22,2025-06-28,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-06-22,2025-06-28,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-06-22,2025-06-28,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-07-13,2025-07-19,cccd,week,meningicoccus,CA,CA,county,Placer County,total,total,confirmed and probable,cases,1
-2025-07-13,2025-07-19,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-07-13,2025-07-19,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,county,Stanislaus County,total,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-07-20,2025-07-26,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,3
-2025-08-03,2025-08-09,cccd,week,meningicoccus,CA,CA,county,Imperial County,total,total,confirmed and probable,cases,1
-2025-08-03,2025-08-09,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-08-03,2025-08-09,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-08-10,2025-08-16,cccd,week,meningicoccus,CA,CA,county,San Joaquin County,total,total,confirmed and probable,cases,1
-2025-08-10,2025-08-16,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-08-10,2025-08-16,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-08-24,2025-08-30,cccd,week,meningicoccus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
-2025-08-24,2025-08-30,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-08-24,2025-08-30,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2025-11-09,2025-11-15,cccd,week,meningicoccus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,2
-2025-11-09,2025-11-15,cccd,week,meningicoccus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
-2025-11-09,2025-11-15,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-11-09,2025-11-15,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-11-16,2025-11-22,cccd,week,meningicoccus,CA,CA,county,Orange County,total,total,confirmed and probable,cases,1
-2025-11-16,2025-11-22,cccd,week,meningicoccus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
-2025-11-16,2025-11-22,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
-2025-11-16,2025-11-22,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-11-16,2025-11-22,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-11-23,2025-11-29,cccd,week,meningicoccus,CA,CA,county,Nevada County,total,total,confirmed and probable,cases,1
-2025-11-23,2025-11-29,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2025-11-23,2025-11-29,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,2
-2025-11-23,2025-11-29,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
-2025-11-30,2025-12-06,cccd,week,meningicoccus,CA,CA,county,San Bernardino County,total,total,confirmed and probable,cases,1
-2025-11-30,2025-12-06,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2025-11-30,2025-12-06,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
-2026-01-18,2026-01-24,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,4
-2026-01-18,2026-01-24,cccd,week,meningicoccus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,3
-2026-01-18,2026-01-24,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2026-01-18,2026-01-24,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,4
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,state,CA,total,Y,confirmed and probable,cases,1
-2026-01-25,2026-01-31,cccd,week,meningicoccus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-01-19,2025-01-25,cccd,week,meningococcus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
+2025-01-19,2025-01-25,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-01-19,2025-01-25,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-02-02,2025-02-08,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-02-02,2025-02-08,cccd,week,meningococcus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
+2025-02-02,2025-02-08,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-02-16,2025-02-22,cccd,week,meningococcus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
+2025-02-16,2025-02-22,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-02-16,2025-02-22,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-03-09,2025-03-15,cccd,week,meningococcus,CA,CA,county,San Mateo County,total,total,confirmed and probable,cases,1
+2025-03-09,2025-03-15,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-03-09,2025-03-15,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,county,Alameda County,total,total,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,county,Santa Barbara County,total,total,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,2
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,state,CA,total,B,confirmed and probable,cases,1
+2025-03-16,2025-03-22,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-03-23,2025-03-29,cccd,week,meningococcus,CA,CA,county,Sonoma County,total,total,confirmed and probable,cases,1
+2025-03-23,2025-03-29,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-03-23,2025-03-29,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-03-30,2025-04-05,cccd,week,meningococcus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
+2025-03-30,2025-04-05,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-03-30,2025-04-05,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-04-20,2025-04-26,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-04-20,2025-04-26,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
+2025-04-20,2025-04-26,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,county,Alameda County,total,total,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,county,Stanislaus County,total,total,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,state,CA,total,A,confirmed and probable,cases,1
+2025-05-04,2025-05-10,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-05-11,2025-05-17,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-05-11,2025-05-17,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-05-11,2025-05-17,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-05-18,2025-05-24,cccd,week,meningococcus,CA,CA,county,Sacramento County,total,total,confirmed and probable,cases,1
+2025-05-18,2025-05-24,cccd,week,meningococcus,CA,CA,county,Siskiyou County,total,total,confirmed and probable,cases,1
+2025-05-18,2025-05-24,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,2
+2025-05-18,2025-05-24,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-06-01,2025-06-07,cccd,week,meningococcus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
+2025-06-01,2025-06-07,cccd,week,meningococcus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
+2025-06-01,2025-06-07,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-06-08,2025-06-14,cccd,week,meningococcus,CA,CA,county,San Joaquin County,total,total,confirmed and probable,cases,1
+2025-06-08,2025-06-14,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-06-08,2025-06-14,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
+2025-06-08,2025-06-14,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-06-08,2025-06-14,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-06-22,2025-06-28,cccd,week,meningococcus,CA,CA,county,Sacramento County,total,total,confirmed and probable,cases,1
+2025-06-22,2025-06-28,cccd,week,meningococcus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
+2025-06-22,2025-06-28,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
+2025-06-22,2025-06-28,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-06-22,2025-06-28,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-07-13,2025-07-19,cccd,week,meningococcus,CA,CA,county,Placer County,total,total,confirmed and probable,cases,1
+2025-07-13,2025-07-19,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-07-13,2025-07-19,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,county,Stanislaus County,total,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,state,CA,19-22 y,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-07-20,2025-07-26,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,3
+2025-08-03,2025-08-09,cccd,week,meningococcus,CA,CA,county,Imperial County,total,total,confirmed and probable,cases,1
+2025-08-03,2025-08-09,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-08-03,2025-08-09,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-08-10,2025-08-16,cccd,week,meningococcus,CA,CA,county,San Joaquin County,total,total,confirmed and probable,cases,1
+2025-08-10,2025-08-16,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-08-10,2025-08-16,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-08-24,2025-08-30,cccd,week,meningococcus,CA,CA,county,Santa Clara County,total,total,confirmed and probable,cases,1
+2025-08-24,2025-08-30,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-08-24,2025-08-30,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2025-11-09,2025-11-15,cccd,week,meningococcus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,2
+2025-11-09,2025-11-15,cccd,week,meningococcus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
+2025-11-09,2025-11-15,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-11-09,2025-11-15,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-11-16,2025-11-22,cccd,week,meningococcus,CA,CA,county,Orange County,total,total,confirmed and probable,cases,1
+2025-11-16,2025-11-22,cccd,week,meningococcus,CA,CA,county,San Diego County,total,total,confirmed and probable,cases,1
+2025-11-16,2025-11-22,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1
+2025-11-16,2025-11-22,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-11-16,2025-11-22,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-11-23,2025-11-29,cccd,week,meningococcus,CA,CA,county,Nevada County,total,total,confirmed and probable,cases,1
+2025-11-23,2025-11-29,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2025-11-23,2025-11-29,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,2
+2025-11-23,2025-11-29,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,2
+2025-11-30,2025-12-06,cccd,week,meningococcus,CA,CA,county,San Bernardino County,total,total,confirmed and probable,cases,1
+2025-11-30,2025-12-06,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2025-11-30,2025-12-06,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
+2026-01-18,2026-01-24,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,4
+2026-01-18,2026-01-24,cccd,week,meningococcus,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,3
+2026-01-18,2026-01-24,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2026-01-18,2026-01-24,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,4
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,county,Riverside County,total,total,confirmed and probable,cases,1
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,state,CA,23-44 y,total,confirmed and probable,cases,1
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,state,CA,5-11 y,total,confirmed and probable,cases,1
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,state,CA,total,Y,confirmed and probable,cases,1
+2026-01-25,2026-01-31,cccd,week,meningococcus,CA,CA,state,CA,total,unknown,confirmed and probable,cases,1
 2024-12-29,2025-01-04,cccd,week,pertussis,CA,CA,county,Fresno County,total,total,confirmed and probable,cases,1
 2024-12-29,2025-01-04,cccd,week,pertussis,CA,CA,county,Los Angeles County,total,total,confirmed and probable,cases,1
 2024-12-29,2025-01-04,cccd,week,pertussis,CA,CA,state,CA,1-4 y,total,confirmed and probable,cases,1

@@ -260,7 +260,7 @@ pertussis_dat_weekly_county <- pertussis_dat_weekly_state %>%
 
 
 
-# BUILD MENINGICOCCUS -----------------------------------------------------
+# BUILD MENINGOCOCCUS -----------------------------------------------------
 
 mening_dat_weekly_state <- state_nndss %>%
     filter(grepl("Mening", Label)) %>%
@@ -273,7 +273,7 @@ mening_dat_weekly_state <- state_nndss %>%
     # rename(state = `Reporting Area`) %>%
     rename(count = `Current week`) %>%
     mutate(date_type = "cccd",
-           disease_name = "meningicoccus",
+           disease_name = "meningococcus",
            outcome = "cases",
            age_group = "total",
            disease_subtype = "total",
