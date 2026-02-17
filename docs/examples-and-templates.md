@@ -70,11 +70,11 @@ This crosswalk helps you:
 
 ## Schema Files
 
-### JSON Schema
+### YAML Schema
 
-The formal JSON schema defining the data structure:
+The formal YAML schema defining the data structure:
 
-**📄 [data_reporting_schema.json](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/data_reporting_schema.json)**
+**📄 [data_reporting_schema.yaml](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/data_reporting_schema.yaml)**
 
 Use this schema for:
 - Automated validation

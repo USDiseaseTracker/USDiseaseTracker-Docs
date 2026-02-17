@@ -1,22 +1,22 @@
-name: Generate JSON Schema from Pydantic Model
+name: Generate Schema from Pydantic Model
 
 on:
   push:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
       # Exclude auto-generated files to prevent workflow loops
-      - '!examples-and-templates/data_reporting_schema.json'
+      - '!examples-and-templates/data_reporting_schema.yaml'
       - '!examples-and-templates/disease_tracking_data_dictionary.csv'
-      - '!guides/DATA-TECHNICAL-SPECS.md'
+      - '!guides/data-technical-specs.md'
     branches:
       - main
   pull_request:
     paths:
       - 'examples-and-templates/data_reporting_schema.py'
       # Exclude auto-generated files to prevent workflow loops
-      - '!examples-and-templates/data_reporting_schema.json'
+      - '!examples-and-templates/data_reporting_schema.yaml'
       - '!examples-and-templates/disease_tracking_data_dictionary.csv'
-      - '!guides/DATA-TECHNICAL-SPECS.md'
+      - '!guides/data-technical-specs.md'
     branches:
       - main
 
@@ -40,11 +40,11 @@ jobs:
       
       - name: Install dependencies
         run: |
-          pip install pydantic
+          pip install pydantic pyyaml
       
-      - name: Generate JSON schema
+      - name: Generate YAML schema
         run: |
-          python3 scripts/generate_json_schema.py
+          python3 scripts/generate_yaml_schema.py
       
       - name: Update data standards tool and documentation from schema
         run: |
@@ -64,9 +64,9 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add examples-and-templates/data_reporting_schema.json
+          git add examples-and-templates/data_reporting_schema.yaml
           git add examples-and-templates/disease_tracking_data_dictionary.csv
-          git add guides/DATA-TECHNICAL-SPECS.md
+          git add guides/data-technical-specs.md
           git commit -m "Auto-update schema, data dictionary, and documentation from Pydantic model" -m "Updated files: $(git diff --cached --name-only | tr '\n' ' ')"
           
           # Determine the target branch
