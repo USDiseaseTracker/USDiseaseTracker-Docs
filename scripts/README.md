@@ -4,6 +4,8 @@ This directory contains utility scripts for the USDiseaseTracker-Docs repository
 
 ## generate_json_schema.py
 
+> **Note:** Despite the script name referencing JSON, this script now generates only YAML schema format.
+
 This script generates `data_reporting_schema.yaml` from the Pydantic model definitions in `examples-and-templates/data_reporting_schema.py`.
 
 **The Pydantic model (`data_reporting_schema.py`) is the source of truth.** This script ensures that the YAML schema stays synchronized with the Pydantic model.
