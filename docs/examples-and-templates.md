@@ -33,7 +33,7 @@ When using this template, rename it with your jurisdiction's two-letter abbrevia
 
 A complete example showing real data submission:
 
-**📄 [disease_tracking_report_WA-EXAMPLE_2026-02-09.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv)**
+**📄 [disease_tracking_report_CA-EXAMPLE_2026-02-09.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv)**
 
 This example demonstrates:
 - Proper formatting for each field

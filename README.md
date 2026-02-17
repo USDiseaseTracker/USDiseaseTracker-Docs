@@ -52,7 +52,7 @@ While we aim to limit changes once data standards and processes are established,
 
 **Templates and Examples:**
 - [Data submission template](examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
-- [Example data file](examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv)
+- [Example data file](examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv)
 - [Data dictionary (CSV)](examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 <br>
 
