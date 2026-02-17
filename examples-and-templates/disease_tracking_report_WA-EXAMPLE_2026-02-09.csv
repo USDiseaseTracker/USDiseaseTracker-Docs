@@ -2,15 +2,15 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2025-02-23,2025-03-01,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,1
 2025-02-23,2025-03-01,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2025-03-16,2025-03-22,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,1
-2025-03-16,2025-03-22,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
+2025-03-16,2025-03-22,cccd,week,measles,WA,WA,state,WA,1-4 y,total,confirmed,cases,1
 2025-03-30,2025-04-05,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,1
-2025-03-30,2025-04-05,cccd,week,measles,WA,WA,state,WA,1-4 y,total,confirmed,cases,1
+2025-03-30,2025-04-05,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2025-04-06,2025-04-12,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,1
-2025-04-06,2025-04-12,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,1
+2025-04-06,2025-04-12,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2025-04-20,2025-04-26,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,1
 2025-04-20,2025-04-26,cccd,week,measles,WA,WA,state,WA,1-4 y,total,confirmed,cases,1
 2025-05-18,2025-05-24,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,1
-2025-05-18,2025-05-24,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
+2025-05-18,2025-05-24,cccd,week,measles,WA,WA,state,WA,1-4 y,total,confirmed,cases,1
 2025-06-15,2025-06-21,cccd,week,measles,WA,WA,county,Whatcom County,total,total,confirmed,cases,1
 2025-06-15,2025-06-21,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2025-06-22,2025-06-28,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,2
@@ -22,8 +22,8 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2025-10-26,2025-11-01,cccd,week,measles,WA,WA,county,King County,total,total,confirmed,cases,1
 2025-10-26,2025-11-01,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,1
 2026-01-11,2026-01-17,cccd,week,measles,WA,WA,county,Kittitas County,total,total,confirmed,cases,1
-2026-01-11,2026-01-17,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,3
-2026-01-11,2026-01-17,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,1
+2026-01-11,2026-01-17,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,4
+2026-01-11,2026-01-17,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,2
 2026-01-11,2026-01-17,cccd,week,measles,WA,WA,state,WA,23-44 y,total,confirmed,cases,1
 2026-01-11,2026-01-17,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,2
 2026-01-18,2026-01-24,cccd,week,measles,WA,WA,county,Clark County,total,total,confirmed,cases,1
@@ -34,12 +34,17 @@ report_period_start,report_period_end,date_type,time_unit,disease_name,reporting
 2026-01-25,2026-01-31,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,1
 2026-01-25,2026-01-31,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2026-02-01,2026-02-07,cccd,week,measles,WA,WA,county,Clark County,total,total,confirmed,cases,7
-2026-02-01,2026-02-07,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,3
+2026-02-01,2026-02-07,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,4
 2026-02-01,2026-02-07,cccd,week,measles,WA,WA,county,Stevens County,total,total,confirmed,cases,1
 2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,1-4 y,total,confirmed,cases,2
 2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,2
-2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,23-44 y,total,confirmed,cases,2
-2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,5
+2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,23-44 y,total,confirmed,cases,1
+2026-02-01,2026-02-07,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,7
+2026-02-08,2026-02-14,cccd,week,measles,WA,WA,county,Snohomish County,total,total,confirmed,cases,1
+2026-02-08,2026-02-14,cccd,week,measles,WA,WA,county,Stevens County,total,total,confirmed,cases,2
+2026-02-08,2026-02-14,cccd,week,measles,WA,WA,state,WA,19-22 y,total,confirmed,cases,1
+2026-02-08,2026-02-14,cccd,week,measles,WA,WA,state,WA,23-44 y,total,confirmed,cases,1
+2026-02-08,2026-02-14,cccd,week,measles,WA,WA,state,WA,5-11 y,total,confirmed,cases,1
 2024-12-29,2025-01-04,cccd,week,pertussis,WA,WA,county,King County,total,total,confirmed and probable,cases,2
 2024-12-29,2025-01-04,cccd,week,pertussis,WA,WA,county,Pierce County,total,total,confirmed and probable,cases,1
 2024-12-29,2025-01-04,cccd,week,pertussis,WA,WA,county,Snohomish County,total,total,confirmed and probable,cases,3

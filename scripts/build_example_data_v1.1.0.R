@@ -306,6 +306,11 @@ mening_dat_weekly_state_serogroups <- mening_dat_weekly_state_serogroups %>%
     summarize(count = sum(count, na.rm = TRUE)) %>%
     ungroup() 
 
+# Replace the ACWY subtype with specific values to improve the example
+
+acwy <- which(mening_dat_weekly_state_serogroups$disease_subtype == "ACWY")
+n_acwy <- length(acwy)
+mening_dat_weekly_state_serogroups$disease_subtype[acwy] <- sample(c("A", "C", "W", "Y"), size = n_acwy, replace = TRUE) 
 
 
 
@@ -339,7 +344,21 @@ mening_dat_weekly_state_age <- mening_dat_weekly_state_serogroups %>%
 
 
 
-# ~ distribute pertussis to counties --------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ~ distribute mening to counties --------------------------------------
 
 library(tidycensus)
 library(dplyr)
@@ -453,10 +472,40 @@ reported_data <- bind_rows(
 
 
 
+# Check totals
+
+
+total_check <- reported_data %>%
+    group_by(disease_name, disease_subtype=="total", age_group=="total", state) %>%
+    summarize(total_count = sum(count)) %>%
+    ungroup() %>%
+    arrange(disease_name, state) %>% 
+  group_by(disease_name, state) %>%
+    summarise(equal_counts = n_distinct(total_count) == 1,
+              total_count = paste(unique(total_count), collapse = ", ")) %>%
+    ungroup() %>%
+    arrange(disease_name, state)
+
+total_check %>%
+    filter(!equal_counts)
+
+
+# Cases by state, mening subtype
+reported_data %>%
+  filter(disease_subtype != "total") %>%
+  View()
+
+
+
+
+
+
+
 # save as disease_tracking_report_{state}_{report_date}
 
 # write_csv(reported_data %>% filter(state == "MA"), "examples-and-templates/disease_tracking_report_MA-EXAMPLE_2026-02-09.csv")
 write_csv(reported_data %>% filter(state == "WA"), "examples-and-templates/disease_tracking_report_WA-EXAMPLE_2026-02-09.csv")
+write_csv(reported_data %>% filter(state == "CA"), "examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv")
 
 
 
