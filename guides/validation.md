@@ -29,8 +29,10 @@ The validation process checks:
 
 Validation errors will be reported back to submitters with specific error descriptions.
 
+<br>
+
 ## Validation Rules
-# 
+
 ### Format Validation
 
 - File must be valid CSV format
