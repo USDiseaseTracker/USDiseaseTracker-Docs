@@ -72,6 +72,8 @@ The project team is working with submitting jurisdictions to provide multiple me
 - Log entry created recording unsuccessful attempt and errors
 - Email notification sent to jurisdiction's registered email address
 
+<br>
+
 ### Option 2: Scheduled Pull by JHU (Automated)
 
 **Best for:** Jurisdictions with existing public data portals
@@ -97,10 +99,12 @@ The project team is working with submitting jurisdictions to provide multiple me
 #### Error Scenarios
 
 **Connection Failure:**
+
 - Logged to extent possible
 - Log contents emailed to monitored JHU email address
 
 **Validation Failure:**
+
 - File not stored
 - Log entry created recording unsuccessful attempt and errors
 - Email notification sent to jurisdiction's registered email address
@@ -111,6 +115,8 @@ The project team is working with submitting jurisdictions to provide multiple me
 - Some commonality possible if states use same data portal software (e.g., Socrata with published API)
 - Each script requires ongoing maintenance
 - Assumes jurisdiction has defined process and schedule for storing data in their portal
+
+<br>
 
 ### Option 3: Scheduled Push by Jurisdiction (Automated)
 
@@ -137,10 +143,12 @@ The project team is working with submitting jurisdictions to provide multiple me
 #### Error Scenarios
 
 **Connection Failure:**
+
 - Jurisdiction monitors/logs connection failures
 - Jurisdiction notifies JHU if warranted
 
 **Validation Failure:**
+
 - File not stored
 - Log entry created recording unsuccessful attempt and errors
 - Email notification sent to jurisdiction's registered email address
@@ -161,6 +169,7 @@ For the production environment, JHU intends to provide all three transfer method
 To prioritize development efforts, jurisdictions should indicate preferences for the pilot phase:
 
 **Ranking Instructions:**
+
 - Rank methods 1-3 based on your preference
 - Omit methods that are not possible for your jurisdiction
 - If only one method is possible, provide only that ranking
@@ -170,9 +179,12 @@ To prioritize development efforts, jurisdictions should indicate preferences for
 ### Data Portal Information
 
 If your jurisdiction has a data portal, please provide:
+
 - Software/platform name
 - Link to developer documentation (if available)
 - Point of contact for technical coordination
+
+<br>
 
 ## File Format Specifications
 
@@ -206,10 +218,10 @@ For detailed field specifications, see the [Data Technical Specifications](data-
 ### Template and Examples
 
 Use the official data submission template and examples:
-- [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
-- [Example data file](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-<br>
+- [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
+- [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+
 <br>
 
 ## Validation
@@ -242,6 +254,8 @@ If validation succeeds:
 3. Confirmation message provided to user
 4. Email notification sent to jurisdiction
 
+<br>
+
 ## Security and Authentication
 
 ### Authentication Requirements
@@ -258,6 +272,8 @@ All data transfer methods require secure authentication:
 - Files stored securely on JHU servers
 - Access limited to authorized project team members
 - Audit logs maintained for all data access
+
+<br>
 
 ## Troubleshooting
 
@@ -290,6 +306,8 @@ All data transfer methods require secure authentication:
 - Review firewall/security settings
 - Contact JHU technical support
 
+<br>
+
 ## Support
 
 ### Technical Support
@@ -307,6 +325,7 @@ For urgent issues or escalation:
 - Contact your jurisdiction's project liaison
 - Liaison will coordinate with JHU project team
 
+<br>
 
 ## Version Control
 
@@ -328,6 +347,7 @@ For each submission, the system records:
 - Validation status
 - Any errors or warnings
 
+<br>
 
 ## Future Enhancements
 
