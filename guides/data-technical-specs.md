@@ -225,9 +225,9 @@ See [Validation](validation.md) for details on file and data validation.
 
 Example data files are available to help understand the required format:
 
-- [Complete example](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
-- [Empty template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Complete example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
+- [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
+- [Data dictionary (CSV)]([..](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 **File naming convention:**
 
@@ -247,7 +247,7 @@ Examples:
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). Metadata required includes:
 
 1. **Date Classification Method**
    a. If using CCCD, indicate "cccd"
@@ -282,7 +282,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 - [Data Submission Guide](data-submission-guide.md) - High-level guidance on what and when to submit
 - [Data Transfer Guide](data-transfer-guide.md) - Technical details on how to transfer data
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)
