@@ -197,10 +197,12 @@ disease_tracking_report_{jurisdiction}_{report_date}.csv
 ```
 
 Where:
+
 - `{state}` = Two-letter state/territory code or NYC (e.g., WA, CA, NYC, PR)
 - `{report_date}` = Date of submission in YYYY-MM-DD format
 
 **Examples:**
+
 ```
 disease_tracking_report_CA_2026-02-09.csv
 disease_tracking_report_WA_2025-10-15.csv
@@ -218,6 +220,7 @@ For detailed field specifications, see the [Data Technical Specifications](data-
 ### Template and Examples
 
 Use the official data submission template and examples:
+
 - [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
 - [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
 - [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
