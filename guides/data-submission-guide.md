@@ -98,7 +98,7 @@ Cases should be classified in time according to a hierarchical date algorithm.
 
 !!! tip "**Recommended:** Use the **Calculated Case Counting Date (CCCD)**" 
 
-   See [CSTE Data Standardization Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf) for details.
+    See [CSTE Data Standardization Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf) for details.
 
    The CCCD employs a hierarchy and assigns the case to the earliest of:
 
@@ -190,7 +190,8 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 
 
 !!! info "Important"
-   Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
+    
+    Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 
 
 <br>
@@ -225,11 +226,12 @@ To ensure total counts add to 100% of cases:
 4. Suppression rules should be shared with the project team for accurate description/footnoting.
 
 !!! example "Example"
-   A jurisdiction with a suppression rule that requires suppression of any count <5, records 31 total cases of measles during a week. County A has 1 case, County B has 3 cases, County C and D have 12 and 15 cases, respectively. For the `county-level` aggregation of these counts, these should be reported as:
-   <br>
-   1. Include a row for each `geo_name = "County C"` and `geo_name = "County D"` with `count = 12` and `count = 15`.
-   2. Include a row with `geo_name = "unspecified"` and a value in `count` that sums all suppressed county counts for this week. In this case `count = 4`.
-   3. **Do not** include a row for `geo_name = "County A"` or `geo_name = "County B"`. 
+
+    A jurisdiction with a suppression rule that requires suppression of any count <5, records 31 total cases of measles during a week. County A has 1 case, County B has 3 cases, County C and D have 12 and 15 cases, respectively. For the `county-level` aggregation of these counts, these should be reported as:
+   
+    1. Include a row for each `geo_name = "County C"` and `geo_name = "County D"` with `count = 12` and `count = 15`.
+    2. Include a row with `geo_name = "unspecified"` and a value in `count` that sums all suppressed county counts for this week. In this case `count = 4`.
+    3. **Do not** include a row for `geo_name = "County A"` or `geo_name = "County B"`. 
 
 <br>
 
@@ -255,8 +257,8 @@ Data should be submitted in CSV format following the standard template structure
 
 **Template and Example Files:**
 
-- [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
-- [Example data file](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Data submission template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
+- [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
 
 **File Submission Requirements:**
 
@@ -279,7 +281,7 @@ See the [Data Transfer Guide](data-transfer-guide.md) for technical details on d
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](../examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
 
 - Algorithm used to classify cases in time (e.g., CCCD or alternative)
 - List of substate geographic units used by jurisdiction
@@ -304,7 +306,7 @@ All submitted data must meet validation requirements to ensure data quality and 
 **Resources:**
 
 - [Data Technical Specifications](data-technical-specs.md) - Complete field definitions and valid value sets
-- [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Comprehensive validation requirements
   
 Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](data-transfer-guide.md) describes what happens when validation succeeds or fails.
