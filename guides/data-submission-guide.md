@@ -226,9 +226,8 @@ To ensure total counts add to 100% of cases:
 4. Suppression rules should be shared with the project team for accurate description/footnoting.
 
 !!! example "Example"
-
    A jurisdiction with a suppression rule that requires suppression of any count <5, records 31 total cases of measles during a week. County A has 1 case, County B has 3 cases, County C and D have 12 and 15 cases, respectively. For the `county-level` aggregation of these counts, these should be reported as:
-
+   <br>
    1. Include a row for each `geo_name = "County C"` and `geo_name = "County D"` with `count = 12` and `count = 15`.
    2. Include a row with `geo_name = "unspecified"` and a value in `count` that sums all suppressed county counts for this week. In this case `count = 4`.
    3. **Do not** include a row for `geo_name = "County A"` or `geo_name = "County B"`. 
@@ -244,6 +243,7 @@ For measles, the project team recommends **not suppressing data** as a default a
 ## Data Format
 
 ### No Zero Reporting
+
 - Report only non-zero counts (i.e., do not include rows in data where the count equals 0)
 - For example, if an age group had no reported outcome during a timeframe, no entry is required (e.g., if age group >= 65 has 0 cases of measles for that week for a state, do *not* include a row with `count = 0` for `age_group = ">=65"`)
 - If a jurisdiction had no reported counts of any disease or outcome during a timeframe, they should still submit the data, even if it has no new additional rows since the prior week's submission. This will enable us to limit missingness and uncertainty in the data.
@@ -255,10 +255,12 @@ For measles, the project team recommends **not suppressing data** as a default a
 Data should be submitted in CSV format following the standard template structure. 
 
 **Template and Example Files:**
+
 - [Data submission template](../examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
 - [Example data file](../examples-and-templates/disease_tracking_report_CA-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
 
 **File Submission Requirements:**
+
 - Submit a file with all incident disease counts since December 29, 2024
 - Each submission should include all updates to current and prior data, with new rows for new time periods
 - Files will be date-stamped by the system for version control
@@ -294,12 +296,14 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 All submitted data must meet validation requirements to ensure data quality and consistency.
 
 **What is validated:**
+
 - Field formats and data types
 - Values are within acceptable ranges and valid value sets
 - Logical consistency across fields
 - Required fields are present
 
 **Resources:**
+
 - [Data Technical Specifications](data-technical-specs.md) - Complete field definitions and valid value sets
 - [Data dictionary (CSV)](../examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Comprehensive validation requirements
