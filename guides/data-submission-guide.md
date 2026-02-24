@@ -190,7 +190,6 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 
 
 !!! info "Important"
-   
    Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 
 
