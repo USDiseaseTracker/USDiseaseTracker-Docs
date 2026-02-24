@@ -265,23 +265,27 @@ All data transfer methods require secure authentication:
 ### Common Issues
 
 **File Upload Fails:**
+
 - Check file format (must be CSV)
 - Verify file follows template structure
 - Check for special characters or encoding issues
 - Ensure file size is within limits
 
 **Validation Errors:**
+
 - Review error message for specific issues
 - Check field values against valid value sets
 - Verify date formats (YYYY-MM-DD)
 - Ensure required fields are populated
 
 **Authentication Issues:**
+
 - Verify username and password
 - Check 2FA device/app is working
 - Contact JHU support for account issues
 
 **Automated Transfer Failures:**
+
 - Verify network connectivity
 - Check credentials/API keys are valid
 - Review firewall/security settings
@@ -292,6 +296,7 @@ All data transfer methods require secure authentication:
 ### Technical Support
 
 For technical issues with data transfer:
+
 - Email: [to be provided]
 - Phone: [to be provided]
 - Support hours: [to be provided]
@@ -299,8 +304,10 @@ For technical issues with data transfer:
 ### Escalation
 
 For urgent issues or escalation:
+
 - Contact your jurisdiction's project liaison
 - Liaison will coordinate with JHU project team
+
 
 ## Version Control
 
@@ -314,12 +321,14 @@ For urgent issues or escalation:
 ### Metadata Tracking
 
 For each submission, the system records:
+
 - Submission date/time
 - Submitting jurisdiction
 - Submitting user
 - File name
 - Validation status
 - Any errors or warnings
+
 
 ## Future Enhancements
 
@@ -330,6 +339,7 @@ Post-pilot enhancements may include:
 - Real-time data quality dashboards for submitters
 - Automated data quality reports
 - API access for jurisdictions to retrieve their own data
+
 
 ## Questions
 
