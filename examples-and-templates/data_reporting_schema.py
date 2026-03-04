@@ -21,6 +21,8 @@ sub_state_jurisdictions: dict[str, list[str]] = {
         "1", "2 North", "2 South", "3", "5", "6", "7", "8"
     ],
 }
+# add "unspecified" as a valid sub-state jurisdiction for each state to handle suppression rules.
+sub_state_jurisdictions = {k: v + ["unspecified"] for k, v in sub_state_jurisdictions.items()}
 
 class DiseaseReport(BaseModel):
     disease_name: Literal["measles", "pertussis", "meningococcus"]
