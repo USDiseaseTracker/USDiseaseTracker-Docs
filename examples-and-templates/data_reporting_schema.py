@@ -20,6 +20,18 @@ sub_state_jurisdictions: dict[str, list[str]] = {
     "MI": [
         "1", "2 North", "2 South", "3", "5", "6", "7", "8"
     ],
+    "MN": [
+        "Aitkin County", "Anoka County", "Becker County", "Beltrami County", "Benton County", "Big Stone County", "Blue Earth County", "Brown County",
+        "Carlton County", "Carver County", "Cass County", "Chippewa County", "Chisago County", "Clay County", "Clearwater County", "Cook County", "Cottonwood County",
+        "Crow Wing County", "Dakota County", "Dodge County", "Douglas County", "Faribault County", "Fillmore County", "Freeborn County", "Goodhue County", "Grant County",
+        "Hennepin County", "Houston County", "Hubbard County", "Isanti County", "Itasca County", "Jackson County", "Kanabec County", "Kandiyohi County", "Kittson County",
+        "Koochiching County", "Lake County", "Lake of the Woods County", "Lac qui Parle County", "Le Sueur County", "Lincoln County", "Lyon County", "Mahnomen County",
+        "Marshall County", "Martin County", "McLeod County", "Meeker County", "Mille Lacs County", "Morrison County", "Mower County", "Murray County", "Nicollet County",
+        "Nobles County", "Norman County", "Olmsted County", "Otter Tail County", "Pennington County", "Pine County", "Pipestone County", "Polk County", "Pope County",
+        "Ramsey County", "Red Lake County", "Redwood County", "Renville County", "Rice County", "Rock County", "Roseau County", "Scott County", "Sherburne County", "Sibley County",
+        "St. Louis County", "Stearns County", "Steele County", "Stevens County", "Swift County", "Todd County", "Traverse County", "Wabasha County", "Wadena County", "Waseca County",
+        "Washington County", "Watonwan County", "Wilkin County", "Winona County", "Wright County", "Yellow Medicine County"
+    ],
 }
 # add "unspecified" as a valid sub-state jurisdiction for each state to handle suppression rules.
 sub_state_jurisdictions = {k: v + ["unspecified"] for k, v in sub_state_jurisdictions.items()}
