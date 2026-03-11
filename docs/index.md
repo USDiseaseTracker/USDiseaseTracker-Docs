@@ -32,18 +32,14 @@ While we aim to limit changes once data standards and processes are established,
 
     **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
 
-### 📅 Key Dates
-
-- **Data Start:** December 29, 2024 (MMWR week 1, 2025)
-- **Submission Frequency:** Weekly (preferred)
 
 ### 🦠 Current Diseases Collected
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes |
-|---------|------------------|---------------------|----------|
-| Measles | Weekly | Confirmed only | Cases |
-| Pertussis | Weekly | Confirmed and probable (combined) | Cases |
-| Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases |
+| Disease | Time Aggregation | Submission Frequency | Confirmation Status | Outcomes |
+|---------|------------------| ---------------------|---------------------|----------|
+| Measles | Weekly | Weekly | Confirmed only | Cases |
+| Pertussis | Weekly | Weekly | Confirmed and probable (combined) | Cases |
+| Invasive Meningococcal Disease | Weekly | Weekly | Confirmed and probable (combined) | Cases |
 
 ### 📚 Guides and Specifications
 
