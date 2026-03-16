@@ -43,10 +43,10 @@ jobs:
       - name: Stage deployment (landing page + docs + redirects)
         run: |
           mkdir -p deploy/documentation
-          mkdir -p deploy/submit
+          mkdir -p deploy/submitdata
           cp index.html deploy/index.html
           cp -r site/. deploy/documentation/
-          cp submit/index.html deploy/submit/index.html
+          cp submitdata/index.html deploy/submitdata/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
