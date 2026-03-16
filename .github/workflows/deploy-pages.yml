@@ -1,4 +1,4 @@
-name: Deploy MkDocs site to Pages
+name: Deploy site to Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -28,23 +28,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
-      
-      - name: Install MkDocs and dependencies
-        run: |
-          pip install mkdocs-material
-      
-      - name: Build with MkDocs
-        run: mkdocs build
-      
-      - name: Stage deployment (landing page + docs)
+      - name: Stage deployment (landing page + docs redirect)
         run: |
           mkdir -p deploy/documentation
           cp index.html deploy/index.html
-          cp -r site/. deploy/documentation/
+          cp documentation/index.html deploy/documentation/index.html
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
