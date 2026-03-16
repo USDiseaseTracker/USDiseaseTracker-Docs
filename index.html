@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Disease Tracker</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #f5f7fa;
+      color: #2c3e50;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Navigation ── */
+    nav {
+      background-color: #1565c0;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav .brand {
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 1rem 0;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    nav ul li a {
+      display: block;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 1rem 0.75rem;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+    }
+
+    /* ── Hero ── */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 4rem 1.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      max-width: 760px;
+      width: 100%;
+      padding: 3rem 3.5rem;
+    }
+
+    .coming-soon {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1565c0;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.5px;
+    }
+
+    .goals-heading {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 0.75rem;
+    }
+
+    .goals-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #4a5568;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.85rem;
+      color: #718096;
+      border-top: 1px solid #e2e8f0;
+      background-color: #ffffff;
+    }
+
+    footer a {
+      color: #1565c0;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="brand" href="https://usdiseasetracker.github.io">US Disease Tracker</a>
+    <ul>
+      <li>
+        <a href="https://publichealth.jhu.edu/ivac/resources/us-measles-tracker"
+           target="_blank" rel="noopener noreferrer">
+          JHU IVAC Measles Tracker
+        </a>
+      </li>
+      <li>
+        <a href="https://usdiseasetracker.github.io/submitdata">USDT Submission Portal</a>
+      </li>
+      <li>
+        <a href="https://usdiseasetracker.github.io/documentation">USDT Documentation</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h1 class="coming-soon">Coming Soon!</h1>
+
+      <h2 class="goals-heading">About US Disease Tracker</h2>
+      <p class="goals-text">
+        The US Disease Tracker (USDT) project aims to provide consolidated, epidemiologically
+        sound data, analytics, and insights for monitoring and responding to disease threats
+        across the United States. By partnering with state and local health departments, USDT
+        collects standardized aggregate surveillance data for infectious diseases—such as measles,
+        pertussis, and invasive meningococcal disease—and makes those data accessible through a
+        unified dashboard and open data portal. The project is committed to voluntary participation,
+        robust data standards, and full transparency: only data supplied by jurisdictions are
+        published, no individual-level records are collected, and all submitted data are protected
+        in accordance with each jurisdiction's policies, regulations, and laws. Once the current
+        pilot phase is complete, the dashboard and reported data are intended to become publicly
+        available, enabling researchers, clinicians, and public-health officials to track disease
+        trends in real time and respond swiftly to emerging threats.
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 US Disease Tracker &mdash;
+      <a href="https://github.com/USDiseaseTracker/USDiseaseTracker-Docs">GitHub</a>
+    </p>
+  </footer>
+
+</body>
+</html>
