@@ -40,11 +40,11 @@ jobs:
       - name: Build with MkDocs
         run: mkdocs build
       
-      - name: Stage deployment (landing page + docs)
-        run: |
-          mkdir -p deploy/documentation
-          cp index.html deploy/index.html
-          cp -r site/. deploy/documentation/
+#      - name: Stage deployment (landing page + docs)
+#        run: |
+#          mkdir -p deploy/documentation
+#          cp index.html deploy/index.html
+#          cp -r site/. deploy/documentation/
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -52,7 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./deploy
+          path: ./site
 
   # Deployment job
   deploy:
