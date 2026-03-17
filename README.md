@@ -1,6 +1,6 @@
 # USDiseaseTracker-Docs
 
-📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
+📖 **[View this documentation as a website](https://usdiseasetracker.github.io/documentation)**
 
 **Version 1.1.0 (updated 2026-02-09)**
     
@@ -30,7 +30,7 @@ While we aim to limit changes once data standards and processes are established,
 ## Quick Reference
 
 **🛠️ Interactive Tool:**
-- ***NEW!!!*** **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
+- ***NEW!!!*** **[USDT Data Standards Tool](https://usdiseasetracker.github.io/documentation/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
 
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
@@ -63,7 +63,7 @@ Data are validated upon submission for completeness, format, and errors. See the
 
 ***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
 
-To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
+To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/documentation/data-standards-tool/).
 
 <br>
 <br>
