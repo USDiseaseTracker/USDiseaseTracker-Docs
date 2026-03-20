@@ -14,17 +14,36 @@
 
 ---
 
-## Project Goals
+## About This Project 
 
-The goal of the US Disease Tracker project is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. To accomplish this, this project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. 
+The goal of the US Disease Tracker project is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. This project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. 
 <br>
 
-#### ***The USDiseaseTracker-Docs repository***
+#### ***The USDiseaseTracker-Docs Repository***
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 <br>
 
 While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves. All changes will be reflected and described here.
 <br>
+<br>
+
+This repository is organized as follows:
+
+- **`guides/`** - Documentation guides on data submission, technical specifications, data transfer, and data validation
+- **`examples-and-templates/`** - Submission templates, examples, and the data dictionary
+- **`data_standards_tool/`** - Interactive data standards tool
+- **`scripts/`** - Validation scripts and schema generators
+- **`docs/`** - MkDocs documentation source files (website content)
+<br>
+
+Our **Key Principles** are:
+1. Provision of data is voluntary.
+2. Only aggregate data will be collected to minimize the risk of reidentification.
+3. Data should be updated and back-populated on a regular basis, acknowledging that recent data may be incomplete as investigations proceed. Records of prior versions will be maintained.
+4. We do not suppress (except in accordance with individual jurisdiction policies, regulations, or laws) or manipulate data once received; jurisdictions should submit only data they are comfortable posting publicly.
+
+*NOTE: Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.*
+
 <br>
 
 ## Quick Reference
@@ -61,38 +80,10 @@ While we aim to limit changes once data standards and processes are established,
 
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements. Data can be submitted to the dashboard at any time to check the validation.
 
-***Coming Soon:*** Tools to perform validation prior to submission are currently under development.
-
 To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
 
 <br>
 <br>
-
-
-## Key Principles
-
-#### 1. Voluntary Participation
-- Provision of data is voluntary and based on individual jurisdiction capabilities and policies.
-
-#### 2. Aggregate Data Only
-- No line-level data will be collected
-- Data are subject to suppression in accordance with individual jurisdiction policies, regulations, and laws
-- Ensures patient privacy and minimizes reidentification risk
-
-#### 3. Data Updates and Versioning
-- Data should be updated and back-populated on a regular basis
-- Records of prior versions will be maintained
-- Recent data may be incomplete as investigations proceed
-
-#### 4. Data Integrity
-- We do not manipulate or suppress data once received
-- Jurisdictions submit only data they are comfortable posting publicly
-- Only data supplied by jurisdictions will be posted publicly
-
-*NOTE: Data for the pilot will **not** be released publicly. Once the pilot is completed and additional states are invited to participate, the dashboard and reported data are intended to become public.*
-<br>
-<br>
-
 
 ## Repository Structure
 
@@ -105,7 +96,6 @@ This repository is organized as follows:
 - **`docs/`** - MkDocs documentation source files (website content)
 <br>
 <br>
-
 
 ## Contributing
 
