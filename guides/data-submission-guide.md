@@ -125,13 +125,11 @@ Cases should be classified in time according to a hierarchical date algorithm.
 - Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
 - Data from recent weeks may be incomplete
 - The project team will clearly indicate provisional data through:
-   -- Dashed lines on epidemic curves
-   -- Asterisks and notes detailing data completeness limitations
-
+    - Dashed lines on epidemic curves
+    - Asterisks and notes detailing data completeness limitations
 - The project team will **not** censor data reported by jurisdictions
 - All data will be displayed as reported
 - The project team will work with jurisdictions to ensure completeness details are understood and portrayed correctly
-- TEST
 
 <br>
 
