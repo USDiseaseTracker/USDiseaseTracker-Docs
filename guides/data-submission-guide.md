@@ -72,7 +72,7 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
     
     All aggregations should sum to the same count, which should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting.
 
-
+<br>
 
 
     Measles
