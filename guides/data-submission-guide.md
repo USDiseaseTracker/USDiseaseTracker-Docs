@@ -66,7 +66,14 @@ This guide provides detailed specifications for health departments participating
 
 ### Required Data Aggregations
 
-Disease counts for different breakdowns are collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We call these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, with each having equivalent total counts over time (e.g., cumulative measles cases in the age group aggregation must equal cumulative measles cases in the sub-jurisdiction aggregation). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data aggregations listed below will be accepted; new aggregations will be added as needed for new demographics, diseases, conditions or outcomes, etc.
+Disease counts for different breakdowns are collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We call these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, with each having equivalent total counts over time (e.g., cumulative measles cases in the age group aggregation must equal cumulative measles cases in the sub-jurisdiction aggregation). For each aggregation, the counts by time period (i.e., week, cumulative) should sum to the equivalent time period for the full jurisdication (e.g., the sum of county-level cases of measles for state Y should equal the number of total cases in state Y for all time points); data suppression should not result in underreporting through use of "unspecified" aggregations (see [Data Suppression](#data-suppression)). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data aggregations listed below will be accepted; new aggregations will be added as needed for new demographics, diseases, conditions or outcomes, etc.
+
+!!! info "Important"
+    
+    All aggregations should sum to the same count, which should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting.
+
+
+
 
     Measles
     - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
