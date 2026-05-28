@@ -70,10 +70,11 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
 
 !!! info "Important"
     
-    All aggregations should sum to the same count, which should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting.
+    All aggregations must sum to the same count (by time period and total). This sum should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting. Follow [Data Suppression](#data-suppression) instructions to ensure complete reporting.
 
 <br>
 
+#### Data Aggregations:
 
     Measles
     - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
