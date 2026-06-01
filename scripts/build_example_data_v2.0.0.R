@@ -26,6 +26,7 @@ library(MMWRweek)
 library(lubridate)
 library(purrr)
 library(tidycensus)
+library(httr)
 
 
 # =========================================================================
@@ -41,31 +42,10 @@ filter_start_date <- as.Date("2024-12-29")
 # Random seed for reproducibility of multinomial splits
 random_seed <- 123
 
-# NNDSS Socrata API endpoint.
-# The $where clause restricts to 2024-onwards to keep the download manageable.
-# current_mmwr_year is the Socrata field name for the "Current MMWR Year" column.
-# Raise $limit if the dataset grows larger in future years.
-nndss_api_url <- paste0(
-    "https://data.cdc.gov/resource/x9gk-5huc.csv",
-    "?$where=current_mmwr_year%20>=%202024",
-    "&$limit=500000",
-    "&$order=:id"
-)
-
-# Mapping: disease_metadata$disease  →  NNDSS Label substring to match.
-# Measles is handled separately (GitHub source) and is therefore excluded.
-nndss_label_map <- tribble(
-    ~disease,                   ~nndss_pattern,
-    "pertussis",                "Pertussis",
-    "meningococcus",            "Meningococcal disease",
-    "hepatitis a",              "Hepatitis A, acute",
-    "acute hepatitis b",        "Hepatitis B, acute",
-    "perinatal hepatitis b",    "Hepatitis B virus infection, perinatal",
-    "mumps",                    "Mumps",
-    "mpox",                     "Mpox",
-    "varicella",                "Varicella",
-    "pediatric flu mortality",  "Influenza-associated pediatric mortality"
-)
+# NNDSS Socrata API base URL (CDC dataset x9gk-5huc).
+# Query parameters ($where, $limit, $order) are set via httr::GET() below so
+# that they are properly URL-encoded. Raise $limit if the dataset grows larger.
+nndss_api_base <- "https://data.cdc.gov/resource/x9gk-5huc.csv"
 
 # Age-group definitions and probability distributions
 age_groups    <- c("<1 y", "1-4 y", "5-11 y", "12-18 y",
@@ -86,13 +66,32 @@ age_df_meas   <- data.frame(age_group = age_groups, age_dist = age_dist_meas)
 
 disease_meta <- read_csv(disease_meta_path, show_col_types = FALSE)
 
+# Derive the NNDSS label map from disease_meta.
+# The nndss_label column stores the substring to match against the NNDSS
+# "Label" field for each disease.  Measles has NA (uses GitHub instead).
+nndss_label_map <- disease_meta %>%
+    filter(!is.na(nndss_label) & nndss_label != "NA") %>%
+    select(disease, nndss_pattern = nndss_label)
+
 
 # =========================================================================
 # PULL NNDSS DATA DIRECTLY FROM CDC SOCRATA API
 # =========================================================================
 
 message("Pulling NNDSS weekly data from CDC Socrata API...")
-state_nndss_raw <- read_csv(nndss_api_url, show_col_types = FALSE)
+nndss_response <- httr::GET(
+    url   = nndss_api_base,
+    query = list(
+        `$where` = "current_mmwr_year >= 2024",
+        `$limit` = 500000,
+        `$order` = ":id"
+    )
+)
+httr::stop_for_status(nndss_response)
+state_nndss_raw <- read_csv(
+    httr::content(nndss_response, as = "text", encoding = "UTF-8"),
+    show_col_types = FALSE
+)
 
 # The Socrata CSV endpoint returns lowercase-underscore field names rather than
 # the display names that appear in a manually-downloaded CSV file.  Normalise
