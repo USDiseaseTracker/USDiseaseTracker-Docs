@@ -129,6 +129,13 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
 
 <br>
 
+!!! info "Note: Sub-jurisdiction or age group counts"
+    
+    For conditions where sub-jurisdiction age group counts are not feasible for a jurisdiction due to small numbers or other reason, jurisdiction-level reporting is feasible and acceptable by using the "unspecified" value for `geo_name` or `age_group`. See [Data Technical Specifications](data-technical-specs.md) for details.
+
+<br>
+
+
 ### Reporting Frequency
 
 Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all diseases should be included, even if there are no updates.
