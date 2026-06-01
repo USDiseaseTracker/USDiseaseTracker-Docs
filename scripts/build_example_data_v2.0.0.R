@@ -70,7 +70,7 @@ disease_meta <- read_csv(disease_meta_path, show_col_types = FALSE)
 # The nndss_label column stores the substring to match against the NNDSS
 # "Label" field for each disease.  Measles has NA (uses GitHub instead).
 nndss_label_map <- disease_meta %>%
-    filter(!is.na(nndss_label) & nndss_label != "NA") %>%
+    filter(!is.na(nndss_label)) %>%
     select(disease, nndss_pattern = nndss_label)
 
 
