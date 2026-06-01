@@ -233,6 +233,13 @@ permalink: /data-standards-tool/
                     <option value="measles">measles</option>
                     <option value="pertussis">pertussis</option>
                     <option value="meningococcus">meningococcus (Invasive Meningococcal Disease)</option>
+                    <option value="hepatitis a">hepatitis a (Hepatitis A)</option>
+                    <option value="acute hepatitis B">acute hepatitis B</option>
+                    <option value="perinatal hepatitis B">perinatal hepatitis B</option>
+                    <option value="mumps">mumps</option>
+                    <option value="mpox">mpox</option>
+                    <option value="varicella">varicella</option>
+                    <option value="pediatric flu mortality">pediatric flu mortality</option>
                 </select>
                 <div class="error-message" id="disease_name_error"></div>
             </div>
@@ -400,7 +407,7 @@ permalink: /data-standards-tool/
                 <select id="disease_subtype" name="disease_subtype" required>
                     <option value="">-- Select Disease First --</option>
                 </select>
-                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; total/unknown/unspecified for measles/pertussis</div>
+                <div class="help-text" id="disease_subtype_help">Serogroup for meningococcus; total/unknown/unspecified for all other diseases</div>
                 <div class="error-message" id="disease_subtype_error"></div>
             </div>
             
@@ -425,10 +432,10 @@ permalink: /data-standards-tool/
 
                     function updateConfirmationStatusHelp() {
                         var disease = (diseaseSelect.value || '').toLowerCase();
-                        if (disease === 'measles') {
-                            confirmationHelp.textContent = 'Measles: confirmed only';
-                        } else if (disease === 'pertussis' || disease === 'meningococcus') {
-                            confirmationHelp.textContent = 'Pertussis/Meningococcus: confirmed and probable';
+                        if (disease === 'measles' || disease === 'hepatitis a' || disease === 'perinatal hepatitis b' || disease === 'pediatric flu mortality') {
+                            confirmationHelp.textContent = diseaseSelect.value.charAt(0).toUpperCase() + diseaseSelect.value.slice(1) + ': confirmed only';
+                        } else if (disease === 'pertussis' || disease === 'meningococcus' || disease === 'acute hepatitis b' || disease === 'mumps' || disease === 'mpox' || disease === 'varicella') {
+                            confirmationHelp.textContent = diseaseSelect.value.charAt(0).toUpperCase() + diseaseSelect.value.slice(1) + ': confirmed and probable';
                         } else {
                             confirmationHelp.textContent = 'Select the appropriate confirmation status based on the selected disease.';
                         }
@@ -499,6 +506,41 @@ permalink: /data-standards-tool/
                 time_unit: ['week'],
                 disease_subtype: ['A', 'B', 'C', 'W', 'X', 'Y', 'Z', 'unknown', 'unspecified', 'total'],
                 confirmation_status: ['confirmed and probable']
+            },
+            'hepatitis a': {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed']
+            },
+            'acute hepatitis B': {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed and probable']
+            },
+            'perinatal hepatitis b': {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed']
+            },
+            mumps: {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed and probable']
+            },
+            mpox: {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed and probable']
+            },
+            varicella: {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed and probable']
+            },
+            'pediatric flu mortality': {
+                time_unit: ['week'],
+                disease_subtype: ['total'],
+                confirmation_status: ['confirmed']
             }
         };
         

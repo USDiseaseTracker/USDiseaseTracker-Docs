@@ -110,6 +110,76 @@ def extract_field_summary_table(markdown: str) -> Dict[str, Dict[str, str]]:
     return fields
 
 
+def extract_disease_per_condition_age_groups(markdown: str) -> Dict[str, Set[str]]:
+    """Extract per-condition age groups from the 'Valid Age Groups by Condition' table."""
+    pattern = r'\*\*Valid Age Groups by Condition:\*\*.*?\n\n\| Disease \| Valid Age Groups \| Notes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
+    match = re.search(pattern, markdown, re.DOTALL)
+    if not match:
+        return {}
+    result = {}
+    for row in match.group(1).strip().split('\n'):
+        parts = [p.strip() for p in row.split('|')[1:-1]]
+        if len(parts) >= 2:
+            disease = parts[0].strip('`').strip()
+            age_groups_str = parts[1]
+            age_groups = {ag.strip().strip('`') for ag in age_groups_str.split(',') if ag.strip().strip('`')}
+            if disease:
+                result[disease] = age_groups
+    return result
+
+
+def extract_disease_per_condition_subtypes(markdown: str) -> Dict[str, Set[str]]:
+    """Extract per-condition subtypes from the 'Valid Subtypes by Condition' table."""
+    pattern = r'\*\*Valid Subtypes by Condition:\*\*.*?\n\n\| Disease \| Valid Subtypes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
+    match = re.search(pattern, markdown, re.DOTALL)
+    if not match:
+        return {}
+    result = {}
+    for row in match.group(1).strip().split('\n'):
+        parts = [p.strip() for p in row.split('|')[1:-1]]
+        if len(parts) >= 2:
+            disease = parts[0].strip('`').strip()
+            subtypes_str = parts[1]
+            subtypes = {s.strip().strip('`') for s in subtypes_str.split(',') if s.strip().strip('`')}
+            if disease:
+                result[disease] = subtypes
+    return result
+
+
+def _get_schema_per_condition_age_groups(schema: Dict) -> Dict[str, List[str]]:
+    """Extract per-disease age_group enums from the schema's allOf[age_group] block."""
+    allOf = schema.get('items', {}).get('allOf', [])
+    result: Dict[str, List[str]] = {}
+    for condition in allOf:
+        if 'oneOf' not in condition:
+            continue
+        for option in condition['oneOf']:
+            props = option.get('properties', {})
+            if 'age_group' in props and 'disease_name' in props:
+                disease = props['disease_name'].get('const', '')
+                age_enum = props['age_group'].get('enum', [])
+                if disease and age_enum:
+                    result[disease] = age_enum
+    return result
+
+
+def _get_schema_per_condition_subtypes(schema: Dict) -> Dict[str, List[str]]:
+    """Extract per-disease disease_subtype enums from the schema's allOf[disease_subtype] block."""
+    allOf = schema.get('items', {}).get('allOf', [])
+    result: Dict[str, List[str]] = {}
+    for condition in allOf:
+        if 'oneOf' not in condition:
+            continue
+        for option in condition['oneOf']:
+            props = option.get('properties', {})
+            if 'disease_subtype' in props and 'disease_name' in props:
+                disease = props['disease_name'].get('const', '')
+                subtype_enum = props['disease_subtype'].get('enum', [])
+                if disease and subtype_enum:
+                    result[disease] = subtype_enum
+    return result
+
+
 def check_age_groups(schema: Dict, markdown: str) -> Tuple[bool, str]:
     """Check if age group values match."""
     schema_age_groups = extract_enum_from_schema(schema, 'age_group')
@@ -142,6 +212,89 @@ def check_age_groups(schema: Dict, markdown: str) -> Tuple[bool, str]:
         return False, msg
     
     return True, "Age groups match"
+
+
+def check_per_condition_age_groups(schema: Dict, markdown: str) -> Tuple[bool, str]:
+    """Check that the 'Valid Age Groups by Condition' table matches per-disease age_group enums in the schema."""
+    schema_per_disease = _get_schema_per_condition_age_groups(schema)
+    md_per_disease = extract_disease_per_condition_age_groups(markdown)
+
+    if not md_per_disease:
+        return False, "Could not find 'Valid Age Groups by Condition' table in markdown"
+
+    errors = []
+    all_diseases = set(schema_per_disease) | set(md_per_disease)
+    for disease in sorted(all_diseases):
+        schema_vals = set(schema_per_disease.get(disease, []))
+        md_vals = md_per_disease.get(disease, set())
+        if schema_vals != md_vals:
+            missing_in_md = schema_vals - md_vals
+            extra_in_md = md_vals - schema_vals
+            msg = f"  {disease}:"
+            if missing_in_md:
+                msg += f" missing in markdown: {sorted(missing_in_md)};"
+            if extra_in_md:
+                msg += f" extra in markdown: {sorted(extra_in_md)};"
+            errors.append(msg)
+
+    if errors:
+        return False, "Per-condition age groups mismatch:\n" + "\n".join(errors)
+    return True, "Per-condition age groups match"
+
+
+def check_per_condition_subtypes(schema: Dict, markdown: str) -> Tuple[bool, str]:
+    """Check that the 'Valid Subtypes by Condition' table matches per-disease subtype enums in the schema."""
+    schema_per_disease = _get_schema_per_condition_subtypes(schema)
+    md_per_disease = extract_disease_per_condition_subtypes(markdown)
+
+    if not md_per_disease:
+        return False, "Could not find 'Valid Subtypes by Condition' table in markdown"
+
+    errors = []
+    all_diseases = set(schema_per_disease) | set(md_per_disease)
+    for disease in sorted(all_diseases):
+        schema_vals = set(schema_per_disease.get(disease, []))
+        md_vals = md_per_disease.get(disease, set())
+        if schema_vals != md_vals:
+            missing_in_md = schema_vals - md_vals
+            extra_in_md = md_vals - schema_vals
+            msg = f"  {disease}:"
+            if missing_in_md:
+                msg += f" missing in markdown: {sorted(missing_in_md)};"
+            if extra_in_md:
+                msg += f" extra in markdown: {sorted(extra_in_md)};"
+            errors.append(msg)
+
+    if errors:
+        return False, "Per-condition subtype values mismatch:\n" + "\n".join(errors)
+    return True, "Per-condition subtype values match"
+
+
+def check_disease_fields_table_disease_name(schema: Dict, markdown: str) -> Tuple[bool, str]:
+    """Check that the disease_name row in the detailed 'Disease Fields' section table matches the schema."""
+    schema_disease_names = set(extract_enum_from_schema(schema, 'disease_name'))
+
+    # The Disease Fields section contains a 4-column table (no Required column).
+    # We look specifically for the disease_name row in that table.
+    pattern = r'\| disease_name \| String \| Name of disease being reported \| ([^|]+) \|'
+    match = re.search(pattern, markdown)
+    if not match:
+        return False, "Could not find disease_name row in Disease Fields section table"
+
+    values_str = match.group(1)
+    md_disease_names = {v.strip().strip('`') for v in values_str.split(',') if v.strip().strip('`')}
+
+    if schema_disease_names != md_disease_names:
+        missing_in_md = schema_disease_names - md_disease_names
+        extra_in_md = md_disease_names - schema_disease_names
+        msg = "Disease Fields table disease_name values mismatch:\n"
+        if missing_in_md:
+            msg += f"  In schema but not in markdown: {sorted(missing_in_md)}\n"
+        if extra_in_md:
+            msg += f"  In markdown but not in schema: {sorted(extra_in_md)}\n"
+        return False, msg
+
+    return True, "Disease Fields table disease_name values match"
 
 
 def check_disease_subtype(schema: Dict, markdown: str) -> Tuple[bool, str]:
@@ -429,7 +582,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         # Match the table row for the field and update the Required column
         required_val = 'Yes' if is_required else 'No'
         # First, locate the full table row for this field to validate its structure.
-        row_pattern = r'^\\|\\s*' + re.escape(field_name) + r'\\s*\\|.*$'
+        row_pattern = r'^\|\s*' + re.escape(field_name) + r'\s*\|.*$'
         row_match = re.search(row_pattern, updated, flags=re.MULTILINE)
         if not row_match:
             # If the field row does not exist in the table, do nothing.
@@ -445,8 +598,9 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
                 "Update 'replace_field_required' to handle the new layout."
             )
         # Perform the substitution on the Required column, ensuring it succeeds.
-        pattern = r'(\\|\\s*' + re.escape(field_name) + r'\\s*\\| [^|]+ \\| [^|]+ \\| [^|]+ \\| )[^|]+(\\s*\\|)'
-        updated_new, count = re.subn(pattern, r'\\1' + required_val + r'\\2', updated)
+        # [^|]+ greedily consumes any trailing space, so we re-add it before \2.
+        pattern = r'(\|\s*' + re.escape(field_name) + r'\s*\| [^|]+ \| [^|]+ \| [^|]+ \| )[^|]+(\s*\|)'
+        updated_new, count = re.subn(pattern, r'\1' + required_val + r' \2', updated)
         if count == 0:
             raise ValueError(
                 f"Failed to update 'Required' column for field '{field_name}'. "
@@ -484,8 +638,43 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
     # Update outcome in Disease Fields table
     detailed_outcome_pattern = r'(\| outcome \| String \| Type of outcome being reported \| )([^|]+)( \|)'
     updated = re.sub(detailed_outcome_pattern, r'\1' + outcome_values + r'\3', updated)
-    
+
+    # Update disease_name in the detailed Disease Fields section table (4-column table)
+    detailed_disease_name_pattern = r'(\| disease_name \| String \| Name of disease being reported \| )([^|]+)( \|)'
+    updated = re.sub(detailed_disease_name_pattern, r'\1' + disease_name_values + r'\3', updated)
+
+    # Update the 'Valid Age Groups by Condition' per-disease table
+    schema_per_disease_ages = _get_schema_per_condition_age_groups(schema)
+    schema_disease_list = extract_enum_from_schema(schema, 'disease_name')
+    # Build new per-condition age groups table.  Preserve the perinatal hepatitis b note.
+    perinatal_note_col = 'only &lt;2yrs'
+    per_age_table = "| Disease | Valid Age Groups | Notes |\n|---------|-----------------|-------|\n"
+    for disease in schema_disease_list:
+        ages = schema_per_disease_ages.get(disease, ['total'])
+        age_str = ', '.join(f'`{a}`' for a in ages)
+        note = perinatal_note_col if disease == 'perinatal hepatitis b' else ''
+        per_age_table += f"| {disease} | {age_str} | {note} |\n"
+    per_age_pattern = (
+        r'(\*\*Valid Age Groups by Condition:\*\*.*?\n\n)'
+        r'\| Disease \| Valid Age Groups \| Notes \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
+    )
+    updated = re.sub(per_age_pattern, r'\1' + per_age_table, updated, flags=re.DOTALL)
+
+    # Update the 'Valid Subtypes by Condition' per-disease table
+    schema_per_disease_subtypes = _get_schema_per_condition_subtypes(schema)
+    per_subtype_table = "| Disease | Valid Subtypes |\n|---------|---------------|\n"
+    for disease in schema_disease_list:
+        subtypes = schema_per_disease_subtypes.get(disease, ['total'])
+        subtype_str = ', '.join(f'`{s}`' for s in subtypes)
+        per_subtype_table += f"| {disease} | {subtype_str} |\n"
+    per_subtype_pattern = (
+        r'(\*\*Valid Subtypes by Condition:\*\*.*?\n\n)'
+        r'\| Disease \| Valid Subtypes \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
+    )
+    updated = re.sub(per_subtype_pattern, r'\1' + per_subtype_table, updated, flags=re.DOTALL)
+
     return updated
+
 
 
 def format_csv_values(values: List[str]) -> str:
@@ -601,7 +790,10 @@ def main():
     
     markdown_checks = [
         ("Markdown: Age groups", lambda s, m: check_age_groups(s, m)),
+        ("Markdown: Per-condition age groups", lambda s, m: check_per_condition_age_groups(s, m)),
         ("Markdown: Disease subtype values", lambda s, m: check_disease_subtype(s, m)),
+        ("Markdown: Per-condition subtype values", lambda s, m: check_per_condition_subtypes(s, m)),
+        ("Markdown: Disease Fields table disease_name values", lambda s, m: check_disease_fields_table_disease_name(s, m)),
         ("Markdown: Geo unit values", lambda s, m: check_geo_unit(s, m)),
         ("Markdown: Required fields", lambda s, m: check_required_fields(s, m)),
         ("Markdown: outcome values", lambda s, m: check_enum_field(s, m, 'outcome')),

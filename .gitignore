@@ -52,3 +52,4 @@ __pycache__/
 *$py.class
 *.so
 .Python
+.positai

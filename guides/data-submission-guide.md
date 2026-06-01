@@ -5,14 +5,11 @@ permalink: /docs/data-submission-guide/
 
 # Data Submission Guide
 
-??? info "**Version 1.1.0** (updated 2026-02-09)"
+??? info "**Version 2.0.0** (updated 2026-05-18)"
     
-    - Updated version of documentation to clarify new standards 
-    - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
-    - Age Groups: Reported at the state/reporting jurisdiction level; Combined the <1 year age groups (currently 0-6 months and 6-12 months) for current diseases (measles, pertussis, meningococcus) into a single “<1 year” category.
-    - Removed “YTD” value as a valid option for time_unit.
-    - Removed monthly aggregations; only weekly aggregation of cases by MMWR week for all diseases.
-    - New value uses implemented: `total`, `unknown`, `unspecified` have specified meaning and uses, `NA` is only valid if `geo_name = "international resident"`.
+    - Added guidance for the expanded disease set now supported by the reporting standards.
+    - Updated aggregation expectations for newly supported diseases and their applicable dimensions.
+    - Aligned submission guidance with current metadata and validation references.
 
 ---
 
@@ -48,6 +45,13 @@ This guide provides detailed specifications for health departments participating
 | Measles | ✓ |
 | Pertussis | ✓ |
 | Invasive Meningococcal Disease | ✓ |
+| Hepatitis A | ✓ |
+| Acute Hepatitis B | ✓ |
+| Perinatal Hepatitis B | ✓ |
+| Mumps | ✓ |
+| Mpox | ✓ |
+| Varicella | ✓ |
+| Influenza-Associated Pediatric Mortality | ✓ |
 
 <br>
 
@@ -60,6 +64,13 @@ This guide provides detailed specifications for health departments participating
 | Measles | Confirmed only |
 | Pertussis | Confirmed and probable combined |
 | Invasive Meningococcal Disease | Confirmed and probable combined |
+| Hepatitis A | Confirmed only |
+| Acute Hepatitis B | Confirmed and probable combined |
+| Perinatal Hepatitis B | Confirmed only |
+| Mumps | Confirmed and probable combined |
+| Mpox | Confirmed and probable combined |
+| Varicella | Confirmed and probable combined |
+| Influenza-Associated Pediatric Mortality | Confirmed only |
 
 <br>
 
@@ -89,7 +100,41 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
     - Cases × week × age group × jurisdiction 
     - Cases × week × serogroup × jurisdiction
 
+    Hepatitis A
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
+
+    Acute Hepatitis B
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
+
+    Perinatal Hepatitis B
+    - Cases × week × sub-jurisdiction unit
+
+    Mumps
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
+
+    Mpox
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
+
+    Varicella
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
+
+    Influenza-Associated Pediatric Mortality
+    - Deaths × week × sub-jurisdiction unit
+    - Deaths × week × age group × jurisdiction
+
 <br>
+
+!!! info "Note: Sub-jurisdiction or age group counts"
+    
+    For conditions where sub-jurisdiction age group counts are not feasible for a jurisdiction due to small numbers or other reason, jurisdiction-level reporting is feasible and acceptable by using the "unspecified" value for `geo_name` or `age_group`. See [Data Technical Specifications](data-technical-specs.md) for details.
+
+<br>
+
 
 ### Reporting Frequency
 

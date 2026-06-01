@@ -2,14 +2,14 @@
 
 📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
 
-**Version 1.1.0 (updated 2026-02-09)**
+**Version 2.0.0 (updated 2026-05-18)**
     
-    - Updated version of documentation to clarify new standards 
-    - Serogrouping for meningococcus: Report only at the state/reporting jurisdiction level as reporting at smaller geographies would likely lead to data suppression; report separately from age.
-    - Age Groups: Reported at the state/reporting jurisdiction level; Combined the <1 year age groups (currently 0-6 months and 6-12 months) for current diseases (measles, pertussis, meningococcus) into a single “<1 year” category.
-    - Removed “YTD” value as a valid option for `time_unit`.
-    - Removed monthly aggregations; only weekly aggregation of cases by MMWR week for all diseases.
-    - New value uses implemented: `total`, `unknown`, `unspecified` have specified meaning and uses, `NA` is only valid if `geo_name = "international resident"`.
+    - Added 7 new diseases: 
+        - New conditions: hepatitis A, acute hepatitis B, perinatal hepatitis B, mumps, mpox, varicella, influenza-associated pediatric mortality 
+        - Original conditions: measles, pertussis, invasive meningoccoccal disease
+    - Added `disease_metadata.csv` file in `examples-and-templates` that details the specifics of each condition
+
+    
 
 
 ---
@@ -40,7 +40,7 @@ Our **Key Principles** are:
 ## Quick Reference
 
 **🛠️ Interactive Tool:**
-- ***NEW!!!*** **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
+- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
 
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
@@ -53,6 +53,13 @@ Our **Key Principles** are:
 | Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 | Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
 | Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *collected* |
+| Hepatitis A | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
+| Acute Hepatitis B | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Perinatal Hepatitis B | Weekly | Confirmed only | Cases | *not collected* | *not collected* |
+| Mumps | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Mpox | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Varicella | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
+| Influenza-Associated Pediatric Mortality | Weekly | Confirmed only | Deaths | *multiple* | *not collected* |
 
 **Guides and Specifications**
 1. **[Data Submission Guide](guides/data-submission-guide.md)** - High-level overview of what and when to submit

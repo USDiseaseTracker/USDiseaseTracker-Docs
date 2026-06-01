@@ -23,13 +23,18 @@ This pilot phase invites state, tribal, local, and territorial health department
 
 ### Pilot Diseases
 
-Three vaccine-preventable diseases have been selected for the pilot phase:
+Ten notifiable diseases are currently tracked in this phase:
 
 1. **Measles** (caused by measles virus)
 2. **Pertussis** (caused by *Bordetella pertussis* bacteria)
 3. **Invasive Meningococcal Disease** (caused by *Neisseria meningitidis* bacteria)
-
-Additional diseases will be added after the pilot phase.
+4. **Hepatitis A** (caused by hepatitis A virus)
+5. **Acute Hepatitis B** (caused by hepatitis B virus)
+6. **Perinatal Hepatitis B** (caused by hepatitis B virus)
+7. **Mumps** (caused by mumps virus)
+8. **Mpox** (caused by monkeypox virus)
+9. **Varicella** (caused by varicella-zoster virus)
+10. **Influenza-Associated Pediatric Mortality** (caused by influenza viruses)
 
 ### Pilot Timeline
 

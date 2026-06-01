@@ -1,8 +1,65 @@
+import csv as _csv
 from datetime import date
+from pathlib import Path as _Path
 from typing import List, Literal
 from collections import defaultdict
 from pydantic import RootModel
 from pydantic import BaseModel, ValidationInfo, field_validator, model_validator
+
+
+def _load_disease_metadata() -> list[dict]:
+    """Load disease metadata from disease_metadata.csv at module import time."""
+    csv_path = _Path(__file__).parent / 'disease_metadata.csv'
+    diseases = []
+    with open(csv_path, newline='', encoding='utf-8') as f:
+        reader = _csv.DictReader(f)
+        for row in reader:
+            if not row or not any(v.strip() for v in row.values() if isinstance(v, str)):
+                continue
+            disease = row.get('disease', '').strip()
+            if not disease:
+                continue
+            subtypes_raw = row.get('disease_subtype', '').strip() or 'total'
+            subtypes = [s.strip() for s in subtypes_raw.split(',') if s.strip()]
+            age_groups_raw = row.get('age_group', '').strip() or 'total'
+            age_groups = [a.strip() for a in age_groups_raw.split(',') if a.strip()]
+            def _parse_bool_flag(column: str, default: str) -> str:
+                raw = row.get(column, default)
+                normalized = raw.strip().upper() if isinstance(raw, str) else default
+                if normalized not in ('TRUE', 'FALSE'):
+                    raise ValueError(
+                        f"Invalid value {raw!r} for column '{column}' in disease_metadata.csv "
+                        f"(disease={disease!r}). Expected 'TRUE' or 'FALSE'."
+                    )
+                return normalized
+
+            diseases.append({
+                'disease': disease,
+                'confirmation_status': row.get('confirmation_status', '').strip(),
+                'disease_subtype': subtypes,
+                'age_group': age_groups,
+                'aggregation_agegroups': _parse_bool_flag('aggregation_agegroups', 'TRUE'),
+                'aggregations_diseasesubtype': _parse_bool_flag('aggregations_diseasesubtype', 'FALSE'),
+            })
+    return diseases
+
+
+_DISEASE_METADATA: list[dict] = _load_disease_metadata()
+
+# Lookup tables derived from disease_metadata.csv (authoritative source)
+DISEASE_NAMES: list[str] = [d['disease'] for d in _DISEASE_METADATA]
+DISEASE_SUBTYPES: dict[str, list[str]] = {d['disease']: d['disease_subtype'] for d in _DISEASE_METADATA}
+DISEASE_CONFIRMATION: dict[str, str] = {d['disease']: d['confirmation_status'] for d in _DISEASE_METADATA}
+DISEASE_AGE_GROUPS: dict[str, list[str]] = {d['disease']: d['age_group'] for d in _DISEASE_METADATA}
+# diseases where aggregation_agegroups = 'TRUE' (state-level age breakdown is reported)
+DISEASES_WITH_AGE_BREAKDOWN: set[str] = {
+    d['disease'] for d in _DISEASE_METADATA if d['aggregation_agegroups'] == 'TRUE'
+}
+# diseases where aggregations_diseasesubtype = 'TRUE' (state-level subtype breakdown is reported)
+DISEASES_WITH_SUBTYPE_BREAKDOWN: set[str] = {
+    d['disease'] for d in _DISEASE_METADATA if d['aggregations_diseasesubtype'] == 'TRUE'
+}
+
 
 """
 # add new states here as needed. only states present in this dictionary
@@ -37,7 +94,7 @@ sub_state_jurisdictions: dict[str, list[str]] = {
 sub_state_jurisdictions = {k: v + ["unspecified"] for k, v in sub_state_jurisdictions.items()}
 
 class DiseaseReport(BaseModel):
-    disease_name: Literal["measles", "pertussis", "meningococcus"]
+    disease_name: str
     report_period_start: date
     report_period_end: date
     date_type: Literal["cccd", "jurisdiction date hierarchy"]
@@ -66,7 +123,7 @@ class DiseaseReport(BaseModel):
         "total", "unknown", "unspecified"
     ]
     confirmation_status: Literal["confirmed", "confirmed and probable"]
-    outcome: Literal["cases", "hospitalizations", "deaths"]
+    outcome: Literal["cases", "deaths"]
     count: int
     
     class Config:
@@ -75,6 +132,18 @@ class DiseaseReport(BaseModel):
         """
         extra = "forbid"
     
+    @field_validator('disease_name')
+    @classmethod
+    def validate_disease_name(cls, v):
+        """
+        validate disease_name against the authoritative list in disease_metadata.csv
+        """
+        if v not in DISEASE_NAMES:
+            raise ValueError(
+                f"disease_name must be one of: {DISEASE_NAMES}. got: '{v}'"
+            )
+        return v
+
     @field_validator('count')
     @classmethod
     def count_must_be_non_negative(cls, v):
@@ -86,20 +155,18 @@ class DiseaseReport(BaseModel):
     @classmethod
     def validate_disease_subtype(cls, v, info: ValidationInfo):
         """
-        validate disease_subtype based on disease_name
+        validate disease_subtype based on disease_name, using valid subtypes from disease_metadata.csv
         """
         disease_name = info.data.get('disease_name')
+        valid_subtypes = DISEASE_SUBTYPES.get(disease_name)
+        if valid_subtypes is None:
+            # disease_name failed its own validation; nothing to check here.
+            return v
         
-        if disease_name == "meningococcus":
-            if v not in ["A", "B", "C", "W", "X", "Y", "Z", "unknown", "unspecified", "total"]:
-                raise ValueError(
-                    f"for meningococcus, disease_subtype must be one of: A, B, C, W, X, Y, Z, unknown, unspecified, total. got: {v}"
-                )
-        elif disease_name in ["measles", "pertussis"]:
-            if v not in ["total"]:
-                raise ValueError(
-                    f"for {disease_name}, disease_subtype must be 'total'. got: {v}"
-                )
+        if v not in valid_subtypes:
+            raise ValueError(
+                f"for {disease_name}, disease_subtype must be one of: {valid_subtypes}. got: '{v}'"
+            )
         
         return v
     
@@ -130,24 +197,44 @@ class DiseaseReport(BaseModel):
     @model_validator(mode = 'after')
     def validate_breakdown_rules(self):
         """
-        enforces age_group and disease_subtype breakdown rules based on geo_unit and disease_name.
+        enforces age_group and disease_subtype breakdown rules based on geo_unit and disease_name,
+        using aggregation flags from disease_metadata.csv.
 
         sub-state level (geo_unit != 'state'):
             - disease_subtype must be 'total'
             - age_group must be 'total'
 
-        state level (geo_unit == 'state') — disease_name == 'measles' or 'pertussis':
+        state level (geo_unit == 'state') — diseases with age breakdown only
+        (aggregation_agegroups=TRUE, aggregations_diseasesubtype=FALSE, e.g. measles, pertussis,
+        hepatitis a, mumps, mpox, varicella, pediatric flu mortality, acute hepatitis b):
             - disease_subtype must be 'total' (already enforced by field validator)
-            - age_group must be anything except 'total'
+            - age_group must not be 'total'
 
-        state level (geo_unit == 'state') — disease_name == 'meningococcus':
-            - age breakdown:  disease_subtype == 'total', and age_group != 'total'
-            - subtype breakdown:  age_group == 'total', and disease_subtype != 'total'
+        state level (geo_unit == 'state') — diseases with subtype breakdown
+        (aggregations_diseasesubtype=TRUE, e.g. meningococcus):
+            - age breakdown rows:     disease_subtype == 'total', age_group != 'total'
+            - subtype breakdown rows: age_group == 'total', disease_subtype != 'total'
+            i.e. exactly one of age_group or disease_subtype must be 'total'
+            (the other must not be 'total')
+
+        diseases with no age breakdown (aggregation_agegroups=FALSE, e.g. perinatal hepatitis b):
+            - age_group must always be 'total' at all geo levels
         """
         disease_name = self.disease_name
         disease_subtype = self.disease_subtype
         geo_unit = self.geo_unit
         age_group = self.age_group
+
+        has_age_breakdown = disease_name in DISEASES_WITH_AGE_BREAKDOWN
+        has_subtype_breakdown = disease_name in DISEASES_WITH_SUBTYPE_BREAKDOWN
+
+        # Validate age_group against disease-specific allowed values (all geo levels).
+        valid_age_groups = DISEASE_AGE_GROUPS.get(disease_name)
+        if valid_age_groups and age_group not in valid_age_groups:
+            raise ValueError(
+                f"for {disease_name}, age_group must be one of: {valid_age_groups}."
+                f"\ngot age_group = '{age_group}'"
+            )
 
         # sub-state level: both must be 'total'.
         if geo_unit != "state":
@@ -166,25 +253,37 @@ class DiseaseReport(BaseModel):
             return self
 
         # state level.
-        if disease_name in ["measles", "pertussis"]:
-            if age_group == "total":
+        if not has_age_breakdown:
+            # diseases with no age breakdown (e.g. perinatal hepatitis b):
+            # age_group must always be 'total'.
+            if age_group != "total":
                 raise ValueError(
-                    f"at state level, age_group must not be 'total' for {disease_name}."
+                    f"for {disease_name}, age_group must be 'total' (no age breakdown reported)."
                     f"\ngot age_group = '{age_group}'"
                 )
-        elif disease_name == "meningococcus":
+        elif has_subtype_breakdown:
+            # diseases with subtype breakdown (e.g. meningococcus):
+            # exactly one of age_group or disease_subtype must be 'total'.
             age_is_total = age_group == "total"
             subtype_is_total = disease_subtype == "total"
 
             if age_is_total and subtype_is_total:
                 raise ValueError(
-                    "for meningococcus at state level, age_group and disease_subtype cannot both be 'total'."
+                    f"for {disease_name} at state level, age_group and disease_subtype cannot both be 'total'."
                     "\nuse age_group = 'total' for subtype breakdowns, or disease_subtype = 'total' for age breakdowns."
                 )
             if not age_is_total and not subtype_is_total:
                 raise ValueError(
-                    "for meningococcus at state level, exactly one of age_group or disease_subtype must be 'total'."
+                    f"for {disease_name} at state level, exactly one of age_group or disease_subtype must be 'total'."
                     f"\ngot age_group = '{age_group}' and disease_subtype = '{disease_subtype}'"
+                )
+        else:
+            # diseases with age breakdown only (e.g. measles, pertussis, hepatitis a, etc.):
+            # age_group must not be 'total' at state level.
+            if age_group == "total":
+                raise ValueError(
+                    f"at state level, age_group must not be 'total' for {disease_name}."
+                    f"\ngot age_group = '{age_group}'"
                 )
 
         return self
@@ -239,20 +338,18 @@ class DiseaseReport(BaseModel):
     @classmethod
     def validate_confirmation_status(cls, v, info: ValidationInfo):
         """
-        validate confirmation_status based on disease_name:
-            - measles: 'confirmed' only
-            - pertussis, meningococcus: 'confirmed and probable' only
+        validate confirmation_status based on disease_name, using the expected status from
+        disease_metadata.csv.
         """
         disease_name = info.data.get('disease_name')
+        expected = DISEASE_CONFIRMATION.get(disease_name)
+        if expected is None:
+            # disease_name failed its own validation; nothing to check here.
+            return v
         
-        if disease_name == 'measles' and v != 'confirmed':
+        if v != expected:
             raise ValueError(
-                f"for measles, confirmation_status must be 'confirmed'."
-                f"\ngot: '{v}'"
-            )
-        elif disease_name in ['pertussis', 'meningococcus'] and v != 'confirmed and probable':
-            raise ValueError(
-                f"for {disease_name}, confirmation_status must be 'confirmed and probable'."
+                f"for {disease_name}, confirmation_status must be '{expected}'."
                 f"\ngot: '{v}'"
             )
         
@@ -277,15 +374,15 @@ class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
     def validate_count_totals(self):
         """
         for each (report_period_start, report_period_end, disease_name, outcome) grouping,
-        verify that counts match across levels:
+        verify that counts match across levels, using aggregation flags from disease_metadata.csv:
 
-        measles/pertussis:
-            - sum of state-level rows (age breakdown) == sum of sub-state rows
-
-        meningococcus:
+        diseases with subtype breakdown (aggregations_diseasesubtype=TRUE, e.g. meningococcus):
             -    sum of state-level age breakdown rows (disease_subtype == 'total')
               == sum of state-level disease subtype breakdown rows (age_group == 'total')
               == sum of sub-state rows
+
+        all other diseases (including age-breakdown-only and no-age-breakdown diseases):
+            - sum of state-level rows == sum of sub-state rows
 
         international resident rows (geo_unit == 'NA') are excluded from all sums.
         """
@@ -307,15 +404,9 @@ class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
 
             substate_sum = sum(r.count for r in substate_rows)
 
-            if disease_name in ["measles", "pertussis"]:
-                state_sum = sum(r.count for r in state_rows)
-
-                if state_sum != substate_sum:
-                    errors.append(
-                        f"count mismatch for [{period_str} | {disease_name} | {outcome}]:"
-                        f"\nstate-level sum ({state_sum}) != sub-state sum ({substate_sum})"
-                    )
-            elif disease_name == "meningococcus":
+            if disease_name in DISEASES_WITH_SUBTYPE_BREAKDOWN:
+                # diseases with subtype breakdown (e.g. meningococcus): verify both
+                # state-level age breakdown and subtype breakdown sums equal the sub-state sum.
                 age_breakdown_sum = sum(
                     r.count for r in state_rows if r.disease_subtype == 'total'
                 )
@@ -329,6 +420,15 @@ class DiseaseReportDataset(RootModel[List[DiseaseReport]]):
                         f"\nstate-level age breakdown sum = {age_breakdown_sum}"
                         f"\nstate-level disease subtype breakdown sum = {subtype_breakdown_sum}"
                         f"\nsub-state sum = {substate_sum}"
+                    )
+            else:
+                # all other diseases: state-level sum must equal sub-state sum.
+                state_sum = sum(r.count for r in state_rows)
+
+                if state_sum != substate_sum:
+                    errors.append(
+                        f"count mismatch for [{period_str} | {disease_name} | {outcome}]:"
+                        f"\nstate-level sum ({state_sum}) != sub-state sum ({substate_sum})"
                     )
 
         if errors:

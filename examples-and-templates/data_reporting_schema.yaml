@@ -30,6 +30,13 @@ items:
       - measles
       - pertussis
       - meningococcus
+      - hepatitis a
+      - acute hepatitis b
+      - perinatal hepatitis b
+      - mumps
+      - mpox
+      - varicella
+      - pediatric flu mortality
       description: Name of the disease
     disease_subtype:
       type: string
@@ -139,7 +146,6 @@ items:
       type: string
       enum:
       - cases
-      - hospitalizations
       - deaths
       description: Reported outcome type
     count:
@@ -180,6 +186,41 @@ items:
           const: meningococcus
         time_unit:
           const: week
+    - properties:
+        disease_name:
+          const: hepatitis a
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: acute hepatitis b
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: perinatal hepatitis b
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: mumps
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: mpox
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: varicella
+        time_unit:
+          const: week
+    - properties:
+        disease_name:
+          const: pediatric flu mortality
+        time_unit:
+          const: week
   - if:
       properties:
         time_unit:
@@ -197,21 +238,6 @@ items:
   - oneOf:
     - properties:
         disease_name:
-          const: meningococcus
-        disease_subtype:
-          enum:
-          - A
-          - B
-          - C
-          - W
-          - X
-          - Y
-          - Z
-          - unknown
-          - unspecified
-          - total
-    - properties:
-        disease_name:
           const: measles
         disease_subtype:
           enum:
@@ -222,16 +248,256 @@ items:
         disease_subtype:
           enum:
           - total
+    - properties:
+        disease_name:
+          const: meningococcus
+        disease_subtype:
+          enum:
+          - A
+          - B
+          - C
+          - W
+          - X
+          - Y
+          - Z
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: hepatitis a
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: acute hepatitis b
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: perinatal hepatitis b
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: mumps
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: mpox
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: varicella
+        disease_subtype:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: pediatric flu mortality
+        disease_subtype:
+          enum:
+          - total
+  - oneOf:
+    - properties:
+        disease_name:
+          const: measles
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: pertussis
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: meningococcus
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: hepatitis a
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: acute hepatitis b
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: perinatal hepatitis b
+        age_group:
+          enum:
+          - total
+    - properties:
+        disease_name:
+          const: mumps
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: mpox
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: varicella
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - 19-22 y
+          - 23-44 y
+          - 45-64 y
+          - '>=65 y'
+          - total
+          - unknown
+          - unspecified
+    - properties:
+        disease_name:
+          const: pediatric flu mortality
+        age_group:
+          enum:
+          - <1 y
+          - 1-4 y
+          - 5-11 y
+          - 12-18 y
+          - total
+          - unknown
+          - unspecified
   - if:
       properties:
+        disease_name:
+          enum:
+          - measles
+          - pertussis
+          - hepatitis a
+          - acute hepatitis b
+          - mumps
+          - mpox
+          - varicella
+          - pediatric flu mortality
         geo_unit:
           const: state
     then:
-      not:
-        allOf:
-        - properties:
-            age_group:
+      properties:
+        age_group:
+          not:
+            const: total
+  - if:
+      properties:
+        disease_name:
+          enum:
+          - meningococcus
+        geo_unit:
+          const: state
+    then:
+      oneOf:
+      - properties:
+          age_group:
+            not:
               const: total
-        - properties:
-            disease_subtype:
+          disease_subtype:
+            const: total
+      - properties:
+          age_group:
+            const: total
+          disease_subtype:
+            not:
               const: total
+  - if:
+      properties:
+        disease_name:
+          enum:
+          - perinatal hepatitis b
+    then:
+      properties:
+        age_group:
+          const: total
