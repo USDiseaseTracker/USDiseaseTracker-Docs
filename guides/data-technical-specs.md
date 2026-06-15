@@ -168,7 +168,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | age_group | String | Age group of cases | See age group table below |
 
 
-**Valid Age Groups:**
+#### Valid Age Groups:
 
 | Value | Description |
 |-------|-------------|
