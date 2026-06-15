@@ -17,13 +17,10 @@ The goal of the US Disease Tracker is to provide consolidated epidemiologically 
 
 ---
 
-
-### The USDiseaseTracker-Docs Repository
-
 #### ***The USDiseaseTracker-Docs Repository***
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 
-While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves. All changes will be reflected and described here.
+While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves, including adding new diseases, modifying data elements, and adding features. All changes will be reflected and described here.
 <br>
 <br>
 
@@ -32,8 +29,8 @@ Our **Key Principles** are:
 
 1. Provision of data is voluntary.
 2. Only aggregate data will be collected to minimize the risk of reidentification.
-3. Data should be updated and back-populated on a regular basis, acknowledging that recent data may be incomplete as investigations proceed. Records of prior versions will be maintained.
-4. We do not suppress (except in accordance with individual jurisdiction policies, regulations, or laws) or manipulate data once received; jurisdictions should submit only data they are comfortable posting publicly.
+3. Data are be updated and back-populated on a regular basis, acknowledging that recent data may be incomplete as investigations proceed. Records of prior versions will be maintained.
+4. We do not suppress or manipulate data once received; jurisdictions should submit data in manner in accordance with heir data release policies.
 
 <br>
 
@@ -41,14 +38,14 @@ Our **Key Principles** are:
 
 ## Quick Reference
 
-!!! tip "New Interactive Tool!"
+!!! tip "Interactive Tool!"
 
     **[USDT Data Standards Tool](data-standards-tool.md)** - Interactive tool to explore valid data field options and generate example data
 
 
 ### 🦠 Current Diseases Collected
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes | Age groups | Disease Subtypes |
+| Disease | Time Aggregation | Confirmation Status | Outcomes | [Age groups](guides/data-technical-specs.md#valid-age-groups-by-condition:) | Disease Subtypes |
 |---------|------------------|---------------------|----------|------------|------------------|
 | Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 | Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
