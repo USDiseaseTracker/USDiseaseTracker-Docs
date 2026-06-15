@@ -192,7 +192,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `unknown` when age information is truely unknown (only for age_group aggregations)
 - Use `unspecified` when age group is known but suppressed
 
-**Valid Age Groups by Condition:**
+#### Valid Age Groups by Condition:
 
 | Disease | Valid Age Groups | Notes |
 |---------|-----------------|-------|
