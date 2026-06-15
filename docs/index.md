@@ -15,15 +15,12 @@ Welcome to the US Disease Tracker Documentation site. This repository houses the
 
 The goal of the US Disease Tracker is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. This project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments.
 
+Data are reported by jurisdictions to USDT on a <u>weekly</u> basis on <u>Thursdays</u>, with <u>new data published on Fridays</u>.
+
+***Note: Data are not yet public for USDT. When data become public, [usdiseasetracker.org](usdiseasetracker.org) will be redirected to the dashboard, rather than this documentation website.
+
+
 ---
-
-#### ***The USDiseaseTracker-Docs Repository***
-This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
-
-While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves, including adding new diseases, modifying data elements, and adding features. All changes will be reflected and described here.
-<br>
-<br>
-
 
 Our **Key Principles** are:
 
@@ -81,8 +78,11 @@ To check what combinations of values are valid, check out the [USDT Data Standar
 
 ---
 
+## The USDiseaseTracker-Docs Repository
+This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 
-## Repository Structure
+While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves, including adding new diseases, modifying data elements, and adding features. All changes will be reflected and described here.
+<br>
 
 This repository is organized as follows:
 
