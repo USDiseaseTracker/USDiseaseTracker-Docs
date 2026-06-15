@@ -45,7 +45,7 @@ Our **Key Principles** are:
 
 ### 🦠 Current Diseases Collected
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes | [Age groups](guides/data-technical-specs.md#valid-age-groups-by-condition:) | Disease Subtypes |
+| Disease | Time Aggregation | Confirmation Status | Outcomes | [Age groups](guides/data-technical-specs.md#valid-age-groups-by-condition) | Disease Subtypes |
 |---------|------------------|---------------------|----------|------------|------------------|
 | Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 | Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
