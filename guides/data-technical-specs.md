@@ -48,6 +48,13 @@ Data should be submitted in CSV format with one row per unique combination of:
 
 <br>
 
+!!! info "Case-sensitivity"
+
+    All field names and values are case-sensitive. Follow the specifications below to ensure correct use of capitalization. In general, capitalization should only be applied to proper nouns, such as for jurisdiction or subjurisdiction names, and disease subtypes (e.g., A, B, C, etc.)
+
+
+<br>
+
 ### Field Summary
 
 The following table provides a comprehensive overview of all data fields required for submission:
@@ -72,12 +79,12 @@ The following table provides a comprehensive overview of all data fields require
 
 **Key Notes:**
 
-- **Report Period:** Use MMWR week boundaries for weekly reporting
+- **Report Period:** Use [MMWR week boundaries](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Week-Log-2025-2026.pdf) for weekly reporting
 - **Disease-Specific Rules:** Measles, Hepatitis A, Perinatal Hepatitis B, and Influenza-Associated Pediatric Mortality use `confirmed` only; Pertussis, Meningococcus, Acute Hepatitis B, Mumps, Mpox, and Varicella use `confirmed and probable`
 - **Geographic Units:** Use standard two-letter abbreviations (AL, AK, ..., WY, DC, PR, etc.); for international residents use `geo_name = "international resident"` and `geo_unit = "NA"`; for suppressed small counts use `geo_name = "unspecified"`
-- **Age Groups:** Age groups displayed at jurisdiction level only (not sub-jurisdiction); use `total` for non-age-stratified aggregations
-- **Perinatal Hepatitis B exception:** Age group stratifications are not collected for Perinatal Hepatitis B; report only `total`
-- **Disease Subtype:** Use `total` for non-subtype-stratified aggregations or diseases without subtype reporting; use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
+- **Age Groups:** Age groups are submitted at jurisdiction level only (not sub-jurisdiction); use `age_group = "total"` for non-age stratifications.
+- **Perinatal Hepatitis B exception:** Age group stratifications are not collected for Perinatal Hepatitis B; report only `age_group = "total"`
+- **Disease Subtype:** Use `disease_subtype = "total"` for non-subtype stratifications or diseases without subtype reporting; use `disease_subtype = "unknown"` when subtyping was not performed; use `disease_subtype = "nonsubtypeable"` when subtyping was performed but specimens could not be subtyped, and use `disease_subtype = "unspecified"` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
 - **Capitalization:** All fields are case-sensitive. Follow the specifics defined here for correct value options.
 
@@ -104,7 +111,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 **Notes:**
 
-- Use MMWR week boundaries for weekly reporting
+- Use [MMWR week boundaries](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Week-Log-2025-2026.pdf) for weekly reporting
 - Provide metadata describing custom date hierarchies if not using CCCD
 
 <br>
@@ -193,6 +200,8 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `unknown` when age information is truely unknown (only for age_group aggregations)
 - Use `unspecified` when age group is known but suppressed
 
+<br>
+
 #### Valid Age Groups by Condition
 
 | Disease | Valid Age Groups | Notes |
@@ -214,7 +223,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nongroupable` |
 
 **Notes:**
 
@@ -233,7 +242,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |---------|---------------|
 | measles | `total` |
 | pertussis | `total` |
-| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` |
+| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nongroupable`|
 | hepatitis a | `total` |
 | acute hepatitis b | `total` |
 | perinatal hepatitis b | `total` |
@@ -259,6 +268,7 @@ Example data files are available to help understand the required format:
 - [Complete example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
 - [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
 - [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+<br>
 
 **File naming convention:**
 
