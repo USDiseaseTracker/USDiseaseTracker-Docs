@@ -57,7 +57,7 @@ This guide provides detailed specifications for health departments participating
 
 ### Confirmation Status
 
-*Required **case** confirmation status by disease:*
+*Required confirmation status by disease:*
 
 | Disease | Confirmation Status |
 |---------|---------------------|
@@ -75,17 +75,17 @@ This guide provides detailed specifications for health departments participating
 <br>
 
 
-### Required Data Aggregations
+### Required Data Stratifications
 
-Disease counts for different breakdowns are collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We call these versions of the data the "data aggregations". Each data aggregation should provide complete data from December 29, 2024 through the present, with each having equivalent total counts over time (e.g., cumulative measles cases in the age group aggregation must equal cumulative measles cases in the sub-jurisdiction aggregation). For each aggregation, the counts by time period (i.e., week, cumulative) should sum to the equivalent time period for the full jurisdication (e.g., the sum of county-level cases of measles for state Y should equal the number of total cases in state Y for all time points); data suppression should not result in underreporting through use of "unspecified" aggregations (see [Data Suppression](#data-suppression)). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data aggregations listed below will be accepted; new aggregations will be added as needed for new demographics, diseases, conditions or outcomes, etc.
+Disease counts for different breakdowns are collected separately (e.g., age, sub-jurisdiction, disease subtype, etc.). We call these versions of the data the "data stratifications". Each data stratification should provide complete data from December 29, 2024 through the present, with each having equivalent total counts over time (e.g., cumulative measles cases in the age group stratification must equal cumulative measles cases in the sub-jurisdiction stratification). For each stratification, the counts by time period (i.e., week, cumulative) should sum to the equivalent time period for the full jurisdication (e.g., the sum of county-level cases of measles for state Y should equal the number of total cases in state Y for all time points); data suppression should not result in underreporting through use of "unspecified" strata (see [Data Suppression](#data-suppression)). See [Case Classification by Time](#case-classification-by-time) below for details on assignment of cases to time periods. Only the data stratifications listed below will be accepted; new stratifications will be added as needed for new demographics, diseases, conditions or outcomes, etc.
 
 !!! info "Important"
     
-    All aggregations must sum to the same count (by time period and total). This sum should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting. Follow [Data Suppression](#data-suppression) instructions to ensure complete reporting.
+    All stratifications must sum to the same count (by time period and total). This sum should be equivalent to the jurisdication-level count for that time period. Do not drop counts in reporting. Follow [Data Suppression](#data-suppression) instructions to ensure complete reporting.
 
 <br>
 
-#### Data Aggregations:
+#### Data Stratifications:
 
     Measles
     - Cases × week × sub-jurisdiction unit (county, planning area, sub-state region, etc.)
@@ -131,14 +131,14 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
 
 !!! info "Note: Sub-jurisdiction or age group counts"
     
-    For conditions where sub-jurisdiction age group counts are not feasible for a jurisdiction due to small numbers or other reason, jurisdiction-level reporting is feasible and acceptable by using the "unspecified" value for `geo_name` or `age_group`. See [Data Technical Specifications](data-technical-specs.md) for details.
+    For conditions where stratified counts by sub-jurisdiction or age group are not feasible due to small numbers or other reasons, jurisdiction-level (e.g., state-level) reporting can be accomplished by using the "unspecified" value for `geo_name` or `age_group`. See [Data Technical Specifications](data-technical-specs.md) for details.
 
 <br>
 
 
 ### Reporting Frequency
 
-Data should be reported **weekly** during non-emergency periods. For each data submission, complete data for all diseases should be included, even if there are no updates.
+Data should be reported **weekly** by Thursday during non-emergency periods. Data can also be uploaded on any other day, but will not be updated on USDT until the next Friday. For each data submission, complete data for all diseases should be included, even if there are no updates.
 
 *Note: During large outbreaks or public health emergencies, more frequent updates may be requested to improve situational awareness.*
 
@@ -169,20 +169,7 @@ Cases should be classified in time according to a hierarchical date algorithm.
 
 ### Time Period Assignment
 
-- **Weekly counts:** Classify by MMWR week (see [MMWR week table](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Weeks-Calendar_2024-2025.pdf))
-
-<br>
-
-### Data Lags and Incompleteness
-
-- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
-- The project team will **not** censor data reported by jurisdictions
-- All data will be displayed as reported
-- The project team will work with jurisdictions to ensure completeness details are understood and portrayed correctly
-- Data from recent weeks may be incomplete
-- The project team will clearly indicate provisional data through:
-    - Dashed lines on epidemic curves
-    - Asterisks and notes detailing data completeness limitations
+- **Weekly counts:** Classify by MMWR week (see [MMWR week table](https://ndc.services.cdc.gov/wp-content/uploads/MMWR-Week-Log-2025-2026.pdf))
 
 <br>
 
@@ -195,32 +182,11 @@ Cases should be included in aggregated counts according to their **place of resi
 
 Sub-jurisdiction level reporting (below state, territory, or city level) is optimal to maximize usefulness for preparedness and response.
 
+- County-level reporing is preferred, but alternate aggregations (region, HSA, etc.) are acceptable.
 - Each jurisdiction should decide the geographic unit to use and provide a list of geographic units as metadata
-- Individual jurisdictions will work with the project team to determine geographic granularity
 
 <br>
-
-## Data Elements
-
-For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](data-technical-specs.md).
-
-### Summary of Required Fields
-
-All data submissions must include the following types of information:
-
-- **Time fields:** When the cases occurred (report period dates and time unit)
-- **Disease fields:** What disease is being reported, case confirmation status, and outcome
-- **Geographic fields:** Where the cases occurred (jurisdiction and geographic unit)
-- **Count field:** Number of cases for this combination
-- **Demographic fields:** Age group (for age-stratified aggregations)
-
-### Summary of Optional Fields
-
-- **disease_subtype:** For meningococcal serogroup reporting.
-
-For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](data-technical-specs.md).
 <br>
-
 
 ### Age Groups
 
@@ -245,27 +211,64 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
     
     Age groups will only be shared and displayed at the jurisdiction level, not at sub-jurisdiction level, unless otherwise agreed to by individual jurisdictions.
 
-
+<br>
 <br>
 
-### International Residents
 
-International residents (residents of countries outside the US but who had a case identified in that jurisdiction) can be included in reported data but should be:
+## Data Elements
 
-- Designated as "international resident" using:
+For complete field definitions, data types, valid values, and detailed validation rules, see the [Data Technical Specifications](data-technical-specs.md).
+
+### Summary of Required Fields
+
+All data submissions must include the following types of information:
+
+- **Time fields:** When the cases occurred (report period dates and time unit)
+- **Disease fields:** What disease is being reported, case confirmation status, and outcome
+- **Geographic fields:** Where the cases occurred (jurisdiction and geographic unit)
+- **Count field:** Number of cases for this combination
+- **Demographic fields:** Age group (for age-stratified aggregations)
+
+### Summary of Optional Fields
+
+- **disease_subtype:** For meningococcal serogroup reporting.
+
+For detailed specifications of each field including exact field names, data types, and valid value sets, see the [Data Technical Specifications](data-technical-specs.md).
+
+<br>
+<br>
+
+
+## International Residents
+
+International residents (residents of countries outside the US but who had a case identified in that jurisdiction) can be included in reported data. These counts will be excluded from displayed totals and epidemic curves for stratifications and jurisdiction totals. To ensure they are included correctly:
+
+- Designate as "international resident" using:
   * `geo_name = "international resident"`
   * `geo_unit = "NA"`
-- Excluded from jurisdiction total counts and age group stratifications
-- Excluded from displayed totals, epidemic curves, etc. for the jurisdiction
 
 <br>
+<br>
 
+
+## Data Lags and Incompleteness
+
+- Jurisdictions should share all cases as soon as they are adjudicated as confirmed or probable, and are ready for public release
+- The project team recognizes that data from recent weeks is likely to be incomplete but encourages as timely submission of data as possible
+- The project team will **not** censor data reported by jurisdictions will display data as they are reported
+- The project team will clearly indicate provisional data according to jurisdiction guidance through:
+    - Dashed lines on epidemic curves
+    - Asterisks and notes detailing data completeness limitations
+
+<br>
+<br>
 
 ## Data Suppression
 
 ### Small Count Suppression
 
-Jurisdictions should work with the project team to ensure visualized data do not risk reidentification of individual patients. In general, jurisdictions can leverage their existing policies regarding suppression of small numerators or where underlying populations are small enough to risk reidentification. All <u>data should have suppression applied by the jurisdiction prior to submission</u>, in accordance with their institutional policies. To ensure clear understanding of the data and transparency, jurisdictions should share applicable documentation of small count suppression policies with the project team if possible. Specific reporting rules are to be followed when data are suppressed to limit uncertainty and incompleteness in the data.
+Jurisdictions should use their existing policies regarding suppression of small numerators or where underlying populations are small enough to risk reidentification. All <u>data should have suppression applied by the jurisdiction prior to submission</u>, in accordance with their institutional policies. To ensure clear understanding of the data and transparency, jurisdictions should share applicable documentation of small count suppression policies with the project team if possible.
+
 <br>
 
 ### Handling Suppressed Data
