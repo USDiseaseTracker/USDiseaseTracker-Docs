@@ -224,7 +224,9 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `unknown` when subtyping was not performed or is otherwise not known (only for disease_subtype aggregations)
 - Use `unspecified` when subtype is known but suppressed
 
-**Valid Subtypes by Condition:**
+<br>
+
+#### Valid Subtypes by Condition
 
 | Disease | Valid Subtypes |
 |---------|---------------|
