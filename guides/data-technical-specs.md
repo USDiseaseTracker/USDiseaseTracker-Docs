@@ -223,7 +223,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nongroupable` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nonsubtypeable` |
 
 **Notes:**
 
@@ -242,7 +242,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |---------|---------------|
 | measles | `total` |
 | pertussis | `total` |
-| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nongroupable`|
+| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nonsubtypeable`|
 | hepatitis a | `total` |
 | acute hepatitis b | `total` |
 | perinatal hepatitis b | `total` |
