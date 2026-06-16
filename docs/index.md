@@ -15,9 +15,9 @@ Welcome to the US Disease Tracker Documentation site. This repository houses the
 
 The goal of the US Disease Tracker is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. This project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments.
 
-Data are reported by jurisdictions to USDT on a <u>weekly</u> basis on <u>Thursdays</u>, with <u>new data published on Fridays</u>.
+Data are reported by jurisdictions to USDT <u>weekly on Thursdays</u>, with <u>new data published on Fridays</u>.
 
-***Note: Data are not yet public for USDT. When data become public, [usdiseasetracker.org](usdiseasetracker.org) will be redirected to the dashboard, rather than this documentation website.
+**Note**: Data are not yet public for USDT. When data become public, [usdiseasetracker.org](usdiseasetracker.org) will be redirected to the dashboard, rather than this documentation website.
 
 
 ---
@@ -42,7 +42,7 @@ Our **Key Principles** are:
 
 ### 🦠 Current Diseases Collected
 
-| Disease | Time Aggregation | Confirmation Status | Outcomes | [Age groups](guides/data-technical-specs.md#valid-age-groups-by-condition) | Disease Subtypes |
+| Disease | [Time Aggregation](guides/data-submission-guide.md#time-aggregation) | [Confirmation Status](guides/data-submission-guide.md#confirmation-status) | [Outcomes](guides/data-technical-specs.md#disease-fields) | [Age groups](guides/data-technical-specs.md#valid-age-groups-by-condition) | [Disease Subtypes](guides/data-technical-specs.md#disease-specific-fields) |
 |---------|------------------|---------------------|----------|------------|------------------|
 | Measles | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 | Pertussis | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
@@ -54,6 +54,8 @@ Our **Key Principles** are:
 | Mpox | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
 | Varicella | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
 | Influenza-Associated Pediatric Mortality | Weekly | Confirmed only | Deaths | *multiple* | *not collected* |
+*Click column name to go to more detailed documentation on each field.*
+
 
 ### 📚 Guides and Specifications
 
