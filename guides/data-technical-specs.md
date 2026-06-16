@@ -67,7 +67,7 @@ The following table provides a comprehensive overview of all data fields require
 | geo_name | String | Name of the geographic unit | Name string or `international resident`, `unknown`, `unspecified` | Yes |
 | count | Integer | Number of cases for this combination | Positive integers | Yes |
 | age_group | String | Age group of cases | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` | Yes |
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` | Yes |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `nongroupable`, `total`, `unknown`, `unspecified` | Yes |
 <br>
 
 **Key Notes:**
@@ -214,7 +214,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `nongroupable`, `total`, `unknown`, `unspecified` |
 
 **Notes:**
 
