@@ -79,6 +79,7 @@ The following table provides a comprehensive overview of all data fields require
 - **Perinatal Hepatitis B exception:** Age group stratifications are not collected for Perinatal Hepatitis B; report only `total`
 - **Disease Subtype:** Use `total` for non-subtype-stratified aggregations or diseases without subtype reporting; use `unknown` when subtyping was not performed; use `unspecified` when subtype is known but suppressed
 - **Counts:** Only include non-zero counts; apply jurisdiction data suppression policies before submission
+- **Capitalization:** All fields are case-sensitive. Follow the specifics defined here for correct value options.
 
 <br>
 
