@@ -223,7 +223,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
-| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nonsubtypeable` |
+| disease_subtype | String | Disease subtype (meningococcal serogroup) | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `nongroupable`, `total`, `unknown`, `unspecified` |
 
 **Notes:**
 
