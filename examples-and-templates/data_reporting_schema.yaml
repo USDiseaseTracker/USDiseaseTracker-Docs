@@ -263,6 +263,7 @@ items:
           - total
           - unknown
           - unspecified
+          - nongroupable
     - properties:
         disease_name:
           const: hepatitis a
