@@ -124,8 +124,8 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
     - Cases × week × age group × jurisdiction
 
     Influenza-Associated Pediatric Mortality
-    - Deaths × week × sub-jurisdiction unit
-    - Deaths × week × age group × jurisdiction
+    - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
 
 <br>
 
