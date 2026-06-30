@@ -2,7 +2,10 @@
 
 Welcome to the US Disease Tracker Documentation site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
-??? info "Version 2.0.0 (updated 2026-05-18)"
+??? info "Version 2.0.1 (updated 2026-06-30)"
+    
+    - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
+    - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
     
     - Expanded supported diseases across documentation, templates, and the data standards tool.
     - Updated disease-specific validation guidance for `confirmation_status` and `disease_subtype`.
