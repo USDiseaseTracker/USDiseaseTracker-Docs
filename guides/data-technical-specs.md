@@ -5,7 +5,10 @@ permalink: /docs/data-technical-specs/
 
 # Data Technical Specifications
 
-??? info "**Version 2.0.0** (updated 2026-05-18)"
+??? info "**Version 2.0.1** (updated 2026-06-30)"
+    
+    - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
+    - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
     
     - Updated field-level specifications to cover the expanded supported disease set.
     - Clarified disease-specific valid values for `confirmation_status` and `disease_subtype`.
@@ -199,6 +202,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 - Use `total` for non-age-stratified aggregations
 - Use `unknown` when age information is truely unknown (only for age_group aggregations)
 - Use `unspecified` when age group is known but suppressed
+- A special `<2 y` age group exists only for use with perinatal hepatitis B
 
 <br>
 
@@ -211,7 +215,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | meningococcus | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | hepatitis a | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | acute hepatitis b | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
-| perinatal hepatitis b | `total` | only &lt;2yrs |
+| perinatal hepatitis b | `<2 y` | only &lt;2yrs |
 | mumps | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | mpox | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | varicella | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
