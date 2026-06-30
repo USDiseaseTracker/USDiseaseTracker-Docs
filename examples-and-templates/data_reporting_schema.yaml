@@ -146,7 +146,6 @@ items:
       type: string
       enum:
       - cases
-      - deaths
       description: Reported outcome type
     count:
       type: integer
