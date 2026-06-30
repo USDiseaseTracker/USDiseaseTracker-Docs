@@ -5,7 +5,7 @@ permalink: /docs/data-transfer-guide/
 
 # Data Transfer Guide
 
-??? info "**Version 2.0.0** (updated 2026-05-18)"
+??? info "**Version 2.0.1** (updated 2026-06-30)"
     
     - No updates to data transfer methods or requirements in this version.
     
