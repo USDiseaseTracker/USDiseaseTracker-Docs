@@ -12,4 +12,4 @@ geo_name,TEXT,"{name of geo_unit element}, ""international resident"",""total"",
 age_group,TEXT,"""<1 y"", ""1-4 y"", ""5-11 y"", ""12-18 y"", ""19-22 y"", ""23-44 y"", ""45-64 y"", "">=65 y"", ""total"", ""unknown"", ""unspecified""",yes,Standardized age group
 count,INTEGER,n,yes,Aggregate count of specified outcome for the specified group for this time period
 confirmation_status,TEXT,"""confirmed"", ""confirmed and probable""",yes,Case confirmation status reported
-outcome,TEXT,"""cases"", ""deaths""",yes,Epidemiologic outcome reported
+outcome,TEXT,"""cases""",yes,Epidemiologic outcome reported
