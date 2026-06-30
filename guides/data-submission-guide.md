@@ -110,6 +110,7 @@ Disease counts for different breakdowns are collected separately (e.g., age, sub
 
     Perinatal Hepatitis B
     - Cases × week × sub-jurisdiction unit
+    - Cases × week × age group × jurisdiction
 
     Mumps
     - Cases × week × sub-jurisdiction unit
