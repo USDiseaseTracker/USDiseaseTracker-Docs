@@ -123,7 +123,7 @@ class DiseaseReport(BaseModel):
         "total", "unknown", "unspecified"
     ]
     confirmation_status: Literal["confirmed", "confirmed and probable"]
-    outcome: Literal["cases", "deaths"]
+    outcome: Literal["cases"]
     count: int
     
     class Config:
