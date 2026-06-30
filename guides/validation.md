@@ -5,7 +5,10 @@ permalink: /docs/validation/
 
 # Validation
 
-??? info "**Version 2.0.0** (updated 2026-05-18)"
+??? info "**Version 2.0.0** (updated 2026-06-30)"
+
+    - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
+    - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
     
     - Updated validation references to reflect the current supported disease set.
     - Clarified disease-specific cross-field expectations for `confirmation_status` and `disease_subtype`.
@@ -49,7 +52,7 @@ Validation errors will be reported back to submitters with specific error descri
 - `time_unit` must be `week`
 - `date_type` must be `cccd` or `jurisdiction date hierarchy`
 - `geo_unit` must be one of: `county`, `state`, `region`, `planning area`, `hsa`, `NA`
-- `outcome` must be one of: `cases`, `deaths`
+- `outcome` must be one of: `cases`
 - `confirmation_status` must be `confirmed` or `confirmed and probable`
 - `age_group` must be one of the recognized age group values (see [Valid Age Groups by Condition](data-technical-specs.md#demographic-fields))
 - `disease_subtype` must be a valid value for the submitted `disease_name` (see [Valid Subtypes by Condition](data-technical-specs.md#disease-specific-fields))
@@ -75,14 +78,14 @@ Validation errors will be reported back to submitters with specific error descri
 
 #### Age Group and Disease Subtype Breakdown Rules
 - **Sub-state level** (`geo_unit` ≠ `state`): both `age_group` and `disease_subtype` must be `total`
-- **Perinatal hepatitis b** (all geo levels): `age_group` must always be `total`
-- **Diseases with age breakdown only** (`measles`, `pertussis`, `hepatitis a`, `acute hepatitis b`, `mumps`, `mpox`, `varicella`, `pediatric flu mortality`) at state level: `age_group` must **not** be `total`
+- **Perinatal hepatitis b** (age group stratification): `age_group` must always be `<2 y`
+- **All diseases in age stratifications** at state level: `age_group` must **not** be `total`
 - **Meningococcus** at state level: exactly one of `age_group` or `disease_subtype` must be `total` (age breakdown rows use `disease_subtype = "total"`; subtype breakdown rows use `age_group = "total"`)
 
 #### Disease-Specific Age Group Values
 - Most diseases accept the full age group set (`<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified`)
 - `pediatric flu mortality` only accepts: `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `total`, `unknown`, `unspecified`
-- `perinatal hepatitis b` only accepts: `total`
+- `perinatal hepatitis b` only accepts: `<2 y`, `total`
 
 ### Count Totals Validation
 
