@@ -5,7 +5,10 @@ permalink: /docs/data-submission-guide/
 
 # Data Submission Guide
 
-??? info "**Version 2.0.0** (updated 2026-05-18)"
+??? info "**Version 2.0.1** (updated 2026-06-30)"
+    
+    - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
+    - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
     
     - Added guidance for the expanded disease set now supported by the reporting standards.
     - Updated aggregation expectations for newly supported diseases and their applicable dimensions.
