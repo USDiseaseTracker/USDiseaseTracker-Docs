@@ -6,7 +6,8 @@ Welcome to the US Disease Tracker Documentation site. This repository houses the
     
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
     - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
-    
+
+    (Changed in Version 2.0.0)
     - Expanded supported diseases across documentation, templates, and the data standards tool.
     - Updated disease-specific validation guidance for `confirmation_status` and `disease_subtype`.
     - Harmonized metadata and dictionary values for the newly supported diseases.
