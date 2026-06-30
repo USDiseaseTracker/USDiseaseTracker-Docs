@@ -2,8 +2,12 @@
 
 📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
 
-**Version 2.0.0 (updated 2026-05-18)**
-    
+**Version 2.0.1 (updated 2026-06-30)**
+
+    - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
+    - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
+
+    (Version 2.0.0)
     - Added 7 new diseases: 
         - New conditions: hepatitis A, acute hepatitis B, perinatal hepatitis B, mumps, mpox, varicella, influenza-associated pediatric mortality 
         - Original conditions: measles, pertussis, invasive meningoccoccal disease
@@ -55,11 +59,11 @@ Our **Key Principles** are:
 | Invasive Meningococcal Disease | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *collected* |
 | Hepatitis A | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 | Acute Hepatitis B | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
-| Perinatal Hepatitis B | Weekly | Confirmed only | Cases | *not collected* | *not collected* |
+| Perinatal Hepatitis B | Weekly | Confirmed only | Cases | only *<2 y* | *not collected* |
 | Mumps | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
 | Mpox | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
 | Varicella | Weekly | Confirmed and probable (combined) | Cases | *multiple* | *not collected* |
-| Influenza-Associated Pediatric Mortality | Weekly | Confirmed only | Deaths | *multiple* | *not collected* |
+| Influenza-Associated Pediatric Mortality | Weekly | Confirmed only | Cases | *multiple* | *not collected* |
 
 **Guides and Specifications**
 1. **[Data Submission Guide](guides/data-submission-guide.md)** - High-level overview of what and when to submit
