@@ -66,7 +66,7 @@ The following table provides a comprehensive overview of all data fields require
 | report_period_end | Date | End date of reporting period (MMWR week aligned) | ISO 8601 format (YYYY-MM-DD) | Yes |
 | date_type | String | Method used to assign cases to reporting periods | `cccd`, `jurisdiction date hierarchy` | Yes |
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus`, `hepatitis a`, `acute hepatitis b`, `perinatal hepatitis b`, `mumps`, `mpox`, `varicella`, `pediatric flu mortality` | Yes |
-| outcome | String | Type of outcome being reported | `cases` | Yes |
+| outcome | String | Type of outcome being reported | `cases`, `deaths` | Yes |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` | Yes |
 | reporting_jurisdiction | String | Jurisdiction submitting the data | Two-letter state/territory code or `NYC` | Yes |
 | state | String | State/territory containing the geographic unit | Two-letter state/territory code | Yes |
@@ -121,7 +121,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | Field Name | Data Type | Description | Valid Values |
 |------------|-----------|-------------|--------------|
 | disease_name | String | Name of disease being reported | `measles`, `pertussis`, `meningococcus`, `hepatitis a`, `acute hepatitis b`, `perinatal hepatitis b`, `mumps`, `mpox`, `varicella`, `pediatric flu mortality` |
-| outcome | String | Type of outcome being reported | `cases` |
+| outcome | String | Type of outcome being reported | `cases`, `deaths` |
 | confirmation_status | String | Case confirmation level | `confirmed`, `confirmed and probable` |
 
 **Notes:**
