@@ -112,7 +112,7 @@ def extract_field_summary_table(markdown: str) -> Dict[str, Dict[str, str]]:
 
 def extract_disease_per_condition_age_groups(markdown: str) -> Dict[str, Set[str]]:
     """Extract per-condition age groups from the 'Valid Age Groups by Condition' table."""
-    pattern = r'\*\*Valid Age Groups by Condition:\*\*.*?\n\n\| Disease \| Valid Age Groups \| Notes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
+    pattern = r'#### Valid Age Groups by Condition\n\n\| Disease \| Valid Age Groups \| Notes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
     match = re.search(pattern, markdown, re.DOTALL)
     if not match:
         return {}
@@ -130,7 +130,7 @@ def extract_disease_per_condition_age_groups(markdown: str) -> Dict[str, Set[str
 
 def extract_disease_per_condition_subtypes(markdown: str) -> Dict[str, Set[str]]:
     """Extract per-condition subtypes from the 'Valid Subtypes by Condition' table."""
-    pattern = r'\*\*Valid Subtypes by Condition:\*\*.*?\n\n\| Disease \| Valid Subtypes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
+    pattern = r'#### Valid Subtypes by Condition\n\n\| Disease \| Valid Subtypes \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
     match = re.search(pattern, markdown, re.DOTALL)
     if not match:
         return {}
@@ -185,7 +185,7 @@ def check_age_groups(schema: Dict, markdown: str) -> Tuple[bool, str]:
     schema_age_groups = extract_enum_from_schema(schema, 'age_group')
     
     # Extract age groups from markdown
-    md_pattern = r'\*\*Valid Age Groups:\*\*.*?\n\n\| Value \| Description \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
+    md_pattern = r'#### Valid Age Groups\n\n\| Value \| Description \|\n\|[-\s|]+\n((?:\|[^\n]+\n)+)'
     match = re.search(md_pattern, markdown, re.DOTALL)
     
     if not match:
@@ -532,7 +532,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         age_table += f"| `{age}` | {desc} |\n"
     
     # Replace age groups table
-    pattern = r'(\*\*Valid Age Groups:\*\*.*?\n\n)\| Value \| Description \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
+    pattern = r'(#### Valid Age Groups\n\n)\| Value \| Description \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
     updated = re.sub(pattern, r'\1' + age_table, updated, flags=re.DOTALL)
     
     # Update field summary table for disease_subtype
@@ -655,7 +655,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         note = perinatal_note_col if disease == 'perinatal hepatitis b' else ''
         per_age_table += f"| {disease} | {age_str} | {note} |\n"
     per_age_pattern = (
-        r'(\*\*Valid Age Groups by Condition:\*\*.*?\n\n)'
+        r'(#### Valid Age Groups by Condition\n\n)'
         r'\| Disease \| Valid Age Groups \| Notes \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
     )
     updated = re.sub(per_age_pattern, r'\1' + per_age_table, updated, flags=re.DOTALL)
@@ -668,7 +668,7 @@ def update_markdown_from_schema(schema: Dict, markdown: str, schema_path: Path) 
         subtype_str = ', '.join(f'`{s}`' for s in subtypes)
         per_subtype_table += f"| {disease} | {subtype_str} |\n"
     per_subtype_pattern = (
-        r'(\*\*Valid Subtypes by Condition:\*\*.*?\n\n)'
+        r'(#### Valid Subtypes by Condition\n\n)'
         r'\| Disease \| Valid Subtypes \|\n\|[-\s|]+\n(?:\|[^\n]+\n)+'
     )
     updated = re.sub(per_subtype_pattern, r'\1' + per_subtype_table, updated, flags=re.DOTALL)
