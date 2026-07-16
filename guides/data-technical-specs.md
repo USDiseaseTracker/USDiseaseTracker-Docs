@@ -215,7 +215,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 | meningococcus | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | hepatitis a | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | acute hepatitis b | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
-| perinatal hepatitis b | `<2 y` | only &lt;2yrs |
+| perinatal hepatitis b | `<2 y`, `total` | only &lt;2yrs (plus `total` for non-age-stratified reporting) |
 | mumps | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | mpox | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
 | varicella | `<1 y`, `1-4 y`, `5-11 y`, `12-18 y`, `19-22 y`, `23-44 y`, `45-64 y`, `>=65 y`, `total`, `unknown`, `unspecified` |  |
@@ -246,7 +246,7 @@ Only include rows with non-zero counts. The system will automatically infer zero
 |---------|---------------|
 | measles | `total` |
 | pertussis | `total` |
-| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`,`nonsubtypeable`|
+| meningococcus | `A`, `B`, `C`, `W`, `X`, `Y`, `Z`, `total`, `unknown`, `unspecified`, `nongroupable` |
 | hepatitis a | `total` |
 | acute hepatitis b | `total` |
 | perinatal hepatitis b | `total` |
