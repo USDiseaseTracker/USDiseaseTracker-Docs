@@ -1,6 +1,6 @@
-# USDiseaseTracker-Docs
+# US Disease Tracker Data Standards
 
-📖 **[View this documentation as a website](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/)**
+📖 **[View this documentation as a website](https://usdiseasetracker.github.io/DataStandards/)**
 
 **Version 2.0.1 (updated 2026-06-30)**
 
