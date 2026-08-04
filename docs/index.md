@@ -5,7 +5,7 @@ Welcome to the US Disease Tracker Documentation site. This repository houses the
 ??? info "Version 2.0.2 (updated 2026-08-04)"
     
     - Updated repository/site references and links to use the DataStandards GitHub Pages path and repository name
-    - Renamed US Disease Tracker Data Standards references to US Disease Tracker Data Standards throughout the documentation
+    - Renamed `USDiseaseTracker-Docs` references to US Disease Tracker Data Standards throughout the documentation
 
     (Changed in Version 2.0.1)
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
