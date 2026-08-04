@@ -56,7 +56,7 @@ The site configuration is in `mkdocs.yml` at the repository root. Key settings:
 - **Theme**: Material for MkDocs
 - **Navigation**: Organized into Guides, Tools, Examples, and Contributing sections
 - **Features**: Search, syntax highlighting, code copying, dark mode
-- **Base URL**: `/USDiseaseTracker-Docs/` for GitHub Pages
+- **Base URL**: `/DataStandards/` for GitHub Pages
 
 ## Deployment
 
@@ -77,7 +77,7 @@ The site is automatically deployed to GitHub Pages when changes are pushed to th
 ### Linking to Files
 
 - **Internal documentation links**: Use relative paths (e.g., `guides/data-submission-guide.md`)
-- **External files in repository**: Use full GitHub URLs (e.g., `https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/...`)
+- **External files in repository**: Use full GitHub URLs (e.g., `https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/...`)
 - **Images**: Store in `docs/assets/images/` and reference with relative paths
 
 ## Theme Customization
@@ -95,4 +95,4 @@ Current customizations:
 
 - The `guides/` directory is a symbolic link to `../guides/` to avoid duplication
 - The `data-standards-tool.html` file is tracked directly in this `docs/` directory and is not copied during the MkDocs build; update it from `../data_standards_tool/` manually or via a separate script/workflow as needed
-- The site uses the `/USDiseaseTracker-Docs/` base URL for GitHub Pages deployment
+- The site uses the `/DataStandards/` base URL for GitHub Pages deployment

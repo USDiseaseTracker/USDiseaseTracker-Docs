@@ -8,7 +8,7 @@ This section provides templates, examples, and reference materials to help you p
 
 The standard template for submitting disease tracking data:
 
-**📄 [disease_tracking_report_{jurisdiction}_{report_date}.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)**
+**📄 [disease_tracking_report_{jurisdiction}_{report_date}.csv](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)**
 
 This template includes:
 
@@ -21,7 +21,7 @@ This template includes:
 
 The template for submitting required metadata about your jurisdiction's data:
 
-**📄 [disease-tracking-metadata-{jurisdiction}.yaml](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml)**
+**📄 [disease-tracking-metadata-{jurisdiction}.yaml](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml)**
 
 This template includes:
 
@@ -37,7 +37,7 @@ When using this template, rename it with your jurisdiction's two-letter abbrevia
 
 A complete example showing simulated data that reflect what submitted data would look like:
 
-**📄 [disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv)**
+**📄 [disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv)**
 
 This example demonstrates:
 
@@ -54,7 +54,7 @@ Note: These data were generated from available data at the state-level from NNDS
 
 An example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting sub-jurisdiction geographies other than county:
 
-**📄 [Jurisdiction specification example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/ID_jurisdictions.csv)**
+**📄 [Jurisdiction specification example](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/ID_jurisdictions.csv)**
 
 This example demonstrates:
 
@@ -69,7 +69,7 @@ This example demonstrates:
 
 The comprehensive data dictionary defines all fields and their valid values:
 
-**📄 [disease_tracking_data_dictionary.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv)**
+**📄 [disease_tracking_data_dictionary.csv](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv)**
 
 The data dictionary includes:
 
@@ -84,7 +84,7 @@ The data dictionary includes:
 
 A reference table mapping MMWR weeks to calendar months:
 
-**📄 [MMWR_week_to_month_crosswalk.csv](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/MMWR_week_to_month_crosswalk.csv)**
+**📄 [MMWR_week_to_month_crosswalk.csv](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/MMWR_week_to_month_crosswalk.csv)**
 
 This crosswalk helps you:
 
@@ -100,7 +100,7 @@ This crosswalk helps you:
 
 The formal YAML schema defining the data structure:
 
-**📄 [data_reporting_schema.yaml](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/data_reporting_schema.yaml)**
+**📄 [data_reporting_schema.yaml](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/data_reporting_schema.yaml)**
 
 Use this schema for:
 
@@ -114,7 +114,7 @@ Use this schema for:
 
 The Python Pydantic schema used for validation:
 
-**📄 [data_reporting_schema.py](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/data_reporting_schema.py)**
+**📄 [data_reporting_schema.py](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/data_reporting_schema.py)**
 
 This schema includes:
 

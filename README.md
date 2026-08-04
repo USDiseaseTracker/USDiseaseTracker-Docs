@@ -2,8 +2,12 @@
 
 📖 **[View this documentation as a website](https://usdiseasetracker.github.io/DataStandards/)**
 
-**Version 2.0.1 (updated 2026-06-30)**
+**Version 2.0.2 (updated 2026-08-04)**
 
+    - Updated repository/site references and links to use the DataStandards GitHub Pages path and repository name
+    - Renamed US Disease Tracker Data Standards references to US Disease Tracker Data Standards throughout the documentation
+
+    (Version 2.0.1)
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
     - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
 
@@ -23,7 +27,7 @@
 The goal of the US Disease Tracker is to provide consolidated epidemiologically sound data, analytics, and insights for monitoring and responding to disease threats across the United States. This project aims to produce data that are as standardized as possible, while recognizing individual variations in how and when data are collected and made available to participating health departments. 
 <br>
 
-#### ***The USDiseaseTracker-Docs Repository***
+#### ***The US Disease Tracker Data Standards Repository***
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 <br>
 
@@ -44,7 +48,7 @@ Our **Key Principles** are:
 ## Quick Reference
 
 **🛠️ Interactive Tool:**
-- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
+- **[USDT Data Standards Tool](https://usdiseasetracker.github.io/DataStandards/data-standards-tool/)** - Interactive tool to explore valid data field options and generate example data
 
 **Key Dates:**
 - **Data Start:** December 29, 2024 (MMWR week 1, 2025)
@@ -82,7 +86,7 @@ Our **Key Principles** are:
 
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements. Data can be submitted to the dashboard at any time to check the validation.
 
-To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
+To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/DataStandards/data-standards-tool/).
 
 <br>
 <br>

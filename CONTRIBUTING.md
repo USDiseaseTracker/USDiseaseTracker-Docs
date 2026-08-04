@@ -18,7 +18,7 @@ To contribute data as a jurisdiction:
 
 If you find an error in the documentation or have a suggestion:
 
-1. Check if the issue already exists in [GitHub Issues](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/issues)
+1. Check if the issue already exists in [GitHub Issues](https://github.com/USDiseaseTracker/DataStandards/issues)
 2. If not, create a new issue with a clear title and description
 3. Include relevant examples or references
 

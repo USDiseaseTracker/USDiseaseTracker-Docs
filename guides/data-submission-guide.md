@@ -5,8 +5,12 @@ permalink: /docs/data-submission-guide/
 
 # Data Submission Guide
 
-??? info "**Version 2.0.1** (updated 2026-06-30)"
+??? info "**Version 2.0.2** (updated 2026-08-04)"
     
+    - Updated repository/site references and links to use the DataStandards GitHub Pages path and repository name
+    - Renamed `USDiseaseTracker-Docs` references to US Disease Tracker Data Standards throughout the documentation
+
+    (Version 2.0.1)
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
     - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
     
@@ -316,9 +320,9 @@ Data should be submitted in CSV format following the standard template structure
 
 **Template and Example Files:**
 
-- [Data submission template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
-- [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
-- [Jurisdiction specification example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
+- [Data submission template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Empty template with correct field structure
+- [Example data file](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Jurisdiction specification example](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
 
 **File Submission Requirements:**
 
@@ -341,7 +345,7 @@ See the [Data Transfer Guide](data-transfer-guide.md) for technical details on d
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). For specifics on metadata, see [Data Technical Specifications](data-technical-specs.md). Metadata required includes:
 
 - Algorithm used to classify cases in time (e.g., CCCD or alternative)
 - List of substate geographic units used by jurisdiction
@@ -366,7 +370,7 @@ All submitted data must meet validation requirements to ensure data quality and 
 **Resources:**
 
 - [Data Technical Specifications](data-technical-specs.md) - Complete field definitions and valid value sets
-- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Comprehensive validation requirements
   
 Values submitted must align with valid value sets. Values not in alignment may result in validation errors. The [Data Transfer Guide](data-transfer-guide.md) describes what happens when validation succeeds or fails.

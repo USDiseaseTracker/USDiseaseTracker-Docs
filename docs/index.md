@@ -2,8 +2,12 @@
 
 Welcome to the US Disease Tracker Documentation site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
-??? info "Version 2.0.1 (updated 2026-06-30)"
+??? info "Version 2.0.2 (updated 2026-08-04)"
     
+    - Updated repository/site references and links to use the DataStandards GitHub Pages path and repository name
+    - Renamed `USDiseaseTracker-Docs` references to US Disease Tracker Data Standards throughout the documentation
+
+    (Changed in Version 2.0.1)
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
     - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
 
@@ -69,22 +73,22 @@ Our **Key Principles** are:
 4. **[Validation Rules](guides/validation.md)** - Data validation requirements
 
 ### 📄 Templates and Examples
-- [Data submission template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
-- [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv)
-- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
-- [Jurisdiction specification example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
+- [Data submission template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv)
+- [Example data file](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv)
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Jurisdiction specification example](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
 ---
 
 ## Data Validation
 
 Data are validated upon submission for completeness, format, and errors. See the [Validation Rules](guides/validation.md) for detailed validation requirements. Data can be submitted to the dashboard at any time to check the validation.
 
-To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/USDiseaseTracker-Docs/data-standards-tool/).
+To check what combinations of values are valid, check out the [USDT Data Standards Tool](https://usdiseasetracker.github.io/DataStandards/data-standards-tool/).
 
 
 ---
 
-## The USDiseaseTracker-Docs Repository
+## The US Disease Tracker Data Standards Repository
 This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker. It provides a centralized location for standardized formats and guidelines for disease surveillance data. The goal of this repository is to establish the processes, standards, and data formats that will enable construction of a consolidated database and dashboard to track infectious diseases across the US in real-time. 
 
 While we aim to limit changes once data standards and processes are established, they may change intermittently as this project evolves, including adding new diseases, modifying data elements, and adding features. All changes will be reflected and described here.
@@ -112,4 +116,4 @@ We welcome contributions to the data standards! Please see our [Contributing Gui
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 or later. See [LICENSE](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/LICENSE) for details.
+This project is licensed under the GNU General Public License v3.0 or later. See [LICENSE](https://github.com/USDiseaseTracker/DataStandards/blob/main/LICENSE) for details.
