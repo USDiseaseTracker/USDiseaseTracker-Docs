@@ -1,10 +1,10 @@
-site_name: US Disease Tracker Documentation
-site_url: https://usdiseasetracker.github.io/USDiseaseTracker-Docs/
+site_name: US Disease Tracker Data Standards
+site_url: https://usdiseasetracker.github.io/DataStandards/
 site_description: Data standards, templates, examples, and validation documentation for the US Disease Tracker project
 site_author: US Disease Tracker Team
 
-repo_name: USDiseaseTracker/USDiseaseTracker-Docs
-repo_url: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
+repo_name: USDiseaseTracker/DataStandards
+repo_url: https://github.com/USDiseaseTracker/DataStandards
 
 theme:
   name: material
@@ -69,4 +69,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/USDiseaseTracker/USDiseaseTracker-Docs
+      link: https://github.com/USDiseaseTracker/DataStandards

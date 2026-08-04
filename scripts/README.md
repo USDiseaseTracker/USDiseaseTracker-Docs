@@ -1,6 +1,6 @@
 # Scripts
 
-This directory contains utility scripts for the USDiseaseTracker-Docs repository.
+This directory contains utility scripts for the US Disease Tracker Data Standards repository.
 
 ## generate_yaml_schema.py
 

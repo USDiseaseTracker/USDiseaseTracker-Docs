@@ -5,7 +5,7 @@ permalink: /docs/data-technical-specs/
 
 # Data Technical Specifications
 
-??? info "**Version 2.0.1** (updated 2026-06-30)"
+??? info "**Version 2.0.2** (updated 2026-08-04)"
     
     - Changed outcomes for Influenza-Associated Pediatric Mortality to "cases" (from "deaths")
     - Changed Perinatal Hepatitis B to require age groups (only one age group: "<2 y"), to maintain validation and system consistency
@@ -269,9 +269,9 @@ See [Validation](validation.md) for details on file and data validation.
 
 Example data files are available to help understand the required format:
 
-- [Complete example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
-- [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
-- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Complete example](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data file with measles and pertussis data
+- [Empty template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template file with correct structure
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 <br>
 
 **File naming convention:**
@@ -292,7 +292,7 @@ Examples:
 
 ## Metadata Requirements
 
-Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). Metadata required includes:
+Jurisdictions should provide accompanying metadata using the [Jurisdiction Reporting Metadata Template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease-tracking-metadata-{jurisdiction}.yaml). Metadata required includes:
 
 1. **Date Classification Method**
    a. If using CCCD, indicate "cccd"
@@ -317,6 +317,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 2.0.2 | 2026-08-04 | Updated repository/site references and links to use the DataStandards GitHub Pages path and renamed US Disease Tracker Data Standards references to US Disease Tracker Data Standards |
 | 2.0.0 | 2026-05-18 | Expanded supported diseases and updated documentation/tool guidance for disease-specific value rules |
 | 1.1.0 | 2026-02-09 | Updated standards. Moves to weekly only, clarifies value use-cases, removes `ytd`, clarifies data sub-aggregations |
 | 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
@@ -328,7 +329,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 - [Data Submission Guide](data-submission-guide.md) - High-level guidance on what and when to submit
 - [Data Transfer Guide](data-transfer-guide.md) - Technical details on how to transfer data
-- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 - [Validation Rules](validation.md) - Complete validation requirements
 - [CSTE CCCD Guidelines](https://cdn.ymaws.com/www.cste.org/resource/resmgr/2015weston/DSWG_BestPracticeGuidelines_.pdf)
 - [CSTE Residency Guidelines](https://learn.cste.org/images/dH42Qhmof6nEbdvwIIL6F4zvNjU1NzA0MjAxMTUy/Course_Content/Case_based_Surveillance_for_Syphilis/CSTE_Revised_Guidelines_for_Determining_Residency_for_Disease_Reporting_Purposes.pdf)

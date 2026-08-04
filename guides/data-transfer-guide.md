@@ -5,9 +5,10 @@ permalink: /docs/data-transfer-guide/
 
 # Data Transfer Guide
 
-??? info "**Version 2.0.1** (updated 2026-06-30)"
+??? info "**Version 2.0.2** (updated 2026-08-04)"
     
-    - No updates to data transfer methods or requirements in this version.
+    - Updated repository/site references and links to use the DataStandards GitHub Pages path and repository name.
+    - Renamed US Disease Tracker Data Standards references to US Disease Tracker Data Standards throughout the documentation.
     
 ---
 
@@ -221,10 +222,10 @@ For detailed field specifications, see the [Data Technical Specifications](data-
 
 Use the official data submission template and examples:
 
-- [Empty template](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
-- [Example data file](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
-- [Jurisdiction specification example](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
-- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/USDiseaseTracker-Docs/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
+- [Empty template](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_{jurisdiction}_{report_date}.csv) - Template with correct field structure
+- [Example data file](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_report_CA-SIMULATED-EXAMPLE_2026-02-09.csv) - Sample data demonstrating proper format
+- [Jurisdiction specification example](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/ID_jurisdictions.csv) - Example format for sharing sub-jurisdiction geographies, particularly for jurisdictions reporting geographies other than county.
+- [Data dictionary (CSV)](https://github.com/USDiseaseTracker/DataStandards/blob/main/examples-and-templates/disease_tracking_data_dictionary.csv) - Reference table of all fields and valid values
 
 <br>
 
