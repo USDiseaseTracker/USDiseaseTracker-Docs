@@ -317,7 +317,7 @@ Jurisdictions should provide accompanying metadata using the [Jurisdiction Repor
 
 | Version | Date | Changes |
 |---------|------|---------|
-| 2.0.2 | 2026-08-04 | Updated repository/site references and links to use the DataStandards GitHub Pages path and renamed US Disease Tracker Data Standards references to US Disease Tracker Data Standards |
+| 2.0.2 | 2026-08-04 | Updated repository/site references and links to use the DataStandards GitHub Pages path and renamed `USDiseaseTracker-Docs` references to US Disease Tracker Data Standards |
 | 2.0.0 | 2026-05-18 | Expanded supported diseases and updated documentation/tool guidance for disease-specific value rules |
 | 1.1.0 | 2026-02-09 | Updated standards. Moves to weekly only, clarifies value use-cases, removes `ytd`, clarifies data sub-aggregations |
 | 1.0.0 | 2026-01-06 | Initial draft for pilot phase |
