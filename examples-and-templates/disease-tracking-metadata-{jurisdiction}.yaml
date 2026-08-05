@@ -35,7 +35,7 @@ geographic_units:
       parent_jurisdiction: NA
       notes: Any additional notes about this geographic unit
     
-    - geo_name: county
+    - geo_unit: county
       geo_name: [Example1 County, Example2 County, etc.] 
       parent_jurisdiction: State abbreviation (if applicable)
       notes: Any additional notes about this geographic unit
