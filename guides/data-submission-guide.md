@@ -198,7 +198,7 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ### Age Groups
 
-Age groups are defined to be relevant to both disease epidemiology and vaccine schedules. The same age groupings are used for all diseases to simplify visualizations.
+Age groups are defined to be relevant to both disease epidemiology and vaccine schedules. The same age groupings are used for all diseases* to simplify visualizations.
 
 | Age Group | Description |
 |-----------|-------------|
@@ -214,6 +214,7 @@ Age groups are defined to be relevant to both disease epidemiology and vaccine s
 | unknown | Counts of individuals with unknown age |
 | unspecified | Aggregated counts of individuals from age groups being suppressed |
 
+*Age groupings differ for Perinatal Hepatitis B, which only uses <2 y
 
 !!! info "Important"
     
