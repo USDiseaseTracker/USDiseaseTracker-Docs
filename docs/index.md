@@ -1,6 +1,6 @@
-# US Disease Tracker Documentation
+# US Disease Tracker Data Standards
 
-Welcome to the US Disease Tracker Documentation site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
+Welcome to the US Disease Tracker Data Standards site. This repository houses the data standards, templates, examples, and validation documentation for the US Disease Tracker project.
 
 ??? info "Version 2.0.2 (updated 2026-08-04)"
     
