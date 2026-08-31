@@ -198,7 +198,7 @@ Sub-jurisdiction level reporting (below state, territory, or city level) is opti
 
 ### Age Groups
 
-Age groups are defined to be relevant to both disease epidemiology and vaccine schedules. The same age groupings are used for all diseases* to simplify visualizations.
+Age groups are defined to be relevant to both disease epidemiology and vaccine schedules. The same age groupings are used for all diseases\* to simplify visualizations.
 
 | Age Group | Description |
 |-----------|-------------|
