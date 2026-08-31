@@ -4,8 +4,7 @@
 #v4 was updated to include changing character date to date and including 4 year olds in 1-4 category
 #V5 updated code for age days; forced on case matching
 #########################################PRE-STEP##################################################################
-'Ensure the following packages are installed on your local machine. This only needs to 
-occur once'
+#Ensure the following packages are installed on your local machine. This only needs to occur once:
 install.packages("tidyverse", "svDialogs", "readr", "MMWRweek","lubridate", "readxl","plyr","dplyr", "sqldf")
 #######################################Start Here##################################################################
 #### Open R Libraries ####
@@ -48,8 +47,8 @@ default <- read_excel(metadata, sheet = "default")
 jx <- tolower(default$Input[
     default$USDTField=="reporting_jurisdiction"
       ])
-
 }
+  
 # 2. Modify field names to standard USDT names
 name_map<- match(names(df), Variables$EDSS_name)
 names(df)[!is.na(name_map)]<- Variables$USDTField[name_map[!is.na(name_map)]]
@@ -79,7 +78,6 @@ df <- df %>%
           toupper(age_unit) =="DAYS" ~ age/365,
           TRUE ~ NA_real_))
 
-
 df <- df %>%
     mutate(
       age_group = case_when(
@@ -104,6 +102,8 @@ df$time_unit <-default$Input[
 ]
 df$outcome <- "cases"
 }
+
+  
 # MEASLES DATA ------------------------------------------------------------
 
 measles_dat <- subset(df, df$disease_name=="measles",
