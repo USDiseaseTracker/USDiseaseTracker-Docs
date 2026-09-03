@@ -1,93 +1,122 @@
 # Jurisdiction Reporting Metadata Template
-# Version: 1.0.0
+# Version: 1.1.0
 
 # Replace {jurisdiction} with your jurisdiction's two-letter abbreviation
 jurisdiction: {jurisdiction}
 last_updated: YYYY-MM-DD
 
+# Jurisdiction dashboard, data portal URLs
+#  - Replace text after ":" with specific details below for all needed links
+#  - Please submit a specifically relevant URL or URLs that you want shared with the public on the USDT dashboard.
+urls:
+  - name: StateName Measles Dashboard 
+    url: www.statedashboardexample.gov
+    disease: measles
+
+  - name: StateName Data Portal
+    url: www.statedataportal.gov
+    disease: all
+
 # Date Classification Method
-# Indicate how cases are classified in time
+#   Indicate how cases are classified in time
 date_classification_method:
-  # Set to 'cccd' if using Calculated Case Counting Date
-  # Set to 'custom' if using a custom hierarchy
-  method_type: cccd
+  # Specify if using a custom jurisdiction date hierarchy (true/false)
+  custom_date_method: false
   
-  description: >
-    If using CCCD, set method_type to 'cccd'. 
-    If using a custom hierarchy, set method_type to 'custom' and provide 
-    a detailed description below.
-  
-  # Only complete this if method_type is 'custom'
+  # Only complete this if custom_date_method is set to 'true'
   custom_hierarchy_description: >
-    Provide detailed description of custom date hierarchy here if method_type is 'custom'. 
+    Provide detailed description of the custom jurisdiction date hierarchy. 
     Include the order of dates considered (e.g., earliest date, date of onset, lab date, 
     report date) and logic for how cases are classified in time.
 
-# Geographic Units
-# List all geographic unit names and levels used by this jurisdiction
-geographic_units:
-  description: List all geographic unit names and levels used by this jurisdiction
-  
-  # List each geographic unit used
-  units:
-    - geo_unit: state
-      geo_name: State Name
-      parent_jurisdiction: NA
-      notes: Any additional notes about this geographic unit
-    
-    - geo_unit: county
-      geo_name: [Example1 County, Example2 County, etc.] 
-      parent_jurisdiction: State abbreviation (if applicable)
-      notes: Any additional notes about this geographic unit
-  
-  # List the geo_unit levels used (e.g., county, state, region, planning area, hsa)
-  geo_unit_levels:
-    - county
-    - state
+# Reported Diseases
+#   List all diseases that the jurisdiction will be submitting data for
+reported_diseases:
+  diseases:
+    - measles
+    - meningococcus
+    - pertussis
   
   notes: >
-    Add any additional notes about geographic unit definitions, naming conventions, 
-    or special cases (e.g., how planning areas are defined, what constitutes a 
-    health service area)
+    Add any additional notes regarding reported diseases
+
+# Substate Jurisdictions
+#   List all substate jurisdiction names and counties/planning regions/other defined geographic areas
+#   that map to each substate jurisdiction. In the case of each substate jurisdiction being a county, the
+#   "counties" list should just be the official county name (exclude the word "County"). Note: the "name" field
+#   below is how the jurisdiction will be displayed on the USDT website
+#   
+#   State naming conventions:
+#     - https://phinvads.cdc.gov/vads/ViewValueSet.action?id=80D34BBC-617F-DD11-B38D-00188B398520#
+#   
+#   County naming conventions:
+#     - https://phinvads.cdc.gov/vads/ViewValueSet.action?id=87FD5AB0-2CA3-4070-9FA4-B92D5934E4E7
+#
+#   Examples:
+#     # Example List where substate jurisdictions are counties grouped as health regions
+#     # 'name' field is how the substate jurisdiction name will be displayed on the dashboard
+#     - name: Knoxville-Knox Region
+#       geo_unit: region
+#       # 'geographic_areas' is the list of geographic areas that make up the substate jurisdiction. these geographic area
+#       # names should match what is stored in Census and ArcGIS data so that population and lat/long centroids can be retrieved.
+#       geographic_areas:
+#         - Hancock
+#         - Hawkins
+#         - Greene
+#         - Washington
+#         - Unicoi
+#         - Carter
+#         - Johnson
+#
+#     # Example List where substate jurisdictions are individual health planning regions
+#     # 'name' field is how the substate jurisdiction name will be displayed on the dashboard
+#     - name: CT Metropolitan
+#       geo_unit: region
+#       # 'geographic_areas' is the list of geographic areas that make up the substate jurisdiction. these geographic area
+#       # names should match what is stored in Census and ArcGIS data so that population and lat/long centroids can be retrieved.
+#       geographic_areas:
+#         - Greater Bridgeport Planning Region
+
+# List all substate jurisdictions and the counties/regions that make up the jurisdiction
+substate_jurisdictions:
+  description: Example description - We report at the health region level, which includes 9 health regions each comprised of 3-5 counties.
+  
+  jurisdictions:
+    # 'name' field is how the substate jurisdiction name will be displayed on the dashboard
+
+    # Example 1 - County-level sub-jurisdictions. Here we just list each county. This can be machine generated from a file.      
+        # 'name' should match what is stored in Census and ArcGIS data so that population and lat/long centroids can be retrieved.  
+        # 'geo_unit' should be the official designation, must match the submitted case data value, and must be consistent across all substate jurisdictions
+        # 'geographic_areas' is the list of geographic areas that make up the substate jurisdiction. these geographic area
+    - name: Bristol County
+      geo_unit: county 
+      geographic_areas:
+        - Bristol
+    
+    - name: Dukes/Nantucket/Barnstable Counties
+      geo_unit: county 
+      geographic_areas:
+        - Dukes
+        - Nantucket
+        - Barnstable
+  
+  notes: >
+    Add any additional notes about naming conventions, or special cases
 
 # Data Suppression Policies
-# Rules and policies for data suppression to protect patient privacy
+#   Rules and policies for data suppression to protect patient privacy
 data_suppression_policies:
-  description: Rules and policies for data suppression to protect patient privacy
-  
-  # Small count suppression rules
-  small_count_suppression:
-    threshold: 5
-    rule_description: >
-      Describe the rule for small count suppression. For example: 
-      'Any count less than 5 is suppressed and aggregated into the unspecified category.'
-    applies_to:
-      - geographic units
-      - age groups
-      - disease subtypes
-  
-  # Secondary suppression (to prevent calculation of suppressed values)
-  secondary_suppression:
-    rule_description: >
-      If secondary suppression is used, describe the rules here.
-  
-  # How suppressed counts are aggregated (leave this unless you are explicitly doing something different)
-  aggregation_of_suppressed_counts:
-    method: unspecified_category
-    description: >
-      Suppressed counts are aggregated in a row with geo_name='unspecified' 
-      (or age_group='unspecified', disease_subtype='unspecified' as appropriate) 
-      to ensure totals add up correctly.
-    notes: >
-      All suppression is applied prior to data submission. Suppressed values are never 
-      included in individual rows but are always included in aggregate unspecified categories.
-  
-  additional_policies: >
-    List any other suppression policies or rules that apply to the data, such as 
-    policies based on population size, geographic area, or other factors.
+  description: Example-Counts are suppressed when counts are 5 and under and the population is less than 100,000.
+  url: Link to suppression policies, if applicable, otherwise delete this line, if applicable, otherwise delete this line.
+
+# Data Lag Policies
+#   Rules and policies for data lag to protect patient privacy. Description should be detailed, but concise. Include specifics
+data_lag_policies:
+  description: No data lag is applied.
+  url: Link to data lag policies, if applicable, otherwise delete this line.
 
 # Contact Information
-# Provide contact information for technical and data quality questions
+#   Provide contact information for technical and data quality questions
 contact_information:
   
   # Technical point of contact
@@ -122,7 +151,7 @@ contact_information:
     notes: Alternate or backup contact if primary contacts are unavailable.
 
 # Additional Notes
-# Any jurisdiction-specific information or notes
+#   Any jurisdiction-specific information or notes
 additional_notes:
   jurisdiction_specific_notes: >
     Add any jurisdiction-specific notes, caveats, or additional information that would 
